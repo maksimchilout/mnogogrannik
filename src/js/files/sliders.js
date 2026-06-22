@@ -103,7 +103,6 @@ function initSliders() {
 			// observer: true,
 			// observeParents: true,
 			// spaceBetween: 0,
-			autoHeight: true,
 			// speed: 800,
 			//touchRatio: 0,
 			//simulateTouch: false,

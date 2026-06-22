@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/_head.htm',{
+"title":"Каталог — MNOGOGRANNIK"
+})
+
+<body>
+	<div class="wrapper">
+		@@include('html/_header.htm',{})
+		<main class="page">
+			<section class="page__catalog-hero catalog-hero">
+				<div class="catalog-hero__container _container">
+					<nav class="catalog-hero__breadcrumbs breadcrumbs" aria-label="Навигация">
+						<a href="./" class="breadcrumbs__link">Главная</a>
+						<span class="breadcrumbs__separator">/</span>
+						<span class="breadcrumbs__current">Каталог</span>
+					</nav>
+					<h1 class="catalog-hero__title _title">Каталог</h1>
+					<p class="catalog-hero__text">Лофт-мебель, садовые конструкции, арт-декор и металлоконструкции на заказ. Выберите раздел — мы изготовим проект под ваше пространство.</p>
+				</div>
+			</section>
+
+			<section class="page__catalog catalog">
+				<div class="catalog__container _container">
+					<aside class="catalog__sidebar catalog-sidebar">
+						<div class="catalog-sidebar__inner">
+							<h2 class="catalog-sidebar__title">Разделы</h2>
+							<ul class="catalog-sidebar__list">
+								<li class="catalog-sidebar__item catalog-sidebar__item_open" data-catalog-section="loft-furniture">
+									<button type="button" data-catalog-toggle class="catalog-sidebar__toggle _active">
+										<span class="catalog-sidebar__toggle-text">Лофт-мебель</span>
+										<span class="catalog-sidebar__toggle-arrow _icon-arrow-down" aria-hidden="true"></span>
+									</button>
+									<div class="catalog-sidebar__sub-wrap">
+									<ul class="catalog-sidebar__sub-list">
+										<li><a href="#loft-furniture/stoly" data-catalog-sub="stoly" class="catalog-sidebar__sub-link _icon-arrow-link">Столы</a></li>
+										<li><a href="#loft-furniture/stulya" data-catalog-sub="stulya" class="catalog-sidebar__sub-link _icon-arrow-link">Стулья</a></li>
+										<li><a href="#loft-furniture/divany" data-catalog-sub="divany" class="catalog-sidebar__sub-link _icon-arrow-link">Диваны</a></li>
+										<li><a href="#loft-furniture/krovati" data-catalog-sub="krovati" class="catalog-sidebar__sub-link _icon-arrow-link">Кровати</a></li>
+										<li><a href="#loft-furniture/kresla" data-catalog-sub="kresla" class="catalog-sidebar__sub-link _icon-arrow-link">Кресла</a></li>
+										<li><a href="#loft-furniture/skameiki" data-catalog-sub="skameiki" class="catalog-sidebar__sub-link _icon-arrow-link">Скамейки / банкетки</a></li>
+										<li><a href="#loft-furniture/stellazhi" data-catalog-sub="stellazhi" class="catalog-sidebar__sub-link _icon-arrow-link">Стеллажи</a></li>
+										<li><a href="#loft-furniture/polki" data-catalog-sub="polki" class="catalog-sidebar__sub-link _icon-arrow-link">Полки</a></li>
+										<li><a href="#loft-furniture/stoiki" data-catalog-sub="stoiki" class="catalog-sidebar__sub-link _icon-arrow-link">Стойки</a></li>
+									</ul>
+									</div>
+								</li>
+								<li class="catalog-sidebar__item" data-catalog-section="garden-furniture">
+									<button type="button" data-catalog-toggle class="catalog-sidebar__toggle">
+										<span class="catalog-sidebar__toggle-text">Садовая мебель</span>
+										<span class="catalog-sidebar__toggle-arrow _icon-arrow-down" aria-hidden="true"></span>
+									</button>
+									<div class="catalog-sidebar__sub-wrap">
+									<ul class="catalog-sidebar__sub-list">
+										<li><a href="#garden-furniture/kacheli" data-catalog-sub="kacheli" class="catalog-sidebar__sub-link _icon-arrow-link">Качели</a></li>
+										<li><a href="#garden-furniture/besedki" data-catalog-sub="besedki" class="catalog-sidebar__sub-link _icon-arrow-link">Беседки</a></li>
+										<li><a href="#garden-furniture/obed" data-catalog-sub="obed" class="catalog-sidebar__sub-link _icon-arrow-link">Обеденные зоны</a></li>
+										<li><a href="#garden-furniture/lavki" data-catalog-sub="lavki" class="catalog-sidebar__sub-link _icon-arrow-link">Лавки / скамейки</a></li>
+										<li><a href="#garden-furniture/ul-art" data-catalog-sub="ul-art" class="catalog-sidebar__sub-link _icon-arrow-link">Уличный арт-декор</a></li>
+									</ul>
+									</div>
+								</li>
+								<li class="catalog-sidebar__item" data-catalog-section="mangal-zones">
+									<button type="button" data-catalog-toggle class="catalog-sidebar__toggle">
+										<span class="catalog-sidebar__toggle-text">Мангалы и костровые зоны</span>
+										<span class="catalog-sidebar__toggle-arrow _icon-arrow-down" aria-hidden="true"></span>
+									</button>
+									<div class="catalog-sidebar__sub-wrap">
+									<ul class="catalog-sidebar__sub-list">
+										<li><a href="#mangal-zones/mangaly" data-catalog-sub="mangaly" class="catalog-sidebar__sub-link _icon-arrow-link">Мангалы</a></li>
+										<li><a href="#mangal-zones/mangal-zony" data-catalog-sub="mangal-zony" class="catalog-sidebar__sub-link _icon-arrow-link">Мангальные зоны</a></li>
+										<li><a href="#mangal-zones/kostrovye" data-catalog-sub="kostrovye" class="catalog-sidebar__sub-link _icon-arrow-link">Костровые чаши</a></li>
+									</ul>
+									</div>
+								</li>
+								<li class="catalog-sidebar__item" data-catalog-section="stairs">
+									<button type="button" data-catalog-toggle class="catalog-sidebar__toggle">
+										<span class="catalog-sidebar__toggle-text">Лестницы</span>
+										<span class="catalog-sidebar__toggle-arrow _icon-arrow-down" aria-hidden="true"></span>
+									</button>
+									<div class="catalog-sidebar__sub-wrap">
+									<ul class="catalog-sidebar__sub-list">
+										<li><a href="#stairs/marshevye" data-catalog-sub="marshevye" class="catalog-sidebar__sub-link _icon-arrow-link">Маршевые лестницы</a></li>
+										<li><a href="#stairs/vintovye" data-catalog-sub="vintovye" class="catalog-sidebar__sub-link _icon-arrow-link">Винтовые лестницы</a></li>
+										<li><a href="#stairs/karkas" data-catalog-sub="karkas" class="catalog-sidebar__sub-link _icon-arrow-link">Лестницы на каркасе</a></li>
+										<li><a href="#stairs/perila" data-catalog-sub="perila" class="catalog-sidebar__sub-link _icon-arrow-link">Перила и ограждения</a></li>
+									</ul>
+									</div>
+								</li>
+								<li class="catalog-sidebar__item" data-catalog-section="gates-fences">
+									<button type="button" data-catalog-toggle class="catalog-sidebar__toggle">
+										<span class="catalog-sidebar__toggle-text">Ворота и заборы</span>
+										<span class="catalog-sidebar__toggle-arrow _icon-arrow-down" aria-hidden="true"></span>
+									</button>
+									<div class="catalog-sidebar__sub-wrap">
+									<ul class="catalog-sidebar__sub-list">
+										<li><a href="#gates-fences/vorota" data-catalog-sub="vorota" class="catalog-sidebar__sub-link _icon-arrow-link">Ворота</a></li>
+										<li><a href="#gates-fences/kalitki" data-catalog-sub="kalitki" class="catalog-sidebar__sub-link _icon-arrow-link">Калитки</a></li>
+										<li><a href="#gates-fences/zabory" data-catalog-sub="zabory" class="catalog-sidebar__sub-link _icon-arrow-link">Заборы</a></li>
+									</ul>
+									</div>
+								</li>
+								<li class="catalog-sidebar__item catalog-sidebar__item_no-subs" data-catalog-section="art-decor">
+									<button type="button" data-catalog-toggle class="catalog-sidebar__toggle">
+										<span class="catalog-sidebar__toggle-text">Арт-декор</span>
+									</button>
+								</li>
+								<li class="catalog-sidebar__item" data-catalog-section="playgrounds">
+									<button type="button" data-catalog-toggle class="catalog-sidebar__toggle">
+										<span class="catalog-sidebar__toggle-text">Детские площадки</span>
+										<span class="catalog-sidebar__toggle-arrow _icon-arrow-down" aria-hidden="true"></span>
+									</button>
+									<div class="catalog-sidebar__sub-wrap">
+									<ul class="catalog-sidebar__sub-list">
+										<li><a href="#playgrounds/igrovye" data-catalog-sub="igrovye" class="catalog-sidebar__sub-link _icon-arrow-link">Игровые комплексы</a></li>
+										<li><a href="#playgrounds/kacheli-det" data-catalog-sub="kacheli-det" class="catalog-sidebar__sub-link _icon-arrow-link">Качели для детей</a></li>
+										<li><a href="#playgrounds/sport" data-catalog-sub="sport" class="catalog-sidebar__sub-link _icon-arrow-link">Спортивные элементы</a></li>
+									</ul>
+									</div>
+								</li>
+								<li class="catalog-sidebar__item catalog-sidebar__item_no-subs" data-catalog-section="dog-cages">
+									<button type="button" data-catalog-toggle class="catalog-sidebar__toggle">
+										<span class="catalog-sidebar__toggle-text">Клетки для собак</span>
+									</button>
+								</li>
+								<li class="catalog-sidebar__item catalog-sidebar__item_no-subs" data-catalog-section="other-metal">
+									<button type="button" data-catalog-toggle class="catalog-sidebar__toggle">
+										<span class="catalog-sidebar__toggle-text">Прочие металлоконструкции</span>
+									</button>
+								</li>
+							</ul>
+						</div>
+					</aside>
+
+					<div class="catalog__content catalog-content">
+						<div class="catalog-content__head">
+							<h2 class="catalog-content__title" data-catalog-title>Лофт-мебель</h2>
+							<p class="catalog-content__subtitle" data-catalog-subtitle>Все подкатегории</p>
+						</div>
+						<div class="catalog-content__grid products__items" data-catalog-grid></div>
+						<p class="catalog-content__empty" data-catalog-empty hidden>В этой подкатегории пока нет фотографий</p>
+					</div>
+				</div>
+			</section>
+
+			<section class="page__catalog-cta catalog-cta">
+				<div class="catalog-cta__container _container">
+					<div class="catalog-cta__body">
+						<h2 class="catalog-cta__title">Не нашли нужный раздел?</h2>
+						<p class="catalog-cta__text">Расскажите о задаче — мы спроектируем и изготовим изделие индивидуально под ваше пространство.</p>
+						<a href="./" class="catalog-cta__button btn">На главную</a>
+					</div>
+				</div>
+			</section>
+		</main>
+		@@include('html/_footer.htm',{})
+	</div>
+	@@include('html/_js.htm',{})
+</body>
+
+</html>

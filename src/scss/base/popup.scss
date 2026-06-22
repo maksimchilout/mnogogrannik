@@ -59,3 +59,35 @@ body.popup-show::after {
 		visibility: visible;
 	}
 }
+
+.popup-phone {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	gap: 16px;
+	max-width: 360px;
+
+	&__title {
+		font-size: 22px;
+		font-weight: 600;
+		color: $mainColor;
+	}
+
+	&__number {
+		font-size: 20px;
+		font-weight: 500;
+		color: $darkGrayColor;
+		text-decoration: none;
+
+		@media (any-hover: hover) {
+			&:hover {
+				color: $mainColor;
+			}
+		}
+	}
+
+	&__btn {
+		min-width: 180px;
+	}
+}

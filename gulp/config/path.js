@@ -30,10 +30,12 @@ export const path = {
 	watch: {
 		js: `${srcFolder}/js/**/*.js`,
 		scss: `${srcFolder}/scss/**/*.scss`,
-		html: `${srcFolder}/**/*.html`,
+		html: `${srcFolder}/*.html`,
+		htmlPartials: `${srcFolder}/html/**/*.htm`,
 		images: `${srcFolder}/img/**/*.{jpg,jpeg,png,gif,webp,ico,svg}`,
 		files: `${srcFolder}/files/**/*.*`,
 		json: `${srcFolder}/json/**/*.*`,
+		logo: `${srcFolder}/img/logo.jpg`,
 	},
 	clean: buildFolder,
 	buildFolder: buildFolder,

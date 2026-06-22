@@ -7,16 +7,19 @@ import {
 	restoreCartFromStorage,
 } from "./cart.js";
 import { initProductCatalog } from "./products-catalog.js";
-
-function formatPrice(value) {
-	if (!value) return '';
-	return `${String(value).replace(/\./g, ' ')} ₽`;
-}
+import { initGalleries } from "./gallery.js";
+import { initCatalogPage } from "./catalog-products.js";
+import { initCheckoutPage } from "./checkout.js";
+import { initCatalogSearch } from "./search-catalog.js";
+import { formatPrice } from "./catalog-utils.js";
 
 window.onload = function () {
 	restoreCartFromStorage();
 	initProductCatalog();
 	initSubscribeForm();
+	initCatalogPage();
+	initCheckoutPage();
+	initCatalogSearch();
 
 	document.addEventListener("click", documentActions);
 
@@ -47,17 +50,34 @@ window.onload = function () {
 		}
 
 		if (targetElement.classList.contains('cart-header__icon') || targetElement.closest('.cart-header__icon')) {
-			if (document.querySelector('.cart-list').children.length > 0) {
-				document.querySelector('.cart-header').classList.toggle('_active');
+			const cartHeader = document.querySelector('.cart-header');
+			const cartList = document.querySelector('.cart-list');
+			const cartEmpty = document.querySelector('[data-cart-empty]');
+			const isEmpty = !cartList?.children.length;
+
+			if (isEmpty) {
+				const isOpen = cartHeader.classList.contains('_active') && cartHeader.classList.contains('_empty');
+				cartHeader.classList.toggle('_active', !isOpen);
+				cartHeader.classList.toggle('_empty', !isOpen);
+				if (cartEmpty) cartEmpty.hidden = isOpen;
+			} else {
+				cartHeader.classList.remove('_empty');
+				if (cartEmpty) cartEmpty.hidden = true;
+				cartHeader.classList.toggle('_active');
 			}
 			e.preventDefault();
 		} else if (!targetElement.closest('.cart-header') && !targetElement.classList.contains('actions-product__button')) {
-			document.querySelector('.cart-header').classList.remove('_active');
+			const cartHeader = document.querySelector('.cart-header');
+			cartHeader?.classList.remove('_active', '_empty');
+			document.querySelector('[data-cart-empty]')?.setAttribute('hidden', '');
 		}
 
-		if (targetElement.classList.contains('cart-list__delete')) {
-			const productId = targetElement.closest('.cart-list__item').dataset.cartPid;
-			removeFromCartStorage(productId);
+		if (targetElement.classList.contains('cart-list__delete') || targetElement.closest('.cart-list__delete')) {
+			const deleteButton = targetElement.closest('.cart-list__delete');
+			const productId = deleteButton?.closest('.cart-list__item')?.dataset.cartPid;
+			if (productId) {
+				removeFromCartStorage(productId);
+			}
 			e.preventDefault();
 		}
 	}
@@ -141,10 +161,10 @@ window.onload = function () {
 			`;
 
 			let productTemplatePrices = '';
-			let productTemplatePricesStart = '<div class="item-product__prices">';
+			let productTemplatePricesStart = '<div class="item-product__prices"><div class="item-product__price-group">';
 			let productTemplatePricesCurrent = `<div class="item-product__price">${formatPrice(productPrice)}</div>`;
 			let productTemplatePricesOld = `<div class="item-product__price item-product__price_old">${formatPrice(productOldPrice)}</div>`;
-			let productTemplatePricesEnd = `</div>`;
+			let productTemplatePricesEnd = `</div><a href="" class="actions-product__button btn btn_white">В корзину</a></div>`;
 
 			productTemplatePrices = productTemplatePricesStart;
 			productTemplatePrices += productTemplatePricesCurrent;
@@ -153,21 +173,10 @@ window.onload = function () {
 			}
 			productTemplatePrices += productTemplatePricesEnd;
 
-			let productTEmplateActions = `
-			<div class="item-product__actions actions-product">
-				<div class="actions-product__body">
-					<a href="" class="actions-product__button btn btn_white">В корзину</a>
-					<a href="${productShareUrl}" class="actions-product__link _icon-share">Поделиться</a>
-					<a href="${productLikeUrl}" class="actions-product__link _icon-favorite">В избранное</a>
-				</div>
-			</div>
-			`;
-
 			let productTemplateBody = '';
 			productTemplateBody += productTemplateBodyStart;
 			productTemplateBody += productTemplateContent;
 			productTemplateBody += productTemplatePrices;
-			productTemplateBody += productTEmplateActions;
 			productTemplateBody += productTemplateBodyEnd;
 
 			let productTemplate = '';
@@ -297,7 +306,16 @@ function initSliders() {
 			loopAdditionalSlides: 5,
 			preloadImages: false,
 			parallax: true,
-			autoHeight: true,
+			on: {
+				init(swiper) {
+					const updateHeight = () => swiper.update();
+					swiper.el.querySelectorAll('.slider-main__image img').forEach((img) => {
+						if (img.complete) return;
+						img.addEventListener('load', updateHeight, { once: true });
+					});
+					updateHeight();
+				},
+			},
 			pagination: {
 				el: '.controls-slider-main__dotts',
 				clickable: true,
@@ -415,4 +433,5 @@ function initSliders() {
 
 window.addEventListener("load", function () {
 	initSliders();
+	initGalleries();
 });

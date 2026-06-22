@@ -30,18 +30,85 @@ import lightGallery from 'lightgallery';
 // Все стили
 // import '@scss/libs/gallery/lightgallery-bundle.scss';
 
-// Запуск
-const galleries = document.querySelectorAll('[data-gallery]');
-if (galleries.length) {
-	galleries.forEach(gallery => {
-		lightGallery(gallery, {
-			//plugins: [lgZoom, lgThumbnail],
-			licenseKey: '7EC452A9-0CFD441C-BD984C7C-17C8456E',
-			speed: 500,
-		});
+function bindSideClickNavigation(gallery, lg) {
+	gallery.addEventListener('lgAfterOpen', () => {
+		const container = document.querySelector('.lg-container.lg-show');
+		if (!container || container.dataset.sideNavBound) return;
+		container.dataset.sideNavBound = 'true';
+
+		const onSurfaceClick = (e) => {
+			if (e.target.closest('.lg-close')) return;
+
+			e.preventDefault();
+			e.stopPropagation();
+
+			if (e.clientX < window.innerWidth / 2) {
+				lg.goToPrevSlide();
+			} else {
+				lg.goToNextSlide();
+			}
+		};
+
+		const onSurfaceTouch = (e) => {
+			if (e.target.closest('.lg-close')) return;
+
+			const touch = e.changedTouches[0];
+			if (!touch) return;
+
+			e.preventDefault();
+			e.stopPropagation();
+
+			if (touch.clientX < window.innerWidth / 2) {
+				lg.goToPrevSlide();
+			} else {
+				lg.goToNextSlide();
+			}
+		};
+
+		container.addEventListener('click', onSurfaceClick, true);
+		const touchOptions = { capture: true, passive: false };
+		container.addEventListener('touchend', onSurfaceTouch, touchOptions);
+
+		gallery.addEventListener(
+			'lgBeforeClose',
+			() => {
+				container.removeEventListener('click', onSurfaceClick, true);
+				container.removeEventListener('touchend', onSurfaceTouch, touchOptions);
+				delete container.dataset.sideNavBound;
+			},
+			{ once: true }
+		);
 	});
 }
 
+// Запуск
+export function initGalleries() {
+	const galleries = document.querySelectorAll('[data-gallery]');
+	if (galleries.length) {
+		galleries.forEach((gallery) => {
+			if (gallery.classList.contains('lg-initialized')) return;
 
+			const sideNav = gallery.hasAttribute('data-gallery-side-nav');
+
+			const lg = lightGallery(gallery, {
+				licenseKey: '7EC452A9-0CFD441C-BD984C7C-17C8456E',
+				speed: 500,
+				selector: 'a',
+				download: false,
+				controls: false,
+				...(sideNav && {
+					closeOnTap: false,
+					swipeToClose: false,
+					loop: true,
+					getCaptionFromTitleOrAlt: false,
+				}),
+			});
+
+			if (sideNav) {
+				bindSideClickNavigation(gallery, lg);
+			}
+		});
+	}
+}
 
 

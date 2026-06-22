@@ -137,5 +137,15 @@
 	transition: all 1s ease 0s;
 }
 
+// lightGallery: навигация кликом по левой/правой половине экрана
+.lg-outer {
+	.lg-content,
+	.lg-item,
+	.lg-image,
+	.lg-img-wrap {
+		cursor: pointer;
+	}
+}
+
 
 

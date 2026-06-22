@@ -7,7 +7,7 @@ export const html = () => {
 	.pipe(app.plugins.plumber(
 		app.plugins.notify.onError({
 			title: "HTML",
-			message: "Error: <%= console.error.message %>"
+			message: "Error: <%= error.message %>"
 		}))
 	)
 	.pipe(fileinclude())
@@ -39,5 +39,5 @@ export const html = () => {
 		)
 	)
 	.pipe(app.gulp.dest(app.path.build.html))
-	.pipe(app.plugins.browsersync.stream());
+	.pipe(app.plugins.browsersync.reload({ stream: true }));
 }

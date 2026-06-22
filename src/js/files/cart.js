@@ -1,4 +1,15 @@
-const CART_STORAGE_KEY = 'funiro_cart';
+const CART_STORAGE_KEY = 'mnogogrannik_cart';
+
+import { formatPrice } from './catalog-utils.js';
+
+export function parsePriceValue(text) {
+	return parseInt(String(text).replace(/\s/g, '').replace(/[^\d]/g, ''), 10) || 0;
+}
+
+export function formatCartPrice(value) {
+	const amount = typeof value === 'number' ? value : parsePriceValue(value);
+	return formatPrice(amount);
+}
 
 export function getCart() {
 	try {
@@ -16,13 +27,19 @@ export function getCartTotalQuantity(cart = getCart()) {
 	return Object.values(cart).reduce((sum, item) => sum + item.quantity, 0);
 }
 
+export function getCartTotalPrice(cart = getCart()) {
+	return Object.values(cart).reduce((sum, item) => sum + (item.price || 0) * item.quantity, 0);
+}
+
 export function getProductDataFromElement(productElement) {
 	const imageEl = productElement.querySelector('.item-product__image img');
+	const priceEl = productElement.querySelector('.item-product__price:not(.item-product__price_old)');
 
 	return {
 		title: productElement.querySelector('.item-product__title')?.textContent.trim() || '',
 		image: imageEl?.getAttribute('src') || '',
 		alt: imageEl?.getAttribute('alt') || '',
+		price: parsePriceValue(priceEl?.textContent || ''),
 	};
 }
 
@@ -40,33 +57,61 @@ export function addCartItem(productId, productData) {
 	return cart[id];
 }
 
-export function decrementCartItem(productId) {
-	const cart = getCart();
-	const id = String(productId);
-
-	if (!cart[id]) return null;
-
-	cart[id].quantity -= 1;
-
-	if (cart[id].quantity <= 0) {
-		delete cart[id];
-	}
-
-	saveCart(cart);
-	return cart[id] || null;
+function escapeHtml(value) {
+	return String(value)
+		.replace(/&/g, '&amp;')
+		.replace(/</g, '&lt;')
+		.replace(/>/g, '&gt;')
+		.replace(/"/g, '&quot;');
 }
 
 function renderCartListItem(productId, item) {
+	const linePrice = (item.price || 0) * item.quantity;
+
 	return `
 		<li data-cart-pid="${productId}" class="cart-list__item">
-			<a href="#" class="cart-list__image -ibg"><img src="${item.image}" alt="${item.alt || item.title}"></a>
+			<a href="#" class="cart-list__image -ibg">
+				<img src="${item.image}" alt="${escapeHtml(item.alt || item.title)}">
+			</a>
 			<div class="cart-list__body">
-				<a href="#" class="cart-list__title">${item.title}</a>
-				<div class="cart-list__quantity">Количество: <span>${item.quantity}</span></div>
-				<a href="#" class="cart-list__delete">Удалить</a>
+				<a href="#" class="cart-list__title">${escapeHtml(item.title)}</a>
+				<div class="cart-list__price">${formatCartPrice(linePrice)}</div>
 			</div>
+			<button type="button" class="cart-list__delete" aria-label="Удалить товар">
+				<img src="img/icons/close.svg" alt="">
+			</button>
 		</li>
 	`;
+}
+
+export function renderCart() {
+	const cartList = document.querySelector('.cart-list');
+	const cartTotal = document.querySelector('[data-cart-total]');
+	const cartFooter = document.querySelector('.cart-header__footer');
+
+	if (!cartList) return;
+
+	const cart = getCart();
+	const entries = Object.entries(cart);
+
+	cartList.innerHTML = '';
+
+	entries.forEach(([productId, item]) => {
+		cartList.insertAdjacentHTML('beforeend', renderCartListItem(productId, item));
+	});
+
+	if (cartTotal) {
+		cartTotal.textContent = formatCartPrice(getCartTotalPrice(cart));
+	}
+
+	if (cartFooter) {
+		cartFooter.hidden = entries.length === 0;
+	}
+
+	document.querySelector('.cart-header')?.classList.remove('_empty');
+	document.querySelector('[data-cart-empty]')?.setAttribute('hidden', '');
+
+	updateCartBadge();
 }
 
 export function updateCartBadge() {
@@ -87,34 +132,8 @@ export function updateCartBadge() {
 	}
 }
 
-function syncCartListItem(productId, item) {
-	const cartList = document.querySelector('.cart-list');
-	const cartProduct = document.querySelector(`[data-cart-pid="${productId}"]`);
-
-	if (cartProduct) {
-		cartProduct.querySelector('.cart-list__quantity span').textContent = item.quantity;
-	} else {
-		cartList?.insertAdjacentHTML('beforeend', renderCartListItem(productId, item));
-	}
-}
-
-function removeCartListItem(productId) {
-	document.querySelector(`[data-cart-pid="${productId}"]`)?.remove();
-}
-
 export function restoreCartFromStorage() {
-	const cart = getCart();
-	const cartList = document.querySelector('.cart-list');
-
-	if (!cartList) return;
-
-	cartList.innerHTML = '';
-
-	Object.entries(cart).forEach(([productId, item]) => {
-		cartList.insertAdjacentHTML('beforeend', renderCartListItem(productId, item));
-	});
-
-	updateCartBadge();
+	renderCart();
 }
 
 export function addToCartStorage(productId, productElement) {
@@ -122,24 +141,21 @@ export function addToCartStorage(productId, productElement) {
 	if (!product) return null;
 
 	const item = addCartItem(productId, getProductDataFromElement(product));
-	syncCartListItem(productId, item);
-	updateCartBadge();
+	renderCart();
 	return item;
 }
 
-export function removeFromCartStorage(productId) {
-	decrementCartItem(productId);
-
+export function removeCartItem(productId) {
 	const cart = getCart();
-	const id = String(productId);
-	const cartHeader = document.querySelector('.cart-header');
+	delete cart[String(productId)];
+	saveCart(cart);
+	renderCart();
 
-	if (cart[id]) {
-		syncCartListItem(productId, cart[id]);
-	} else {
-		removeCartListItem(productId);
-		cartHeader?.classList.remove('_active');
+	if (!Object.keys(getCart()).length) {
+		document.querySelector('.cart-header')?.classList.remove('_active');
 	}
+}
 
-	updateCartBadge();
+export function removeFromCartStorage(productId) {
+	removeCartItem(productId);
 }

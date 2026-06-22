@@ -3,40 +3,95 @@
 		<div class="header__container _container">
 			<div class="header__body">
 				<div class="header__main">
-					<a href="home.html" class="header__logo">Funiro.</a>
+					<div class="header__brand">
+						<a href="./" class="header__logo">MNOGOGRANNIK</a>
+						<a href="./" class="header__logo-img">
+							<img src="@img/logo.jpg" alt="MNOGOGRANNIK">
+						</a>
+					</div>
 					<div class="header__menu menu">
 						
 						<nav class="menu__body">
 							<ul data-spollers="768,max" class="menu__list">
-								<li class="menu__item">
-									<a href="" class="menu__link">Товары</a>
+								<li class="menu__item menu__item_catalog">
+									<a href="catalog.html" class="menu__link">Каталог</a>
 									<button data-spoller type="button" class="menu__arrow _icon-arrow-down"></button>
-									<ul class="menu__sub-list">
-										<li class="menu__sub-item">
-											<a href="" class="menu__sub-link">Товар №1</a>
-										</li>
-										<li class="menu__sub-item">
-											<a href="" class="menu__sub-link">Товар №2</a>
-										</li>
-										<li class="menu__sub-item">
-											<a href="" class="menu__sub-link">Товар №3</a>
-										</li>
-									</ul>
-								</li>
-								<li class="menu__item">
-									<a href="" class="menu__link">Комнаты</a>
-									<button data-spoller type="button" class="menu__arrow _icon-arrow-down"></button>
-									<ul class="menu__sub-list">
-										<li class="menu__sub-item">
-											<a href="" class="menu__sub-link">Комната №1</a>
-										</li>
-										<li class="menu__sub-item">
-											<a href="" class="menu__sub-link">Комната №2</a>
-										</li>
-										<li class="menu__sub-item">
-											<a href="" class="menu__sub-link">Комната №3</a>
-										</li>
-									</ul>
+									<div class="menu__dropdown menu-dropdown">
+										<ul data-spollers="768,max" data-one-spoller class="menu-dropdown__sections">
+											<li class="menu-dropdown__section">
+												<a href="catalog.html#loft-furniture" class="menu-dropdown__section-link">Лофт-мебель</a>
+												<button data-spoller type="button" class="menu-dropdown__arrow _icon-arrow-down"></button>
+												<ul class="menu-dropdown__sub-list">
+													<li><a href="catalog.html#loft-furniture/stoly" class="menu-dropdown__sub-link">Столы</a></li>
+													<li><a href="catalog.html#loft-furniture/stulya" class="menu-dropdown__sub-link">Стулья</a></li>
+													<li><a href="catalog.html#loft-furniture/divany" class="menu-dropdown__sub-link">Диваны</a></li>
+													<li><a href="catalog.html#loft-furniture/krovati" class="menu-dropdown__sub-link">Кровати</a></li>
+													<li><a href="catalog.html#loft-furniture/kresla" class="menu-dropdown__sub-link">Кресла</a></li>
+													<li><a href="catalog.html#loft-furniture/skameiki" class="menu-dropdown__sub-link">Скамейки / банкетки</a></li>
+													<li><a href="catalog.html#loft-furniture/stellazhi" class="menu-dropdown__sub-link">Стеллажи</a></li>
+													<li><a href="catalog.html#loft-furniture/polki" class="menu-dropdown__sub-link">Полки</a></li>
+													<li><a href="catalog.html#loft-furniture/stoiki" class="menu-dropdown__sub-link">Стойки</a></li>
+												</ul>
+											</li>
+											<li class="menu-dropdown__section">
+												<a href="catalog.html#garden-furniture" class="menu-dropdown__section-link">Садовая мебель</a>
+												<button data-spoller type="button" class="menu-dropdown__arrow _icon-arrow-down"></button>
+												<ul class="menu-dropdown__sub-list">
+													<li><a href="catalog.html#garden-furniture/kacheli" class="menu-dropdown__sub-link">Качели</a></li>
+													<li><a href="catalog.html#garden-furniture/besedki" class="menu-dropdown__sub-link">Беседки</a></li>
+													<li><a href="catalog.html#garden-furniture/obed" class="menu-dropdown__sub-link">Обеденные зоны</a></li>
+													<li><a href="catalog.html#garden-furniture/lavki" class="menu-dropdown__sub-link">Лавки / скамейки</a></li>
+													<li><a href="catalog.html#garden-furniture/ul-art" class="menu-dropdown__sub-link">Уличный арт-декор</a></li>
+												</ul>
+											</li>
+											<li class="menu-dropdown__section">
+												<a href="catalog.html#mangal-zones" class="menu-dropdown__section-link">Мангалы и костровые зоны</a>
+												<button data-spoller type="button" class="menu-dropdown__arrow _icon-arrow-down"></button>
+												<ul class="menu-dropdown__sub-list">
+													<li><a href="catalog.html#mangal-zones/mangaly" class="menu-dropdown__sub-link">Мангалы</a></li>
+													<li><a href="catalog.html#mangal-zones/mangal-zony" class="menu-dropdown__sub-link">Мангальные зоны</a></li>
+													<li><a href="catalog.html#mangal-zones/kostrovye" class="menu-dropdown__sub-link">Костровые чаши</a></li>
+												</ul>
+											</li>
+											<li class="menu-dropdown__section">
+												<a href="catalog.html#stairs" class="menu-dropdown__section-link">Лестницы</a>
+												<button data-spoller type="button" class="menu-dropdown__arrow _icon-arrow-down"></button>
+												<ul class="menu-dropdown__sub-list">
+													<li><a href="catalog.html#stairs/marshevye" class="menu-dropdown__sub-link">Маршевые лестницы</a></li>
+													<li><a href="catalog.html#stairs/vintovye" class="menu-dropdown__sub-link">Винтовые лестницы</a></li>
+													<li><a href="catalog.html#stairs/karkas" class="menu-dropdown__sub-link">Лестницы на каркасе</a></li>
+													<li><a href="catalog.html#stairs/perila" class="menu-dropdown__sub-link">Перила и ограждения</a></li>
+												</ul>
+											</li>
+											<li class="menu-dropdown__section">
+												<a href="catalog.html#gates-fences" class="menu-dropdown__section-link">Ворота и заборы</a>
+												<button data-spoller type="button" class="menu-dropdown__arrow _icon-arrow-down"></button>
+												<ul class="menu-dropdown__sub-list">
+													<li><a href="catalog.html#gates-fences/vorota" class="menu-dropdown__sub-link">Ворота</a></li>
+													<li><a href="catalog.html#gates-fences/kalitki" class="menu-dropdown__sub-link">Калитки</a></li>
+													<li><a href="catalog.html#gates-fences/zabory" class="menu-dropdown__sub-link">Заборы</a></li>
+												</ul>
+											</li>
+											<li class="menu-dropdown__section menu-dropdown__section_simple">
+												<a href="catalog.html#art-decor" class="menu-dropdown__section-link">Арт-декор</a>
+											</li>
+											<li class="menu-dropdown__section">
+												<a href="catalog.html#playgrounds" class="menu-dropdown__section-link">Детские площадки</a>
+												<button data-spoller type="button" class="menu-dropdown__arrow _icon-arrow-down"></button>
+												<ul class="menu-dropdown__sub-list">
+													<li><a href="catalog.html#playgrounds/igrovye" class="menu-dropdown__sub-link">Игровые комплексы</a></li>
+													<li><a href="catalog.html#playgrounds/kacheli-det" class="menu-dropdown__sub-link">Качели для детей</a></li>
+													<li><a href="catalog.html#playgrounds/sport" class="menu-dropdown__sub-link">Спортивные элементы</a></li>
+												</ul>
+											</li>
+											<li class="menu-dropdown__section menu-dropdown__section_simple">
+												<a href="catalog.html#dog-cages" class="menu-dropdown__section-link">Клетки для собак</a>
+											</li>
+											<li class="menu-dropdown__section menu-dropdown__section_simple">
+												<a href="catalog.html#other-metal" class="menu-dropdown__section-link">Прочие металлоконструкции</a>
+											</li>
+										</ul>
+									</div>
 								</li>
 								<li class="menu__item">
 									<a href="" class="menu__link">Вдохновение</a>
@@ -48,10 +103,13 @@
 				<div class="header__search">
 					<div class="search-form">
 						<button type="button" class="search-form__icon _icon-search"></button>
-						<form action="#" class="search-form__item">
-							<button type="submit" class="search-form__btn _icon-search" aria-label="Поиск товаров"></button>
-							<input autocomplete="off" type="search" name="search" placeholder="Поиск минималистичного стула" class="search-form__input" aria-label="Поиск товаров">
-						</form>
+						<div class="search-form__field">
+							<form action="#" class="search-form__item">
+								<button type="submit" class="search-form__btn _icon-search" aria-label="Поиск товаров"></button>
+								<input autocomplete="off" type="search" name="search" placeholder="Поиск по каталогу" class="search-form__input" aria-label="Поиск по каталогу">
+							</form>
+							<div class="search-form__results search-results" data-search-results hidden></div>
+						</div>
 					</div>
 				</div>
 				<div class="header__actions actions-header">
@@ -59,12 +117,17 @@
 					<div class="actions-header__item cart-header">
 						<a href="" class="cart-header__icon _icon-cart"></a>
 						<div class="cart-header__body">
+							<p class="cart-header__empty" data-cart-empty hidden>Корзина пуста</p>
 							<ul class="cart-header__list cart-list"></ul>
+							<div class="cart-header__footer" hidden>
+								<div class="cart-header__total">
+									<span class="cart-header__total-label">Итого:</span>
+									<strong class="cart-header__total-value" data-cart-total>0 BYN</strong>
+								</div>
+								<a href="checkout.html" class="cart-header__checkout btn">Оформить заказ</a>
+							</div>
 						</div>
 					</div>
-					<a href="" class="actions-header__item actions-header__item_user _ibg">
-						<img src="@img/avatar.jpg" alt="Аватар">
-					</a>
 				</div>
 				<button type="button" class="icon-menu">
 					<span></span>

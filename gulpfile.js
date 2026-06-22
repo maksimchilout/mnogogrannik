@@ -19,16 +19,18 @@ import { server } from "./gulp/tasks/server.js";
 import { scss } from "./gulp/tasks/scss.js";
 import { js } from "./gulp/tasks/js.js";
 import { images } from "./gulp/tasks/images.js";
+import { favicon } from "./gulp/tasks/favicon.js";
 import { otfToTtf, ttfToWoff, fonstStyle } from "./gulp/tasks/fonts.js";
 import { svgSprive } from "./gulp/tasks/svgSprive.js";
 import { zip } from "./gulp/tasks/zip.js";
 
 function watcher() {
 	gulp.watch(path.watch.files, copy);
-	gulp.watch(path.watch.html, html);
+	gulp.watch([path.watch.html, path.watch.htmlPartials], html);
 	gulp.watch(path.watch.scss, scss);
 	gulp.watch(path.watch.js, js);
 	gulp.watch(path.watch.images, images);
+	gulp.watch(path.watch.logo, favicon);
 	gulp.watch(path.watch.json, json);
 }
 
@@ -38,7 +40,7 @@ export { svgSprive }
 // Последовательная обработака шрифтов
 const fonts = gulp.series(otfToTtf, ttfToWoff, fonstStyle);
 
-const mainTasks = gulp.series(fonts, gulp.parallel(copy, html, scss, json, js, images));
+const mainTasks = gulp.series(fonts, gulp.parallel(copy, html, scss, json, js, images, favicon));
 
 // create script to do tasks
 const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));
@@ -49,6 +51,9 @@ const deployZIP = gulp.series(reset, mainTasks, zip);
 export { dev }
 export { build }
 export { deployZIP }
+export { html }
+export { images }
+export { favicon }
 // export { deployFTP }
 
 gulp.task('default', dev);

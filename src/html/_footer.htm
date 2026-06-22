@@ -2,20 +2,24 @@
 	<div class="footer__container _container">
 		<div class="footer__body">
 			<div class="footer__main">
-				<a href="#" class="footer__logo _footer-title">Funiro.</a>
+				<div class="footer__brand">
+					<a href="./" class="footer__logo _footer-title">MNOGOGRANNIK</a>
+					<a href="./" class="footer__logo-img">
+						<img src="@img/logo.jpg" alt="MNOGOGRANNIK">
+					</a>
+				</div>
 				<div class="footer__text">Мебельный магазин с 2020 года. На нашем сайте более 1000 брендовых товаров</div>
 				<div class="footer__contacts contacts-footer">
 					<a href="" class="contacts-footer__item _icon-location">Sawojajar, Маланг, Индонезия</a>
-					<a href="tel:+62894563455" class="contacts-footer__item _icon-phone">+6289 4563 455</a>
-					<a href="https://www.funiro.com" class="contacts-footer__item">www.funiro.com</a>
+					<button type="button" data-popup="#phoneCall" class="contacts-footer__item _icon-phone">+375 44 586 01 01</button>
+					<a href="https://www.mnogogrannik.by" class="contacts-footer__item">www.mnogogrannik.by</a>
 				</div>
 			</div>
 			<div class="footer__menu menu-footer" data-spollers="768,max" >
 				<div class="menu-footer__column">
 					<button type="button" class="menu-footer__title _footer-title" data-spoller >Меню</button>
 					<ul class="menu-footer__list">
-						<li><a href="" class="menu-footer__link">Товары</a></li>
-						<li><a href="" class="menu-footer__link">Комнаты</a></li>
+						<li><a href="catalog.html" class="menu-footer__link">Каталог</a></li>
 						<li><a href="" class="menu-footer__link">Вдохновение</a></li>
 						<li><a href="" class="menu-footer__link">О нас</a></li>
 						<li><a href="" class="menu-footer__link">Условия и политика</a></li>
@@ -25,7 +29,7 @@
 					<button type="button" class="menu-footer__title _footer-title" data-spoller >Аккаунт</button>
 					<ul class="menu-footer__list">
 						<li><a href="" class="menu-footer__link">Мой аккаунт</a></li>
-						<li><a href="" class="menu-footer__link">Оформление заказа</a></li>
+						<li><a href="checkout.html" class="menu-footer__link">Оформление заказа</a></li>
 						<li><a href="" class="menu-footer__link">Моя корзина</a></li>
 						<li><a href="" class="menu-footer__link">Мой каталог</a></li>
 					</ul>
@@ -50,3 +54,4 @@
 		</div>
 	</div>
 </footer>
+@@include('_popup.htm',{})

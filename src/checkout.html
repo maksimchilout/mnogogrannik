@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/_head.htm',{
+"title":"Оформление заказа — MNOGOGRANNIK"
+})
+
+<body>
+	<div class="wrapper">
+		@@include('html/_header.htm',{})
+		<main class="page" data-checkout-page>
+			<section class="page__checkout-hero checkout-hero">
+				<div class="checkout-hero__container _container">
+					<nav class="checkout-hero__breadcrumbs breadcrumbs" aria-label="Навигация">
+						<a href="./" class="breadcrumbs__link">Главная</a>
+						<span class="breadcrumbs__separator">/</span>
+						<a href="catalog.html" class="breadcrumbs__link">Каталог</a>
+						<span class="breadcrumbs__separator">/</span>
+						<span class="breadcrumbs__current">Оформление заказа</span>
+					</nav>
+					<h1 class="checkout-hero__title _title">Оформление заказа</h1>
+					<p class="checkout-hero__text">Проверьте состав заказа и оставьте контактные данные — мы свяжемся с вами для уточнения деталей.</p>
+				</div>
+			</section>
+
+			<section class="page__checkout checkout">
+				<div class="checkout__container _container">
+					<p class="checkout__empty" data-checkout-empty>
+						Корзина пуста. <a href="catalog.html">Перейти в каталог</a>
+					</p>
+
+					<div class="checkout__layout" data-checkout-layout hidden>
+						<div class="checkout__summary checkout-summary">
+							<h2 class="checkout-summary__heading">Ваш заказ</h2>
+							<ul class="checkout-summary__list" data-checkout-items></ul>
+							<div class="checkout-summary__total">
+								<span>Итого:</span>
+								<strong data-checkout-total>0 BYN</strong>
+							</div>
+						</div>
+
+						<div class="checkout__form-wrap">
+							<h2 class="checkout__form-title">Контактные данные</h2>
+							<form class="checkout__form checkout-form" data-checkout-form action="#" method="post">
+								<div class="checkout-form__row">
+									<label class="checkout-form__field">
+										<span class="checkout-form__label">Имя</span>
+										<input class="checkout-form__input input" type="text" name="name" placeholder="Как к вам обращаться" required>
+									</label>
+									<label class="checkout-form__field">
+										<span class="checkout-form__label">Телефон</span>
+										<input class="checkout-form__input input" type="tel" name="phone" placeholder="+7 (___) ___-__-__" required>
+									</label>
+								</div>
+								<label class="checkout-form__field">
+									<span class="checkout-form__label">E-mail</span>
+									<input class="checkout-form__input input" type="email" name="email" placeholder="example@mail.ru">
+								</label>
+								<label class="checkout-form__field">
+									<span class="checkout-form__label">Адрес доставки</span>
+									<input class="checkout-form__input input" type="text" name="address" placeholder="Город, улица, дом" required>
+								</label>
+								<label class="checkout-form__field">
+									<span class="checkout-form__label">Комментарий к заказу</span>
+									<textarea class="checkout-form__textarea input" name="comment" placeholder="Пожелания по изготовлению или доставке"></textarea>
+								</label>
+								<button type="submit" class="checkout-form__submit btn" data-checkout-submit>Отправить заказ</button>
+							</form>
+						</div>
+					</div>
+
+					<div class="checkout__success checkout-success" data-checkout-success hidden>
+						<h2 class="checkout-success__title">Заказ отправлен</h2>
+						<p class="checkout-success__text">Спасибо! Мы получили вашу заявку и скоро свяжемся с вами.</p>
+						<a href="catalog.html" class="checkout-success__link btn">Вернуться в каталог</a>
+					</div>
+				</div>
+			</section>
+		</main>
+		@@include('html/_footer.htm',{})
+	</div>
+	@@include('html/_js.htm',{})
+</body>
+
+</html>

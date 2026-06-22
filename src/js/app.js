@@ -68,7 +68,7 @@ flsFunctions.spollers();
 Документация по работе в шаблоне:
 Сниппет (HTML): pl
 */
-// flsFunctions.initPopups();
+flsFunctions.initPopups();
 
 /*
 Модуль параллакса мышью
@@ -172,8 +172,6 @@ flsScroll.headerScroll();
 Документация плагина: https://www.lightgalleryjs.com/docs/
 Сниппет(HTML):
 */
-import "./files/gallery.js";
-
 // import {gallery} from "./files/gallery.js";         //for gallery, if photo-gallery is loop. 
 // gallery();
 
