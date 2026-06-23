@@ -5,6 +5,9 @@ import {
 	getProductPrice,
 	getProductText,
 	getProductTitle,
+	buildCatalogHref,
+	textMatchesSearchQuery,
+	valuesMatchSearchQuery,
 } from './catalog-utils.js';
 
 const MIN_QUERY_LENGTH = 2;
@@ -14,16 +17,8 @@ let categoryIndex = [];
 let debounceTimer = null;
 let catalogReady = false;
 
-function normalize(value) {
-	return String(value || '').toLowerCase().trim();
-}
-
 function matchesQuery(...parts) {
-	return (query) => {
-		const normalizedQuery = normalize(query);
-		if (!normalizedQuery) return false;
-		return parts.some((part) => normalize(part).includes(normalizedQuery));
-	};
+	return (query) => valuesMatchSearchQuery(query, ...parts);
 }
 
 function buildCategoryIndex(products) {
@@ -71,11 +66,6 @@ function searchCatalog(query) {
 	};
 }
 
-function buildCatalogHref(category, subcategory = null) {
-	const hash = subcategory ? `#${category}/${subcategory}` : `#${category}`;
-	return `catalog.html${hash}`;
-}
-
 function renderCategoryItem(item) {
 	const href = buildCatalogHref(item.category, item.subcategory);
 	const imageSrc = catalogImageSrc(item.image);
@@ -94,7 +84,7 @@ function renderCategoryItem(item) {
 }
 
 function renderProductItem(product) {
-	const href = buildCatalogHref(product.category, product.subcategory);
+	const href = buildCatalogHref(product.category, product.subcategory, product.id);
 	const imageSrc = catalogImageSrc(product.image);
 	const title = getProductTitle(product);
 	const price = formatProductPrice(product);
@@ -159,7 +149,7 @@ function hideResults(resultsEl) {
 function dispatchSearchEvent(query) {
 	document.dispatchEvent(
 		new CustomEvent('catalogSearch', {
-			detail: { query: normalize(query) },
+			detail: { query: String(query || '').toLowerCase().trim() },
 		})
 	);
 }
@@ -234,11 +224,21 @@ export function initCatalogSearch() {
 		if (query.length < MIN_QUERY_LENGTH) return;
 
 		const { categories, products } = searchCatalog(query);
-		const target = categories[0] || products[0];
+		const targetProduct = products[0];
+		const targetCategory = categories[0];
 
-		if (!target) return;
+		if (!targetProduct && !targetCategory) return;
 
-		window.location.href = buildCatalogHref(target.category, target.subcategory);
+		if (targetProduct) {
+			window.location.href = buildCatalogHref(
+				targetProduct.category,
+				targetProduct.subcategory,
+				targetProduct.id
+			);
+			return;
+		}
+
+		window.location.href = buildCatalogHref(targetCategory.category, targetCategory.subcategory);
 	});
 
 	resultsEl.addEventListener('click', () => {

@@ -38,7 +38,7 @@
 										<li><a href="#loft-furniture/divany" data-catalog-sub="divany" class="catalog-sidebar__sub-link _icon-arrow-link">Диваны</a></li>
 										<li><a href="#loft-furniture/krovati" data-catalog-sub="krovati" class="catalog-sidebar__sub-link _icon-arrow-link">Кровати</a></li>
 										<li><a href="#loft-furniture/kresla" data-catalog-sub="kresla" class="catalog-sidebar__sub-link _icon-arrow-link">Кресла</a></li>
-										<li><a href="#loft-furniture/skameiki" data-catalog-sub="skameiki" class="catalog-sidebar__sub-link _icon-arrow-link">Скамейки / банкетки</a></li>
+										<li><a href="#loft-furniture/skameiki" data-catalog-sub="skameiki" class="catalog-sidebar__sub-link _icon-arrow-link">Банкетки</a></li>
 										<li><a href="#loft-furniture/stellazhi" data-catalog-sub="stellazhi" class="catalog-sidebar__sub-link _icon-arrow-link">Стеллажи</a></li>
 										<li><a href="#loft-furniture/polki" data-catalog-sub="polki" class="catalog-sidebar__sub-link _icon-arrow-link">Полки</a></li>
 										<li><a href="#loft-furniture/stoiki" data-catalog-sub="stoiki" class="catalog-sidebar__sub-link _icon-arrow-link">Стойки</a></li>
@@ -146,9 +146,21 @@
 			<section class="page__catalog-cta catalog-cta">
 				<div class="catalog-cta__container _container">
 					<div class="catalog-cta__body">
-						<h2 class="catalog-cta__title">Не нашли нужный раздел?</h2>
+						<h2 class="catalog-cta__title">Не нашли желаемое изделие?</h2>
 						<p class="catalog-cta__text">Расскажите о задаче — мы спроектируем и изготовим изделие индивидуально под ваше пространство.</p>
-						<a href="./" class="catalog-cta__button btn">На главную</a>
+						<form class="catalog-cta__form" data-dev data-popup-message="#formMessage" action="#" method="post" enctype="multipart/form-data">
+							<div class="catalog-cta__row">
+								<label class="catalog-cta__field catalog-cta__field_text">
+									<textarea class="catalog-cta__textarea input" name="message" rows="1" placeholder="Опишите желаемое изделие: размеры, материалы, назначение" aria-label="Опишите желаемое изделие" data-required data-error="Опишите задачу" required></textarea>
+								</label>
+								<div class="catalog-cta__file-wrap">
+									<input class="catalog-cta__file-input" type="file" name="file" id="catalog-cta-file" accept="image/*,.pdf,.doc,.docx" data-catalog-cta-file>
+									<label class="catalog-cta__file-btn" for="catalog-cta-file">Выбрать файл</label>
+									<span class="catalog-cta__file-name" data-catalog-cta-file-name hidden></span>
+								</div>
+								<button type="submit" class="catalog-cta__submit btn">Отправить заявку</button>
+							</div>
+						</form>
 					</div>
 				</div>
 			</section>

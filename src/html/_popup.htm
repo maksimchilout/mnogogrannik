@@ -1,11 +1,9 @@
 
 <div id="formMessage" aria-hidden="true" class="popup">
 	<div class="popup__wrapper">
-		<div class="popup__content">
-			<button data-close type="button" class="popup__close">Закрыть</button>
-			<div class="popup__text">
-				Форма отправлена
-			</div>
+		<div class="popup__content popup-message">
+			<button data-close type="button" class="popup__close popup__close_icon" aria-label="Закрыть"></button>
+			<p class="popup-message__text">Форма отправлена</p>
 		</div>
 	</div>
 </div>
@@ -13,12 +11,47 @@
 <div id="phoneCall" aria-hidden="true" class="popup">
 	<div class="popup__wrapper">
 		<div class="popup__content popup-phone">
-			<button data-close type="button" class="popup__close">Закрыть</button>
+			<button data-close type="button" class="popup__close popup__close_icon" aria-label="Закрыть"></button>
 			<div class="popup-phone__title">Позвонить нам?</div>
 			<a href="tel:+375445860101" class="popup-phone__number">+375 44 586 01 01</a>
 			<a href="tel:+375445860101" class="popup-phone__btn btn">Позвонить</a>
 		</div>
 	</div>
 </div>
+
+<div id="catalogProduct" aria-hidden="true" class="popup">
+	<div class="popup__wrapper">
+		<div class="popup__content popup-product">
+			<button data-close type="button" class="popup__close popup__close_icon" aria-label="Закрыть"></button>
+			<div class="popup-product__layout">
+				<div class="popup-product__media -ibg">
+					<img src="" alt="" data-catalog-popup-image>
+				</div>
+				<div class="popup-product__body">
+					<h2 class="popup-product__title" data-catalog-popup-title></h2>
+					<p class="popup-product__text" data-catalog-popup-text></p>
+					<div class="popup-product__price" data-catalog-popup-price></div>
+					<div class="popup-product__form-wrap">
+						<h3 class="popup-product__form-title">Администратор свяжется с вами для уточнения размеров, цвета, материалов изделия, а так же окончательной стоимости</h3>
+						<form class="popup-product__form" data-catalog-popup-form data-dev data-popup-message="#formMessage" action="#" method="post">
+							<input type="hidden" name="product" value="" data-catalog-popup-product-input>
+							<label class="popup-product__field">
+								<span class="popup-product__label">Имя</span>
+								<input class="popup-product__input input" type="text" name="name" placeholder="Как к вам обращаться" data-required data-error="Введите имя" required>
+							</label>
+							<label class="popup-product__field">
+								<span class="popup-product__label">Номер телефона</span>
+								<input class="popup-product__input input" type="tel" name="phone" placeholder="+375 (__) ___-__-__" data-required="phone" data-validate data-error="Введите корректный номер телефона" inputmode="tel" autocomplete="tel">
+							</label>
+							<button type="submit" class="popup-product__submit btn">Отправить заявку</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<button type="button" hidden data-popup="#catalogProduct" data-catalog-popup-open></button>
 
 

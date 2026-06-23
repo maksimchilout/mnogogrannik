@@ -5,6 +5,8 @@ import {
 	getProductPrice,
 	getProductText,
 	getProductTitle,
+	parseCatalogHash,
+	valuesMatchSearchQuery,
 } from './catalog-utils.js';
 
 let catalogProducts = [];
@@ -18,9 +20,8 @@ function renderProductCard(product) {
 	const text = getProductText(product);
 	const price = formatProductPrice(product);
 	const imageSrc = catalogImageSrc(product.image);
-
 	return `
-		<article data-pid="${productId}" class="products__item item-product">
+		<article data-pid="${productId}" class="products__item item-product" data-catalog-popup>
 			<a href="#" class="item-product__image -ibg">
 				<img src="${imageSrc}" alt="${escapeHtml(title)}" loading="lazy">
 			</a>
@@ -40,31 +41,91 @@ function renderProductCard(product) {
 	`;
 }
 
-
-function parseCatalogHash() {
-	const hash = window.location.hash.slice(1);
-	if (!hash) return { section: null, sub: null };
-
-	const slashIndex = hash.indexOf('/');
-	if (slashIndex === -1) {
-		return { section: hash, sub: null };
-	}
-
-	return {
-		section: hash.slice(0, slashIndex),
-		sub: hash.slice(slashIndex + 1) || null,
-	};
+function getProductByCardId(cardId) {
+	const productId = String(cardId).replace(/^c/, '');
+	return catalogProducts.find((product) => String(product.id) === productId) || null;
 }
 
-function buildCatalogHash(sectionId, subId = null) {
-	return subId ? `#${sectionId}/${subId}` : `#${sectionId}`;
+function openCatalogProductPopup(product) {
+	if (!product) return;
+
+	const popup = document.getElementById('catalogProduct');
+	const imageEl = popup?.querySelector('[data-catalog-popup-image]');
+	const titleEl = popup?.querySelector('[data-catalog-popup-title]');
+	const textEl = popup?.querySelector('[data-catalog-popup-text]');
+	const priceEl = popup?.querySelector('[data-catalog-popup-price]');
+	const productInput = popup?.querySelector('[data-catalog-popup-product-input]');
+	const form = popup?.querySelector('[data-catalog-popup-form]');
+	const openButton = document.querySelector('[data-catalog-popup-open]');
+
+	if (!popup || !imageEl || !titleEl || !textEl || !priceEl || !openButton) return;
+
+	const title = getProductTitle(product);
+	const text = getProductText(product);
+	const price = formatProductPrice(product);
+	const imageSrc = catalogImageSrc(product.image);
+
+	imageEl.src = imageSrc;
+	imageEl.alt = title;
+	titleEl.textContent = title;
+	textEl.textContent = text;
+	priceEl.textContent = price;
+	if (productInput) productInput.value = title;
+	form?.reset();
+	if (productInput) productInput.value = title;
+
+	openButton.click();
 }
 
-function setCatalogHash(sectionId, subId = null) {
-	const hash = buildCatalogHash(sectionId, subId);
+function initCatalogProductPopup() {
+	const grid = document.querySelector('[data-catalog-grid]');
+	if (!grid) return;
+
+	grid.addEventListener('click', (event) => {
+		if (event.target.closest('.actions-product__button')) return;
+
+		const card = event.target.closest('[data-catalog-popup]');
+		if (!card) return;
+
+		event.preventDefault();
+		event.stopPropagation();
+
+		const product = getProductByCardId(card.dataset.pid);
+		if (product) {
+			openCatalogProductPopup(product);
+		}
+	});
+
+	document.addEventListener('formSent', (event) => {
+		const form = event.detail?.form;
+		if (!form?.matches('[data-catalog-popup-form]')) return;
+		form.reset();
+	});
+}
+
+
+function parseCatalogHashFromLocation() {
+	return parseCatalogHash(window.location.hash);
+}
+
+function buildCatalogHash(sectionId, subId = null, productId = null) {
+	let hash = `#${sectionId}`;
+	if (subId) hash += `/${subId}`;
+	if (productId) hash += `/${productId}`;
+	return hash;
+}
+
+function setCatalogHash(sectionId, subId = null, productId = null) {
+	const hash = buildCatalogHash(sectionId, subId, productId);
 	if (window.location.hash !== hash) {
 		history.replaceState(null, '', hash);
 	}
+}
+
+function clearCatalogSearchInput() {
+	const searchInput = document.querySelector('.search-form__input');
+	if (searchInput) searchInput.value = '';
+	searchQuery = '';
 }
 
 function isValidSection(sectionId) {
@@ -79,19 +140,32 @@ function isValidSub(sectionId, subId) {
 }
 
 function getSectionFromHash() {
-	const { section, sub } = parseCatalogHash();
+	const { section, sub, productId } = parseCatalogHashFromLocation();
 	const firstSection = document.querySelector('[data-catalog-section]')?.dataset.catalogSection;
+
+	if (productId) {
+		const product = getProductByCardId(productId);
+		if (product) {
+			return {
+				section: product.category,
+				sub: product.subcategory,
+				productId,
+			};
+		}
+	}
 
 	if (section && isValidSection(section)) {
 		return {
 			section,
 			sub: isValidSub(section, sub) ? sub : null,
+			productId: null,
 		};
 	}
 
 	return {
 		section: firstSection || 'loft-furniture',
 		sub: null,
+		productId: null,
 	};
 }
 
@@ -111,6 +185,31 @@ function sectionHasSubs(sectionId) {
 	return Boolean(
 		document.querySelector(`[data-catalog-section="${sectionId}"] [data-catalog-sub]`)
 	);
+}
+
+function getSubcategoryOrder(sectionId) {
+	const links = document.querySelectorAll(
+		`[data-catalog-section="${sectionId}"] [data-catalog-sub]`
+	);
+	return [...links].map((link) => link.dataset.catalogSub);
+}
+
+function getProductCatalogIndex(product) {
+	return catalogProducts.indexOf(product);
+}
+
+function sortProductsForSection(items, sectionId) {
+	const subOrder = getSubcategoryOrder(sectionId);
+	if (!subOrder.length) return items;
+
+	const subRank = new Map(subOrder.map((sub, index) => [sub, index]));
+
+	return [...items].sort((a, b) => {
+		const rankA = subRank.get(a.subcategory) ?? subOrder.length;
+		const rankB = subRank.get(b.subcategory) ?? subOrder.length;
+		if (rankA !== rankB) return rankA - rankB;
+		return getProductCatalogIndex(a) - getProductCatalogIndex(b);
+	});
 }
 
 function updateHeader() {
@@ -135,12 +234,12 @@ function updateHeader() {
 function productMatchesSearch(product) {
 	if (!searchQuery) return true;
 
-	const query = searchQuery;
-	return (
-		getProductTitle(product).toLowerCase().includes(query) ||
-		getProductText(product).toLowerCase().includes(query) ||
-		product.subcategoryTitle.toLowerCase().includes(query) ||
-		product.categoryTitle.toLowerCase().includes(query)
+	return valuesMatchSearchQuery(
+		searchQuery,
+		getProductTitle(product),
+		getProductText(product),
+		product.subcategoryTitle,
+		product.categoryTitle
 	);
 }
 
@@ -155,6 +254,8 @@ function renderProducts() {
 	}
 	if (searchQuery) {
 		items = catalogProducts.filter((product) => productMatchesSearch(product));
+	} else {
+		items = sortProductsForSection(items, currentSection);
 	}
 
 	grid.innerHTML = '';
@@ -202,7 +303,26 @@ function scrollToCatalog() {
 	});
 }
 
-function selectSection(sectionId, subId = null, updateHash = true, scrollToTop = false) {
+function scrollToProductCard(productId) {
+	requestAnimationFrame(() => {
+		const card = document.querySelector(`[data-pid="${productId}"]`);
+		if (!card) return;
+
+		const header = document.querySelector('.header');
+		const headerOffset = header?.classList.contains('_scroll') ? 86 : 141;
+		const top = card.getBoundingClientRect().top + window.scrollY - headerOffset - 16;
+
+		window.scrollTo({
+			top: Math.max(0, top),
+			behavior: 'smooth',
+		});
+
+		card.classList.add('_catalog-highlight');
+		window.setTimeout(() => card.classList.remove('_catalog-highlight'), 2200);
+	});
+}
+
+function selectSection(sectionId, subId = null, updateHash = true, scrollToTop = false, productId = null) {
 	currentSection = sectionId;
 	currentSub = subId;
 	openSidebarSection(sectionId);
@@ -211,10 +331,12 @@ function selectSection(sectionId, subId = null, updateHash = true, scrollToTop =
 	setActiveSubLink();
 
 	if (updateHash) {
-		setCatalogHash(sectionId, subId);
+		setCatalogHash(sectionId, subId, productId);
 	}
 
-	if (scrollToTop) {
+	if (productId) {
+		scrollToProductCard(productId);
+	} else if (scrollToTop) {
 		scrollToCatalog();
 	}
 }
@@ -253,13 +375,45 @@ function initSidebarNavigation() {
 	});
 
 	window.addEventListener('hashchange', () => {
-		const { section, sub } = getSectionFromHash();
-		selectSection(section, sub, false, true);
+		const { section, sub, productId } = getSectionFromHash();
+		if (productId) {
+			clearCatalogSearchInput();
+		}
+		selectSection(section, sub, false, !productId, productId);
+	});
+}
+
+function initCatalogCtaForm() {
+	const form = document.querySelector('.catalog-cta__form');
+	if (!form) return;
+
+	const fileInput = form.querySelector('[data-catalog-cta-file]');
+	const fileName = form.querySelector('[data-catalog-cta-file-name]');
+
+	fileInput?.addEventListener('change', () => {
+		const file = fileInput.files?.[0];
+		if (!fileName) return;
+
+		if (file) {
+			fileName.textContent = file.name;
+			fileName.hidden = false;
+		} else {
+			fileName.textContent = '';
+			fileName.hidden = true;
+		}
+	});
+
+	form.addEventListener('reset', () => {
+		if (fileName) {
+			fileName.textContent = '';
+			fileName.hidden = true;
+		}
 	});
 }
 
 export async function initCatalogPage() {
 	const grid = document.querySelector('[data-catalog-grid]');
+	initCatalogCtaForm();
 	if (!grid) return;
 
 	try {
@@ -272,9 +426,15 @@ export async function initCatalogPage() {
 		return;
 	}
 
-	const { section, sub } = getSectionFromHash();
+	const { section, sub, productId } = getSectionFromHash();
 	initSidebarNavigation();
-	selectSection(section, sub, false, Boolean(window.location.hash));
+	initCatalogProductPopup();
+
+	if (productId) {
+		clearCatalogSearchInput();
+	}
+
+	selectSection(section, sub, false, !productId, productId);
 
 	if (!window.location.hash) {
 		setCatalogHash(section, sub);

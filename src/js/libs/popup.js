@@ -2,10 +2,11 @@
 // Документация: 
 
 // Подключение функционала "Чертогов Фрилансера"
-import { isMobile, bodyLockStatus, bodyLockToggle, FLS } from "../files/functions.js";
+import { isMobile, bodyLock, forceBodyUnlock, FLS } from "../files/functions.js";
 
 // Класс Popup
 export class Popup {
+	static activeCount = 0;
 	constructor(options) {
 		let config = {
 			logging: true,
@@ -97,6 +98,33 @@ export class Popup {
 			}
 		}
 		this.options.init ? this.initPopups() : null
+	}
+	_lockBody() {
+		if (!this.options.bodyLock) return;
+
+		Popup.activeCount += 1;
+		if (Popup.activeCount === 1) {
+			document.body.classList.add(this.options.classes.bodyActive);
+			if (!document.documentElement.classList.contains('lock')) {
+				bodyLock(0);
+			}
+		}
+	}
+	_unlockBody() {
+		if (!this.options.bodyLock) return;
+
+		Popup.activeCount = Math.max(0, Popup.activeCount - 1);
+		if (Popup.activeCount === 0) {
+			document.body.classList.remove(this.options.classes.bodyActive);
+			forceBodyUnlock();
+		}
+	}
+	_syncBodyLockState() {
+		const hasOpenPopup = Boolean(document.querySelector(`.${this.options.classes.popupActive}`));
+		if (!hasOpenPopup && Popup.activeCount !== 0) {
+			Popup.activeCount = 0;
+			forceBodyUnlock();
+		}
 	}
 	initPopups() {
 		this.popupLogging(`Проснулся`);
@@ -215,12 +243,10 @@ export class Popup {
 			this.options.on.beforeOpen(this);
 
 			this.targetOpen.element.classList.add(this.options.classes.popupActive);
-			document.body.classList.add(this.options.classes.bodyActive);
-
-			if (!this._reopen) bodyLockToggle();
-			else this._reopen = false;
-
 			this.targetOpen.element.setAttribute('aria-hidden', 'false');
+
+			if (!this._reopen) this._lockBody();
+			else this._reopen = false;
 
 			// // Запоминаю это открытое окно. Оно будет последним открытым
 			this.previousOpen.selector = this.targetOpen.selector;
@@ -251,22 +277,22 @@ export class Popup {
 		if (selectorValue && typeof (selectorValue) === "string" && selectorValue.trim() !== "") {
 			this.previousOpen.selector = selectorValue;
 		}
-		if (!this.isOpen || !bodyLockStatus) {
+		if (!this.isOpen) {
+			this._syncBodyLockState();
 			return;
 		}
 		// До закрытия
 		this.options.on.beforeClose(this);
 		// YouTube
-		if (this.targetOpen.element.hasAttribute(this.options.youtubeAttribute)) {
-			if (this.targetOpen.element.querySelector(`[${this.options.youtubePlaceAttribute}]`))
-				this.targetOpen.element.querySelector(`[${this.options.youtubePlaceAttribute}]`).innerHTML = '';
+		if (this.previousOpen.element?.hasAttribute(this.options.youtubeAttribute)) {
+			if (this.previousOpen.element.querySelector(`[${this.options.youtubePlaceAttribute}]`))
+				this.previousOpen.element.querySelector(`[${this.options.youtubePlaceAttribute}]`).innerHTML = '';
 		}
 		this.previousOpen.element.classList.remove(this.options.classes.popupActive);
 		// aria-hidden
 		this.previousOpen.element.setAttribute('aria-hidden', 'true');
 		if (!this._reopen) {
-			document.body.classList.remove(this.options.classes.bodyActive);
-			bodyLockToggle();
+			this._unlockBody();
 			this.isOpen = false;
 		}
 		// Очищение адресной строки
@@ -278,6 +304,7 @@ export class Popup {
 		}
 		// После закрытия
 		this.options.on.afterClose(this);
+		this._syncBodyLockState();
 		setTimeout(() => {
 			this._focusTrap();
 		}, 50);
@@ -306,6 +333,7 @@ export class Popup {
 		history.pushState('', '', this.hash);
 	}
 	_removeHash() {
+		if (!this.options.hashSettings.location) return;
 		history.pushState('', '', window.location.href.split('#')[0])
 	}
 	_focusCatch(e) {

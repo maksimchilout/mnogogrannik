@@ -7,11 +7,11 @@ export function catalogImageSrc(imagePath) {
 
 const SUB_DESCRIPTIONS = {
 	stoly: 'Стол в стиле лофт',
-	stulya: 'Стулья из металла',
+	stulya: 'Барный стул в стиле лофт из металла и массива',
 	divany: 'Диван для интерьера',
 	krovati: 'Кровать на каркасе',
 	kresla: 'Кресло в стиле лофт',
-	skameiki: 'Скамейка для зала',
+	skameiki: 'Банкетка для зала',
 	stellazhi: 'Металлический стеллаж',
 	polki: 'Настенная полка',
 	stoiki: 'Стойка для бара',
@@ -107,7 +107,17 @@ export function formatProductPrice(product) {
 		return 'По запросу';
 	}
 
-	const formatted = formatPrice(getProductPrice(product));
+	const price = getProductPrice(product);
+	if (price == null) {
+		return 'По запросу';
+	}
+
+	const formatted = formatPrice(price);
+
+	if (product.priceMax != null && product.priceMax !== '') {
+		const maxFormatted = formatPrice(Number(product.priceMax));
+		return `${formatted.replace(' BYN', '')} – ${maxFormatted.replace(' BYN', '')} BYN`;
+	}
 
 	if (product.priceFrom) {
 		return `от ${formatted}`;
@@ -130,4 +140,62 @@ export function escapeHtml(value) {
 		.replace(/</g, '&lt;')
 		.replace(/>/g, '&gt;')
 		.replace(/"/g, '&quot;');
+}
+
+function normalizeSearchQuery(value) {
+	return String(value || '').toLowerCase().trim();
+}
+
+function getSearchWords(text) {
+	return normalizeSearchQuery(text).split(/[^a-zа-яё0-9]+/i).filter(Boolean);
+}
+
+function wordMatchesSearchQuery(word, query) {
+	if (!word || !query) return false;
+	if (word === query) return true;
+	if (!word.startsWith(query)) return false;
+	return word.length <= query.length + 3;
+}
+
+export function textMatchesSearchQuery(text, query) {
+	const normalizedQuery = normalizeSearchQuery(query);
+	if (!normalizedQuery) return false;
+	return getSearchWords(text).some((word) => wordMatchesSearchQuery(word, normalizedQuery));
+}
+
+export function valuesMatchSearchQuery(query, ...parts) {
+	const normalizedQuery = normalizeSearchQuery(query);
+	if (!normalizedQuery) return false;
+	return parts.some((part) => textMatchesSearchQuery(part, normalizedQuery));
+}
+
+export function getCatalogProductPid(productId) {
+	return `c${productId}`;
+}
+
+export function parseCatalogHash(hash = window.location.hash) {
+	const value = String(hash || '').replace(/^#/, '');
+	if (!value) {
+		return { section: null, sub: null, productId: null };
+	}
+
+	const parts = value.split('/').filter(Boolean);
+	const productId = parts[2] && /^c\d+$/i.test(parts[2]) ? parts[2].toLowerCase() : null;
+
+	return {
+		section: parts[0] || null,
+		sub: parts[1] || null,
+		productId,
+	};
+}
+
+export function buildCatalogHref(category, subcategory = null, productId = null) {
+	const parts = [category];
+	if (subcategory) parts.push(subcategory);
+	if (productId) parts.push(getCatalogProductPid(productId));
+
+	const hash = `#${parts.join('/')}`;
+	const onCatalogPage = Boolean(document.querySelector('[data-catalog-grid]'));
+
+	return onCatalogPage ? hash : `catalog.html${hash}`;
 }

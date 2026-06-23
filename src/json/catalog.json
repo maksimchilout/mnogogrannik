@@ -1,18 +1,6 @@
 {
   "products": [
     {
-      "id": "343",
-      "category": "loft-furniture",
-      "categoryTitle": "Лофт-мебель",
-      "subcategory": "stoly",
-      "subcategoryTitle": "Столы",
-      "image": "img/catalog/loft furniture/stol/stol41.jpg",
-      "file": "stol41.jpg",
-      "title": "Стол «Зингер»",
-      "description": "Письменный стол в стиле лофт, фасад ЛДСП, металлический каркас",
-      "price": 430
-    },
-    {
       "id": "1",
       "category": "loft-furniture",
       "categoryTitle": "Лофт-мебель",
@@ -36,26 +24,16 @@
       "price": 850
     },
     {
-      "id": "3",
+      "id": "19",
       "category": "loft-furniture",
       "categoryTitle": "Лофт-мебель",
       "subcategory": "stoly",
       "subcategoryTitle": "Столы",
-      "image": "img/catalog/loft furniture/stol/stol11.jpg",
-      "file": "stol11.jpg",
-      "title": "Стол «Графит»",
-      "description": "Массив и металл в духе индустриального лофта"
-    },
-    {
-      "id": "4",
-      "category": "loft-furniture",
-      "categoryTitle": "Лофт-мебель",
-      "subcategory": "stoly",
-      "subcategoryTitle": "Столы",
-      "image": "img/catalog/loft furniture/stol/stol12.jpg",
-      "file": "stol12.jpg",
-      "title": "Стол «Патина»",
-      "description": "Массив и металл в духе индустриального лофта"
+      "image": "img/catalog/loft furniture/stol/stol26.jpg",
+      "file": "stol26.jpg",
+      "title": "Стол «Цепь»",
+      "description": "Стильный журнальный столик в стиле лофт из стекла и металла",
+      "price": 785
     },
     {
       "id": "5",
@@ -66,7 +44,8 @@
       "image": "img/catalog/loft furniture/stol/stol13.jpg",
       "file": "stol13.jpg",
       "title": "Стол «Карман»",
-      "description": "Массив и металл в духе индустриального лофта"
+      "description": "Журнальный стол из металла и ЛДСП в стиле лофт",
+      "price": 520
     },
     {
       "id": "6",
@@ -77,7 +56,8 @@
       "image": "img/catalog/loft furniture/stol/stol14.jpg",
       "file": "stol14.jpg",
       "title": "Стол «Ателье»",
-      "description": "Массив и металл в духе индустриального лофта"
+      "description": "Журнальный стол из массива и металла в духе лофта",
+      "price": 710
     },
     {
       "id": "7",
@@ -87,8 +67,9 @@
       "subcategoryTitle": "Столы",
       "image": "img/catalog/loft furniture/stol/stol15.jpg",
       "file": "stol15.jpg",
-      "title": "Стол «Винтаж»",
-      "description": "Массив и металл в духе индустриального лофта"
+      "title": "Стол «Модерно»",
+      "description": "Стильный журнальный столик в стиле лофт из стекла и металла",
+      "price": 570
     },
     {
       "id": "8",
@@ -99,7 +80,8 @@
       "image": "img/catalog/loft furniture/stol/stol16.jpg",
       "file": "stol16.jpg",
       "title": "Стол «Фабрика»",
-      "description": "Массив и металл в духе индустриального лофта"
+      "description": "Журнальный столик в стиле лофт из стекла и металла",
+      "price": 495
     },
     {
       "id": "9",
@@ -110,7 +92,8 @@
       "image": "img/catalog/loft furniture/stol/stol17.jpg",
       "file": "stol17.jpg",
       "title": "Стол «Мануфактура»",
-      "description": "Массив и металл в духе индустриального лофта"
+      "description": "Стильный журнальный столик в стиле лофт из стекла и металла",
+      "price": 530
     },
     {
       "id": "10",
@@ -120,8 +103,9 @@
       "subcategoryTitle": "Столы",
       "image": "img/catalog/loft furniture/stol/stol18.jpg",
       "file": "stol18.jpg",
-      "title": "Стол «Кузница»",
-      "description": "Массив и металл в духе индустриального лофта"
+      "title": "Стол «Лин»",
+      "description": "Стильный журнальный столик в стиле лофт из стекла и металла",
+      "price": 590
     },
     {
       "id": "11",
@@ -132,18 +116,8 @@
       "image": "img/catalog/loft furniture/stol/stol19.jpg",
       "file": "stol19.jpg",
       "title": "Стол «Горизонт»",
-      "description": "Массив и металл в духе индустриального лофта"
-    },
-    {
-      "id": "12",
-      "category": "loft-furniture",
-      "categoryTitle": "Лофт-мебель",
-      "subcategory": "stoly",
-      "subcategoryTitle": "Столы",
-      "image": "img/catalog/loft furniture/stol/stol2.jpg",
-      "file": "stol2.jpg",
-      "title": "Стол «Контур»",
-      "description": "Массив и металл в духе индустриального лофта"
+      "description": "Стильный журнальный столик в стиле лофт из стекла и металла",
+      "price": 420
     },
     {
       "id": "13",
@@ -154,7 +128,8 @@
       "image": "img/catalog/loft furniture/stol/stol20.jpg",
       "file": "stol20.jpg",
       "title": "Стол «Набережная»",
-      "description": "Массив и металл в духе индустриального лофта"
+      "description": "Стильный журнальный столик в стиле лофт из стекла и металла",
+      "price": 410
     },
     {
       "id": "14",
@@ -164,19 +139,9 @@
       "subcategoryTitle": "Столы",
       "image": "img/catalog/loft furniture/stol/stol21.jpg",
       "file": "stol21.jpg",
-      "title": "Стол «Лофт»",
-      "description": "Массив и металл в духе индустриального лофта"
-    },
-    {
-      "id": "15",
-      "category": "loft-furniture",
-      "categoryTitle": "Лофт-мебель",
-      "subcategory": "stoly",
-      "subcategoryTitle": "Столы",
-      "image": "img/catalog/loft furniture/stol/stol22.jpg",
-      "file": "stol22.jpg",
-      "title": "Стол «Бетон»",
-      "description": "Массив и металл в духе индустриального лофта"
+      "title": "Стол «Грань»",
+      "description": "Стильный журнальный столик в стиле лофт из стекла и металла",
+      "price": 965
     },
     {
       "id": "16",
@@ -187,73 +152,8 @@
       "image": "img/catalog/loft furniture/stol/stol23.jpg",
       "file": "stol23.jpg",
       "title": "Стол «Сталь»",
-      "description": "Массив и металл в духе индустриального лофта"
-    },
-    {
-      "id": "17",
-      "category": "loft-furniture",
-      "categoryTitle": "Лофт-мебель",
-      "subcategory": "stoly",
-      "subcategoryTitle": "Столы",
-      "image": "img/catalog/loft furniture/stol/stol24.jpg",
-      "file": "stol24.jpg",
-      "title": "Стол «Медь»",
-      "description": "Массив и металл в духе индустриального лофта"
-    },
-    {
-      "id": "18",
-      "category": "loft-furniture",
-      "categoryTitle": "Лофт-мебель",
-      "subcategory": "stoly",
-      "subcategoryTitle": "Столы",
-      "image": "img/catalog/loft furniture/stol/stol25.jpg",
-      "file": "stol25.jpg",
-      "title": "Стол «Фактура»",
-      "description": "Массив и металл в духе индустриального лофта"
-    },
-    {
-      "id": "19",
-      "category": "loft-furniture",
-      "categoryTitle": "Лофт-мебель",
-      "subcategory": "stoly",
-      "subcategoryTitle": "Столы",
-      "image": "img/catalog/loft furniture/stol/stol26.jpg",
-      "file": "stol26.jpg",
-      "title": "Стол «Линия»",
-      "description": "Массив и металл в духе индустриального лофта"
-    },
-    {
-      "id": "20",
-      "category": "loft-furniture",
-      "categoryTitle": "Лофт-мебель",
-      "subcategory": "stoly",
-      "subcategoryTitle": "Столы",
-      "image": "img/catalog/loft furniture/stol/stol27.jpg",
-      "file": "stol27.jpg",
-      "title": "Стол «Ритм»",
-      "description": "Массив и металл в духе индустриального лофта"
-    },
-    {
-      "id": "21",
-      "category": "loft-furniture",
-      "categoryTitle": "Лофт-мебель",
-      "subcategory": "stoly",
-      "subcategoryTitle": "Столы",
-      "image": "img/catalog/loft furniture/stol/stol28.jpg",
-      "file": "stol28.jpg",
-      "title": "Стол «Эхо»",
-      "description": "Массив и металл в духе индустриального лофта"
-    },
-    {
-      "id": "22",
-      "category": "loft-furniture",
-      "categoryTitle": "Лофт-мебель",
-      "subcategory": "stoly",
-      "subcategoryTitle": "Столы",
-      "image": "img/catalog/loft furniture/stol/stol3.jpg",
-      "file": "stol3.jpg",
-      "title": "Стол «Отблеск»",
-      "description": "Массив и металл в духе индустриального лофта"
+      "description": "Стильный журнальный столик в стиле лофт из стекла и металла",
+      "price": 710
     },
     {
       "id": "23",
@@ -264,7 +164,181 @@
       "image": "img/catalog/loft furniture/stol/stol4.jpg",
       "file": "stol4.jpg",
       "title": "Стол «Гранит»",
-      "description": "Массив и металл в духе индустриального лофта"
+      "description": "Журнальный стол из металла и ЛДСП в стиле лофт",
+      "price": 450
+    },
+    {
+      "id": "331",
+      "category": "loft-furniture",
+      "categoryTitle": "Лофт-мебель",
+      "subcategory": "stoly",
+      "subcategoryTitle": "Столы",
+      "image": "img/catalog/loft furniture/stol/stol29.jpg",
+      "file": "stol29.jpg",
+      "title": "Стол журнальный «Зета»",
+      "description": "Журнальный стол в стиле лофта из массива дерева и металла",
+      "price": 525
+    },
+    {
+      "id": "335",
+      "category": "loft-furniture",
+      "categoryTitle": "Лофт-мебель",
+      "subcategory": "stoly",
+      "subcategoryTitle": "Столы",
+      "image": "img/catalog/loft furniture/stol/stol33.jpg",
+      "file": "stol33.jpg",
+      "title": "Стол «Многогранник»",
+      "description": "Журнальный стол в стиле лофт",
+      "price": 320
+    },
+    {
+      "id": "336",
+      "category": "loft-furniture",
+      "categoryTitle": "Лофт-мебель",
+      "subcategory": "stoly",
+      "subcategoryTitle": "Столы",
+      "image": "img/catalog/loft furniture/stol/stol34.jpg",
+      "file": "stol34.jpg",
+      "title": "Стол журнальный «Дуэт»",
+      "description": "Комплект из двух вкладывающихся журнальных столиков",
+      "price": 320
+    },
+    {
+      "id": "340",
+      "category": "loft-furniture",
+      "categoryTitle": "Лофт-мебель",
+      "subcategory": "stoly",
+      "subcategoryTitle": "Столы",
+      "image": "img/catalog/loft furniture/stol/stol38.jpg",
+      "file": "stol38.jpg",
+      "title": "Стол журнальный «Аура»",
+      "description": "Журнальный стол в стиле лофт из массива и металла",
+      "price": 1140
+    },
+    {
+      "id": "343",
+      "category": "loft-furniture",
+      "categoryTitle": "Лофт-мебель",
+      "subcategory": "stoly",
+      "subcategoryTitle": "Столы",
+      "image": "img/catalog/loft furniture/stol/stol41.jpg",
+      "file": "stol41.jpg",
+      "title": "Стол «Зингер»",
+      "description": "Письменный стол в стиле лофт, фасад ЛДСП, металлический каркас",
+      "price": 430
+    },
+    {
+      "id": "3",
+      "category": "loft-furniture",
+      "categoryTitle": "Лофт-мебель",
+      "subcategory": "stoly",
+      "subcategoryTitle": "Столы",
+      "image": "img/catalog/loft furniture/stol/stol11.jpg",
+      "file": "stol11.jpg",
+      "title": "Стол «Графит»",
+      "description": "Стол из металла в стиле лофта",
+      "price": 870
+    },
+    {
+      "id": "4",
+      "category": "loft-furniture",
+      "categoryTitle": "Лофт-мебель",
+      "subcategory": "stoly",
+      "subcategoryTitle": "Столы",
+      "image": "img/catalog/loft furniture/stol/stol12.jpg",
+      "file": "stol12.jpg",
+      "title": "Стол «Патина»",
+      "description": "Стол из металла и дерева в стиле лофт",
+      "price": 465
+    },
+    {
+      "id": "12",
+      "category": "loft-furniture",
+      "categoryTitle": "Лофт-мебель",
+      "subcategory": "stoly",
+      "subcategoryTitle": "Столы",
+      "image": "img/catalog/loft furniture/stol/stol2.jpg",
+      "file": "stol2.jpg",
+      "title": "Стол «Контур»",
+      "description": "Массив и металл в духе индустриального лофта",
+      "price": 920
+    },
+    {
+      "id": "15",
+      "category": "loft-furniture",
+      "categoryTitle": "Лофт-мебель",
+      "subcategory": "stoly",
+      "subcategoryTitle": "Столы",
+      "image": "img/catalog/loft furniture/stol/stol22.jpg",
+      "file": "stol22.jpg",
+      "title": "Стол «Бетон»",
+      "description": "Обеденный стол из массива и металла в духе индустриального лофта",
+      "price": 1100,
+      "priceFrom": true
+    },
+    {
+      "id": "17",
+      "category": "loft-furniture",
+      "categoryTitle": "Лофт-мебель",
+      "subcategory": "stoly",
+      "subcategoryTitle": "Столы",
+      "image": "img/catalog/loft furniture/stol/stol24.jpg",
+      "file": "stol24.jpg",
+      "title": "Стол «Медь»",
+      "description": "Массив и металл в духе индустриального лофта",
+      "price": 600,
+      "priceFrom": true
+    },
+    {
+      "id": "18",
+      "category": "loft-furniture",
+      "categoryTitle": "Лофт-мебель",
+      "subcategory": "stoly",
+      "subcategoryTitle": "Столы",
+      "image": "img/catalog/loft furniture/stol/stol25.jpg",
+      "file": "stol25.jpg",
+      "title": "Стол «Фактура»",
+      "description": "Массив и металл в стиле лофт с ножкой в виде выбранного вами слова",
+      "price": 900,
+      "priceFrom": true
+    },
+    {
+      "id": "20",
+      "category": "loft-furniture",
+      "categoryTitle": "Лофт-мебель",
+      "subcategory": "stoly",
+      "subcategoryTitle": "Столы",
+      "image": "img/catalog/loft furniture/stol/stol27.jpg",
+      "file": "stol27.jpg",
+      "title": "Стол «Ритм»",
+      "description": "Изящный стол из стекла и металла в стиле лофт",
+      "price": 1100,
+      "priceFrom": true
+    },
+    {
+      "id": "21",
+      "category": "loft-furniture",
+      "categoryTitle": "Лофт-мебель",
+      "subcategory": "stoly",
+      "subcategoryTitle": "Столы",
+      "image": "img/catalog/loft furniture/stol/stol28.jpg",
+      "file": "stol28.jpg",
+      "title": "Стол «Эхо»",
+      "description": "Изящный стол из стекла и металла в стиле лофт",
+      "price": 760
+    },
+    {
+      "id": "22",
+      "category": "loft-furniture",
+      "categoryTitle": "Лофт-мебель",
+      "subcategory": "stoly",
+      "subcategoryTitle": "Столы",
+      "image": "img/catalog/loft furniture/stol/stol3.jpg",
+      "file": "stol3.jpg",
+      "title": "Стол «Отблеск»",
+      "description": "Письменный стол из металла и мрамора / гранита в стиле лофт",
+      "price": 1280,
+      "priceFrom": true
     },
     {
       "id": "24",
@@ -275,51 +349,9 @@
       "image": "img/catalog/loft furniture/stol/stol5.jpg",
       "file": "stol5.jpg",
       "title": "Стол «Базальт»",
-      "description": "Массив и металл в духе индустриального лофта"
-    },
-    {
-      "id": "25",
-      "category": "loft-furniture",
-      "categoryTitle": "Лофт-мебель",
-      "subcategory": "stoly",
-      "subcategoryTitle": "Столы",
-      "image": "img/catalog/loft furniture/stol/stol6.jpg",
-      "file": "stol6.jpg",
-      "title": "Стол «Депо»",
-      "description": "Массив и металл в духе индустриального лофта"
-    },
-    {
-      "id": "26",
-      "category": "loft-furniture",
-      "categoryTitle": "Лофт-мебель",
-      "subcategory": "stoly",
-      "subcategoryTitle": "Столы",
-      "image": "img/catalog/loft furniture/stol/stol7.jpg",
-      "file": "stol7.jpg",
-      "title": "Стол «Ангар»",
-      "description": "Массив и металл в духе индустриального лофта"
-    },
-    {
-      "id": "27",
-      "category": "loft-furniture",
-      "categoryTitle": "Лофт-мебель",
-      "subcategory": "stoly",
-      "subcategoryTitle": "Столы",
-      "image": "img/catalog/loft furniture/stol/stol8.jpg",
-      "file": "stol8.jpg",
-      "title": "Стол «Цех»",
-      "description": "Массив и металл в духе индустриального лофта"
-    },
-    {
-      "id": "28",
-      "category": "loft-furniture",
-      "categoryTitle": "Лофт-мебель",
-      "subcategory": "stoly",
-      "subcategoryTitle": "Столы",
-      "image": "img/catalog/loft furniture/stol/stol9.jpg",
-      "file": "stol9.jpg",
-      "title": "Стол «Маяк»",
-      "description": "Массив и металл в духе индустриального лофта"
+      "description": "Стол из металла и мрамора / гранита в стиле лофт",
+      "price": 1200,
+      "priceFrom": true
     },
     {
       "id": "29",
@@ -329,8 +361,9 @@
       "subcategoryTitle": "Стулья",
       "image": "img/catalog/loft furniture/stul/stul1.jpg",
       "file": "stul1.jpg",
-      "title": "Стул «Клин»",
-      "description": "Удобная посадка и выразительный металлический каркас"
+      "title": "Барный стул «Клин»",
+      "description": "Барный стул в стиле лофт из металла и массива",
+      "price": 245
     },
     {
       "id": "30",
@@ -340,8 +373,9 @@
       "subcategoryTitle": "Стулья",
       "image": "img/catalog/loft furniture/stul/stul10.jpg",
       "file": "stul10.jpg",
-      "title": "Стул «Шпиль»",
-      "description": "Удобная посадка и выразительный металлический каркас"
+      "title": "Барный стул «Шпиль»",
+      "description": "Барный стул в стиле лофт из металла и массива",
+      "price": 210
     },
     {
       "id": "31",
@@ -352,7 +386,8 @@
       "image": "img/catalog/loft furniture/stul/stul2.jpg",
       "file": "stul2.jpg",
       "title": "Стул «Рычаг»",
-      "description": "Удобная посадка и выразительный металлический каркас"
+      "description": "Кухонный стул в стиле лофт из металла и массива",
+      "price": 170
     },
     {
       "id": "32",
@@ -362,8 +397,9 @@
       "subcategoryTitle": "Стулья",
       "image": "img/catalog/loft furniture/stul/stul3.jpg",
       "file": "stul3.jpg",
-      "title": "Стул «Винт»",
-      "description": "Удобная посадка и выразительный металлический каркас"
+      "title": "Барный стул «Винт»",
+      "description": "Барный стул в стиле лофт из металла и массива",
+      "price": 200
     },
     {
       "id": "33",
@@ -373,8 +409,9 @@
       "subcategoryTitle": "Стулья",
       "image": "img/catalog/loft furniture/stul/stul4.jpg",
       "file": "stul4.jpg",
-      "title": "Стул «Заклёпка»",
-      "description": "Удобная посадка и выразительный металлический каркас"
+      "title": "Барный стул «Заклёпка»",
+      "description": "Барный стул в стиле лофт из металла и массива",
+      "price": 220
     },
     {
       "id": "34",
@@ -384,8 +421,9 @@
       "subcategoryTitle": "Стулья",
       "image": "img/catalog/loft furniture/stul/stul5.jpg",
       "file": "stul5.jpg",
-      "title": "Стул «Шов»",
-      "description": "Удобная посадка и выразительный металлический каркас"
+      "title": "Барный стул «Шов»",
+      "description": "Барный стул в стиле лофт из металла и массива",
+      "price": 235
     },
     {
       "id": "35",
@@ -395,8 +433,9 @@
       "subcategoryTitle": "Стулья",
       "image": "img/catalog/loft furniture/stul/stul6.jpg",
       "file": "stul6.jpg",
-      "title": "Стул «Рельс»",
-      "description": "Удобная посадка и выразительный металлический каркас"
+      "title": "Барный стул «Рельс»",
+      "description": "Барный стул в стиле лофт из металла и массива",
+      "price": 215
     },
     {
       "id": "36",
@@ -406,8 +445,9 @@
       "subcategoryTitle": "Стулья",
       "image": "img/catalog/loft furniture/stul/stul7.jpg",
       "file": "stul7.jpg",
-      "title": "Стул «Платформа»",
-      "description": "Удобная посадка и выразительный металлический каркас"
+      "title": "Барный стул «Платформа»",
+      "description": "Барный стул в стиле лофт из металла и массива",
+      "price": 180
     },
     {
       "id": "37",
@@ -417,8 +457,9 @@
       "subcategoryTitle": "Стулья",
       "image": "img/catalog/loft furniture/stul/stul8.jpg",
       "file": "stul8.jpg",
-      "title": "Стул «Мастерская»",
-      "description": "Удобная посадка и выразительный металлический каркас"
+      "title": "Барный стул «Мастерская»",
+      "description": "Барный стул в стиле лофт из металла и массива",
+      "price": 150
     },
     {
       "id": "38",
@@ -428,8 +469,21 @@
       "subcategoryTitle": "Стулья",
       "image": "img/catalog/loft furniture/stul/stul9.jpg",
       "file": "stul9.jpg",
-      "title": "Стул «Наковальня»",
-      "description": "Удобная посадка и выразительный металлический каркас"
+      "title": "Барный стул «Наковальня»",
+      "description": "Барный стул в стиле лофт из металла и массива",
+      "price": 260
+    },
+    {
+      "id": "365",
+      "category": "loft-furniture",
+      "categoryTitle": "Лофт-мебель",
+      "subcategory": "stulya",
+      "subcategoryTitle": "Стулья",
+      "image": "img/catalog/loft furniture/stul/stul12.jpg",
+      "file": "stul12.jpg",
+      "title": "Барный стул «Сектор»",
+      "description": "Барный стул в стиле лофт из металла и массива",
+      "price": 275
     },
     {
       "id": "39",
@@ -440,7 +494,9 @@
       "image": "img/catalog/loft furniture/divan/divan1.jpg",
       "file": "divan1.jpg",
       "title": "Диван «Закат»",
-      "description": "Мягкий отдых с характером урбанистического интерьера"
+      "description": "Мягкий отдых с характером урбанистического интерьера",
+      "price": 2400,
+      "priceFrom": true
     },
     {
       "id": "40",
@@ -451,7 +507,8 @@
       "image": "img/catalog/loft furniture/divan/divan2.jpg",
       "file": "divan2.jpg",
       "title": "Диван «Рассвет»",
-      "description": "Мягкий отдых с характером урбанистического интерьера"
+      "description": "Мягкий отдых с характером урбанистического интерьера",
+      "price": 1100
     },
     {
       "id": "41",
@@ -462,7 +519,8 @@
       "image": "img/catalog/loft furniture/divan/divan3.jpg",
       "file": "divan3.jpg",
       "title": "Диван «Туман»",
-      "description": "Мягкий отдых с характером урбанистического интерьера"
+      "description": "Мягкий отдых с характером урбанистического интерьера",
+      "price": 1340
     },
     {
       "id": "42",
@@ -473,7 +531,8 @@
       "image": "img/catalog/loft furniture/divan/divan4.jpg",
       "file": "divan4.jpg",
       "title": "Диван «Силуэт»",
-      "description": "Мягкий отдых с характером урбанистического интерьера"
+      "description": "Мягкий отдых с характером урбанистического интерьера",
+      "price": 1200
     },
     {
       "id": "43",
@@ -484,7 +543,8 @@
       "image": "img/catalog/loft furniture/divan/divan5.jpg",
       "file": "divan5.jpg",
       "title": "Диван «Каркас»",
-      "description": "Мягкий отдых с характером урбанистического интерьера"
+      "description": "Мягкий отдых с характером урбанистического интерьера",
+      "price": 1100
     },
     {
       "id": "44",
@@ -495,7 +555,8 @@
       "image": "img/catalog/loft furniture/divan/divan6.jpg",
       "file": "divan6.jpg",
       "title": "Диван «Мост»",
-      "description": "Мягкий отдых с характером урбанистического интерьера"
+      "description": "Мягкий отдых с характером урбанистического интерьера",
+      "price": 2200
     },
     {
       "id": "45",
@@ -506,7 +567,8 @@
       "image": "img/catalog/loft furniture/divan/divan7.jpg",
       "file": "divan7.jpg",
       "title": "Диван «Угол»",
-      "description": "Мягкий отдых с характером урбанистического интерьера"
+      "description": "Мягкий отдых с характером урбанистического интерьера",
+      "price": 1050
     },
     {
       "id": "46",
@@ -517,7 +579,20 @@
       "image": "img/catalog/loft furniture/divan/divan8.jpg",
       "file": "divan8.jpg",
       "title": "Диван «Свет»",
-      "description": "Мягкий отдых с характером урбанистического интерьера"
+      "description": "Мягкий отдых с характером урбанистического интерьера",
+      "price": 970
+    },
+    {
+      "id": "366",
+      "category": "loft-furniture",
+      "categoryTitle": "Лофт-мебель",
+      "subcategory": "divany",
+      "subcategoryTitle": "Диваны",
+      "image": "img/catalog/loft furniture/divan/divan9.jpg",
+      "file": "divan9.jpg",
+      "title": "Диван «Лофт»",
+      "description": "Мягкий отдых с характером урбанистического интерьера",
+      "price": 1560
     },
     {
       "id": "47",
@@ -528,7 +603,8 @@
       "image": "img/catalog/loft furniture/krovati/krovat1.jpg",
       "file": "krovat1.jpg",
       "title": "Кровать «Тень»",
-      "description": "Надёжный каркас и спокойная геометрия спальни"
+      "description": "Надёжный каркас и спокойная геометрия спальни",
+      "price": 830
     },
     {
       "id": "48",
@@ -539,7 +615,8 @@
       "image": "img/catalog/loft furniture/krovati/krovat2.jpg",
       "file": "krovat2.jpg",
       "title": "Кровать «Искра»",
-      "description": "Надёжный каркас и спокойная геометрия спальни"
+      "description": "Надёжный каркас и спокойная геометрия спальни",
+      "price": 940
     },
     {
       "id": "49",
@@ -550,7 +627,8 @@
       "image": "img/catalog/loft furniture/krovati/krovat3.jpg",
       "file": "krovat3.jpg",
       "title": "Кровать «Уголь»",
-      "description": "Надёжный каркас и спокойная геометрия спальни"
+      "description": "Надёжный каркас и спокойная геометрия спальни",
+      "price": 1050
     },
     {
       "id": "50",
@@ -561,7 +639,8 @@
       "image": "img/catalog/loft furniture/krovati/krovat4.jpg",
       "file": "krovat4.jpg",
       "title": "Кровать «Пепел»",
-      "description": "Надёжный каркас и спокойная геометрия спальни"
+      "description": "Надёжный каркас и спокойная геометрия спальни",
+      "price": 740
     },
     {
       "id": "51",
@@ -572,7 +651,8 @@
       "image": "img/catalog/loft furniture/krovati/krovat5.jpg",
       "file": "krovat5.jpg",
       "title": "Кровать «Дым»",
-      "description": "Надёжный каркас и спокойная геометрия спальни"
+      "description": "Надёжный каркас и спокойная геометрия спальни",
+      "price": 1200
     },
     {
       "id": "52",
@@ -583,7 +663,8 @@
       "image": "img/catalog/loft furniture/krovati/krovat6.jpg",
       "file": "krovat6.jpg",
       "title": "Кровать «Огонь»",
-      "description": "Надёжный каркас и спокойная геометрия спальни"
+      "description": "Надёжный каркас и спокойная геометрия спальни",
+      "price": 920
     },
     {
       "id": "53",
@@ -594,7 +675,20 @@
       "image": "img/catalog/loft furniture/krovati/krovat7.jpg",
       "file": "krovat7.jpg",
       "title": "Кровать «Волна»",
-      "description": "Надёжный каркас и спокойная геометрия спальни"
+      "description": "Надёжный каркас и спокойная геометрия спальни",
+      "price": 900
+    },
+    {
+      "id": "367",
+      "category": "loft-furniture",
+      "categoryTitle": "Лофт-мебель",
+      "subcategory": "krovati",
+      "subcategoryTitle": "Кровати",
+      "image": "img/catalog/loft furniture/krovati/krovat9.jpg",
+      "file": "krovat9.jpg",
+      "title": "Кровать «Массив»",
+      "description": "Надёжный каркас и спокойная геометрия спальни",
+      "price": 1120
     },
     {
       "id": "54",
@@ -605,7 +699,8 @@
       "image": "img/catalog/loft furniture/kresla/kreslo1.jpg",
       "file": "kreslo1.jpg",
       "title": "Кресло «Скала»",
-      "description": "Акцентное кресло для гостиной или кабинета"
+      "description": "Акцентное кресло для гостиной или кабинета",
+      "price": 580
     },
     {
       "id": "55",
@@ -616,7 +711,8 @@
       "image": "img/catalog/loft furniture/kresla/kreslo2.jpg",
       "file": "kreslo2.jpg",
       "title": "Кресло «Кварц»",
-      "description": "Акцентное кресло для гостиной или кабинета"
+      "description": "Акцентное кресло для гостиной или кабинета",
+      "price": 1250
     },
     {
       "id": "56",
@@ -627,7 +723,8 @@
       "image": "img/catalog/loft furniture/kresla/kreslo3.jpg",
       "file": "kreslo3.jpg",
       "title": "Кресло «Оникс»",
-      "description": "Акцентное кресло для гостиной или кабинета"
+      "description": "Акцентное кресло для гостиной или кабинета",
+      "price": 540
     },
     {
       "id": "57",
@@ -638,7 +735,8 @@
       "image": "img/catalog/loft furniture/kresla/kreslo4.jpg",
       "file": "kreslo4.jpg",
       "title": "Кресло «Янтарь»",
-      "description": "Акцентное кресло для гостиной или кабинета"
+      "description": "Акцентное кресло для гостиной или кабинета",
+      "price": 480
     },
     {
       "id": "58",
@@ -649,7 +747,8 @@
       "image": "img/catalog/loft furniture/kresla/kreslo5.jpg",
       "file": "kreslo5.jpg",
       "title": "Кресло «Ржавчина»",
-      "description": "Акцентное кресло для гостиной или кабинета"
+      "description": "Акцентное кресло для гостиной или кабинета",
+      "price": 510
     },
     {
       "id": "59",
@@ -660,7 +759,8 @@
       "image": "img/catalog/loft furniture/kresla/kreslo6.jpg",
       "file": "kreslo6.jpg",
       "title": "Кресло «Оксид»",
-      "description": "Акцентное кресло для гостиной или кабинета"
+      "description": "Акцентное кресло для гостиной или кабинета",
+      "price": 780
     },
     {
       "id": "60",
@@ -671,7 +771,8 @@
       "image": "img/catalog/loft furniture/kresla/kreslo7.jpg",
       "file": "kreslo7.jpg",
       "title": "Кресло «Сплав»",
-      "description": "Акцентное кресло для гостиной или кабинета"
+      "description": "Акцентное кресло для гостиной или кабинета",
+      "price": 220
     },
     {
       "id": "61",
@@ -682,7 +783,8 @@
       "image": "img/catalog/loft furniture/kresla/kreslo8.jpg",
       "file": "kreslo8.jpg",
       "title": "Кресло «Шестерня»",
-      "description": "Акцентное кресло для гостиной или кабинета"
+      "description": "Акцентное кресло для гостиной или кабинета",
+      "price": 480
     },
     {
       "id": "62",
@@ -693,172 +795,236 @@
       "image": "img/catalog/loft furniture/kresla/kreslo9.jpg",
       "file": "kreslo9.jpg",
       "title": "Кресло «Болт»",
-      "description": "Акцентное кресло для гостиной или кабинета"
+      "description": "Акцентное кресло для гостиной или кабинета",
+      "price": 620
+    },
+    {
+      "id": "368",
+      "category": "loft-furniture",
+      "categoryTitle": "Лофт-мебель",
+      "subcategory": "kresla",
+      "subcategoryTitle": "Кресла",
+      "image": "img/catalog/loft furniture/kresla/kreslo10.jpg",
+      "file": "kreslo10.jpg",
+      "title": "Кресло «Табак»",
+      "description": "Акцентное кресло для гостиной или кабинета",
+      "price": 620
+    },
+    {
+      "id": "369",
+      "category": "loft-furniture",
+      "categoryTitle": "Лофт-мебель",
+      "subcategory": "kresla",
+      "subcategoryTitle": "Кресла",
+      "image": "img/catalog/loft furniture/kresla/kreslo11.jpg",
+      "file": "kreslo11.jpg",
+      "title": "Кресло «Рама»",
+      "description": "Акцентное кресло для гостиной или кабинета",
+      "price": 715
+    },
+    {
+      "id": "370",
+      "category": "loft-furniture",
+      "categoryTitle": "Лофт-мебель",
+      "subcategory": "kresla",
+      "subcategoryTitle": "Кресла",
+      "image": "img/catalog/loft furniture/kresla/kreslo12.jpg",
+      "file": "kreslo12.jpg",
+      "title": "Кресло «Графит»",
+      "description": "Акцентное кресло для гостиной или кабинета",
+      "price": 830
+    },
+    {
+      "id": "371",
+      "category": "loft-furniture",
+      "categoryTitle": "Лофт-мебель",
+      "subcategory": "kresla",
+      "subcategoryTitle": "Кресла",
+      "image": "img/catalog/loft furniture/kresla/kreslo13.jpg",
+      "file": "kreslo13.jpg",
+      "title": "Кресло «Сатин»",
+      "description": "Акцентное кресло для гостиной или кабинета",
+      "price": 570
     },
     {
       "id": "63",
       "category": "loft-furniture",
       "categoryTitle": "Лофт-мебель",
       "subcategory": "skameiki",
-      "subcategoryTitle": "Скамейки / банкетки",
+      "subcategoryTitle": "Банкетки",
       "image": "img/catalog/loft furniture/skameiki,banketki/banketka1.jpg",
       "file": "banketka1.jpg",
-      "title": "Скамейка «Стрелка»",
-      "description": "Лаконичная скамья для зала, прихожей или террасы"
+      "title": "Банкетка «Стрелка»",
+      "description": "Лаконичная банкетка для зала, прихожей или террасы",
+      "price": 520
     },
     {
       "id": "64",
       "category": "loft-furniture",
       "categoryTitle": "Лофт-мебель",
       "subcategory": "skameiki",
-      "subcategoryTitle": "Скамейки / банкетки",
+      "subcategoryTitle": "Банкетки",
       "image": "img/catalog/loft furniture/skameiki,banketki/banketka10.jpg",
       "file": "banketka10.jpg",
-      "title": "Скамейка «Молот»",
-      "description": "Лаконичная скамья для зала, прихожей или террасы"
+      "title": "Банкетка «Молот»",
+      "description": "Лаконичная банкетка для зала, прихожей или террасы",
+      "price": 800
     },
     {
       "id": "65",
       "category": "loft-furniture",
       "categoryTitle": "Лофт-мебель",
       "subcategory": "skameiki",
-      "subcategoryTitle": "Скамейки / банкетки",
+      "subcategoryTitle": "Банкетки",
       "image": "img/catalog/loft furniture/skameiki,banketki/banketka11.jpg",
       "file": "banketka11.jpg",
-      "title": "Скамейка «Ковка»",
-      "description": "Лаконичная скамья для зала, прихожей или террасы"
+      "title": "Банкетка «Ковка»",
+      "description": "Лаконичная банкетка для зала, прихожей или террасы",
+      "price": 870
     },
     {
       "id": "66",
       "category": "loft-furniture",
       "categoryTitle": "Лофт-мебель",
       "subcategory": "skameiki",
-      "subcategoryTitle": "Скамейки / банкетки",
+      "subcategoryTitle": "Банкетки",
       "image": "img/catalog/loft furniture/skameiki,banketki/banketka12.jpg",
       "file": "banketka12.jpg",
-      "title": "Скамейка «Пролёт»",
-      "description": "Лаконичная скамья для зала, прихожей или террасы"
+      "title": "Банкетка «Пролёт»",
+      "description": "Лаконичная банкетка для зала, прихожей или террасы",
+      "price": 520
     },
     {
       "id": "67",
       "category": "loft-furniture",
       "categoryTitle": "Лофт-мебель",
       "subcategory": "skameiki",
-      "subcategoryTitle": "Скамейки / банкетки",
+      "subcategoryTitle": "Банкетки",
       "image": "img/catalog/loft furniture/skameiki,banketki/banketka13.jpg",
       "file": "banketka13.jpg",
-      "title": "Скамейка «Стык»",
-      "description": "Лаконичная скамья для зала, прихожей или террасы"
+      "title": "Банкетка «Стык»",
+      "description": "Лаконичная банкетка для зала, прихожей или террасы",
+      "price": 440
     },
     {
       "id": "68",
       "category": "loft-furniture",
       "categoryTitle": "Лофт-мебель",
       "subcategory": "skameiki",
-      "subcategoryTitle": "Скамейки / банкетки",
+      "subcategoryTitle": "Банкетки",
       "image": "img/catalog/loft furniture/skameiki,banketki/banketka14.jpg",
       "file": "banketka14.jpg",
-      "title": "Скамейка «Кромка»",
-      "description": "Лаконичная скамья для зала, прихожей или террасы"
+      "title": "Банкетка «Кромка»",
+      "description": "Лаконичная банкетка для зала, прихожей или террасы",
+      "price": 475
     },
     {
       "id": "69",
       "category": "loft-furniture",
       "categoryTitle": "Лофт-мебель",
       "subcategory": "skameiki",
-      "subcategoryTitle": "Скамейки / банкетки",
+      "subcategoryTitle": "Банкетки",
       "image": "img/catalog/loft furniture/skameiki,banketki/banketka15.jpg",
       "file": "banketka15.jpg",
-      "title": "Скамейка «Профиль»",
-      "description": "Лаконичная скамья для зала, прихожей или террасы"
+      "title": "Банкетка «Профиль»",
+      "description": "Лаконичная банкетка для зала, прихожей или террасы",
+      "price": 300
     },
     {
       "id": "70",
       "category": "loft-furniture",
       "categoryTitle": "Лофт-мебель",
       "subcategory": "skameiki",
-      "subcategoryTitle": "Скамейки / банкетки",
+      "subcategoryTitle": "Банкетки",
       "image": "img/catalog/loft furniture/skameiki,banketki/banketka2.jpg",
       "file": "banketka2.jpg",
-      "title": "Скамейка «Секция»",
-      "description": "Лаконичная скамья для зала, прихожей или террасы"
+      "title": "Банкетка «Секция»",
+      "description": "Лаконичная банкетка для зала, прихожей или террасы",
+      "price": 620
     },
     {
       "id": "71",
       "category": "loft-furniture",
       "categoryTitle": "Лофт-мебель",
       "subcategory": "skameiki",
-      "subcategoryTitle": "Скамейки / банкетки",
+      "subcategoryTitle": "Банкетки",
       "image": "img/catalog/loft furniture/skameiki,banketki/banketka3.jpg",
       "file": "banketka3.jpg",
-      "title": "Скамейка «Модуль»",
-      "description": "Лаконичная скамья для зала, прихожей или террасы"
+      "title": "Банкетка «Модуль»",
+      "description": "Лаконичная банкетка для зала, прихожей или террасы",
+      "price": 680
     },
     {
       "id": "72",
       "category": "loft-furniture",
       "categoryTitle": "Лофт-мебель",
       "subcategory": "skameiki",
-      "subcategoryTitle": "Скамейки / банкетки",
+      "subcategoryTitle": "Банкетки",
       "image": "img/catalog/loft furniture/skameiki,banketki/banketka4.jpg",
       "file": "banketka4.jpg",
-      "title": "Скамейка «Ярус»",
-      "description": "Лаконичная скамья для зала, прихожей или террасы"
+      "title": "Банкетка «Ярус»",
+      "description": "Лаконичная банкетка для зала, прихожей или террасы",
+      "price": 575
     },
     {
       "id": "73",
       "category": "loft-furniture",
       "categoryTitle": "Лофт-мебель",
       "subcategory": "skameiki",
-      "subcategoryTitle": "Скамейки / банкетки",
+      "subcategoryTitle": "Банкетки",
       "image": "img/catalog/loft furniture/skameiki,banketki/banketka5.jpg",
       "file": "banketka5.jpg",
-      "title": "Скамейка «Уровень»",
-      "description": "Лаконичная скамья для зала, прихожей или террасы"
+      "title": "Банкетка «Уровень»",
+      "description": "Лаконичная банкетка для зала, прихожей или террасы",
+      "price": 420
     },
     {
       "id": "74",
       "category": "loft-furniture",
       "categoryTitle": "Лофт-мебель",
       "subcategory": "skameiki",
-      "subcategoryTitle": "Скамейки / банкетки",
+      "subcategoryTitle": "Банкетки",
       "image": "img/catalog/loft furniture/skameiki,banketki/banketka6.jpg",
       "file": "banketka6.jpg",
-      "title": "Скамейка «Сектор»",
-      "description": "Лаконичная скамья для зала, прихожей или террасы"
+      "title": "Банкетка «Сектор»",
+      "description": "Лаконичная банкетка для зала, прихожей или террасы",
+      "price": 470
     },
     {
       "id": "75",
       "category": "loft-furniture",
       "categoryTitle": "Лофт-мебель",
       "subcategory": "skameiki",
-      "subcategoryTitle": "Скамейки / банкетки",
+      "subcategoryTitle": "Банкетки",
       "image": "img/catalog/loft furniture/skameiki,banketki/banketka7.jpg",
       "file": "banketka7.jpg",
-      "title": "Скамейка «Блок»",
-      "description": "Лаконичная скамья для зала, прихожей или террасы"
+      "title": "Банкетка «Блок»",
+      "description": "Лаконичная банкетка для зала, прихожей или террасы",
+      "price": 400
     },
     {
       "id": "76",
       "category": "loft-furniture",
       "categoryTitle": "Лофт-мебель",
       "subcategory": "skameiki",
-      "subcategoryTitle": "Скамейки / банкетки",
+      "subcategoryTitle": "Банкетки",
       "image": "img/catalog/loft furniture/skameiki,banketki/banketka8.jpg",
       "file": "banketka8.jpg",
-      "title": "Скамейка «Решётка»",
-      "description": "Лаконичная скамья для зала, прихожей или террасы"
+      "title": "Банкетка «Решётка»",
+      "description": "Лаконичная банкетка для зала, прихожей или террасы",
+      "price": 600
     },
     {
       "id": "77",
       "category": "loft-furniture",
       "categoryTitle": "Лофт-мебель",
       "subcategory": "skameiki",
-      "subcategoryTitle": "Скамейки / банкетки",
+      "subcategoryTitle": "Банкетки",
       "image": "img/catalog/loft furniture/skameiki,banketki/banketka9.jpg",
       "file": "banketka9.jpg",
-      "title": "Скамейка «Сетка»",
-      "description": "Лаконичная скамья для зала, прихожей или террасы"
+      "title": "Банкетка «Сетка»",
+      "description": "Лаконичная банкетка для зала, прихожей или террасы",
+      "price": 890
     },
     {
       "id": "78",
@@ -2842,14 +3008,15 @@
     },
     {
       "id": "258",
-      "category": "gates-fences",
-      "categoryTitle": "Ворота и заборы",
-      "subcategory": "vorota",
-      "subcategoryTitle": "Ворота",
-      "image": "img/catalog/vorota, zabory/vorota/kostrovai_chasha-6.png",
+      "category": "mangal-zones",
+      "categoryTitle": "Мангалы и костровые зоны",
+      "subcategory": "kostrovye",
+      "subcategoryTitle": "Костровые чаши",
+      "image": "img/catalog/mangal, kostrovie_zoni/kostrovie_chachi/kostrovai_chasha-6.png",
       "file": "kostrovai_chasha-6.png",
-      "title": "Ворота «Мыс»",
-      "description": "Въездные ворота с индивидуальным дизайном"
+      "title": "Костровая чаша «Сфера»",
+      "description": "Костровая чаша для вечеров у живого огня",
+      "price": 620
     },
     {
       "id": "259",
@@ -3644,16 +3811,56 @@
       "description": "Металлоконструкция по индивидуальному проекту"
     },
     {
-      "id": "331",
+      "id": "25",
       "category": "loft-furniture",
       "categoryTitle": "Лофт-мебель",
       "subcategory": "stoly",
       "subcategoryTitle": "Столы",
-      "image": "img/catalog/loft furniture/stol/stol29.jpg",
-      "file": "stol29.jpg",
-      "title": "Стол журнальный «Зета»",
-      "description": "Журнальный стол в стиле лофт: массив дерева и геометричные металлические ножки Z-образной формы",
-      "price": 525
+      "image": "img/catalog/loft furniture/stol/stol6.jpg",
+      "file": "stol6.jpg",
+      "title": "Стол «Депо»",
+      "description": "Стол из металла и мрамора / гранита в стиле лофт",
+      "price": 800,
+      "priceFrom": true
+    },
+    {
+      "id": "26",
+      "category": "loft-furniture",
+      "categoryTitle": "Лофт-мебель",
+      "subcategory": "stoly",
+      "subcategoryTitle": "Столы",
+      "image": "img/catalog/loft furniture/stol/stol7.jpg",
+      "file": "stol7.jpg",
+      "title": "Стол «Ангар»",
+      "description": "Стильный стол из металла и мрамора / гранита в стиле лофт",
+      "price": 2200,
+      "priceFrom": true
+    },
+    {
+      "id": "27",
+      "category": "loft-furniture",
+      "categoryTitle": "Лофт-мебель",
+      "subcategory": "stoly",
+      "subcategoryTitle": "Столы",
+      "image": "img/catalog/loft furniture/stol/stol8.jpg",
+      "file": "stol8.jpg",
+      "title": "Стол «Цех»",
+      "description": "Стол из массива и металла в духе лофта",
+      "price": 1000,
+      "priceFrom": true
+    },
+    {
+      "id": "28",
+      "category": "loft-furniture",
+      "categoryTitle": "Лофт-мебель",
+      "subcategory": "stoly",
+      "subcategoryTitle": "Столы",
+      "image": "img/catalog/loft furniture/stol/stol9.jpg",
+      "file": "stol9.jpg",
+      "title": "Стол «Маяк»",
+      "description": "Массив и металл в духе индустриального лофта",
+      "price": 1250,
+      "priceFrom": true
     },
     {
       "id": "332",
@@ -3664,7 +3871,7 @@
       "image": "img/catalog/loft furniture/stol/stol30.jpg",
       "file": "stol30.jpg",
       "title": "Стол «Уно»",
-      "description": "Письменный стол в стиле лофт: столешница из массива и металлический каркас с X-образными перемычками",
+      "description": "Письменный стол в стиле лофт из массива и металла",
       "price": 565
     },
     {
@@ -3676,8 +3883,9 @@
       "image": "img/catalog/loft furniture/stol/stol31.jpg",
       "file": "stol31.jpg",
       "title": "Стол обеденный «Лента»",
-      "description": "Обеденный стол премиум-класса: каменная столешница и скульптурное основание из металла в благородной бронзе",
-      "price": "request"
+      "description": "Обеденный стол премиум-класса: каменная столешница, основание из металла",
+      "price": 2500,
+      "priceFrom": true
     },
     {
       "id": "334",
@@ -3688,32 +3896,9 @@
       "image": "img/catalog/loft furniture/stol/stol32.jpg",
       "file": "stol32.jpg",
       "title": "Стол обеденный «Арка»",
-      "description": "Современный обеденный стол: мраморная столешница и скульптурное основание из перекрещивающихся дуг",
-      "price": "request"
-    },
-    {
-      "id": "335",
-      "category": "loft-furniture",
-      "categoryTitle": "Лофт-мебель",
-      "subcategory": "stoly",
-      "subcategoryTitle": "Столы",
-      "image": "img/catalog/loft furniture/stol/stol33.jpg",
-      "file": "stol33.jpg",
-      "title": "Стол «Многогранник»",
-      "description": "Журнальный стол в стиле лофт: геометричный металлический каркас и столешница в чёрно-белом сплэш-арт",
-      "price": 320
-    },
-    {
-      "id": "336",
-      "category": "loft-furniture",
-      "categoryTitle": "Лофт-мебель",
-      "subcategory": "stoly",
-      "subcategoryTitle": "Столы",
-      "image": "img/catalog/loft furniture/stol/stol34.jpg",
-      "file": "stol34.jpg",
-      "title": "Стол журнальный «Дуэт»",
-      "description": "Комплект из двух вкладывающихся журнальных столиков: круглые столешницы и тонкий металлический каркас",
-      "price": 320
+      "description": "Обеденный стол премиум-класса: каменная столешница, основание из металла",
+      "price": 2700,
+      "priceFrom": true
     },
     {
       "id": "337",
@@ -3724,7 +3909,7 @@
       "image": "img/catalog/loft furniture/stol/stol35.jpg",
       "file": "stol35.jpg",
       "title": "Стол обеденный «Гранд»",
-      "description": "Большой обеденный стол в стиле лофт: массив светлого дерева и массивные U-образные металлические опоры",
+      "description": "Большой обеденный стол в стиле лофт из массива и металла",
       "price": 1620
     },
     {
@@ -3736,7 +3921,7 @@
       "image": "img/catalog/loft furniture/stol/stol36.jpg",
       "file": "stol36.jpg",
       "title": "Стол «Дымка»",
-      "description": "Стол в стиле лофт: тонированная стеклянная столешница и геометричный металлический каркас с угловыми опорами",
+      "description": "Стол в стиле лофт из металла и стекла",
       "price": 540
     },
     {
@@ -3748,20 +3933,8 @@
       "image": "img/catalog/loft furniture/stol/stol37.jpg",
       "file": "stol37.jpg",
       "title": "Стол «Слэб»",
-      "description": "Стол в стиле лофт: столешница из массива с живым краем и геометричный металлический каркас из перекрёстных рам",
+      "description": "Стол в стиле лофт из массива и металла",
       "price": 1520
-    },
-    {
-      "id": "340",
-      "category": "loft-furniture",
-      "categoryTitle": "Лофт-мебель",
-      "subcategory": "stoly",
-      "subcategoryTitle": "Столы",
-      "image": "img/catalog/loft furniture/stol/stol38.jpg",
-      "file": "stol38.jpg",
-      "title": "Стол журнальный «Аура»",
-      "description": "Журнальный стол в стиле лофт: столешница из массива с живым краем и геометричный каркас в золотистом металле",
-      "price": 1140
     },
     {
       "id": "341",
@@ -3784,7 +3957,7 @@
       "image": "img/catalog/loft furniture/stol/stol40.jpg",
       "file": "stol40.jpg",
       "title": "Стол «Фасет»",
-      "description": "Стол в стиле лофт: белая столешница и геометричные металлические ножки из треугольных фасетов",
+      "description": "Стол в стиле лофт: белая столешница на тонких металлических ножках",
       "price": 540
     },
     {
@@ -3792,7 +3965,7 @@
       "category": "loft-furniture",
       "categoryTitle": "Лофт-мебель",
       "subcategory": "skameiki",
-      "subcategoryTitle": "Скамейки / банкетки",
+      "subcategoryTitle": "Банкетки",
       "image": "img/catalog/loft furniture/skameiki,banketki/banketka16.jpg",
       "file": "banketka16.jpg",
       "title": "Банкетка «Изумруд»",
@@ -3807,8 +3980,8 @@
       "subcategoryTitle": "Стулья",
       "image": "img/catalog/loft furniture/stul/stul11.jpg",
       "file": "stul11.jpg",
-      "title": "Барный стул «Borg-N»",
-      "description": "Барный стул в стиле лофт: сиденье из велюра графитового цвета и чёрный металлический каркас, 40×55×85 см",
+      "title": "Барный стул «Борг»",
+      "description": "Барный стул в стиле лофт из металла с мягким сидением и спинкой",
       "price": 300
     },
     {
@@ -3940,7 +4113,7 @@
       "image": "img/catalog/loft furniture/stol/stol42.jpg",
       "file": "stol42.jpg",
       "title": "Стол «Лестница»",
-      "description": "Стол в стиле лофт: столешница из светлого дерева и металлические опоры в форме лестницы",
+      "description": "Стол в стиле лофт из массива и металла",
       "price": 820
     },
     {
@@ -3951,7 +4124,7 @@
       "subcategoryTitle": "Столы",
       "image": "img/catalog/loft furniture/stol/stol43.jpg",
       "file": "stol43.jpg",
-      "title": "Стол дизайнерский «Rings Loft»",
+      "title": "Стол «Рингс»",
       "description": "Дизайнерский стол в стиле лофт: каменная столешница и металлические опоры в форме полуколец",
       "price": 1600,
       "priceFrom": true
@@ -3964,8 +4137,8 @@
       "subcategoryTitle": "Столы",
       "image": "img/catalog/loft furniture/stol/stol44.jpg",
       "file": "stol44.jpg",
-      "title": "Стол дизайнерский «Cord»",
-      "description": "Дизайнерский стол в скандинавском стиле: каменная столешница и архитектурное металлическое основание V-образной формы",
+      "title": "Стол «Спэйс»",
+      "description": "Дизайнерский стол: каменная столешница и архитектурное металлическое основание",
       "price": 1600,
       "priceFrom": true
     },
@@ -3977,7 +4150,7 @@
       "subcategoryTitle": "Столы",
       "image": "img/catalog/loft furniture/stol/stol45.jpg",
       "file": "stol45.jpg",
-      "title": "Стол «Dron»",
+      "title": "Стол «Тритон»",
       "description": "Стол в минималистичном индустриальном стиле: каменная столешница и металлические ножки X-образной формы",
       "price": 1000,
       "priceFrom": true
@@ -3990,8 +4163,8 @@
       "subcategoryTitle": "Столы",
       "image": "img/catalog/loft furniture/stol/stol46.jpg",
       "file": "stol46.jpg",
-      "title": "Стол дизайнерский «Flame»",
-      "description": "Дизайнерский стол в индустриальном стиле: тонкая столешница под мрамор и скульптурное V-образное металлическое основание",
+      "title": "Стол «Пламя»",
+      "description": "Дизайнерский стол в индустриальном стиле: тонкая столешница из мрамора / гранита и металлическое основание",
       "price": 1900,
       "priceFrom": true
     },
@@ -4003,7 +4176,7 @@
       "subcategoryTitle": "Столы",
       "image": "img/catalog/loft furniture/stol/stol47.jpg",
       "file": "stol47.jpg",
-      "title": "Стол «Signal Hermes»",
+      "title": "Стол «Гермес»",
       "description": "Дизайнерский обеденный стол: белая мраморная столешница и скульптурное основание в золотистом металле",
       "price": 3000,
       "priceFrom": true
@@ -4016,8 +4189,8 @@
       "subcategoryTitle": "Столы",
       "image": "img/catalog/loft furniture/stol/stol48.jpg",
       "file": "stol48.jpg",
-      "title": "Стол дизайнерский «Форма»",
-      "description": "Обеденный стол в современном стиле: столешница из массива дерева и скульптурные металлические опоры Z-образной формы",
+      "title": "Стол «Форма»",
+      "description": "Стол в современном стиле: столешница из массива дерева и скульптурные металлические опоры",
       "price": 2000,
       "priceFrom": true
     },

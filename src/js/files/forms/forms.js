@@ -19,6 +19,7 @@ export const formsModules = {
 Чтобы поле участвовало в валидации добавляем атрибут data-required
 Особые проверки:
 data-required="email" - вадидация E-mail
+data-required="phone" - только цифры, + и скобки, минимум 7 цифр
 
 Чтобы поле валидировалось при потере фокуса, 
 к атрибуту data-required добавляем атрибут data-validate
@@ -66,6 +67,27 @@ export function formFieldsInit() {
 			}
 		}
 	});
+
+	const sanitizePhoneInput = (input) => {
+		const sanitized = input.value.replace(/[^0-9+()]/g, '');
+		if (sanitized !== input.value) {
+			input.value = sanitized;
+		}
+	};
+
+	document.body.addEventListener('input', (e) => {
+		const targetElement = e.target;
+		if (targetElement?.dataset?.required === 'phone') {
+			sanitizePhoneInput(targetElement);
+		}
+	});
+
+	document.body.addEventListener('paste', (e) => {
+		const targetElement = e.target;
+		if (targetElement?.dataset?.required === 'phone') {
+			requestAnimationFrame(() => sanitizePhoneInput(targetElement));
+		}
+	});
 }
 // Валидация форм
 export let formValidate = {
@@ -86,6 +108,14 @@ export let formValidate = {
 		if (formRequiredItem.dataset.required === "email") {
 			formRequiredItem.value = formRequiredItem.value.replace(" ", "");
 			if (this.emailTest(formRequiredItem)) {
+				this.addError(formRequiredItem);
+				error++;
+			} else {
+				this.removeError(formRequiredItem);
+			}
+		} else if (formRequiredItem.dataset.required === "phone") {
+			this.sanitizePhoneValue(formRequiredItem);
+			if (this.phoneTest(formRequiredItem)) {
 				this.addError(formRequiredItem);
 				error++;
 			} else {
@@ -151,6 +181,19 @@ export let formValidate = {
 	},
 	emailTest(formRequiredItem) {
 		return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(formRequiredItem.value);
+	},
+	sanitizePhoneValue(formRequiredItem) {
+		const sanitized = formRequiredItem.value.replace(/[^0-9+()]/g, '');
+		if (sanitized !== formRequiredItem.value) {
+			formRequiredItem.value = sanitized;
+		}
+	},
+	phoneTest(formRequiredItem) {
+		const value = formRequiredItem.value.trim();
+		if (!value) return true;
+		if (/[^0-9+()]/.test(value)) return true;
+		const digits = value.replace(/\D/g, '');
+		return digits.length < 7;
 	}
 }
 /* Отправка форм */

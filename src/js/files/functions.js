@@ -140,6 +140,16 @@ export let bodyUnlock = (delay = 500) => {
 		}, delay);
 	}
 }
+export function forceBodyUnlock() {
+	const body = document.querySelector('body');
+	document.documentElement.classList.remove('lock');
+	body?.classList.remove('popup-show');
+	if (body) body.style.paddingRight = '0px';
+	document.querySelectorAll('[data-lp]').forEach((el) => {
+		el.style.paddingRight = '0px';
+	});
+	bodyLockStatus = true;
+}
 export let bodyLock = (delay = 500) => {
 	let body = document.querySelector("body");
 	if (bodyLockStatus) {
@@ -525,7 +535,12 @@ data-youtube - Атрибут для кода youtube
 Сниппет (HTML): pl
 */
 import { Popup } from "../libs/popup.js";
-export const initPopups = () => new Popup({});
+export const initPopups = () => new Popup({
+	hashSettings: {
+		location: false,
+		goHash: false,
+	},
+});
 
 // Модуль параллакса мышью ===========================================================================================================================================================================================================================
 /*
