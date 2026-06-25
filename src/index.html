@@ -385,6 +385,34 @@
 				</div>
 				
 			</section>
+
+			<section class="page__catalog-cta catalog-cta">
+				<div class="catalog-cta__container _container">
+					<div class="catalog-cta__body">
+						<h2 class="catalog-cta__title">Изготовим изделие любой сложности на заказ</h2>
+						<p class="catalog-cta__text">Расскажите о задаче — мы спроектируем и изготовим изделие индивидуально под ваше пространство.</p>
+						<form class="catalog-cta__form" data-dev data-popup-message="#formMessage" action="#" method="post" enctype="multipart/form-data">
+							<div class="catalog-cta__grid">
+								<label class="catalog-cta__field catalog-cta__field_text">
+									<textarea class="catalog-cta__textarea input" name="message" rows="5" placeholder="Опишите желаемое изделие: размеры, материалы, назначение" aria-label="Опишите желаемое изделие" data-required data-error="Опишите задачу" required></textarea>
+								</label>
+								<div class="catalog-cta__right">
+									<div class="catalog-cta__previews _empty" data-catalog-cta-previews>
+										<span class="catalog-cta__previews-placeholder">Добавленные фото появятся здесь</span>
+									</div>
+									<div class="catalog-cta__file-wrap">
+										<input class="catalog-cta__file-input" type="file" name="files[]" id="home-cta-file" accept="image/*" multiple data-catalog-cta-file>
+										<label class="catalog-cta__file-btn" for="home-cta-file">Добавить фото</label>
+									</div>
+								</div>
+							</div>
+							<div class="catalog-cta__footer">
+								<button type="submit" class="catalog-cta__submit btn">Отправить заявку</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</section>
 		</main>
 		@@include('html/_footer.htm',{})
 	</div>

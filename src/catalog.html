@@ -40,7 +40,9 @@
 										<li><a href="#loft-furniture/kresla" data-catalog-sub="kresla" class="catalog-sidebar__sub-link _icon-arrow-link">Кресла</a></li>
 										<li><a href="#loft-furniture/skameiki" data-catalog-sub="skameiki" class="catalog-sidebar__sub-link _icon-arrow-link">Банкетки</a></li>
 										<li><a href="#loft-furniture/stellazhi" data-catalog-sub="stellazhi" class="catalog-sidebar__sub-link _icon-arrow-link">Стеллажи</a></li>
+										<li><a href="#loft-furniture/garderobnye" data-catalog-sub="garderobnye" class="catalog-sidebar__sub-link _icon-arrow-link">Гардеробные</a></li>
 										<li><a href="#loft-furniture/polki" data-catalog-sub="polki" class="catalog-sidebar__sub-link _icon-arrow-link">Полки</a></li>
+										<li><a href="#loft-furniture/vinnye-bary" data-catalog-sub="vinnye-bary" class="catalog-sidebar__sub-link _icon-arrow-link">Винные шкафы / бары</a></li>
 										<li><a href="#loft-furniture/stoiki" data-catalog-sub="stoiki" class="catalog-sidebar__sub-link _icon-arrow-link">Стойки</a></li>
 									</ul>
 									</div>
@@ -56,9 +58,18 @@
 										<li><a href="#garden-furniture/besedki" data-catalog-sub="besedki" class="catalog-sidebar__sub-link _icon-arrow-link">Беседки</a></li>
 										<li><a href="#garden-furniture/obed" data-catalog-sub="obed" class="catalog-sidebar__sub-link _icon-arrow-link">Обеденные зоны</a></li>
 										<li><a href="#garden-furniture/lavki" data-catalog-sub="lavki" class="catalog-sidebar__sub-link _icon-arrow-link">Лавки / скамейки</a></li>
-										<li><a href="#garden-furniture/ul-art" data-catalog-sub="ul-art" class="catalog-sidebar__sub-link _icon-arrow-link">Уличный арт-декор</a></li>
 									</ul>
 									</div>
+								</li>
+								<li class="catalog-sidebar__item catalog-sidebar__item_no-subs" data-catalog-section="car-canopies">
+									<button type="button" data-catalog-toggle class="catalog-sidebar__toggle">
+										<span class="catalog-sidebar__toggle-text">Навесы для машины</span>
+									</button>
+								</li>
+								<li class="catalog-sidebar__item catalog-sidebar__item_no-subs" data-catalog-section="kozyrek-loft">
+									<button type="button" data-catalog-toggle class="catalog-sidebar__toggle">
+										<span class="catalog-sidebar__toggle-text">Козырек в стиле лофт</span>
+									</button>
 								</li>
 								<li class="catalog-sidebar__item" data-catalog-section="mangal-zones">
 									<button type="button" data-catalog-toggle class="catalog-sidebar__toggle">
@@ -70,6 +81,7 @@
 										<li><a href="#mangal-zones/mangaly" data-catalog-sub="mangaly" class="catalog-sidebar__sub-link _icon-arrow-link">Мангалы</a></li>
 										<li><a href="#mangal-zones/mangal-zony" data-catalog-sub="mangal-zony" class="catalog-sidebar__sub-link _icon-arrow-link">Мангальные зоны</a></li>
 										<li><a href="#mangal-zones/kostrovye" data-catalog-sub="kostrovye" class="catalog-sidebar__sub-link _icon-arrow-link">Костровые чаши</a></li>
+										<li><a href="#mangal-zones/drovnicy" data-catalog-sub="drovnicy" class="catalog-sidebar__sub-link _icon-arrow-link">Дровницы</a></li>
 									</ul>
 									</div>
 								</li>
@@ -100,10 +112,17 @@
 									</ul>
 									</div>
 								</li>
-								<li class="catalog-sidebar__item catalog-sidebar__item_no-subs" data-catalog-section="art-decor">
+								<li class="catalog-sidebar__item" data-catalog-section="art-decor">
 									<button type="button" data-catalog-toggle class="catalog-sidebar__toggle">
 										<span class="catalog-sidebar__toggle-text">Арт-декор</span>
+										<span class="catalog-sidebar__toggle-arrow _icon-arrow-down" aria-hidden="true"></span>
 									</button>
+									<div class="catalog-sidebar__sub-wrap">
+									<ul class="catalog-sidebar__sub-list">
+										<li><a href="#art-decor/int-art" data-catalog-sub="int-art" class="catalog-sidebar__sub-link _icon-arrow-link">Интерьерный арт-декор</a></li>
+										<li><a href="#art-decor/ul-art" data-catalog-sub="ul-art" class="catalog-sidebar__sub-link _icon-arrow-link">Уличный арт-декор</a></li>
+									</ul>
+									</div>
 								</li>
 								<li class="catalog-sidebar__item" data-catalog-section="playgrounds">
 									<button type="button" data-catalog-toggle class="catalog-sidebar__toggle">
@@ -123,9 +142,9 @@
 										<span class="catalog-sidebar__toggle-text">Клетки для собак</span>
 									</button>
 								</li>
-								<li class="catalog-sidebar__item catalog-sidebar__item_no-subs" data-catalog-section="other-metal">
+								<li class="catalog-sidebar__item catalog-sidebar__item_no-subs" data-catalog-section="window-grilles">
 									<button type="button" data-catalog-toggle class="catalog-sidebar__toggle">
-										<span class="catalog-sidebar__toggle-text">Прочие металлоконструкции</span>
+										<span class="catalog-sidebar__toggle-text">Решётки на окна</span>
 									</button>
 								</li>
 							</ul>
@@ -149,15 +168,21 @@
 						<h2 class="catalog-cta__title">Не нашли желаемое изделие?</h2>
 						<p class="catalog-cta__text">Расскажите о задаче — мы спроектируем и изготовим изделие индивидуально под ваше пространство.</p>
 						<form class="catalog-cta__form" data-dev data-popup-message="#formMessage" action="#" method="post" enctype="multipart/form-data">
-							<div class="catalog-cta__row">
+							<div class="catalog-cta__grid">
 								<label class="catalog-cta__field catalog-cta__field_text">
-									<textarea class="catalog-cta__textarea input" name="message" rows="1" placeholder="Опишите желаемое изделие: размеры, материалы, назначение" aria-label="Опишите желаемое изделие" data-required data-error="Опишите задачу" required></textarea>
+									<textarea class="catalog-cta__textarea input" name="message" rows="5" placeholder="Опишите желаемое изделие: размеры, материалы, назначение" aria-label="Опишите желаемое изделие" data-required data-error="Опишите задачу" required></textarea>
 								</label>
-								<div class="catalog-cta__file-wrap">
-									<input class="catalog-cta__file-input" type="file" name="file" id="catalog-cta-file" accept="image/*,.pdf,.doc,.docx" data-catalog-cta-file>
-									<label class="catalog-cta__file-btn" for="catalog-cta-file">Выбрать файл</label>
-									<span class="catalog-cta__file-name" data-catalog-cta-file-name hidden></span>
+								<div class="catalog-cta__right">
+									<div class="catalog-cta__previews _empty" data-catalog-cta-previews>
+										<span class="catalog-cta__previews-placeholder">Добавленные фото появятся здесь</span>
+									</div>
+									<div class="catalog-cta__file-wrap">
+										<input class="catalog-cta__file-input" type="file" name="files[]" id="catalog-cta-file" accept="image/*" multiple data-catalog-cta-file>
+										<label class="catalog-cta__file-btn" for="catalog-cta-file">Добавить фото</label>
+									</div>
 								</div>
+							</div>
+							<div class="catalog-cta__footer">
 								<button type="submit" class="catalog-cta__submit btn">Отправить заявку</button>
 							</div>
 						</form>

@@ -3,7 +3,14 @@
 	<div class="popup__wrapper">
 		<div class="popup__content popup-message">
 			<button data-close type="button" class="popup__close popup__close_icon" aria-label="Закрыть"></button>
-			<p class="popup-message__text">Форма отправлена</p>
+			<div class="popup-message__icon-wrap" aria-hidden="true">
+				<svg class="popup-message__check" viewBox="0 0 52 52" role="presentation">
+					<circle class="popup-message__check-circle" cx="26" cy="26" r="24" fill="none"></circle>
+					<path class="popup-message__check-mark" fill="none" d="M15.5 26.5l7 7 14-14"></path>
+				</svg>
+			</div>
+			<h3 class="popup-message__title">Заявка отправлена</h3>
+			<p class="popup-message__text">Спасибо! Мы свяжемся с вами в ближайшее время.</p>
 		</div>
 	</div>
 </div>
@@ -24,7 +31,7 @@
 		<div class="popup__content popup-product">
 			<button data-close type="button" class="popup__close popup__close_icon" aria-label="Закрыть"></button>
 			<div class="popup-product__layout">
-				<div class="popup-product__media -ibg">
+				<div class="popup-product__media">
 					<img src="" alt="" data-catalog-popup-image>
 				</div>
 				<div class="popup-product__body">

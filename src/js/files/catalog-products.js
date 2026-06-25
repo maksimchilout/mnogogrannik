@@ -383,32 +383,130 @@ function initSidebarNavigation() {
 	});
 }
 
+function getCatalogCtaFileKey(file) {
+	return `${file.name}-${file.size}-${file.lastModified}`;
+}
+
 function initCatalogCtaForm() {
 	const form = document.querySelector('.catalog-cta__form');
 	if (!form) return;
 
 	const fileInput = form.querySelector('[data-catalog-cta-file]');
-	const fileName = form.querySelector('[data-catalog-cta-file-name]');
+	const previews = form.querySelector('[data-catalog-cta-previews]');
+	const fileStore = new DataTransfer();
+	const previewUrls = new Map();
+
+	const revokePreviewUrls = () => {
+		previewUrls.forEach((url) => URL.revokeObjectURL(url));
+		previewUrls.clear();
+	};
+
+	const syncFileInput = () => {
+		if (fileInput) {
+			fileInput.files = fileStore.files;
+		}
+	};
+
+	const removeFileAt = (index) => {
+		const files = Array.from(fileStore.files);
+		files.splice(index, 1);
+
+		while (fileStore.items.length > 0) {
+			fileStore.items.remove(0);
+		}
+
+		files.forEach((file) => fileStore.items.add(file));
+		syncFileInput();
+		renderPreviews();
+	};
+
+	const renderPreviews = () => {
+		if (!previews) return;
+
+		const files = Array.from(fileStore.files);
+		const activeKeys = new Set(files.map(getCatalogCtaFileKey));
+
+		previewUrls.forEach((url, key) => {
+			if (!activeKeys.has(key)) {
+				URL.revokeObjectURL(url);
+				previewUrls.delete(key);
+			}
+		});
+
+		previews.innerHTML = '';
+
+		if (!files.length) {
+			previews.classList.add('_empty');
+			previews.innerHTML = '<span class="catalog-cta__previews-placeholder">Добавленные фото появятся здесь</span>';
+			return;
+		}
+
+		previews.classList.remove('_empty');
+
+		files.forEach((file, index) => {
+			const key = getCatalogCtaFileKey(file);
+
+			if (!previewUrls.has(key)) {
+				previewUrls.set(key, URL.createObjectURL(file));
+			}
+
+			const item = document.createElement('div');
+			item.className = 'catalog-cta__preview';
+
+			const image = document.createElement('img');
+			image.className = 'catalog-cta__preview-img';
+			image.src = previewUrls.get(key);
+			image.alt = file.name;
+
+			const removeButton = document.createElement('button');
+			removeButton.type = 'button';
+			removeButton.className = 'catalog-cta__preview-remove';
+			removeButton.setAttribute('aria-label', `Удалить фото ${file.name}`);
+			removeButton.dataset.catalogCtaRemove = String(index);
+			removeButton.textContent = '×';
+
+			item.append(image, removeButton);
+			previews.append(item);
+		});
+	};
+
+	const clearFiles = () => {
+		while (fileStore.items.length > 0) {
+			fileStore.items.remove(0);
+		}
+		if (fileInput) {
+			fileInput.value = '';
+		}
+		revokePreviewUrls();
+		renderPreviews();
+	};
 
 	fileInput?.addEventListener('change', () => {
-		const file = fileInput.files?.[0];
-		if (!fileName) return;
+		Array.from(fileInput.files || []).forEach((file) => {
+			const isDuplicate = Array.from(fileStore.files).some(
+				(existing) => getCatalogCtaFileKey(existing) === getCatalogCtaFileKey(file)
+			);
 
-		if (file) {
-			fileName.textContent = file.name;
-			fileName.hidden = false;
-		} else {
-			fileName.textContent = '';
-			fileName.hidden = true;
-		}
+			if (!isDuplicate) {
+				fileStore.items.add(file);
+			}
+		});
+
+		syncFileInput();
+		renderPreviews();
 	});
 
-	form.addEventListener('reset', () => {
-		if (fileName) {
-			fileName.textContent = '';
-			fileName.hidden = true;
-		}
+	previews?.addEventListener('click', (event) => {
+		const removeButton = event.target.closest('[data-catalog-cta-remove]');
+		if (!removeButton) return;
+
+		const index = Number(removeButton.dataset.catalogCtaRemove);
+		if (Number.isNaN(index)) return;
+
+		removeFileAt(index);
 	});
+
+	form.addEventListener('reset', clearFiles);
 }
 
 export async function initCatalogPage() {
