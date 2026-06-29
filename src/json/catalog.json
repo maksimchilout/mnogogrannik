@@ -1964,7 +1964,7 @@
       "subcategoryTitle": "Навесы для машины",
       "image": "img/catalog/navesy_dlia_mashiny/naves1.jpg",
       "file": "naves1.jpg",
-      "title": "Навес для машины",
+      "title": "Навес «Гоби»",
       "description": "Стильный навес для машины в стиле лофт",
       "price": 8000,
       "priceFrom": true
@@ -3338,18 +3338,6 @@
       "image": "img/catalog/vorota, zabory/vorota/vorota14.jpg",
       "file": "vorota14.jpg",
       "title": "Ворота «Терра»",
-      "description": "Въездные ворота с индивидуальным дизайном",
-      "price": "request"
-    },
-    {
-      "id": "265",
-      "category": "gates-fences",
-      "categoryTitle": "Ворота и заборы",
-      "subcategory": "vorota",
-      "subcategoryTitle": "Ворота",
-      "image": "img/catalog/vorota, zabory/vorota/vorota15.jpg",
-      "file": "vorota15.jpg",
-      "title": "Ворота «Ущелье»",
       "description": "Въездные ворота с индивидуальным дизайном",
       "price": "request"
     },

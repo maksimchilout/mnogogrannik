@@ -1,0 +1,112 @@
+:root {
+	color-scheme: light;
+
+	--color-bg: #fcf8f3;
+	--color-bg-secondary: #f9f1e7;
+	--color-bg-tertiary: #f4f5f7;
+	--color-surface: #ffffff;
+	--color-surface-elevated: #ffffff;
+	--color-surface-glass: rgba(255, 255, 255, 0.72);
+	--color-surface-glass-soft: rgba(255, 255, 255, 0.34);
+	--color-text: #3a3a3a;
+	--color-text-muted: #898989;
+	--color-text-strong: #000000;
+	--color-accent: #e89f71;
+	--color-accent-soft: rgba(232, 159, 113, 0.12);
+	--color-accent-hover: #9e8463;
+	--color-border: #e0e0e0;
+	--color-border-soft: #fcf9f9;
+	--color-border-warm: #e8d8c8;
+	--color-header-scroll: rgba(255, 255, 255, 0.88);
+	--color-header-scroll-hover: rgba(255, 255, 255, 0.94);
+	--color-icon: #363f56;
+	--color-shadow: rgba(51, 36, 20, 0.12);
+	--color-shadow-strong: rgba(51, 36, 20, 0.18);
+	--color-overlay: rgba(0, 0, 0, 0.5);
+	--color-input-bg: #ffffff;
+	--color-card-bg: #f4f5f7;
+	--color-menu-bg: #fcf8f3;
+	--gradient-body: none;
+	--gradient-accent: linear-gradient(135deg, #e89f71 0%, #d4885c 100%);
+	--transition-theme: background-color 0.45s ease, color 0.45s ease, border-color 0.45s ease, box-shadow 0.45s ease, fill 0.45s ease, stroke 0.45s ease, backdrop-filter 0.45s ease;
+
+	--search-bg: #ffffff;
+	--search-border: 1px solid #ebe4dc;
+	--search-radius: #{rem(4)};
+	--search-shadow: none;
+	--search-backdrop: none;
+	--search-icon-color: #333333;
+	--search-input-color: #616161;
+	--search-placeholder-color: #898989;
+	--search-results-bg: #ffffff;
+	--search-results-border: 1px solid #ebe4dc;
+	--search-results-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+	--search-results-hover: #faf6f3;
+	--search-results-divider: #f0f0f0;
+	--search-results-thumb-bg: #f3f3f3;
+
+	--cart-bg: rgba(255, 255, 255, 0.42);
+	--cart-border: 1px solid rgba(255, 255, 255, 0.48);
+	--cart-radius: #{rem(4)};
+	--cart-shadow: 0 rem(8) rem(28) rgba(51, 36, 20, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.55);
+	--cart-backdrop: blur(12px) saturate(160%);
+	--cart-footer-border: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="dark"] {
+	color-scheme: dark;
+
+	--color-bg: #0c0b0a;
+	--color-bg-secondary: #121110;
+	--color-bg-tertiary: #181614;
+	--color-surface: rgba(255, 255, 255, 0.07);
+	--color-surface-elevated: rgba(255, 255, 255, 0.1);
+	--color-surface-glass: rgba(255, 255, 255, 0.08);
+	--color-surface-glass-soft: rgba(255, 255, 255, 0.05);
+	--color-text: #f0ebe4;
+	--color-text-muted: #9c9690;
+	--color-text-strong: #faf8f5;
+	--color-accent: #e89f71;
+	--color-accent-soft: rgba(232, 159, 113, 0.16);
+	--color-accent-hover: #f0b088;
+	--color-border: rgba(255, 255, 255, 0.1);
+	--color-border-soft: rgba(255, 255, 255, 0.06);
+	--color-border-warm: rgba(232, 159, 113, 0.28);
+	--color-header-scroll: rgba(255, 255, 255, 0.06);
+	--color-header-scroll-hover: rgba(255, 255, 255, 0.09);
+	--color-icon: #ddd7cf;
+	--color-shadow: rgba(0, 0, 0, 0.35);
+	--color-shadow-strong: rgba(0, 0, 0, 0.5);
+	--color-overlay: rgba(4, 3, 2, 0.65);
+	--color-input-bg: rgba(255, 255, 255, 0.05);
+	--color-card-bg: rgba(255, 255, 255, 0.04);
+	--color-menu-bg: rgba(255, 255, 255, 0.08);
+	--gradient-body:
+		radial-gradient(ellipse 70% 45% at 15% -5%, rgba(232, 159, 113, 0.14), transparent 55%),
+		radial-gradient(ellipse 55% 35% at 85% 10%, rgba(232, 159, 113, 0.07), transparent 50%),
+		radial-gradient(ellipse 80% 50% at 50% 100%, rgba(255, 255, 255, 0.03), transparent 60%),
+		linear-gradient(180deg, #10100f 0%, #0c0b0a 100%);
+	--gradient-accent: linear-gradient(135deg, #e89f71 0%, #d4885c 100%);
+
+	--search-bg: rgba(255, 255, 255, 0.07);
+	--search-border: 1px solid rgba(255, 255, 255, 0.12);
+	--search-radius: #{rem(4)};
+	--search-shadow: 0 4px 24px rgba(0, 0, 0, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+	--search-backdrop: blur(20px) saturate(170%);
+	--search-icon-color: var(--color-icon);
+	--search-input-color: var(--color-text);
+	--search-placeholder-color: var(--color-text-muted);
+	--search-results-bg: rgba(255, 255, 255, 0.1);
+	--search-results-border: 1px solid rgba(255, 255, 255, 0.12);
+	--search-results-shadow: 0 8px 32px rgba(0, 0, 0, 0.38), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+	--search-results-hover: rgba(255, 255, 255, 0.06);
+	--search-results-divider: rgba(255, 255, 255, 0.08);
+	--search-results-thumb-bg: rgba(255, 255, 255, 0.06);
+
+	--cart-bg: rgba(255, 255, 255, 0.14);
+	--cart-border: 1px solid rgba(255, 255, 255, 0.14);
+	--cart-radius: #{rem(4)};
+	--cart-shadow: 0 rem(8) rem(32) rgba(0, 0, 0, 0.38), inset 0 1px 0 rgba(255, 255, 255, 0.1), inset 0 -1px 0 rgba(255, 255, 255, 0.03);
+	--cart-backdrop: blur(32px) saturate(185%);
+	--cart-footer-border: rgba(255, 255, 255, 0.1);
+}

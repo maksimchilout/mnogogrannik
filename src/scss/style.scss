@@ -18,6 +18,8 @@
 @import "base/icons";
 
 
+@import "base/theme";
+
 // Шрифт по умолчанию ==============================================================================================================================================================================================================================================================================
 $fontFamily: "Gilroy";
 $fontSize: rem(16); // где 14(px) - размер шрифта по умолчанию из макета
@@ -58,8 +60,10 @@ $mobileSmall: em(479.98); // Телефоны S
 @import "base/null";
 
 body {
-	// Скролл заблокирован
-	color: $mainColor;
+	color: var(--color-text);
+	background-color: var(--color-bg);
+	background-image: var(--gradient-body);
+	transition: var(--transition-theme);
 	
 	.lock & {
 		overflow: hidden;
@@ -75,6 +79,8 @@ body {
 	display: flex;
 	flex-direction: column;
 	overflow: hidden;
+	background-color: var(--color-bg);
+	transition: var(--transition-theme);
 	// Прижимаем footer
 	> main {
 		position: relative;
@@ -155,6 +161,8 @@ body {
 @import "home";
 @import "catalog";
 @import "checkout";
+@import "theme-dark";
+@import "theme-toggle";
 
 
 

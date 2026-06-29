@@ -6,6 +6,7 @@ import {
 	getProductText,
 	getProductTitle,
 	buildCatalogHref,
+	buildCatalogSearchUrl,
 	textMatchesSearchQuery,
 	valuesMatchSearchQuery,
 } from './catalog-utils.js';
@@ -217,28 +218,18 @@ export function initCatalogSearch() {
 		event.preventDefault();
 		const query = searchInput.value.trim();
 
-		if (isCatalogPage) {
-			dispatchSearchEvent(query);
-		}
-
 		if (query.length < MIN_QUERY_LENGTH) return;
 
-		const { categories, products } = searchCatalog(query);
-		const targetProduct = products[0];
-		const targetCategory = categories[0];
+		hideResults(resultsEl);
+		searchWrap?.classList.remove('_active');
 
-		if (!targetProduct && !targetCategory) return;
-
-		if (targetProduct) {
-			window.location.href = buildCatalogHref(
-				targetProduct.category,
-				targetProduct.subcategory,
-				targetProduct.id
-			);
+		if (isCatalogPage) {
+			dispatchSearchEvent(query);
+			document.querySelector('.page__catalog')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
 			return;
 		}
 
-		window.location.href = buildCatalogHref(targetCategory.category, targetCategory.subcategory);
+		window.location.href = buildCatalogSearchUrl(query);
 	});
 
 	resultsEl.addEventListener('click', () => {

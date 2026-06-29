@@ -6,14 +6,16 @@ import {
 	removeFromCartStorage,
 	restoreCartFromStorage,
 } from "./cart.js";
-import { initProductCatalog } from "./products-catalog.js";
+import { initProductCatalog, showMoreHomeProducts } from "./products-catalog.js";
 import { initGalleries } from "./gallery.js";
 import { initCatalogPage } from "./catalog-products.js";
 import { initCheckoutPage } from "./checkout.js";
 import { initCatalogSearch } from "./search-catalog.js";
+import { initThemeToggle } from "./theme.js";
 import { formatPrice } from "./catalog-utils.js";
 
 window.onload = function () {
+	initThemeToggle();
 	restoreCartFromStorage();
 	initProductCatalog();
 	initSubscribeForm();
@@ -40,7 +42,9 @@ window.onload = function () {
 			document.querySelector('.search-form').classList.remove('_active');
 		}
 		if (targetElement.classList.contains('products__more')) {
-			getProducts(targetElement);
+			if (!showMoreHomeProducts(targetElement)) {
+				getProducts(targetElement);
+			}
 			e.preventDefault();
 		}
 		if (targetElement.classList.contains('actions-product__button')) {
@@ -302,6 +306,7 @@ function initSliders() {
 			speed: 800,
 			autoplay: {
 				delay: 3000,
+				disableOnInteraction: false,
 			},
 			loopAdditionalSlides: 5,
 			preloadImages: false,

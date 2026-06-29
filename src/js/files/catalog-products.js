@@ -6,7 +6,8 @@ import {
 	getProductText,
 	getProductTitle,
 	parseCatalogHash,
-	valuesMatchSearchQuery,
+	titleMatchesSearchQuery,
+	getCatalogSearchQueryFromUrl,
 } from './catalog-utils.js';
 
 let catalogProducts = [];
@@ -128,6 +129,36 @@ function clearCatalogSearchInput() {
 	searchQuery = '';
 }
 
+function clearSearchUrlParam() {
+	const url = new URL(window.location.href);
+	if (!url.searchParams.has('q')) return;
+	url.searchParams.delete('q');
+	history.replaceState(null, '', `${url.pathname}${url.search}${url.hash}`);
+}
+
+function setSearchUrlParam(query) {
+	const url = new URL(window.location.href);
+	const normalizedQuery = String(query || '').trim();
+	if (!normalizedQuery) {
+		clearSearchUrlParam();
+		return;
+	}
+	url.searchParams.set('q', normalizedQuery);
+	history.replaceState(null, '', `${url.pathname}${url.search}${url.hash}`);
+}
+
+function applyCatalogSearch(query, { updateUrl = true } = {}) {
+	searchQuery = String(query || '').trim().toLowerCase();
+	const searchInput = document.querySelector('.search-form__input');
+	if (searchInput) searchInput.value = searchQuery;
+	if (updateUrl) {
+		if (searchQuery) setSearchUrlParam(searchQuery);
+		else clearSearchUrlParam();
+	}
+	renderProducts();
+	updateHeader();
+}
+
 function isValidSection(sectionId) {
 	return Boolean(document.querySelector(`[data-catalog-section="${sectionId}"]`));
 }
@@ -217,6 +248,13 @@ function updateHeader() {
 	const subtitleEl = document.querySelector('[data-catalog-subtitle]');
 	if (!titleEl || !subtitleEl) return;
 
+	if (searchQuery) {
+		titleEl.textContent = 'Результаты поиска';
+		subtitleEl.hidden = false;
+		subtitleEl.textContent = `По запросу «${searchQuery}» в названии`;
+		return;
+	}
+
 	titleEl.textContent = getSectionTitle(currentSection);
 
 	if (!sectionHasSubs(currentSection)) {
@@ -234,13 +272,7 @@ function updateHeader() {
 function productMatchesSearch(product) {
 	if (!searchQuery) return true;
 
-	return valuesMatchSearchQuery(
-		searchQuery,
-		getProductTitle(product),
-		getProductText(product),
-		product.subcategoryTitle,
-		product.categoryTitle
-	);
+	return titleMatchesSearchQuery(getProductTitle(product), searchQuery);
 }
 
 function renderProducts() {
@@ -262,8 +294,13 @@ function renderProducts() {
 
 	if (!items.length) {
 		empty.hidden = false;
+		empty.textContent = searchQuery
+			? 'По вашему запросу ничего не найдено'
+			: 'В этой подкатегории пока нет фотографий';
 		return;
 	}
+
+	empty.textContent = 'В этой подкатегории пока нет фотографий';
 
 	empty.hidden = true;
 	grid.insertAdjacentHTML('beforeend', items.map(renderProductCard).join(''));
@@ -323,6 +360,11 @@ function scrollToProductCard(productId) {
 }
 
 function selectSection(sectionId, subId = null, updateHash = true, scrollToTop = false, productId = null) {
+	if (updateHash && searchQuery) {
+		clearCatalogSearchInput();
+		clearSearchUrlParam();
+	}
+
 	currentSection = sectionId;
 	currentSub = subId;
 	openSidebarSection(sectionId);
@@ -376,8 +418,9 @@ function initSidebarNavigation() {
 
 	window.addEventListener('hashchange', () => {
 		const { section, sub, productId } = getSectionFromHash();
-		if (productId) {
+		if (productId || searchQuery) {
 			clearCatalogSearchInput();
+			clearSearchUrlParam();
 		}
 		selectSection(section, sub, false, !productId, productId);
 	});
@@ -525,21 +568,25 @@ export async function initCatalogPage() {
 	}
 
 	const { section, sub, productId } = getSectionFromHash();
+	const initialSearchQuery = getCatalogSearchQueryFromUrl();
 	initSidebarNavigation();
 	initCatalogProductPopup();
 
-	if (productId) {
+	if (initialSearchQuery) {
+		searchQuery = initialSearchQuery.toLowerCase();
+		const searchInput = document.querySelector('.search-form__input');
+		if (searchInput) searchInput.value = initialSearchQuery;
+	} else if (productId) {
 		clearCatalogSearchInput();
 	}
 
-	selectSection(section, sub, false, !productId, productId);
+	selectSection(section, sub, false, !productId && !initialSearchQuery, productId);
 
 	if (!window.location.hash) {
 		setCatalogHash(section, sub);
 	}
 
 	document.addEventListener('catalogSearch', (event) => {
-		searchQuery = event.detail?.query || '';
-		renderProducts();
+		applyCatalogSearch(event.detail?.query || '');
 	});
 }

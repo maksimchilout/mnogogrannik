@@ -169,6 +169,12 @@ export function textMatchesSearchQuery(text, query) {
 	return getSearchWords(text).some((word) => wordMatchesSearchQuery(word, normalizedQuery));
 }
 
+export function titleMatchesSearchQuery(title, query) {
+	const normalizedQuery = normalizeSearchQuery(query);
+	if (!normalizedQuery) return false;
+	return normalizeSearchQuery(title).includes(normalizedQuery);
+}
+
 export function valuesMatchSearchQuery(query, ...parts) {
 	const normalizedQuery = normalizeSearchQuery(query);
 	if (!normalizedQuery) return false;
@@ -204,4 +210,14 @@ export function buildCatalogHref(category, subcategory = null, productId = null)
 	const onCatalogPage = Boolean(document.querySelector('[data-catalog-grid]'));
 
 	return onCatalogPage ? hash : `catalog.html${hash}`;
+}
+
+export function buildCatalogSearchUrl(query) {
+	const url = new URL('catalog.html', window.location.href);
+	url.searchParams.set('q', String(query || '').trim());
+	return `${url.pathname}${url.search}`;
+}
+
+export function getCatalogSearchQueryFromUrl(location = window.location) {
+	return new URLSearchParams(location.search).get('q')?.trim() || '';
 }

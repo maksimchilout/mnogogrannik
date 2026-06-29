@@ -1,5 +1,42 @@
+const HOME_PRODUCTS_INITIAL_VISIBLE = 8;
+
 let currentFilter = 'all';
 let applyFiltersCallback = null;
+
+function initHomeProductsVisibility() {
+	const section = document.querySelector('.page__products');
+	if (!section) return;
+
+	const productItems = section.querySelector('.products__items');
+	const moreButton = section.querySelector('.products__more');
+	if (!productItems) return;
+
+	const items = productItems.querySelectorAll('.products__item');
+	if (items.length <= HOME_PRODUCTS_INITIAL_VISIBLE) {
+		moreButton?.remove();
+		return;
+	}
+
+	items.forEach((item, index) => {
+		if (index >= HOME_PRODUCTS_INITIAL_VISIBLE) {
+			item.classList.add('_hidden');
+		}
+	});
+}
+
+export function showMoreHomeProducts(button) {
+	const section = document.querySelector('.page__products');
+	const productItems = section?.querySelector('.products__items');
+	if (!productItems) return false;
+
+	const hiddenItems = productItems.querySelectorAll('.products__item._hidden');
+	if (!hiddenItems.length) return false;
+
+	hiddenItems.forEach((item) => item.classList.remove('_hidden'));
+	button.remove();
+	document.dispatchEvent(new CustomEvent('productsUpdated'));
+	return true;
+}
 
 function productMatchesFilters(item) {
 	const hasSale = item.querySelector('.item-product__label_sale');
@@ -32,6 +69,7 @@ export function initProductCatalog() {
 
 	if (!document.querySelector('.products__items')) return;
 
+	initHomeProductsVisibility();
 	applyFiltersCallback = applyProductFilters;
 
 	filterButtons.forEach((button) => {

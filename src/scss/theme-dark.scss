@@ -1,0 +1,621 @@
+@mixin dark-glass-surface($opacity: 0.08) {
+	background: rgba(255, 255, 255, $opacity);
+	border: 1px solid rgba(255, 255, 255, 0.14);
+	box-shadow:
+		0 rem(8) rem(32) rgba(0, 0, 0, 0.38),
+		inset 0 1px 0 rgba(255, 255, 255, 0.1),
+		inset 0 -1px 0 rgba(255, 255, 255, 0.03);
+}
+
+@mixin dark-glass($opacity: 0.08) {
+	@include dark-glass-surface($opacity);
+	backdrop-filter: blur(32px) saturate(185%);
+	-webkit-backdrop-filter: blur(32px) saturate(185%);
+}
+
+@mixin dark-glass-blur-layer($opacity: 0.08) {
+	background: rgba(255, 255, 255, $opacity);
+	backdrop-filter: blur(32px) saturate(185%);
+	-webkit-backdrop-filter: blur(32px) saturate(185%);
+}
+
+@mixin dark-glass-soft($opacity: 0.05) {
+	background: rgba(255, 255, 255, $opacity);
+	backdrop-filter: blur(24px) saturate(170%);
+	-webkit-backdrop-filter: blur(24px) saturate(170%);
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	box-shadow:
+		0 rem(4) rem(24) rgba(0, 0, 0, 0.28),
+		inset 0 1px 0 rgba(255, 255, 255, 0.07);
+}
+
+[data-theme="dark"] {
+	body,
+	.wrapper {
+		background-color: var(--color-bg);
+		background-image: var(--gradient-body);
+		color: var(--color-text);
+	}
+
+	body::after {
+		background-color: var(--color-overlay);
+		backdrop-filter: blur(6px);
+		-webkit-backdrop-filter: blur(6px);
+	}
+
+	// Header
+	.header {
+		&__logo {
+			color: var(--color-text-strong);
+		}
+
+		&._scroll .header__wrapper {
+			background: transparent;
+			backdrop-filter: none;
+			-webkit-backdrop-filter: none;
+			border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+			box-shadow: 0 rem(8) rem(32) rgba(0, 0, 0, 0.35);
+
+			&::before {
+				content: "";
+				position: absolute;
+				inset: 0;
+				z-index: 0;
+				pointer-events: none;
+				background: rgba(255, 255, 255, 0.06);
+				backdrop-filter: blur(32px) saturate(185%);
+				-webkit-backdrop-filter: blur(32px) saturate(185%);
+				box-shadow:
+					inset 0 1px 0 rgba(255, 255, 255, 0.1),
+					inset 0 -1px 0 rgba(255, 255, 255, 0.03);
+			}
+
+			.header__container {
+				position: relative;
+				z-index: 1;
+			}
+
+			@media (any-hover: hover) {
+				&:hover::before {
+					background: rgba(255, 255, 255, 0.09);
+				}
+			}
+		}
+	}
+
+	.menu__link {
+		color: var(--color-text);
+	}
+
+	.menu__body {
+		@media (max-width: $mobile) {
+			@include dark-glass(0.07);
+			border-right: 1px solid rgba(255, 255, 255, 0.08);
+
+			&::before {
+				@include dark-glass(0.08);
+				border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+			}
+		}
+	}
+
+	.menu-dropdown {
+		@media (min-width: $mobile) {
+			opacity: 1;
+			transition: transform 0.3s ease, visibility 0.3s ease;
+			box-shadow: 0 rem(12) rem(32) rgba(0, 0, 0, 0.38), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+		}
+
+		&__sections {
+			position: relative;
+			background: transparent;
+			backdrop-filter: none;
+			-webkit-backdrop-filter: none;
+			border: 1px solid rgba(255, 255, 255, 0.14);
+			box-shadow:
+				0 rem(8) rem(32) rgba(0, 0, 0, 0.38),
+				inset 0 1px 0 rgba(255, 255, 255, 0.1),
+				inset 0 -1px 0 rgba(255, 255, 255, 0.03);
+			transition: none;
+
+			&::before {
+				content: "";
+				position: absolute;
+				inset: 0;
+				z-index: 0;
+				pointer-events: none;
+				transition: none;
+				@include dark-glass-blur-layer(0.16);
+			}
+		}
+
+		&__section {
+			position: relative;
+			z-index: 1;
+
+			@media (any-hover: hover) {
+				&:hover {
+					.menu-dropdown__section-link {
+						color: var(--color-accent);
+						background: var(--color-accent-soft);
+					}
+
+					.menu-dropdown__sub-list {
+						transition: visibility 0s linear 0s;
+					}
+				}
+			}
+		}
+
+		&__section-link {
+			color: var(--color-text-strong);
+			transition: color 0.2s ease, background-color 0.2s ease;
+
+			@media (any-hover: hover) {
+				&:hover {
+					color: var(--color-accent);
+					background: var(--color-accent-soft);
+				}
+			}
+		}
+
+		&__arrow {
+			color: var(--color-accent);
+		}
+
+		&__sub-list {
+			@media (min-width: $mobile) {
+				opacity: 1;
+				transition: visibility 0s linear 0.25s;
+				background: transparent;
+				backdrop-filter: none;
+				-webkit-backdrop-filter: none;
+				border: 1px solid rgba(255, 255, 255, 0.14);
+				box-shadow:
+					0 rem(8) rem(32) rgba(0, 0, 0, 0.38),
+					inset 0 1px 0 rgba(255, 255, 255, 0.1),
+					inset 0 -1px 0 rgba(255, 255, 255, 0.03);
+
+				&::after {
+					content: "";
+					position: absolute;
+					inset: 0;
+					z-index: 0;
+					pointer-events: none;
+					transition: none;
+					@include dark-glass-blur-layer(0.16);
+				}
+
+				> li {
+					position: relative;
+					z-index: 1;
+				}
+			}
+		}
+
+		&__sub-link {
+			color: var(--color-text);
+			transition: color 0.2s ease, background-color 0.2s ease;
+
+			@media (any-hover: hover) {
+				&:hover {
+					background: var(--color-accent-soft);
+					color: var(--color-accent);
+				}
+			}
+
+			@media (max-width: $mobile) {
+				color: var(--color-text-muted);
+			}
+		}
+	}
+
+	.theme-toggle {
+		@include dark-glass-soft(0.06);
+		border-color: rgba(255, 255, 255, 0.12);
+	}
+
+	.cart-header__icon {
+		color: var(--color-icon);
+	}
+
+	.cart-header__body {
+		@include dark-glass(0.14);
+	}
+
+	.cart-list__item {
+		border-color: rgba(255, 255, 255, 0.08);
+	}
+
+	.cart-list__name,
+	.cart-header__total-label {
+		color: var(--color-text);
+	}
+
+	.cart-list__price,
+	.cart-header__empty {
+		color: var(--color-text-muted);
+	}
+
+	.icon-menu span {
+		background-color: var(--color-text-strong);
+	}
+
+	// Footer
+	.footer__body {
+		border-top-color: rgba(255, 255, 255, 0.08);
+	}
+
+	._footer-title {
+		color: var(--color-text-strong);
+	}
+
+	.footer__text,
+	.contacts-footer__item,
+	.menu-footer__link {
+		color: var(--color-text-muted);
+	}
+
+	.subscribe__input {
+		@include dark-glass-soft(0.05);
+		color: var(--color-text);
+	}
+
+	// Home
+	.main-slider {
+		background: transparent;
+
+		&__container::before {
+			background: linear-gradient(90deg, rgba(255, 255, 255, 0.03) 0%, transparent 100%);
+		}
+	}
+
+	.content-main {
+		@include dark-glass(0.08);
+
+		&__text {
+			color: var(--color-text);
+		}
+	}
+
+	.slider-main__content {
+		@include dark-glass(0.1);
+		color: var(--color-text);
+	}
+
+	.slider-main__title,
+	.slider-main__price,
+	.slider-main__text {
+		color: var(--color-text-strong);
+	}
+
+	.slider-main__text {
+		color: var(--color-text);
+		opacity: 0.92;
+	}
+
+	.advantages {
+		background: transparent;
+	}
+
+	.advantages__title {
+		color: var(--color-text-strong);
+	}
+
+	.advantages__text {
+		color: var(--color-text-muted);
+	}
+
+	.products__title,
+	.rooms__title,
+	.tips__title,
+	.furniture__title,
+	._title {
+		color: var(--color-text-strong);
+	}
+
+	.item-product {
+		@include dark-glass-soft(0.05);
+
+		&__title {
+			color: var(--color-text-strong);
+		}
+
+		&__text {
+			color: var(--color-text-muted);
+		}
+
+		&__price {
+			color: var(--color-accent);
+		}
+	}
+
+	.btn_white {
+		@include dark-glass-soft(0.04);
+		color: var(--color-accent);
+
+		@media (any-hover: hover) {
+			&:hover {
+				background: var(--color-accent);
+				border-color: var(--color-accent);
+				color: #fff;
+				box-shadow: 0 rem(8) rem(24) rgba(232, 159, 113, 0.28);
+			}
+		}
+	}
+
+	.products__more {
+		@include dark-glass-soft(0.04);
+		border-color: rgba(232, 159, 113, 0.35);
+		color: var(--color-accent);
+
+		@media (any-hover: hover) {
+			&:hover {
+				background: var(--color-accent);
+				color: #fff;
+			}
+		}
+	}
+
+	.rooms {
+		background: var(--color-bg);
+	}
+
+	.rooms__text {
+		color: var(--color-text-muted);
+	}
+
+	.slider-rooms__body::before {
+		background: var(--color-bg);
+	}
+
+	.slider-rooms__image_review {
+		background: var(--color-bg-secondary);
+	}
+
+	.tips {
+		background: transparent;
+	}
+
+	.slider-tips__text {
+		color: var(--color-text-muted);
+	}
+
+	.slider-tips__slide {
+		@media (any-hover: hover) {
+			&:hover {
+				box-shadow: 0 rem(8) rem(32) rgba(0, 0, 0, 0.35);
+			}
+		}
+	}
+
+	.furniture {
+		background: transparent;
+	}
+
+	.furniture__subtitle {
+		color: var(--color-text-muted);
+	}
+
+	.catalog-cta {
+		background: var(--color-bg-secondary);
+
+		&__title {
+			color: var(--color-text-strong);
+		}
+
+		&__text {
+			color: var(--color-text-muted);
+		}
+
+		&__textarea,
+		&__input {
+			@include dark-glass-soft(0.05);
+			color: var(--color-text-strong);
+
+			&::placeholder {
+				color: rgba(255, 255, 255, 0.62);
+			}
+		}
+
+		&__previews {
+			@include dark-glass-soft(0.04);
+
+			&._empty {
+				border-color: rgba(255, 255, 255, 0.18);
+			}
+		}
+
+		&__previews-placeholder {
+			color: rgba(255, 255, 255, 0.62);
+		}
+
+		&__file-btn {
+			@include dark-glass-soft(0.05);
+			color: var(--color-text);
+		}
+	}
+
+	// Catalog
+	.catalog-hero {
+		background: transparent;
+	}
+
+	.breadcrumbs__link {
+		color: var(--color-text);
+	}
+
+	.catalog-sidebar__inner {
+		@include dark-glass-soft(0.05);
+	}
+
+	.catalog-sidebar__toggle {
+		color: var(--color-text);
+
+		&._active {
+			color: var(--color-accent);
+		}
+	}
+
+	.catalog-sidebar__sub-link {
+		color: var(--color-text-muted);
+
+		&._active {
+			color: var(--color-accent);
+		}
+
+		@media (any-hover: hover) {
+			&:hover {
+				color: var(--color-accent);
+			}
+		}
+	}
+
+	.catalog-sidebar__item_open > .catalog-sidebar__toggle {
+		background: rgba(232, 159, 113, 0.12);
+	}
+
+	.catalog-content__empty {
+		@include dark-glass-soft(0.05);
+		color: var(--color-text-muted);
+	}
+
+	// Checkout
+	.checkout-hero {
+		background: transparent;
+	}
+
+	.checkout-summary,
+	.checkout-success {
+		@include dark-glass-soft(0.05);
+	}
+
+	.checkout-summary__item {
+		border-color: rgba(255, 255, 255, 0.08);
+	}
+
+	.checkout-form__label {
+		color: var(--color-text);
+	}
+
+	.checkout-form__input,
+	.checkout-form__textarea {
+		@include dark-glass-soft(0.05);
+		color: var(--color-text);
+	}
+
+	.checkout__empty {
+		@include dark-glass-soft(0.05);
+		color: var(--color-text-muted);
+	}
+
+	// Popups
+	.popup__content {
+		@include dark-glass(0.1);
+	}
+
+	.popup-message {
+		@include dark-glass(0.12);
+
+		&__title {
+			color: var(--color-text-strong);
+		}
+
+		&__text {
+			color: var(--color-text-muted);
+		}
+	}
+
+	.popup-phone {
+		@include dark-glass(0.12);
+
+		&__text {
+			color: var(--color-text-muted);
+		}
+
+		&__number {
+			@include dark-glass-soft(0.06);
+			color: var(--color-text-strong);
+		}
+	}
+
+	.popup-product {
+		@include dark-glass(0.08);
+
+		&__title {
+			color: var(--color-text-strong);
+		}
+
+		&__text {
+			color: var(--color-text-muted);
+		}
+
+		&__media {
+			@include dark-glass-soft(0.04);
+		}
+
+		&__form-wrap {
+			border-top-color: rgba(255, 255, 255, 0.08);
+		}
+
+		&__input {
+			@include dark-glass-soft(0.05);
+			color: var(--color-text);
+		}
+	}
+
+	.popup__close_icon {
+		@include dark-glass-soft(0.08);
+		color: var(--color-text);
+	}
+
+	.content-main__button {
+		@media (any-hover: hover) {
+			&:hover {
+				background: var(--color-accent-hover);
+			}
+		}
+	}
+
+	.rooms__button {
+		@media (any-hover: hover) {
+			&:hover {
+				background: var(--color-accent-hover);
+			}
+		}
+	}
+
+	.slider-arrow_white {
+		@include dark-glass-soft(0.08);
+		color: var(--color-accent);
+
+		@media (any-hover: hover) {
+			&:hover {
+				background: var(--color-accent);
+				color: #fff;
+			}
+		}
+	}
+}
+
+body,
+.wrapper,
+.header__wrapper,
+.main-slider,
+.advantages,
+.rooms,
+.tips,
+.furniture,
+.catalog-hero,
+.catalog,
+.checkout,
+.footer__body,
+.item-product,
+.cart-header__body,
+.search-results,
+.popup__content,
+.content-main,
+.slider-main__content,
+.theme-toggle {
+	transition: var(--transition-theme);
+}
