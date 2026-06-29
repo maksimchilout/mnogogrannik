@@ -172,7 +172,7 @@ export class Popup {
 			}
 		}.bind(this))
 		// Событие отправки формы
-		if (document.querySelector('form[data-ajax],form[data-dev]')) {
+		if (document.querySelector('form[data-ajax],form[data-dev],form[data-telegram-order]')) {
 			document.addEventListener("formSent", function (e) {
 				const popup = e.detail.form.dataset.popupMessage;
 				if (popup) {

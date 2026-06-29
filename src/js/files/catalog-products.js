@@ -9,6 +9,10 @@ import {
 	titleMatchesSearchQuery,
 	getCatalogSearchQueryFromUrl,
 } from './catalog-utils.js';
+import {
+	getProductOrderSnapshot,
+	setProductOrderSnapshot,
+} from './product-order-snapshot.js';
 
 let catalogProducts = [];
 let currentSection = 'loft-furniture';
@@ -56,6 +60,9 @@ function openCatalogProductPopup(product) {
 	const textEl = popup?.querySelector('[data-catalog-popup-text]');
 	const priceEl = popup?.querySelector('[data-catalog-popup-price]');
 	const productInput = popup?.querySelector('[data-catalog-popup-product-input]');
+	const priceInput = popup?.querySelector('[data-catalog-popup-price-input]');
+	const productIdInput = popup?.querySelector('[data-catalog-popup-id-input]');
+	const productImageInput = popup?.querySelector('[data-catalog-popup-image-input]');
 	const form = popup?.querySelector('[data-catalog-popup-form]');
 	const openButton = document.querySelector('[data-catalog-popup-open]');
 
@@ -65,15 +72,27 @@ function openCatalogProductPopup(product) {
 	const text = getProductText(product);
 	const price = formatProductPrice(product);
 	const imageSrc = catalogImageSrc(product.image);
+	const imageUrl = new URL(imageSrc, window.location.href).href;
 
 	imageEl.src = imageSrc;
 	imageEl.alt = title;
 	titleEl.textContent = title;
 	textEl.textContent = text;
 	priceEl.textContent = price;
-	if (productInput) productInput.value = title;
+
 	form?.reset();
+
+	if (productIdInput) productIdInput.value = String(product.id);
 	if (productInput) productInput.value = title;
+	if (priceInput) priceInput.value = price;
+	if (productImageInput) productImageInput.value = imageUrl;
+
+	setProductOrderSnapshot({
+		productId: product.id,
+		product: title,
+		price,
+		productImage: imageUrl,
+	});
 
 	openButton.click();
 }
@@ -100,7 +119,21 @@ function initCatalogProductPopup() {
 	document.addEventListener('formSent', (event) => {
 		const form = event.detail?.form;
 		if (!form?.matches('[data-catalog-popup-form]')) return;
-		form.reset();
+
+		window.setTimeout(() => {
+			const snapshot = getProductOrderSnapshot();
+			if (!snapshot?.productId) return;
+
+			const productIdInput = form.querySelector('[name="productId"]');
+			const productInput = form.querySelector('[name="product"]');
+			const priceInput = form.querySelector('[name="price"]');
+			const productImageInput = form.querySelector('[name="productImage"]');
+
+			if (productIdInput) productIdInput.value = snapshot.productId;
+			if (productInput) productInput.value = snapshot.product;
+			if (priceInput) priceInput.value = snapshot.price;
+			if (productImageInput) productImageInput.value = snapshot.productImage;
+		}, 0);
 	});
 }
 

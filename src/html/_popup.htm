@@ -45,8 +45,11 @@
 					<div class="popup-product__price" data-catalog-popup-price></div>
 					<div class="popup-product__form-wrap">
 						<h3 class="popup-product__form-title">Администратор свяжется с вами для уточнения размеров, цвета, материалов изделия, а так же окончательной стоимости</h3>
-						<form class="popup-product__form" data-catalog-popup-form data-dev data-popup-message="#formMessage" action="#" method="post">
+						<form class="popup-product__form" data-catalog-popup-form data-telegram-order="product" data-popup-message="#formMessage" action="#" method="post">
+							<input type="hidden" name="productId" value="" data-catalog-popup-id-input>
 							<input type="hidden" name="product" value="" data-catalog-popup-product-input>
+							<input type="hidden" name="price" value="" data-catalog-popup-price-input>
+							<input type="hidden" name="productImage" value="" data-catalog-popup-image-input>
 							<label class="popup-product__field">
 								<span class="popup-product__label">Имя</span>
 								<input class="popup-product__input input" type="text" name="name" placeholder="Как к вам обращаться" data-required data-error="Введите имя" required>

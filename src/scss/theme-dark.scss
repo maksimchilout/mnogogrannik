@@ -485,9 +485,37 @@
 		background: transparent;
 	}
 
-	.checkout-summary,
-	.checkout-success {
+	.checkout-summary {
 		@include dark-glass-soft(0.05);
+	}
+
+	.checkout-quantity {
+		@include dark-glass-soft(0.05);
+		border-color: rgba(255, 255, 255, 0.12);
+
+		&__value {
+			color: var(--color-text);
+		}
+	}
+
+	.checkout-summary__remove {
+		@include dark-glass-soft(0.05);
+	}
+
+	.checkout-success-overlay__backdrop {
+		background: rgba(8, 10, 16, 0.72);
+	}
+
+	.checkout-success.popup-message {
+		@include dark-glass(0.12);
+
+		.popup-message__title {
+			color: var(--color-text-strong);
+		}
+
+		.popup-message__text {
+			color: var(--color-text-muted);
+		}
 	}
 
 	.checkout-summary__item {

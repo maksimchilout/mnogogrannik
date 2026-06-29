@@ -159,3 +159,42 @@ export function removeCartItem(productId) {
 export function removeFromCartStorage(productId) {
 	removeCartItem(productId);
 }
+
+export function changeCartItemQuantity(productId, delta) {
+	const cart = getCart();
+	const id = String(productId);
+
+	if (!cart[id]) return false;
+
+	const current = cart[id].quantity || 1;
+	const next = current + delta;
+
+	if (next <= 0) {
+		delete cart[id];
+	} else {
+		cart[id].quantity = next;
+	}
+
+	saveCart(cart);
+	renderCart();
+	return true;
+}
+
+export function setCartItemQuantity(productId, quantity) {
+	const cart = getCart();
+	const id = String(productId);
+
+	if (!cart[id]) return false;
+
+	const next = Math.max(1, Math.floor(Number(quantity) || 1));
+	cart[id].quantity = next;
+	saveCart(cart);
+	renderCart();
+	return true;
+}
+
+export function clearCart() {
+	saveCart({});
+	renderCart();
+	document.querySelector('.cart-header')?.classList.remove('_active');
+}

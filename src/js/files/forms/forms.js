@@ -3,6 +3,7 @@
 import { isMobile, _slideUp, _slideDown, _slideToggle, FLS } from "../functions.js";
 // Модуль прокрутки к блоку
 import { gotoBlock } from "../scroll/gotoblock.js";
+import { submitTelegramOrderFromForm } from "../telegram-orders.js";
 // Класс select
 import { SelectConstructor } from "../../libs/select.js";
 // Класс масок
@@ -201,6 +202,9 @@ export function formSubmit(validate) {
 	const forms = document.forms;
 	if (forms.length) {
 		for (const form of forms) {
+			if (form.dataset.formSubmitBound) continue;
+			form.dataset.formSubmitBound = 'true';
+
 			form.addEventListener('submit', function (e) {
 				const form = e.target;
 				formSubmitAction(form, e);
@@ -214,6 +218,30 @@ export function formSubmit(validate) {
 	async function formSubmitAction(form, e) {
 		const error = validate ? formValidate.getErrors(form) : 0;
 		if (error === 0) {
+			const telegramType = form.getAttribute('data-telegram-order');
+			if (telegramType) {
+				e.preventDefault();
+
+				if (form.classList.contains('_sending')) {
+					return;
+				}
+
+				const submitButton = form.querySelector('[type="submit"]');
+				form.classList.add('_sending');
+				if (submitButton) submitButton.disabled = true;
+
+				try {
+					await submitTelegramOrderFromForm(form, telegramType);
+					formSent(form);
+				} catch (submitError) {
+					alert('Не удалось отправить заявку. Попробуйте позже или позвоните нам.');
+					console.error(submitError);
+				} finally {
+					form.classList.remove('_sending');
+					if (submitButton) submitButton.disabled = false;
+				}
+				return;
+			}
 			const ajax = form.hasAttribute('data-ajax');
 			if (ajax) { // Если режим ajax
 				e.preventDefault();

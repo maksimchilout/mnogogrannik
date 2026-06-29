@@ -67,14 +67,23 @@
 							</form>
 						</div>
 					</div>
-
-					<div class="checkout__success checkout-success" data-checkout-success hidden>
-						<h2 class="checkout-success__title">Заказ отправлен</h2>
-						<p class="checkout-success__text">Спасибо! Мы получили вашу заявку и скоро свяжемся с вами.</p>
-						<a href="catalog.html" class="checkout-success__link btn">Вернуться в каталог</a>
-					</div>
 				</div>
 			</section>
+
+			<div class="checkout-success-overlay" data-checkout-success-overlay hidden>
+				<div class="checkout-success-overlay__backdrop" aria-hidden="true"></div>
+				<div class="checkout__success checkout-success popup-message" data-checkout-success>
+					<div class="popup-message__icon-wrap" aria-hidden="true">
+						<svg class="popup-message__check" viewBox="0 0 52 52" role="presentation">
+							<circle class="popup-message__check-circle" cx="26" cy="26" r="24" fill="none"></circle>
+							<path class="popup-message__check-mark" fill="none" d="M15.5 26.5l7 7 14-14"></path>
+						</svg>
+					</div>
+					<h2 class="popup-message__title">Заказ отправлен</h2>
+					<p class="popup-message__text">Спасибо! Мы получили вашу заявку и скоро свяжемся с вами.</p>
+					<a href="catalog.html" class="checkout-success__link btn">Вернуться в каталог</a>
+				</div>
+			</div>
 		</main>
 		@@include('html/_footer.htm',{})
 	</div>
