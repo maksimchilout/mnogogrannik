@@ -20,8 +20,8 @@
 	&__rooms {
 	}
 
-	// .page__tips
-	&__tips {
+	// .page__home-about
+	&__home-about {
 	}
 
 	// .page__furniture
@@ -801,7 +801,86 @@
 //====================================================================================================
 
 //==============================================================================================
-//  section TIPS
+//  section HOME ABOUT
+
+.home-about {
+	@include adaptiveValue("padding-top", 44, 30);
+	@include adaptiveValue("padding-bottom", 44, 30);
+
+	&__title {
+		margin-bottom: calc(32px / 40px * 1em);
+	}
+
+	&__body {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+		gap: 40px;
+		align-items: center;
+
+		@media (max-width: $tablet) {
+			grid-template-columns: 1fr;
+			gap: 28px;
+		}
+	}
+
+	&__media {
+		overflow: hidden;
+		border-radius: rem(4);
+		background: #f9f1e7;
+		aspect-ratio: 4 / 5;
+		max-height: rem(520);
+
+		img {
+			display: block;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 20px;
+	}
+
+	&__eyebrow {
+		margin: 0;
+		font-size: rem(13);
+		font-weight: 600;
+		line-height: 140%;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+		color: $orangeColor;
+	}
+
+	&__text {
+		margin: 0;
+		font-size: rem(17);
+		line-height: 165%;
+		color: $grayColor;
+	}
+
+	&__btn {
+		min-width: rem(220);
+		min-height: rem(52);
+		padding: 0 rem(28);
+		margin-top: 8px;
+		font-weight: 600;
+		color: #fff;
+		background: $orangeColor;
+
+		@media (any-hover: hover) {
+			&:hover {
+				background: #9e8463;
+			}
+		}
+	}
+}
+
+//==============================================================================================
+//  section TIPS (legacy)
 
 .tips {
 	@include adaptiveValue("padding-top", 44, 30);

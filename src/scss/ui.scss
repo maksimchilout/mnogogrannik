@@ -137,7 +137,7 @@
 	transition: all 1s ease 0s;
 }
 
-// lightGallery: навигация кликом по левой/правой половине экрана
+// lightGallery: навигация кликом по левой/правой половине экрана (desktop)
 .lg-outer {
 	.lg-content,
 	.lg-item,
@@ -146,6 +146,29 @@
 		cursor: pointer;
 	}
 }
+
+.lg-container {
+	.lg-content,
+	.lg-item,
+	.lg-img-wrap,
+	.lg-image {
+		-webkit-user-select: none;
+		user-select: none;
+		touch-action: none;
+	}
+}
+
+// На таче стрелки скрыты — листание свайпом / тапом по половинам
+html.touch {
+	.lg-container {
+		.lg-next,
+		.lg-prev {
+			display: none !important;
+		}
+	}
+}
+
+
 
 
 

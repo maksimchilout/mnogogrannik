@@ -67,7 +67,8 @@ body {
 	
 	.lock & {
 		overflow: hidden;
-		touch-action: none;
+		overscroll-behavior: none;
+		// Не трогаем touch-action — жесты остаются внутри lightGallery
 	}
 	// Сайт загружен
 	.loaded & {
@@ -161,6 +162,8 @@ body {
 @import "home";
 @import "catalog";
 @import "checkout";
+@import "about";
+@import "policy";
 @import "theme-dark";
 @import "theme-toggle";
 

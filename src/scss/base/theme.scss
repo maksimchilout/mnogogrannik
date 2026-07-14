@@ -17,8 +17,9 @@
 	--color-border: #e0e0e0;
 	--color-border-soft: #fcf9f9;
 	--color-border-warm: #e8d8c8;
-	--color-header-scroll: rgba(255, 255, 255, 0.88);
-	--color-header-scroll-hover: rgba(255, 255, 255, 0.94);
+	--color-header-scroll: rgba(252, 248, 243, 0.96);
+	--color-header-scroll-hover: rgba(252, 248, 243, 0.98);
+	--color-header-scroll-solid: #fcf8f3;
 	--color-icon: #363f56;
 	--color-shadow: rgba(51, 36, 20, 0.12);
 	--color-shadow-strong: rgba(51, 36, 20, 0.18);
@@ -72,8 +73,9 @@
 	--color-border: rgba(255, 255, 255, 0.1);
 	--color-border-soft: rgba(255, 255, 255, 0.06);
 	--color-border-warm: rgba(232, 159, 113, 0.28);
-	--color-header-scroll: rgba(255, 255, 255, 0.06);
-	--color-header-scroll-hover: rgba(255, 255, 255, 0.09);
+	--color-header-scroll: rgba(12, 11, 10, 0.94);
+	--color-header-scroll-hover: rgba(12, 11, 10, 0.97);
+	--color-header-scroll-solid: #0c0b0a;
 	--color-icon: #ddd7cf;
 	--color-shadow: rgba(0, 0, 0, 0.35);
 	--color-shadow-strong: rgba(0, 0, 0, 0.5);
@@ -103,7 +105,7 @@
 	--search-results-divider: rgba(255, 255, 255, 0.08);
 	--search-results-thumb-bg: rgba(255, 255, 255, 0.06);
 
-	--cart-bg: rgba(255, 255, 255, 0.14);
+	--cart-bg: rgba(255, 255, 255, 0.24);
 	--cart-border: 1px solid rgba(255, 255, 255, 0.14);
 	--cart-radius: #{rem(4)};
 	--cart-shadow: 0 rem(8) rem(32) rgba(0, 0, 0, 0.38), inset 0 1px 0 rgba(255, 255, 255, 0.1), inset 0 -1px 0 rgba(255, 255, 255, 0.03);

@@ -234,7 +234,12 @@ export function formSubmit(validate) {
 					await submitTelegramOrderFromForm(form, telegramType);
 					formSent(form);
 				} catch (submitError) {
-					alert('Не удалось отправить заявку. Попробуйте позже или позвоните нам.');
+					const isSubscribe = telegramType === 'subscribe';
+					alert(
+						isSubscribe
+							? 'Не удалось оформить подписку. Попробуйте позже.'
+							: 'Не удалось отправить заявку. Попробуйте позже или позвоните нам.'
+					);
 					console.error(submitError);
 				} finally {
 					form.classList.remove('_sending');

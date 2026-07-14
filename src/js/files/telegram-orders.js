@@ -86,6 +86,24 @@ export async function submitTelegramOrderFromForm(form, type) {
 		return submitTelegramOrder(formData);
 	}
 
+	if (type === 'subscribe') {
+		const email = form.querySelector('[name="email"]')?.value?.trim() || '';
+		if (!email) {
+			throw new Error('Введите корректный email');
+		}
+
+		formData.append('type', 'subscribe');
+		formData.append(
+			'fields',
+			JSON.stringify({
+				email,
+				note: 'Рассылка новостей и акций',
+			})
+		);
+
+		return submitTelegramOrder(formData);
+	}
+
 	const fields = collectFormFields(form);
 
 	form.querySelectorAll('input[type="file"]').forEach((input) => {

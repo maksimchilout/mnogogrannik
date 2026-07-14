@@ -12,13 +12,22 @@
 		@include adaptiveValue("padding-top", 80, 30);
 		@include adaptiveValue("padding-bottom", 60, 30);
 		@include adaptiveValue("column-gap", 80, 0);
+		row-gap: 0;
 
-		@media (max-width:$pc){
-			grid-template-rows: auto auto;
-			grid-template-columns: 1fr 290px;
+		// ≤1300px и >992: ряд 1 — меню / соцсети / подписка по центру; ряд 2 — бренд
+		@media (max-width: $pc) {
+			grid-template-columns: repeat(3, auto);
+			justify-content: center;
+			justify-items: center;
+			@include adaptiveValue("column-gap", 72, 40);
+			@include adaptiveValue("row-gap", 48, 32);
 		}
-		@media (max-width:$tablet){
-			display: block;
+
+		// ≤992: ряд 1 — меню + соцсети; ряд 2 — «Будьте в курсе»; ряд 3 — бренд
+		@media (max-width: 992px) {
+			grid-template-columns: 1fr;
+			justify-items: center;
+			column-gap: 0;
 		}
 	}
 
@@ -27,9 +36,15 @@
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
-		@media (max-width:$pc){
-			grid-column: span 2;
-			@include adaptiveValue("margin-bottom", 40, 30);
+
+		@media (max-width: $pc) {
+			order: 4;
+			grid-column: 1 / -1;
+			justify-self: center;
+			align-items: center;
+			text-align: center;
+			max-width: rem(420);
+			width: 100%;
 		}
 	}
 
@@ -39,6 +54,10 @@
 		align-items: center;
 		@include adaptiveValue("gap", 6, 4);
 		margin-bottom: calc(16px / 24px * 1em);
+
+		@media (max-width: $pc) {
+			justify-content: center;
+		}
 	}
 
 	// .footer__logo
@@ -77,19 +96,103 @@
 
 	// .footer__menu
 	&__menu {
-		@media (max-width:$tablet){
-			@include adaptiveValue("margin-bottom", 40, 30);
+		@media (max-width: 992px) {
+			order: 1;
+			width: 100%;
+			max-width: rem(520);
+		}
+
+		&.menu-footer {
+			@media (min-width: $pc) {
+				justify-content: center;
+				@include adaptiveValue("column-gap", 96, 56);
+			}
+
+			// 993–1300: колонки меню в общей сетке с подпиской
+			@media (max-width: $pc) and (min-width: 993px) {
+				display: contents;
+			}
+
+			// ≤992: меню и соцсети в одну линию
+			@media (max-width: 992px) {
+				display: flex;
+				justify-content: center;
+				@include adaptiveValue("column-gap", 48, 24);
+			}
+
+			// ≤620: соцсети под меню
+			@media (max-width: 620px) {
+				flex-direction: column;
+				align-items: center;
+				row-gap: rem(28);
+				column-gap: 0;
+			}
+		}
+
+		.menu-footer__column {
+			@media (min-width: $mobile) {
+				flex: 0 0 auto;
+			}
+
+			@media (max-width: $pc) {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				text-align: center;
+
+				&:nth-child(1) {
+					order: 1;
+				}
+
+				&:nth-child(2) {
+					order: 2;
+				}
+			}
+
+			@media (max-width: 992px) {
+				flex: 1 1 auto;
+				min-width: 0;
+			}
+
+			@media (max-width: 620px) {
+				flex: 0 0 auto;
+				width: 100%;
+			}
 		}
 	}
 
 	// .footer__subscribe
 	&__subscribe {
+		@media (max-width: $pc) {
+			order: 3;
+			width: 100%;
+			max-width: rem(290);
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			text-align: center;
+		}
+
+		@media (max-width: 992px) {
+			order: 2;
+			max-width: rem(360);
+		}
 	}
 }
 .contacts-footer {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
+
+	.footer__main & {
+		@media (max-width: $pc) {
+			align-items: center;
+
+			.contacts-footer__item {
+				text-align: center;
+			}
+		}
+	}
 	// .contacts-footer__item
 	&__item {
 		display: inline-flex;
@@ -117,45 +220,19 @@
 	}
 }
 .menu-footer {
-	@media (min-width:$mobile){
-		display: flex;
-	}
+	display: flex;
+
 	// .menu-footer__column
 	&__column {
 		@media (min-width:$mobile){
 			flex: 0 1 33.333%;
-		}
-		@media (max-width:$mobile){
-			@include adaptiveValue("margin-bottom", 30, 15);
 		}
 	}
 
 	// .menu-footer__title
 	&__title {
 		cursor: default;
-		
-		@media (min-width:$mobile){
-			margin: 0px 0px calc(16x / 24x * 1em) 0px;
-		}
-		._spoller-init & {
-			display: flex;
-			width: 100%;
-			flex-direction: row-reverse;
-			justify-content: space-between;
-			align-items: center;
-			@extend ._icon-arrow-down;
-			&::before{
-				@extend %ic;
-				font-size: 14px;
-				transition: all 0.3s ease 0s;
-			}
-		}
-		&._spoller-active{
-			&::before{
-				transform: rotate(-180deg);
-				
-			}
-		}
+		margin: 0px 0px calc(16px / 24px * 1em) 0px;
 	}
 
 	// .menu-footer__list
@@ -164,9 +241,6 @@
 			&:not(:last-child) {
 				margin: 0 0 15px 0;
 			}
-		}
-		@media (max-width:$mobile){
-			padding: 15px 0 0 0;
 		}
 	}
 
@@ -194,6 +268,7 @@
 	&__form {
 		display: flex;
 		position: relative;
+		width: 100%;
 		.form__error{
 			position: absolute;
 			top: 100%;

@@ -50,24 +50,14 @@
 		}
 
 		&._scroll .header__wrapper {
-			background: transparent;
-			backdrop-filter: none;
-			-webkit-backdrop-filter: none;
-			border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-			box-shadow: 0 rem(8) rem(32) rgba(0, 0, 0, 0.35);
+			background: var(--color-header-scroll);
+			backdrop-filter: blur(18px) saturate(160%);
+			-webkit-backdrop-filter: blur(18px) saturate(160%);
+			border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+			box-shadow: none;
 
 			&::before {
-				content: "";
-				position: absolute;
-				inset: 0;
-				z-index: 0;
-				pointer-events: none;
-				background: rgba(255, 255, 255, 0.06);
-				backdrop-filter: blur(32px) saturate(185%);
-				-webkit-backdrop-filter: blur(32px) saturate(185%);
-				box-shadow:
-					inset 0 1px 0 rgba(255, 255, 255, 0.1),
-					inset 0 -1px 0 rgba(255, 255, 255, 0.03);
+				display: none;
 			}
 
 			.header__container {
@@ -76,9 +66,16 @@
 			}
 
 			@media (any-hover: hover) {
-				&:hover::before {
-					background: rgba(255, 255, 255, 0.09);
+				&:hover {
+					background: var(--color-header-scroll-hover);
 				}
+			}
+
+			@media (max-width: $tablet) {
+				background: var(--color-header-scroll-solid);
+				backdrop-filter: none;
+				-webkit-backdrop-filter: none;
+				box-shadow: 0 -120px 0 0 var(--color-header-scroll-solid);
 			}
 		}
 	}
@@ -95,6 +92,16 @@
 			&::before {
 				@include dark-glass(0.08);
 				border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+			}
+		}
+	}
+
+	.menu__tools {
+		@media (max-width: $mobile) {
+			border-bottom-color: rgba(255, 255, 255, 0.1);
+
+			.cart-header__icon::after {
+				color: var(--color-text);
 			}
 		}
 	}
@@ -220,7 +227,7 @@
 	}
 
 	.cart-header__body {
-		@include dark-glass(0.14);
+		@include dark-glass(0.24);
 	}
 
 	.cart-list__item {
@@ -271,7 +278,11 @@
 	}
 
 	.content-main {
-		@include dark-glass(0.08);
+		@include dark-glass(0.16);
+
+		&__title {
+			color: var(--color-text-strong);
+		}
 
 		&__text {
 			color: var(--color-text);
@@ -308,7 +319,7 @@
 
 	.products__title,
 	.rooms__title,
-	.tips__title,
+	.home-about__title,
 	.furniture__title,
 	._title {
 		color: var(--color-text-strong);
@@ -363,6 +374,18 @@
 
 	.rooms__text {
 		color: var(--color-text-muted);
+	}
+
+	.home-about__media {
+		@include dark-glass-soft(0.04);
+	}
+
+	.home-about__text {
+		color: var(--color-text-muted);
+	}
+
+	.home-about__eyebrow {
+		color: var(--color-accent);
 	}
 
 	.slider-rooms__body::before {
@@ -485,6 +508,102 @@
 		background: transparent;
 	}
 
+	// About
+	.about-hero {
+		background: transparent;
+	}
+
+	.about__subtitle {
+		color: var(--color-text-strong);
+	}
+
+	.about__lead {
+		color: var(--color-text);
+
+		strong {
+			color: var(--color-accent);
+		}
+	}
+
+	.about__media {
+		@include dark-glass-soft(0.04);
+	}
+
+	.about-section {
+		border-bottom-color: rgba(255, 255, 255, 0.08);
+
+		&__title {
+			color: var(--color-text-strong);
+		}
+
+		&__content {
+			color: var(--color-text-muted);
+		}
+
+		&__closing {
+			color: var(--color-text);
+
+			strong {
+				color: var(--color-accent);
+			}
+		}
+
+		&_highlight {
+			@include dark-glass-soft(0.05);
+		}
+	}
+
+	.about__cta {
+		@include dark-glass-soft(0.05);
+	}
+
+	.about__cta-text {
+		color: var(--color-text-muted);
+	}
+
+	.about__cta-btn_outline {
+		@include dark-glass-soft(0.04);
+		color: var(--color-accent);
+		border-color: rgba(232, 159, 113, 0.35);
+
+		@media (any-hover: hover) {
+			&:hover {
+				background: var(--color-accent);
+				border-color: var(--color-accent);
+				color: #fff;
+			}
+		}
+	}
+
+	// Policy
+	.policy-hero {
+		background: transparent;
+	}
+
+	.policy-section {
+		border-bottom-color: rgba(255, 255, 255, 0.08);
+
+		&__title {
+			color: var(--color-text-strong);
+		}
+
+		&__content {
+			color: var(--color-text-muted);
+
+			strong {
+				color: var(--color-text);
+			}
+
+			a {
+				color: var(--color-accent);
+			}
+		}
+	}
+
+	.policy__updated {
+		color: var(--color-text-muted);
+	}
+
 	.checkout-summary {
 		@include dark-glass-soft(0.05);
 	}
@@ -586,9 +705,24 @@
 			border-top-color: rgba(255, 255, 255, 0.08);
 		}
 
+		&__form-title,
+		&__label {
+			color: #fff;
+		}
+
 		&__input {
 			@include dark-glass-soft(0.05);
-			color: var(--color-text);
+			color: #fff;
+
+			&::placeholder {
+				color: #fff;
+				opacity: 0.85;
+			}
+
+			&::-webkit-input-placeholder {
+				color: #fff;
+				opacity: 0.85;
+			}
 		}
 	}
 
@@ -632,11 +766,13 @@ body,
 .main-slider,
 .advantages,
 .rooms,
-.tips,
+.home-about,
 .furniture,
 .catalog-hero,
 .catalog,
 .checkout,
+.about,
+.policy,
 .footer__body,
 .item-product,
 .cart-header__body,

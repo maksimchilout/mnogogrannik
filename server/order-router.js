@@ -96,12 +96,24 @@ export function createOrderRouter() {
 					console.log('Product order:', fields.productId, fields.product);
 				}
 
+				if (type === 'subscribe') {
+					const email = String(fields.email || '').trim();
+					if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+						return res.status(400).json({
+							ok: false,
+							error: 'Введите корректный email',
+						});
+					}
+					fields.email = email;
+					console.log('Subscribe:', email);
+				}
+
 				await sendOrderToTelegram({
 					type,
 					fields,
 					cart,
 					cartImages,
-					files: type === 'product' ? [] : (req.files || []),
+					files: type === 'product' || type === 'subscribe' ? [] : (req.files || []),
 					productImageBuffer,
 				});
 

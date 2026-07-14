@@ -12,6 +12,7 @@
 					<div class="header__menu menu">
 						
 						<nav class="menu__body">
+							<div class="menu__tools"></div>
 							<ul data-spollers="768,max" class="menu__list">
 								<li class="menu__item menu__item_catalog">
 									<a href="catalog.html" class="menu__link">Каталог</a>
@@ -106,14 +107,11 @@
 										</ul>
 									</div>
 								</li>
-								<li class="menu__item">
-									<a href="" class="menu__link">Вдохновение</a>
-								</li>
 							</ul>
 						</nav>
 					</div>
 				</div>
-				<div class="header__search">
+				<div data-da=".menu__tools,767.98,first" class="header__search">
 					<div class="search-form">
 						<button type="button" class="search-form__icon _icon-search"></button>
 						<div class="search-form__field">
@@ -135,8 +133,8 @@
 							<path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 7 7 0 1 0 20 14.5Z" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/>
 						</svg>
 					</button>
-					<div class="actions-header__item cart-header">
-						<a href="" class="cart-header__icon _icon-cart"></a>
+					<div data-da=".menu__tools,767.98,last" class="actions-header__item cart-header">
+						<a href="" class="cart-header__icon _icon-cart" aria-label="Корзина"></a>
 						<div class="cart-header__body">
 							<p class="cart-header__empty" data-cart-empty hidden>Корзина пуста</p>
 							<ul class="cart-header__list cart-list"></ul>

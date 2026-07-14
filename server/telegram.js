@@ -23,7 +23,6 @@ function buildCheckoutMessage({ fields, cart }) {
 	const lines = ['<b>🛒 Новый заказ с сайта</b>', ''];
 	lines.push(line('Имя', fields.name));
 	lines.push(line('Телефон', fields.phone));
-	lines.push(line('E-mail', fields.email));
 	lines.push(line('Адрес', fields.address));
 	lines.push(line('Комментарий', fields.comment));
 
@@ -58,14 +57,38 @@ function buildCustomMessage({ fields }) {
 	return lines.filter(Boolean).join('\n');
 }
 
+function buildSubscribeMessage({ fields }) {
+	const lines = [
+		'<b>📰 Рассылка новостей и акций</b>',
+		'',
+		line('Пометка', fields.note || 'Рассылка новостей и акций'),
+		line('Email', fields.email),
+	];
+	return lines.filter(Boolean).join('\n');
+}
+
+function fieldsHasSubscribeEmail(fields) {
+	return Boolean(fields?.email) && !fields?.message && !fields?.phone && !fields?.product;
+}
+
 function buildMessage(payload) {
-	switch (payload.type) {
+	const type = String(payload.type || '').trim().toLowerCase();
+
+	if (type === 'subscribe' || (!type && fieldsHasSubscribeEmail(payload.fields))) {
+		return buildSubscribeMessage(payload);
+	}
+
+	switch (type) {
 		case 'checkout':
 			return buildCheckoutMessage(payload);
 		case 'product':
 			return buildProductMessage(payload);
 		case 'custom':
+			return buildCustomMessage(payload);
 		default:
+			if (fieldsHasSubscribeEmail(payload.fields)) {
+				return buildSubscribeMessage(payload);
+			}
 			return buildCustomMessage(payload);
 	}
 }

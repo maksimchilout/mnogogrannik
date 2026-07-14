@@ -7,9 +7,10 @@ const API_PORT = 3001;
 
 export const server = (done) => {
 	const api = express();
+	// Подключаем роутер так, чтобы изменения server/*.js подхватывались после перезапуска gulp
 	api.use('/api', createOrderRouter());
 
-	api.listen(API_PORT, '127.0.0.1', () => {
+	const apiServer = api.listen(API_PORT, '127.0.0.1', () => {
 		console.log(`Order API: http://127.0.0.1:${API_PORT}/api/order`);
 
 		app.plugins.browsersync.init({
@@ -27,5 +28,12 @@ export const server = (done) => {
 		});
 
 		done();
+	});
+
+	apiServer.on('error', (error) => {
+		if (error.code === 'EADDRINUSE') {
+			console.error(`Port ${API_PORT} is busy. Stop the old process and restart npm run dev.`);
+		}
+		throw error;
 	});
 };
