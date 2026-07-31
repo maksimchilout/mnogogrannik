@@ -82,6 +82,7 @@
 		align-self: flex-end;
 		@media (min-width:$tablet){
 			padding-left: 32px;
+			margin-top: rem(-40);
 		}
 	}
 }
@@ -185,7 +186,7 @@
 	// .slider-main__image
 	&__image {
 		width: 100%;
-		@include adaptiveValue("height", 702, 218);
+		@include adaptiveValue("height", 656, 218);
 		overflow: hidden;
 	}
 
@@ -195,20 +196,23 @@
 		display: flex;
 		flex-direction: column;
 		width: 100%;
-		max-width: rem(350);
-		min-height: rem(200);
+		max-width: rem(300);
+		min-height: rem(160);
 		overflow: hidden;
 		color: $mainColor;
-		@include adaptiveValue("padding", 24, 15);
+		@include adaptiveValue("padding", 14, 10);
 		@media (min-width:$mobile){
 			position: absolute;
-			width: rem(350);
-			min-width: rem(350);
-			max-width: rem(350);
-			min-height: rem(200);
+			width: rem(300);
+			min-width: rem(300);
+			max-width: rem(300);
+			min-height: rem(160);
 			@include adaptiveValue("bottom", 20, 0);
 			@include adaptiveValue("right", 25, 0);
 		}
+		// Не transition: none — иначе parallax при автопрокрутке только мигает
+		// transform/opacity анимирует Swiper; тему не трогаем
+		transition: background-color 0.3s ease, box-shadow 0.3s ease;
 		background: rgba(255, 255, 255, 0.34);
 		backdrop-filter: blur(8px);
 		-webkit-backdrop-filter: blur(8px);
@@ -220,10 +224,10 @@
 	&__title {
 		@include adaptiveValue("font-size", 28, 22);
 		font-weight: 600;
-		line-height: 120%;
+		line-height: 110%;
 		color: $mainColor;
 		&:not(:last-child) {
-			margin: 0px 0px calc(4px / 28px * 1em) 0px;
+			margin: 0px 0px calc(2px / 28px * 1em) 0px;
 		}
 		
 	}
@@ -231,10 +235,10 @@
 	// .slider-main__text
 	&__text {
 		flex: 1 1 auto;
-		line-height: 150%;
+		line-height: 130%;
 		color: $mainColor;
 		&:not(:last-child) {
-			margin: 0px 0px calc(8px / 16px * 1em) 0px;
+			margin: 0px 0px calc(4px / 16px * 1em) 0px;
 		}
 		
 	}

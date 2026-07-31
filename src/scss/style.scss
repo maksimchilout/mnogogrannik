@@ -59,11 +59,20 @@ $mobileSmall: em(479.98); // Телефоны S
 // Обнуление и общие параметры ============================================================================================================================================================================================== =============================================================================================== ===============================================================================================
 @import "base/null";
 
+html {
+	// Горизонтальный скролл режем здесь, НЕ на .wrapper —
+	// иначе WebKit делает wrapper scroll-контейнером и ломает position:fixed
+	overflow-x: clip;
+	overscroll-behavior-y: none;
+}
+
 body {
 	color: var(--color-text);
 	background-color: var(--color-bg);
 	background-image: var(--gradient-body);
 	transition: var(--transition-theme);
+	overflow-x: clip;
+	overscroll-behavior-y: none;
 	
 	.lock & {
 		overflow: hidden;
@@ -79,7 +88,8 @@ body {
 	min-height: 100%;
 	display: flex;
 	flex-direction: column;
-	overflow: hidden;
+	// Без overflow — иначе fixed-хедер «отлипает» в Safari / Telegram WebView
+	overflow: visible;
 	background-color: var(--color-bg);
 	transition: var(--transition-theme);
 	// Прижимаем footer

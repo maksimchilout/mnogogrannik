@@ -292,6 +292,19 @@ function bildSliders() {
 	}
 }
 
+/** Плавно двигает/проявляет описание товара по progress слайда (авто и drag одинаково) */
+function updateMainSlideContent(swiper) {
+	swiper.slides.forEach((slide) => {
+		const content = slide.querySelector('.slider-main__content');
+		if (!content) return;
+		const progress = Number.isFinite(slide.progress) ? slide.progress : 0;
+		const p = Math.max(-1, Math.min(1, progress));
+		const abs = Math.abs(p);
+		content.style.transform = `translate3d(${(p * -45).toFixed(3)}%, 0, 0)`;
+		content.style.opacity = (1 - abs).toFixed(3);
+	});
+}
+
 function initSliders() {
 	bildSliders();
 
@@ -303,22 +316,42 @@ function initSliders() {
 			slidesPerView: 1,
 			spaceBetween: 32,
 			watchOverflow: true,
-			speed: 800,
+			watchSlidesProgress: true,
+			speed: 1100,
 			autoplay: {
-				delay: 3000,
+				delay: 4200,
 				disableOnInteraction: false,
 			},
 			loopAdditionalSlides: 5,
 			preloadImages: false,
-			parallax: true,
+			// Свой parallax для карточки — встроенный мигает на autoplay
+			parallax: false,
 			on: {
 				init(swiper) {
+					swiper.el.querySelectorAll('.slider-main__content').forEach((el) => {
+						el.removeAttribute('data-swiper-parallax-x');
+						el.removeAttribute('data-swiper-parallax-opacity');
+						el.removeAttribute('data-swiper-parallax-duration');
+						el.style.willChange = 'transform, opacity';
+					});
+
 					const updateHeight = () => swiper.update();
 					swiper.el.querySelectorAll('.slider-main__image img').forEach((img) => {
 						if (img.complete) return;
 						img.addEventListener('load', updateHeight, { once: true });
 					});
 					updateHeight();
+					updateMainSlideContent(swiper);
+				},
+				setTransition(swiper, duration) {
+					swiper.el.querySelectorAll('.slider-main__content').forEach((el) => {
+						el.style.transitionDuration = `${duration}ms`;
+						el.style.transitionTimingFunction = 'ease-out';
+						el.style.transitionProperty = 'transform, opacity';
+					});
+				},
+				setTranslate(swiper) {
+					updateMainSlideContent(swiper);
 				},
 			},
 			pagination: {

@@ -411,6 +411,22 @@ export function menuInit() {
 			}
 		});
 	};
+
+	// Из бургер-меню открываем попап звонка — сначала закрываем меню
+	document.querySelectorAll('.menu__contacts-link[data-popup]').forEach((btn) => {
+		btn.addEventListener('click', () => {
+			const menuBody = document.querySelector('.menu__body');
+			const menuIcon = document.querySelector('.icon-menu');
+			if (menuBody?.classList.contains('_active')) {
+				menuBody.classList.remove('_active');
+				menuIcon?.classList.remove('_active');
+				// lock снимет/поставит попап; меню уже закрыто визуально
+				if (document.documentElement.classList.contains('lock')) {
+					forceBodyUnlock();
+				}
+			}
+		});
+	});
 }
 export function menuOpen() {
 	bodyLock();

@@ -4,31 +4,40 @@
 	left: 0;
 	width: 100%;
 	min-height: 40px;
+	z-index: 1000;
 	@media (max-width:$mobile){
 		min-height: 5px;
 	}
 	&._scroll {
 		.header__wrapper {
-			background-color: var(--color-header-scroll);
-			backdrop-filter: blur(16px) saturate(160%);
-			-webkit-backdrop-filter: blur(16px) saturate(160%);
-			border-bottom: 1px solid var(--color-border-soft);
+			background-color: transparent;
+			backdrop-filter: none;
+			-webkit-backdrop-filter: none;
+			border-bottom: var(--cart-border);
+			box-shadow: var(--cart-shadow);
 
-			@media (any-hover: hover) {
-				&:hover {
-					background-color: var(--color-header-scroll-hover);
-				}
+			// Тот же плотный glass, что у корзины (blur на ::before — корзина не ломается)
+			&::before {
+				content: "";
+				position: absolute;
+				inset: 0;
+				z-index: 0;
+				pointer-events: none;
+				background: var(--cart-bg);
+				backdrop-filter: var(--cart-backdrop);
+				-webkit-backdrop-filter: var(--cart-backdrop);
 			}
 
-			// Планшет/мобайл: плотная полоса от самого верха экрана, без «парения»
-			@media (max-width: $tablet) {
-				background-color: var(--color-header-scroll-solid);
-				backdrop-filter: none;
-				-webkit-backdrop-filter: none;
-				// Дорисовываем фон вверх — закрывает зазор при скролле / overscroll
-				box-shadow: 0 -120px 0 0 var(--color-header-scroll-solid);
+			.header__container {
+				position: relative;
+				z-index: 1;
 			}
 		}
+
+		.header__bleed {
+			opacity: 1;
+		}
+
 		.header__body {
 			min-height: 50px;
 			@media (min-width:$tablet){
@@ -36,6 +45,35 @@
 			}
 		}
 	}
+
+	// Независимый от хедера слой — всегда приклеен к верху viewport (Telegram / iOS)
+	&__bleed {
+		display: none;
+
+		@media (max-width: $tablet) {
+			display: block;
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			height: 0;
+			z-index: 999;
+			pointer-events: none;
+			opacity: 0;
+			transition: opacity 0.2s ease;
+
+			&::before {
+				content: "";
+				position: absolute;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				height: 100vmax;
+				background: var(--cart-bg);
+			}
+		}
+	}
+
 	// .header__wrapper
 	&__wrapper {
 		transition: background-color 0.3s ease 0s, box-shadow 0.3s ease 0s, border-color 0.3s ease 0s;
@@ -44,7 +82,9 @@
 		left: 0;
 		right: 0;
 		top: 0;
-		z-index: 50;
+		z-index: 1000;
+		padding-top: env(safe-area-inset-top, 0px);
+		// Без transform — иначе position:fixed у .menu__body считается от хедера (~50px)
 	}
 
 	// .header__container
@@ -162,17 +202,23 @@
 			margin: 0 0 rem(24) 0;
 			padding: 0 0 rem(8) 0;
 			border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+			position: relative;
+			z-index: 40;
 
 			.header__search {
 				width: 100%;
 				padding: 0;
 				flex: none;
 				max-width: none;
+				position: relative;
+				z-index: 40;
 			}
 
 			.search-form {
 				max-width: none;
 				width: 100%;
+				position: relative;
+				z-index: 40;
 
 				&__icon {
 					display: none;
@@ -185,7 +231,12 @@
 					width: 100%;
 					opacity: 1;
 					visibility: visible;
+					z-index: 40;
 				}
+			}
+
+			.search-results {
+				z-index: 50;
 			}
 
 			.cart-header {
@@ -256,19 +307,31 @@
 	&__body {
 		@media (max-width:$mobile){
 			position: fixed;
+			inset: 0;
 			width: 100%;
+			width: 100vw;
 			height: 100%;
-			top: 0;
+			height: 100dvh;
+			min-height: 100vh;
+			min-height: 100dvh;
 			left: -100%;
+			right: auto;
+			top: 0;
+			bottom: 0;
 			overflow: auto;
+			-webkit-overflow-scrolling: touch;
 			background: #fcf8f3;
-			transition:  left 0.3s ease 0s;
-			padding: 70px 15px 30px 15px;
+			transition: left 0.3s ease 0s;
+			padding: calc(70px + env(safe-area-inset-top, 0px)) 15px calc(30px + env(safe-area-inset-bottom, 0px)) 15px;
+			display: flex;
+			flex-direction: column;
+			box-sizing: border-box;
+			z-index: 20;
 			&::before{
 				content:'';
 				position: fixed;
 				width: 100%;
-				height: 50px;
+				height: calc(50px + env(safe-area-inset-top, 0px));
 				top: 0;
 				left: -100%;
 				z-index: 2;
@@ -281,6 +344,55 @@
 				&::before{
 					left: 0;
 				}
+			}
+		}
+	}
+
+	// .menu__contacts — телефоны в бургер-меню
+	&__contacts {
+		display: none;
+
+		@media (max-width: $mobile) {
+			display: flex;
+			flex-direction: column;
+			gap: rem(12);
+			margin-top: auto;
+			padding-top: rem(24);
+			border-top: 1px solid rgba(0, 0, 0, 0.08);
+		}
+	}
+
+	&__contacts-title {
+		font-size: rem(13);
+		font-weight: 600;
+		letter-spacing: 0.06em;
+		text-transform: uppercase;
+		color: $grayColor;
+	}
+
+	&__contacts-link {
+		display: inline-flex;
+		align-items: center;
+		font: inherit;
+		font-size: rem(18);
+		font-weight: 600;
+		line-height: 140%;
+		color: $mainColor;
+		background: none;
+		border: none;
+		padding: 0;
+		cursor: pointer;
+		text-align: left;
+		transition: color 0.3s ease;
+
+		&::before {
+			margin-right: rem(10);
+			color: $orangeColor;
+		}
+
+		@media (any-hover: hover) {
+			&:hover {
+				color: $orangeColor;
 			}
 		}
 	}
@@ -670,6 +782,11 @@
 		min-width: 0;
 		padding: 0px 20px 0px 0px;
 
+		// iOS зумит инпуты с font-size < 16px при фокусе
+		@media (max-width: $mobile) {
+			font-size: 16px;
+		}
+
 		&::placeholder {
 			color: var(--search-placeholder-color);
 		}
@@ -1009,7 +1126,7 @@
 			display: block;
 			width: 12px;
 			height: 12px;
-			filter: brightness(0) saturate(100%) invert(36%) sepia(7%) saturate(500%) hue-rotate(182deg) brightness(95%) contrast(88%);
+			filter: brightness(0);
 		}
 
 		@media (any-hover: hover) {
@@ -1036,7 +1153,7 @@
 		flex: 0 0 30px;
 		height: 18px;
 		cursor: pointer;
-		z-index: 5;
+		z-index: 30;
 		span {
 			transition: all 0.3s ease 0s;
 			top: calc(50% - 1px);
@@ -1063,6 +1180,23 @@
 				&:last-child{
 					transform: rotate(45deg);
 					bottom: calc(50% - 1px);
+				}
+			}
+		}
+	}
+}
+
+// Telegram WebView: усиливаем закрытие просвета над хедером
+html.is-telegram {
+	.header {
+		@media (max-width: $tablet) {
+			&._scroll {
+				.header__bleed {
+					opacity: 1;
+				}
+
+				.header__wrapper {
+					background-color: var(--color-header-scroll-solid);
 				}
 			}
 		}

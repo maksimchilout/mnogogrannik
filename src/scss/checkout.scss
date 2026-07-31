@@ -150,13 +150,19 @@
 		img {
 			width: rem(14);
 			height: rem(14);
-			opacity: 0.72;
+			opacity: 0.75;
+			// close.svg белый — в светлой теме делаем тёмным
+			filter: brightness(0) saturate(100%) invert(22%) sepia(8%) saturate(600%) hue-rotate(175deg) brightness(95%) contrast(90%);
 		}
 
 		@media (any-hover: hover) {
 			&:hover {
 				background: rgba(232, 159, 113, 0.18);
 				transform: scale(1.04);
+
+				img {
+					opacity: 1;
+				}
 			}
 		}
 	}

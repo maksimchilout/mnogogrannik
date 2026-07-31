@@ -46,11 +46,11 @@
 	--search-results-divider: #f0f0f0;
 	--search-results-thumb-bg: #f3f3f3;
 
-	--cart-bg: rgba(255, 255, 255, 0.42);
-	--cart-border: 1px solid rgba(255, 255, 255, 0.48);
+	--cart-bg: rgba(255, 255, 255, 0.58);
+	--cart-border: 1px solid rgba(255, 255, 255, 0.55);
 	--cart-radius: #{rem(4)};
-	--cart-shadow: 0 rem(8) rem(28) rgba(51, 36, 20, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.55);
-	--cart-backdrop: blur(12px) saturate(160%);
+	--cart-shadow: 0 rem(8) rem(28) rgba(51, 36, 20, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.65);
+	--cart-backdrop: blur(18px) saturate(165%);
 	--cart-footer-border: rgba(0, 0, 0, 0.08);
 }
 
@@ -98,17 +98,17 @@
 	--search-icon-color: var(--color-icon);
 	--search-input-color: var(--color-text);
 	--search-placeholder-color: var(--color-text-muted);
-	--search-results-bg: rgba(255, 255, 255, 0.1);
-	--search-results-border: 1px solid rgba(255, 255, 255, 0.12);
-	--search-results-shadow: 0 8px 32px rgba(0, 0, 0, 0.38), inset 0 1px 0 rgba(255, 255, 255, 0.08);
-	--search-results-hover: rgba(255, 255, 255, 0.06);
-	--search-results-divider: rgba(255, 255, 255, 0.08);
-	--search-results-thumb-bg: rgba(255, 255, 255, 0.06);
+	--search-results-bg: rgba(18, 17, 16, 0.96);
+	--search-results-border: 1px solid rgba(255, 255, 255, 0.14);
+	--search-results-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+	--search-results-hover: rgba(255, 255, 255, 0.08);
+	--search-results-divider: rgba(255, 255, 255, 0.1);
+	--search-results-thumb-bg: rgba(255, 255, 255, 0.08);
 
-	--cart-bg: rgba(255, 255, 255, 0.24);
-	--cart-border: 1px solid rgba(255, 255, 255, 0.14);
+	--cart-bg: rgba(22, 20, 18, 0.72);
+	--cart-border: 1px solid rgba(255, 255, 255, 0.16);
 	--cart-radius: #{rem(4)};
-	--cart-shadow: 0 rem(8) rem(32) rgba(0, 0, 0, 0.38), inset 0 1px 0 rgba(255, 255, 255, 0.1), inset 0 -1px 0 rgba(255, 255, 255, 0.03);
-	--cart-backdrop: blur(32px) saturate(185%);
+	--cart-shadow: 0 rem(8) rem(32) rgba(0, 0, 0, 0.42), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+	--cart-backdrop: blur(24px) saturate(175%);
 	--cart-footer-border: rgba(255, 255, 255, 0.1);
 }
