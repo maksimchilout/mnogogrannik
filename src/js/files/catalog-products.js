@@ -2,10 +2,9 @@ import {
 	catalogImageSrc,
 	escapeHtml,
 	formatProductPrice,
-	getProductPrice,
+	getProductImageAlt,
 	getProductText,
 	getProductTitle,
-	parseCatalogHash,
 	titleMatchesSearchQuery,
 	getCatalogSearchQueryFromUrl,
 } from './catalog-utils.js';
@@ -13,6 +12,15 @@ import {
 	getProductOrderSnapshot,
 	setProductOrderSnapshot,
 } from './product-order-snapshot.js';
+import { SHOWCASE_MODE } from './shop-mode.js';
+import { applyCatalogSeo } from './catalog-seo.js';
+import {
+	getProductPath,
+	getSectionById,
+	hashToCatalogPath,
+	normalizeCatalogPathname,
+	parseCatalogPathname,
+} from './catalog-taxonomy.js';
 
 let catalogProducts = [];
 let currentSection = 'loft-furniture';
@@ -25,21 +33,23 @@ function renderProductCard(product) {
 	const text = getProductText(product);
 	const price = formatProductPrice(product);
 	const imageSrc = catalogImageSrc(product.image);
+	const imageAlt = getProductImageAlt(product);
+	const href = getProductPath(product);
 	return `
-		<article data-pid="${productId}" class="products__item item-product" data-catalog-popup>
-			<a href="#" class="item-product__image -ibg">
-				<img src="${imageSrc}" alt="${escapeHtml(title)}" loading="lazy">
+		<article data-pid="${productId}" class="products__item item-product" data-catalog-product>
+			<a href="${href}" class="item-product__image -ibg">
+				<img src="${imageSrc.startsWith('/') ? imageSrc : `/${imageSrc}`}" alt="${escapeHtml(imageAlt)}" loading="lazy">
 			</a>
 			<div class="item-product__body">
 				<div class="item-product__content">
-					<h3 class="item-product__title">${escapeHtml(title)}</h3>
+					<h3 class="item-product__title"><a href="${href}">${escapeHtml(title)}</a></h3>
 					<div class="item-product__text">${escapeHtml(text)}</div>
 				</div>
 				<div class="item-product__prices">
 					<div class="item-product__price-group">
 						<div class="item-product__price">${price}</div>
 					</div>
-					<a href="" class="actions-product__button btn btn_white">В корзину</a>
+					<a href="${href}" class="actions-product__button btn btn_white">${SHOWCASE_MODE ? 'Подробнее' : 'В корзину'}</a>
 				</div>
 			</div>
 		</article>
@@ -51,9 +61,7 @@ function getProductByCardId(cardId) {
 	return catalogProducts.find((product) => String(product.id) === productId) || null;
 }
 
-function openCatalogProductPopup(product) {
-	if (!product) return;
-
+export function openProductDetailsPopup({ id, title, text, price, imageSrc, imageAlt }) {
 	const popup = document.getElementById('catalogProduct');
 	const imageEl = popup?.querySelector('[data-catalog-popup-image]');
 	const titleEl = popup?.querySelector('[data-catalog-popup-title]');
@@ -68,27 +76,23 @@ function openCatalogProductPopup(product) {
 
 	if (!popup || !imageEl || !titleEl || !textEl || !priceEl || !openButton) return;
 
-	const title = getProductTitle(product);
-	const text = getProductText(product);
-	const price = formatProductPrice(product);
-	const imageSrc = catalogImageSrc(product.image);
 	const imageUrl = new URL(imageSrc, window.location.href).href;
 
 	imageEl.src = imageSrc;
-	imageEl.alt = title;
+	imageEl.alt = imageAlt || title;
 	titleEl.textContent = title;
 	textEl.textContent = text;
 	priceEl.textContent = price;
 
 	form?.reset();
 
-	if (productIdInput) productIdInput.value = String(product.id);
+	if (productIdInput) productIdInput.value = String(id ?? '');
 	if (productInput) productInput.value = title;
 	if (priceInput) priceInput.value = price;
 	if (productImageInput) productImageInput.value = imageUrl;
 
 	setProductOrderSnapshot({
-		productId: product.id,
+		productId: id,
 		product: title,
 		price,
 		productImage: imageUrl,
@@ -97,25 +101,35 @@ function openCatalogProductPopup(product) {
 	openButton.click();
 }
 
-function initCatalogProductPopup() {
-	const grid = document.querySelector('[data-catalog-grid]');
-	if (!grid) return;
+export function openProductPopupFromCard(card) {
+	if (!card) return;
 
-	grid.addEventListener('click', (event) => {
-		if (event.target.closest('.actions-product__button')) return;
+	const pid = card.dataset.pid || '';
+	const id = String(pid).replace(/^c/, '');
+	const title = card.querySelector('.item-product__title')?.textContent.trim() || '';
+	const text = card.querySelector('.item-product__text')?.textContent.trim() || '';
+	const price =
+		card.querySelector('.item-product__price:not(.item-product__price_old)')?.textContent.trim() ||
+		'По запросу';
+	const imageSrc = card.querySelector('.item-product__image img')?.getAttribute('src') || '';
 
-		const card = event.target.closest('[data-catalog-popup]');
-		if (!card) return;
+	openProductDetailsPopup({ id, title, text, price, imageSrc });
+}
 
-		event.preventDefault();
-		event.stopPropagation();
+export function openCatalogProductPopup(product) {
+	if (!product) return;
 
-		const product = getProductByCardId(card.dataset.pid);
-		if (product) {
-			openCatalogProductPopup(product);
-		}
+	openProductDetailsPopup({
+		id: product.id,
+		title: getProductTitle(product),
+		text: getProductText(product),
+		price: formatProductPrice(product),
+		imageSrc: catalogImageSrc(product.image),
+		imageAlt: getProductImageAlt(product),
 	});
+}
 
+function initCatalogProductPopup() {
 	document.addEventListener('formSent', (event) => {
 		const form = event.detail?.form;
 		if (!form?.matches('[data-catalog-popup-form]')) return;
@@ -137,25 +151,6 @@ function initCatalogProductPopup() {
 	});
 }
 
-
-function parseCatalogHashFromLocation() {
-	return parseCatalogHash(window.location.hash);
-}
-
-function buildCatalogHash(sectionId, subId = null, productId = null) {
-	let hash = `#${sectionId}`;
-	if (subId) hash += `/${subId}`;
-	if (productId) hash += `/${productId}`;
-	return hash;
-}
-
-function setCatalogHash(sectionId, subId = null, productId = null) {
-	const hash = buildCatalogHash(sectionId, subId, productId);
-	if (window.location.hash !== hash) {
-		history.replaceState(null, '', hash);
-	}
-}
-
 function clearCatalogSearchInput() {
 	const searchInput = document.querySelector('.search-form__input');
 	if (searchInput) searchInput.value = '';
@@ -166,7 +161,7 @@ function clearSearchUrlParam() {
 	const url = new URL(window.location.href);
 	if (!url.searchParams.has('q')) return;
 	url.searchParams.delete('q');
-	history.replaceState(null, '', `${url.pathname}${url.search}${url.hash}`);
+	history.replaceState(null, '', `${url.pathname}${url.search}`);
 }
 
 function setSearchUrlParam(query) {
@@ -177,7 +172,7 @@ function setSearchUrlParam(query) {
 		return;
 	}
 	url.searchParams.set('q', normalizedQuery);
-	history.replaceState(null, '', `${url.pathname}${url.search}${url.hash}`);
+	history.replaceState(null, '', `${url.pathname}${url.search}`);
 }
 
 function applyCatalogSearch(query, { updateUrl = true } = {}) {
@@ -188,74 +183,33 @@ function applyCatalogSearch(query, { updateUrl = true } = {}) {
 		if (searchQuery) setSearchUrlParam(searchQuery);
 		else clearSearchUrlParam();
 	}
+
+	const indexBlock = document.querySelector('[data-catalog-index]');
+	const grid = document.querySelector('[data-catalog-grid]');
+	if (indexBlock && grid) {
+		indexBlock.hidden = Boolean(searchQuery);
+		grid.hidden = !searchQuery && document.querySelector('[data-catalog-page="index"]');
+	}
+
 	renderProducts();
 	updateHeader();
 }
 
-function isValidSection(sectionId) {
-	return Boolean(document.querySelector(`[data-catalog-section="${sectionId}"]`));
-}
-
-function isValidSub(sectionId, subId) {
-	if (!subId) return false;
-	return Boolean(
-		document.querySelector(`[data-catalog-section="${sectionId}"] [data-catalog-sub="${subId}"]`)
-	);
-}
-
-function getSectionFromHash() {
-	const { section, sub, productId } = parseCatalogHashFromLocation();
-	const firstSection = document.querySelector('[data-catalog-section]')?.dataset.catalogSection;
-
-	if (productId) {
-		const product = getProductByCardId(productId);
-		if (product) {
-			return {
-				section: product.category,
-				sub: product.subcategory,
-				productId,
-			};
-		}
-	}
-
-	if (section && isValidSection(section)) {
-		return {
-			section,
-			sub: isValidSub(section, sub) ? sub : null,
-			productId: null,
-		};
-	}
-
-	return {
-		section: firstSection || 'loft-furniture',
-		sub: null,
-		productId: null,
-	};
-}
-
 function getSectionTitle(sectionId) {
-	const item = document.querySelector(`[data-catalog-section="${sectionId}"]`);
-	return item?.querySelector('.catalog-sidebar__toggle-text')?.textContent.trim() || '';
+	return getSectionById(sectionId)?.title || '';
 }
 
 function getSubTitle(sectionId, subId) {
-	const link = document.querySelector(
-		`[data-catalog-section="${sectionId}"] [data-catalog-sub="${subId}"]`
-	);
-	return link?.textContent.trim() || '';
+	const section = getSectionById(sectionId);
+	return section?.subs?.find((sub) => sub.id === subId)?.title || '';
 }
 
 function sectionHasSubs(sectionId) {
-	return Boolean(
-		document.querySelector(`[data-catalog-section="${sectionId}"] [data-catalog-sub]`)
-	);
+	return Boolean(getSectionById(sectionId)?.subs?.length);
 }
 
 function getSubcategoryOrder(sectionId) {
-	const links = document.querySelectorAll(
-		`[data-catalog-section="${sectionId}"] [data-catalog-sub]`
-	);
-	return [...links].map((link) => link.dataset.catalogSub);
+	return (getSectionById(sectionId)?.subs || []).map((sub) => sub.id);
 }
 
 function getProductCatalogIndex(product) {
@@ -285,6 +239,15 @@ function updateHeader() {
 		titleEl.textContent = 'Результаты поиска';
 		subtitleEl.hidden = false;
 		subtitleEl.textContent = `По запросу «${searchQuery}» в названии`;
+		applyCatalogSeo(currentSection, currentSub);
+		return;
+	}
+
+	if (document.querySelector('[data-catalog-page="index"]')) {
+		titleEl.textContent = 'Разделы каталога';
+		subtitleEl.hidden = false;
+		subtitleEl.textContent = 'Выберите категорию';
+		applyCatalogSeo(null, null);
 		return;
 	}
 
@@ -293,6 +256,7 @@ function updateHeader() {
 	if (!sectionHasSubs(currentSection)) {
 		subtitleEl.textContent = '';
 		subtitleEl.hidden = true;
+		applyCatalogSeo(currentSection, currentSub);
 		return;
 	}
 
@@ -300,11 +264,12 @@ function updateHeader() {
 	subtitleEl.textContent = currentSub
 		? getSubTitle(currentSection, currentSub)
 		: 'Все подкатегории';
+
+	applyCatalogSeo(currentSection, currentSub);
 }
 
 function productMatchesSearch(product) {
 	if (!searchQuery) return true;
-
 	return titleMatchesSearchQuery(getProductTitle(product), searchQuery);
 }
 
@@ -313,13 +278,16 @@ function renderProducts() {
 	const empty = document.querySelector('[data-catalog-empty]');
 	if (!grid || !empty) return;
 
-	let items = catalogProducts.filter((product) => product.category === currentSection);
-	if (currentSub) {
-		items = items.filter((product) => product.subcategory === currentSub);
-	}
+	let items;
 	if (searchQuery) {
 		items = catalogProducts.filter((product) => productMatchesSearch(product));
+	} else if (document.querySelector('[data-catalog-page="index"]')) {
+		items = [];
 	} else {
+		items = catalogProducts.filter((product) => product.category === currentSection);
+		if (currentSub) {
+			items = items.filter((product) => product.subcategory === currentSub);
+		}
 		items = sortProductsForSection(items, currentSection);
 	}
 
@@ -334,129 +302,8 @@ function renderProducts() {
 	}
 
 	empty.textContent = 'В этой подкатегории пока нет фотографий';
-
 	empty.hidden = true;
 	grid.insertAdjacentHTML('beforeend', items.map(renderProductCard).join(''));
-}
-
-function openSidebarSection(sectionId) {
-	document.querySelectorAll('[data-catalog-section]').forEach((item) => {
-		const isTarget = item.dataset.catalogSection === sectionId;
-		item.classList.toggle('catalog-sidebar__item_open', isTarget);
-		item.querySelector('[data-catalog-toggle]')?.classList.toggle('_active', isTarget);
-	});
-}
-
-function setActiveSubLink() {
-	document.querySelectorAll('.catalog-sidebar__sub-link').forEach((link) => {
-		const item = link.closest('[data-catalog-section]');
-		const section = item?.dataset.catalogSection;
-		const sub = link.dataset.catalogSub;
-		const isActive = section === currentSection && sub === currentSub;
-		link.classList.toggle('_active', Boolean(isActive));
-	});
-}
-
-function scrollToCatalog() {
-	requestAnimationFrame(() => {
-		const catalog = document.querySelector('.page__catalog');
-		const header = document.querySelector('.header');
-		const headerOffset = header?.classList.contains('_scroll') ? 86 : 141;
-		const top = catalog
-			? catalog.getBoundingClientRect().top + window.scrollY - headerOffset
-			: 0;
-
-		window.scrollTo({
-			top: Math.max(0, top),
-			behavior: 'smooth',
-		});
-	});
-}
-
-function scrollToProductCard(productId) {
-	requestAnimationFrame(() => {
-		const card = document.querySelector(`[data-pid="${productId}"]`);
-		if (!card) return;
-
-		const header = document.querySelector('.header');
-		const headerOffset = header?.classList.contains('_scroll') ? 86 : 141;
-		const top = card.getBoundingClientRect().top + window.scrollY - headerOffset - 16;
-
-		window.scrollTo({
-			top: Math.max(0, top),
-			behavior: 'smooth',
-		});
-
-		card.classList.add('_catalog-highlight');
-		window.setTimeout(() => card.classList.remove('_catalog-highlight'), 2200);
-	});
-}
-
-function selectSection(sectionId, subId = null, updateHash = true, scrollToTop = false, productId = null) {
-	if (updateHash && searchQuery) {
-		clearCatalogSearchInput();
-		clearSearchUrlParam();
-	}
-
-	currentSection = sectionId;
-	currentSub = subId;
-	openSidebarSection(sectionId);
-	updateHeader();
-	renderProducts();
-	setActiveSubLink();
-
-	if (updateHash) {
-		setCatalogHash(sectionId, subId, productId);
-	}
-
-	if (productId) {
-		scrollToProductCard(productId);
-	} else if (scrollToTop) {
-		scrollToCatalog();
-	}
-}
-
-function initSidebarNavigation() {
-	const sidebar = document.querySelector('.catalog-sidebar');
-	if (!sidebar) return;
-
-	const items = sidebar.querySelectorAll('[data-catalog-section]');
-
-	items.forEach((item) => {
-		const sectionId = item.dataset.catalogSection;
-		const toggle = item.querySelector('[data-catalog-toggle]');
-
-		toggle?.addEventListener('click', () => {
-			const isOpen = item.classList.contains('catalog-sidebar__item_open');
-
-			if (isOpen) {
-				item.classList.remove('catalog-sidebar__item_open');
-				toggle.classList.remove('_active');
-				return;
-			}
-
-			selectSection(sectionId, null, true, true);
-		});
-
-		item.querySelectorAll('[data-catalog-sub]').forEach((link) => {
-			link.addEventListener('click', (event) => {
-				if (link.getAttribute('href')?.startsWith('#')) {
-					event.preventDefault();
-				}
-
-				selectSection(sectionId, link.dataset.catalogSub, true, true);
-			});
-		});
-	});
-
-	window.addEventListener('hashchange', () => {
-		const { section, sub, productId } = getSectionFromHash();
-		if (productId || searchQuery) {
-			clearCatalogSearchInput();
-			clearSearchUrlParam();
-		}
-		selectSection(section, sub, false, !productId, productId);
-	});
 }
 
 function getCatalogCtaFileKey(file) {
@@ -521,28 +368,20 @@ function initCatalogCtaForm() {
 
 		files.forEach((file, index) => {
 			const key = getCatalogCtaFileKey(file);
-
-			if (!previewUrls.has(key)) {
-				previewUrls.set(key, URL.createObjectURL(file));
+			let url = previewUrls.get(key);
+			if (!url) {
+				url = URL.createObjectURL(file);
+				previewUrls.set(key, url);
 			}
 
 			const item = document.createElement('div');
 			item.className = 'catalog-cta__preview';
-
-			const image = document.createElement('img');
-			image.className = 'catalog-cta__preview-img';
-			image.src = previewUrls.get(key);
-			image.alt = file.name;
-
-			const removeButton = document.createElement('button');
-			removeButton.type = 'button';
-			removeButton.className = 'catalog-cta__preview-remove';
-			removeButton.setAttribute('aria-label', `Удалить фото ${file.name}`);
-			removeButton.dataset.catalogCtaRemove = String(index);
-			removeButton.textContent = '×';
-
-			item.append(image, removeButton);
-			previews.append(item);
+			item.innerHTML = `
+				<img src="${url}" alt="">
+				<button type="button" class="catalog-cta__preview-remove" aria-label="Удалить фото">&times;</button>
+			`;
+			item.querySelector('button')?.addEventListener('click', () => removeFileAt(index));
+			previews.appendChild(item);
 		});
 	};
 
@@ -550,76 +389,250 @@ function initCatalogCtaForm() {
 		while (fileStore.items.length > 0) {
 			fileStore.items.remove(0);
 		}
-		if (fileInput) {
-			fileInput.value = '';
-		}
+		syncFileInput();
 		revokePreviewUrls();
 		renderPreviews();
 	};
 
 	fileInput?.addEventListener('change', () => {
 		Array.from(fileInput.files || []).forEach((file) => {
-			const isDuplicate = Array.from(fileStore.files).some(
-				(existing) => getCatalogCtaFileKey(existing) === getCatalogCtaFileKey(file)
+			const key = getCatalogCtaFileKey(file);
+			const exists = Array.from(fileStore.files).some(
+				(existing) => getCatalogCtaFileKey(existing) === key
 			);
-
-			if (!isDuplicate) {
-				fileStore.items.add(file);
-			}
+			if (!exists) fileStore.items.add(file);
 		});
-
 		syncFileInput();
 		renderPreviews();
-	});
-
-	previews?.addEventListener('click', (event) => {
-		const removeButton = event.target.closest('[data-catalog-cta-remove]');
-		if (!removeButton) return;
-
-		const index = Number(removeButton.dataset.catalogCtaRemove);
-		if (Number.isNaN(index)) return;
-
-		removeFileAt(index);
+		fileInput.value = '';
 	});
 
 	form.addEventListener('reset', clearFiles);
 }
 
+function resolveRouteFromPath() {
+	const parsed = parseCatalogPathname(window.location.pathname);
+	if (parsed.kind === 'section' || parsed.kind === 'sub' || parsed.kind === 'product') {
+		return {
+			section: parsed.section?.id || 'loft-furniture',
+			sub: parsed.sub?.id || null,
+			productSlug: parsed.productSlug || null,
+			kind: parsed.kind,
+		};
+	}
+
+	const page = document.querySelector('[data-catalog-page]');
+	return {
+		section: page?.dataset.catalogSection || 'loft-furniture',
+		sub: page?.dataset.catalogSub || null,
+		productSlug: null,
+		kind: page?.dataset.catalogPage || 'index',
+	};
+}
+
+function redirectLegacyCatalogHash() {
+	const rawHash = String(window.location.hash || '').replace(/^#/, '');
+	if (!rawHash) return false;
+
+	const target = hashToCatalogPath(rawHash);
+	if (!target) return false;
+
+	const targetUrl = new URL(target, window.location.origin);
+	const samePath =
+		normalizeCatalogPathname(window.location.pathname) ===
+		normalizeCatalogPathname(targetUrl.pathname);
+
+	if (samePath) {
+		// Already on the pretty URL — drop legacy hash without a navigation.
+		const next = `${window.location.pathname}${targetUrl.search || window.location.search}`;
+		if (`${window.location.pathname}${window.location.search}${window.location.hash}` !== next) {
+			history.replaceState(null, '', next);
+		}
+		return false;
+	}
+
+	window.location.replace(`${targetUrl.pathname}${targetUrl.search}`);
+	return true;
+}
+
+function redirectLegacyPid() {
+	const pid = new URLSearchParams(window.location.search).get('pid');
+	if (!pid) return false;
+	const product = getProductByCardId(pid);
+	if (!product?.slug) return false;
+
+	const targetPath = getProductPath(product);
+	if (
+		normalizeCatalogPathname(window.location.pathname) ===
+		normalizeCatalogPathname(targetPath)
+	) {
+		// Already on the product page — strip ?pid without reloading.
+		history.replaceState(null, '', targetPath);
+		return false;
+	}
+
+	window.location.replace(targetPath);
+	return true;
+}
+
+const CATALOG_SCROLL_KEY = 'mnogogrannik:catalog-scroll';
+let pendingCatalogScrollY = null;
+
+function normalizePathKey(pathname = '', search = '') {
+	const path = String(pathname || '/').replace(/\/index\.html$/i, '/').replace(/\/{2,}/g, '/');
+	const withSlash = path.endsWith('/') || path === '/' ? path : `${path}/`;
+	return `${withSlash}${search || ''}`;
+}
+
+function getLocationKey(locationLike = window.location) {
+	return normalizePathKey(locationLike.pathname, locationLike.search);
+}
+
+function rememberCatalogScrollPosition() {
+	try {
+		sessionStorage.setItem(
+			CATALOG_SCROLL_KEY,
+			JSON.stringify({
+				path: getLocationKey(),
+				y: window.scrollY || window.pageYOffset || 0,
+			})
+		);
+	} catch {
+		// ignore quota / private mode
+	}
+}
+
+function readStoredCatalogScroll() {
+	try {
+		const raw = sessionStorage.getItem(CATALOG_SCROLL_KEY);
+		if (!raw) return null;
+		const data = JSON.parse(raw);
+		if (!data || data.path !== getLocationKey()) return null;
+		const y = Number(data.y);
+		if (!Number.isFinite(y) || y < 0) return null;
+		return y;
+	} catch {
+		return null;
+	}
+}
+
+function applyCatalogScrollY(y) {
+	if (!Number.isFinite(y) || y < 0) return;
+	window.scrollTo(0, y);
+}
+
+function restoreCatalogScrollPosition({ clear = false } = {}) {
+	if (pendingCatalogScrollY == null) {
+		pendingCatalogScrollY = readStoredCatalogScroll();
+	}
+	if (pendingCatalogScrollY == null) return false;
+
+	const y = pendingCatalogScrollY;
+	applyCatalogScrollY(y);
+	requestAnimationFrame(() => {
+		applyCatalogScrollY(y);
+		requestAnimationFrame(() => applyCatalogScrollY(y));
+	});
+
+	if (clear) {
+		try {
+			sessionStorage.removeItem(CATALOG_SCROLL_KEY);
+		} catch {
+			// ignore
+		}
+		pendingCatalogScrollY = null;
+		setTimeout(() => applyCatalogScrollY(y), 50);
+		setTimeout(() => applyCatalogScrollY(y), 250);
+		setTimeout(() => applyCatalogScrollY(y), 600);
+	}
+	return true;
+}
+
+function initCatalogScrollMemory() {
+	try {
+		if ('scrollRestoration' in history) {
+			history.scrollRestoration = 'manual';
+		}
+	} catch {
+		// ignore
+	}
+
+	document.addEventListener(
+		'click',
+		(event) => {
+			const link = event.target.closest('a[href]');
+			if (!link || link.target === '_blank' || event.defaultPrevented) return;
+			if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) {
+				return;
+			}
+
+			const href = link.getAttribute('href');
+			if (!href || href.startsWith('#') || /^(https?:|mailto:|tel:)/i.test(href)) return;
+
+			// Только переход из карточки товара (главная / каталог) — не сайдбар и не крошки
+			if (!link.closest('.item-product, [data-catalog-product]')) return;
+
+			rememberCatalogScrollPosition();
+		},
+		true
+	);
+
+	restoreCatalogScrollPosition();
+}
+
 export async function initCatalogPage() {
-	const grid = document.querySelector('[data-catalog-grid]');
+	const pageRoot = document.querySelector('[data-catalog-page]');
 	initCatalogCtaForm();
-	if (!grid) return;
+	initCatalogProductPopup();
+	initCatalogScrollMemory();
+
+	if (!pageRoot && !document.querySelector('[data-catalog-grid]')) return;
+
+	// Hash → pretty path must run before async fetch so /catalog/#section works
+	// after Apache's catalog.html → /catalog/ redirect.
+	if (redirectLegacyCatalogHash()) return;
 
 	try {
-		const response = await fetch('json/catalog.json');
+		const response = await fetch('/json/catalog.json');
 		if (!response.ok) throw new Error('catalog.json not found');
 		const data = await response.json();
 		catalogProducts = data.products || [];
+		window.__catalogProductsCache = catalogProducts;
 	} catch (error) {
 		console.error(error);
 		return;
 	}
 
-	const { section, sub, productId } = getSectionFromHash();
-	const initialSearchQuery = getCatalogSearchQueryFromUrl();
-	initSidebarNavigation();
-	initCatalogProductPopup();
+	if (redirectLegacyPid()) return;
 
+	const route = resolveRouteFromPath();
+	currentSection = route.section;
+	currentSub = route.sub;
+
+	const initialSearchQuery = getCatalogSearchQueryFromUrl();
 	if (initialSearchQuery) {
 		searchQuery = initialSearchQuery.toLowerCase();
 		const searchInput = document.querySelector('.search-form__input');
 		if (searchInput) searchInput.value = initialSearchQuery;
-	} else if (productId) {
-		clearCatalogSearchInput();
+		applyCatalogSearch(searchQuery, { updateUrl: false });
+	} else if (route.kind === 'product') {
+		applyCatalogSeo(currentSection, currentSub);
+	} else if (pageRoot?.dataset.catalogSsr !== 'true' && !document.querySelector('[data-catalog-ssr="true"]')) {
+		renderProducts();
+		updateHeader();
+	} else {
+		updateHeader();
 	}
 
-	selectSection(section, sub, false, !productId && !initialSearchQuery, productId);
-
-	if (!window.location.hash) {
-		setCatalogHash(section, sub);
-	}
+	// После SSR/рендера сетки браузер мог сбросить скролл — восстановить ещё раз
+	restoreCatalogScrollPosition({ clear: true });
 
 	document.addEventListener('catalogSearch', (event) => {
-		applyCatalogSearch(event.detail?.query || '');
+		const query = event.detail?.query || '';
+		if (!document.querySelector('[data-catalog-grid]')) {
+			window.location.href = `/catalog/?q=${encodeURIComponent(query)}`;
+			return;
+		}
+		applyCatalogSearch(query);
 	});
 }

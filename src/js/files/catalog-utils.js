@@ -1,3 +1,10 @@
+import {
+	catalogPath,
+	getProductPath,
+	getSectionById,
+	getSubById,
+} from './catalog-taxonomy.js';
+
 export function catalogImageSrc(imagePath) {
 	return imagePath
 		.split('/')
@@ -51,6 +58,43 @@ export function getProductTitle(product) {
 export function getProductText(product) {
 	if (product.description) return product.description;
 	return SUB_DESCRIPTIONS[product.subcategory] || product.subcategoryTitle;
+}
+
+/**
+ * Осмысленный alt для фото товара.
+ * Пример: «Стол «Форма» из массива дерева и металла»
+ */
+export function getProductImageAlt(product) {
+	const title = getProductTitle(product);
+	const description = String(product.description || getProductText(product) || '').trim();
+
+	if (!description) {
+		return `${title} на заказ`;
+	}
+
+	// \b не работает с кириллицей — ищем «из …» без word-boundary
+	const materialMatch = description.match(/(?:^|[\s,:;—-])(из\s+[^.;]+)/i);
+	if (materialMatch) {
+		let material = materialMatch[1].replace(/\s+/g, ' ').trim();
+		// Обрезаем хвост вроде «в духе лофта», если слишком длинно
+		material = material
+			.replace(/\s+в\s+(духе|стиле)\s+лофта$/i, '')
+			.replace(/\s+в\s+стиле\s+лофт$/i, '')
+			.trim();
+		const alt = `${title} ${material}`;
+		return alt.length > 140 ? `${alt.slice(0, 137).trim()}…` : alt;
+	}
+
+	const short =
+		description.length > 110
+			? `${description.slice(0, 107).trim()}…`
+			: description.replace(/\.$/, '');
+
+	if (short.toLowerCase().startsWith(title.toLowerCase())) {
+		return short;
+	}
+
+	return `${title} — ${short}`;
 }
 
 // Ориентиры по рынку РБ (BYN): mangal.by, grills.by, hmloft.by, kovkam.by,
@@ -185,6 +229,7 @@ export function getCatalogProductPid(productId) {
 	return `c${productId}`;
 }
 
+/** @deprecated hash routing — kept for legacy redirects */
 export function parseCatalogHash(hash = window.location.hash) {
 	const value = String(hash || '').replace(/^#/, '');
 	if (!value) {
@@ -201,19 +246,34 @@ export function parseCatalogHash(hash = window.location.hash) {
 	};
 }
 
-export function buildCatalogHref(category, subcategory = null, productId = null) {
-	const parts = [category];
-	if (subcategory) parts.push(subcategory);
-	if (productId) parts.push(getCatalogProductPid(productId));
+export function buildCatalogHref(category, subcategory = null, productOrId = null) {
+	const section = getSectionById(category);
+	if (!section) return '/catalog/';
 
-	const hash = `#${parts.join('/')}`;
-	const onCatalogPage = Boolean(document.querySelector('[data-catalog-grid]'));
+	if (productOrId != null && productOrId !== '') {
+		if (typeof productOrId === 'object' && productOrId.slug) {
+			return getProductPath(productOrId);
+		}
 
-	return onCatalogPage ? hash : `catalog.html${hash}`;
+		const id = String(productOrId).replace(/^c/i, '');
+		const cached = typeof window !== 'undefined' ? window.__catalogProductsCache : null;
+		const product = Array.isArray(cached)
+			? cached.find((item) => String(item.id) === id)
+			: null;
+		if (product?.slug) return getProductPath(product);
+
+		const sub = getSubById(section, subcategory);
+		if (section.subs?.length && sub) return catalogPath(section.slug, sub.slug);
+		return catalogPath(section.slug);
+	}
+
+	const sub = getSubById(section, subcategory);
+	if (section.subs?.length && sub) return catalogPath(section.slug, sub.slug);
+	return catalogPath(section.slug);
 }
 
 export function buildCatalogSearchUrl(query) {
-	const url = new URL('catalog.html', window.location.href);
+	const url = new URL('/catalog/', window.location.origin);
 	url.searchParams.set('q', String(query || '').trim());
 	return `${url.pathname}${url.search}`;
 }

@@ -9,7 +9,8 @@
       "image": "img/catalog/loft furniture/stol/stol1.jpg",
       "file": "stol1.jpg",
       "title": "Стол «Левитация»",
-      "description": "Журнальный стол из сочетания металла и стекла в духе лофта"
+      "description": "Журнальный стол из сочетания металла и стекла в духе лофта",
+      "slug": "stol-levitaciya"
     },
     {
       "id": "2",
@@ -21,7 +22,8 @@
       "file": "stol10.jpg",
       "title": "Стол «Бруклин»",
       "description": "Брутальный журнальный стол из металла и стекла в духе индустриального лофта",
-      "price": 850
+      "price": 850,
+      "slug": "stol-bruklin"
     },
     {
       "id": "19",
@@ -33,7 +35,8 @@
       "file": "stol26.jpg",
       "title": "Стол «Цепь»",
       "description": "Стильный журнальный столик в стиле лофт из стекла и металла",
-      "price": 785
+      "price": 785,
+      "slug": "stol-cep"
     },
     {
       "id": "5",
@@ -45,7 +48,8 @@
       "file": "stol13.jpg",
       "title": "Стол «Карман»",
       "description": "Журнальный стол из металла и ЛДСП в стиле лофт",
-      "price": 520
+      "price": 520,
+      "slug": "stol-karman"
     },
     {
       "id": "6",
@@ -57,7 +61,8 @@
       "file": "stol14.jpg",
       "title": "Стол «Ателье»",
       "description": "Журнальный стол из массива и металла в духе лофта",
-      "price": 710
+      "price": 710,
+      "slug": "stol-atele"
     },
     {
       "id": "7",
@@ -69,7 +74,8 @@
       "file": "stol15.jpg",
       "title": "Стол «Модерно»",
       "description": "Стильный журнальный столик в стиле лофт из стекла и металла",
-      "price": 570
+      "price": 570,
+      "slug": "stol-moderno"
     },
     {
       "id": "8",
@@ -81,7 +87,8 @@
       "file": "stol16.jpg",
       "title": "Стол «Фабрика»",
       "description": "Журнальный столик в стиле лофт из стекла и металла",
-      "price": 495
+      "price": 495,
+      "slug": "stol-fabrika"
     },
     {
       "id": "9",
@@ -93,7 +100,8 @@
       "file": "stol17.jpg",
       "title": "Стол «Мануфактура»",
       "description": "Стильный журнальный столик в стиле лофт из стекла и металла",
-      "price": 530
+      "price": 530,
+      "slug": "stol-manufaktura"
     },
     {
       "id": "10",
@@ -105,7 +113,8 @@
       "file": "stol18.jpg",
       "title": "Стол «Лин»",
       "description": "Стильный журнальный столик в стиле лофт из стекла и металла",
-      "price": 590
+      "price": 590,
+      "slug": "stol-lin"
     },
     {
       "id": "11",
@@ -117,7 +126,8 @@
       "file": "stol19.jpg",
       "title": "Стол «Горизонт»",
       "description": "Стильный журнальный столик в стиле лофт из стекла и металла",
-      "price": 420
+      "price": 420,
+      "slug": "stol-gorizont"
     },
     {
       "id": "13",
@@ -129,7 +139,8 @@
       "file": "stol20.jpg",
       "title": "Стол «Набережная»",
       "description": "Стильный журнальный столик в стиле лофт из стекла и металла",
-      "price": 410
+      "price": 410,
+      "slug": "stol-naberezhnaya"
     },
     {
       "id": "14",
@@ -141,7 +152,8 @@
       "file": "stol21.jpg",
       "title": "Стол «Грань»",
       "description": "Стильный журнальный столик в стиле лофт из стекла и металла",
-      "price": 965
+      "price": 965,
+      "slug": "stol-gran"
     },
     {
       "id": "16",
@@ -153,7 +165,8 @@
       "file": "stol23.jpg",
       "title": "Стол «Сталь»",
       "description": "Стильный журнальный столик в стиле лофт из стекла и металла",
-      "price": 710
+      "price": 710,
+      "slug": "stol-stal"
     },
     {
       "id": "23",
@@ -165,7 +178,8 @@
       "file": "stol4.jpg",
       "title": "Стол «Гранит»",
       "description": "Журнальный стол из металла и ЛДСП в стиле лофт",
-      "price": 450
+      "price": 450,
+      "slug": "stol-granit"
     },
     {
       "id": "331",
@@ -177,7 +191,8 @@
       "file": "stol29.jpg",
       "title": "Стол журнальный «Зета»",
       "description": "Журнальный стол в стиле лофта из массива дерева и металла",
-      "price": 525
+      "price": 525,
+      "slug": "stol-zhurnalnyj-zeta"
     },
     {
       "id": "335",
@@ -189,7 +204,8 @@
       "file": "stol33.jpg",
       "title": "Стол «Многогранник»",
       "description": "Журнальный стол в стиле лофт",
-      "price": 320
+      "price": 320,
+      "slug": "stol-mnogogrannik"
     },
     {
       "id": "336",
@@ -201,7 +217,8 @@
       "file": "stol34.jpg",
       "title": "Стол журнальный «Дуэт»",
       "description": "Комплект из двух вкладывающихся журнальных столиков",
-      "price": 320
+      "price": 320,
+      "slug": "stol-zhurnalnyj-duet"
     },
     {
       "id": "340",
@@ -213,7 +230,8 @@
       "file": "stol38.jpg",
       "title": "Стол журнальный «Аура»",
       "description": "Журнальный стол в стиле лофт из массива и металла",
-      "price": 1140
+      "price": 1140,
+      "slug": "stol-zhurnalnyj-aura"
     },
     {
       "id": "343",
@@ -225,7 +243,8 @@
       "file": "stol41.jpg",
       "title": "Стол «Зингер»",
       "description": "Письменный стол в стиле лофт, фасад ЛДСП, металлический каркас",
-      "price": 430
+      "price": 430,
+      "slug": "stol-zinger"
     },
     {
       "id": "3",
@@ -237,7 +256,8 @@
       "file": "stol11.jpg",
       "title": "Стол «Графит»",
       "description": "Стол из металла в стиле лофта",
-      "price": 870
+      "price": 870,
+      "slug": "stol-grafit"
     },
     {
       "id": "4",
@@ -249,7 +269,8 @@
       "file": "stol12.jpg",
       "title": "Стол «Патина»",
       "description": "Стол из металла и дерева в стиле лофт",
-      "price": 465
+      "price": 465,
+      "slug": "stol-patina"
     },
     {
       "id": "12",
@@ -261,7 +282,8 @@
       "file": "stol2.jpg",
       "title": "Стол «Контур»",
       "description": "Массив и металл в духе индустриального лофта",
-      "price": 920
+      "price": 920,
+      "slug": "stol-kontur"
     },
     {
       "id": "15",
@@ -274,7 +296,8 @@
       "title": "Стол «Бетон»",
       "description": "Обеденный стол из массива и металла в духе индустриального лофта",
       "price": 1100,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "stol-beton"
     },
     {
       "id": "17",
@@ -287,7 +310,8 @@
       "title": "Стол «Медь»",
       "description": "Массив и металл в духе индустриального лофта",
       "price": 600,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "stol-med"
     },
     {
       "id": "18",
@@ -300,7 +324,8 @@
       "title": "Стол «Фактура»",
       "description": "Массив и металл в стиле лофт с ножкой в виде выбранного вами слова",
       "price": 900,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "stol-faktura"
     },
     {
       "id": "20",
@@ -313,7 +338,8 @@
       "title": "Стол «Ритм»",
       "description": "Изящный стол из стекла и металла в стиле лофт",
       "price": 1100,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "stol-ritm"
     },
     {
       "id": "21",
@@ -325,7 +351,8 @@
       "file": "stol28.jpg",
       "title": "Стол «Эхо»",
       "description": "Изящный стол из стекла и металла в стиле лофт",
-      "price": 760
+      "price": 760,
+      "slug": "stol-eho"
     },
     {
       "id": "22",
@@ -338,7 +365,8 @@
       "title": "Стол «Отблеск»",
       "description": "Письменный стол из металла и мрамора / гранита в стиле лофт",
       "price": 1280,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "stol-otblesk"
     },
     {
       "id": "24",
@@ -351,7 +379,8 @@
       "title": "Стол «Базальт»",
       "description": "Стол из металла и мрамора / гранита в стиле лофт",
       "price": 1200,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "stol-bazalt"
     },
     {
       "id": "29",
@@ -363,7 +392,8 @@
       "file": "stul1.jpg",
       "title": "Барный стул «Клин»",
       "description": "Барный стул в стиле лофт из металла и массива",
-      "price": 245
+      "price": 245,
+      "slug": "barnyj-stul-klin"
     },
     {
       "id": "30",
@@ -375,7 +405,8 @@
       "file": "stul10.jpg",
       "title": "Барный стул «Шпиль»",
       "description": "Барный стул в стиле лофт из металла и массива",
-      "price": 210
+      "price": 210,
+      "slug": "barnyj-stul-shpil"
     },
     {
       "id": "31",
@@ -387,7 +418,8 @@
       "file": "stul2.jpg",
       "title": "Стул «Рычаг»",
       "description": "Кухонный стул в стиле лофт из металла и массива",
-      "price": 170
+      "price": 170,
+      "slug": "stul-rychag"
     },
     {
       "id": "32",
@@ -399,7 +431,8 @@
       "file": "stul3.jpg",
       "title": "Барный стул «Винт»",
       "description": "Барный стул в стиле лофт из металла и массива",
-      "price": 200
+      "price": 200,
+      "slug": "barnyj-stul-vint"
     },
     {
       "id": "33",
@@ -411,7 +444,8 @@
       "file": "stul4.jpg",
       "title": "Барный стул «Заклёпка»",
       "description": "Барный стул в стиле лофт из металла и массива",
-      "price": 220
+      "price": 220,
+      "slug": "barnyj-stul-zaklepka"
     },
     {
       "id": "34",
@@ -423,7 +457,8 @@
       "file": "stul5.jpg",
       "title": "Барный стул «Шов»",
       "description": "Барный стул в стиле лофт из металла и массива",
-      "price": 235
+      "price": 235,
+      "slug": "barnyj-stul-shov"
     },
     {
       "id": "35",
@@ -435,7 +470,8 @@
       "file": "stul6.jpg",
       "title": "Барный стул «Рельс»",
       "description": "Барный стул в стиле лофт из металла и массива",
-      "price": 215
+      "price": 215,
+      "slug": "barnyj-stul-rels"
     },
     {
       "id": "36",
@@ -447,7 +483,8 @@
       "file": "stul7.jpg",
       "title": "Барный стул «Платформа»",
       "description": "Барный стул в стиле лофт из металла и массива",
-      "price": 180
+      "price": 180,
+      "slug": "barnyj-stul-platforma"
     },
     {
       "id": "37",
@@ -459,7 +496,8 @@
       "file": "stul8.jpg",
       "title": "Барный стул «Мастерская»",
       "description": "Барный стул в стиле лофт из металла и массива",
-      "price": 150
+      "price": 150,
+      "slug": "barnyj-stul-masterskaya"
     },
     {
       "id": "38",
@@ -471,7 +509,8 @@
       "file": "stul9.jpg",
       "title": "Барный стул «Наковальня»",
       "description": "Барный стул в стиле лофт из металла и массива",
-      "price": 260
+      "price": 260,
+      "slug": "barnyj-stul-nakovalnya"
     },
     {
       "id": "365",
@@ -483,7 +522,8 @@
       "file": "stul12.jpg",
       "title": "Барный стул «Сектор»",
       "description": "Барный стул в стиле лофт из металла и массива",
-      "price": 275
+      "price": 275,
+      "slug": "barnyj-stul-sektor"
     },
     {
       "id": "39",
@@ -496,7 +536,8 @@
       "title": "Диван «Закат»",
       "description": "Мягкий отдых с характером урбанистического интерьера",
       "price": 2400,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "divan-zakat"
     },
     {
       "id": "40",
@@ -508,7 +549,8 @@
       "file": "divan2.jpg",
       "title": "Диван «Рассвет»",
       "description": "Мягкий отдых с характером урбанистического интерьера",
-      "price": 1100
+      "price": 1100,
+      "slug": "divan-rassvet"
     },
     {
       "id": "41",
@@ -520,7 +562,8 @@
       "file": "divan3.jpg",
       "title": "Диван «Туман»",
       "description": "Мягкий отдых с характером урбанистического интерьера",
-      "price": 1340
+      "price": 1340,
+      "slug": "divan-tuman"
     },
     {
       "id": "42",
@@ -532,7 +575,8 @@
       "file": "divan4.jpg",
       "title": "Диван «Силуэт»",
       "description": "Мягкий отдых с характером урбанистического интерьера",
-      "price": 1200
+      "price": 1200,
+      "slug": "divan-siluet"
     },
     {
       "id": "43",
@@ -544,7 +588,8 @@
       "file": "divan5.jpg",
       "title": "Диван «Каркас»",
       "description": "Мягкий отдых с характером урбанистического интерьера",
-      "price": 1100
+      "price": 1100,
+      "slug": "divan-karkas"
     },
     {
       "id": "44",
@@ -556,7 +601,8 @@
       "file": "divan6.jpg",
       "title": "Диван «Мост»",
       "description": "Мягкий отдых с характером урбанистического интерьера",
-      "price": 2200
+      "price": 2200,
+      "slug": "divan-most"
     },
     {
       "id": "45",
@@ -568,7 +614,8 @@
       "file": "divan7.jpg",
       "title": "Диван «Угол»",
       "description": "Мягкий отдых с характером урбанистического интерьера",
-      "price": 1050
+      "price": 1050,
+      "slug": "divan-ugol"
     },
     {
       "id": "46",
@@ -580,7 +627,8 @@
       "file": "divan8.jpg",
       "title": "Диван «Свет»",
       "description": "Мягкий отдых с характером урбанистического интерьера",
-      "price": 970
+      "price": 970,
+      "slug": "divan-svet"
     },
     {
       "id": "366",
@@ -592,7 +640,8 @@
       "file": "divan9.jpg",
       "title": "Диван «Лофт»",
       "description": "Мягкий отдых с характером урбанистического интерьера",
-      "price": 1560
+      "price": 1560,
+      "slug": "divan-loft"
     },
     {
       "id": "47",
@@ -604,7 +653,8 @@
       "file": "krovat1.jpg",
       "title": "Кровать «Тень»",
       "description": "Надёжный каркас и спокойная геометрия спальни",
-      "price": 830
+      "price": 830,
+      "slug": "krovat-ten"
     },
     {
       "id": "48",
@@ -616,7 +666,8 @@
       "file": "krovat2.jpg",
       "title": "Кровать «Искра»",
       "description": "Надёжный каркас и спокойная геометрия спальни",
-      "price": 940
+      "price": 940,
+      "slug": "krovat-iskra"
     },
     {
       "id": "49",
@@ -628,7 +679,8 @@
       "file": "krovat3.jpg",
       "title": "Кровать «Уголь»",
       "description": "Надёжный каркас и спокойная геометрия спальни",
-      "price": 1050
+      "price": 1050,
+      "slug": "krovat-ugol"
     },
     {
       "id": "50",
@@ -640,7 +692,8 @@
       "file": "krovat4.jpg",
       "title": "Кровать «Пепел»",
       "description": "Надёжный каркас и спокойная геометрия спальни",
-      "price": 740
+      "price": 740,
+      "slug": "krovat-pepel"
     },
     {
       "id": "51",
@@ -652,7 +705,8 @@
       "file": "krovat5.jpg",
       "title": "Кровать «Дым»",
       "description": "Надёжный каркас и спокойная геометрия спальни",
-      "price": 1200
+      "price": 1200,
+      "slug": "krovat-dym"
     },
     {
       "id": "52",
@@ -664,7 +718,8 @@
       "file": "krovat6.jpg",
       "title": "Кровать «Огонь»",
       "description": "Надёжный каркас и спокойная геометрия спальни",
-      "price": 920
+      "price": 920,
+      "slug": "krovat-ogon"
     },
     {
       "id": "53",
@@ -676,7 +731,8 @@
       "file": "krovat7.jpg",
       "title": "Кровать «Волна»",
       "description": "Надёжный каркас и спокойная геометрия спальни",
-      "price": 900
+      "price": 900,
+      "slug": "krovat-volna"
     },
     {
       "id": "367",
@@ -688,7 +744,8 @@
       "file": "krovat9.jpg",
       "title": "Кровать «Массив»",
       "description": "Надёжный каркас и спокойная геометрия спальни",
-      "price": 1120
+      "price": 1120,
+      "slug": "krovat-massiv"
     },
     {
       "id": "54",
@@ -700,7 +757,8 @@
       "file": "kreslo1.jpg",
       "title": "Кресло «Скала»",
       "description": "Акцентное кресло для гостиной или кабинета",
-      "price": 580
+      "price": 580,
+      "slug": "kreslo-skala"
     },
     {
       "id": "55",
@@ -712,7 +770,8 @@
       "file": "kreslo2.jpg",
       "title": "Кресло «Кварц»",
       "description": "Акцентное кресло для гостиной или кабинета",
-      "price": 250
+      "price": 250,
+      "slug": "kreslo-kvarc"
     },
     {
       "id": "56",
@@ -724,7 +783,8 @@
       "file": "kreslo3.jpg",
       "title": "Кресло «Оникс»",
       "description": "Акцентное кресло для гостиной или кабинета",
-      "price": 540
+      "price": 540,
+      "slug": "kreslo-oniks"
     },
     {
       "id": "57",
@@ -736,7 +796,8 @@
       "file": "kreslo4.jpg",
       "title": "Кресло «Янтарь»",
       "description": "Акцентное кресло для гостиной или кабинета",
-      "price": 480
+      "price": 480,
+      "slug": "kreslo-yantar"
     },
     {
       "id": "58",
@@ -748,7 +809,8 @@
       "file": "kreslo5.jpg",
       "title": "Кресло «Ржавчина»",
       "description": "Акцентное кресло для гостиной или кабинета",
-      "price": 510
+      "price": 510,
+      "slug": "kreslo-rzhavchina"
     },
     {
       "id": "59",
@@ -760,7 +822,8 @@
       "file": "kreslo6.jpg",
       "title": "Кресло «Оксид»",
       "description": "Акцентное кресло для гостиной или кабинета",
-      "price": 780
+      "price": 780,
+      "slug": "kreslo-oksid"
     },
     {
       "id": "60",
@@ -772,7 +835,8 @@
       "file": "kreslo7.jpg",
       "title": "Кресло «Сплав»",
       "description": "Акцентное кресло для гостиной или кабинета",
-      "price": 220
+      "price": 220,
+      "slug": "kreslo-splav"
     },
     {
       "id": "61",
@@ -784,7 +848,8 @@
       "file": "kreslo8.jpg",
       "title": "Кресло «Шестерня»",
       "description": "Акцентное кресло для гостиной или кабинета",
-      "price": 480
+      "price": 480,
+      "slug": "kreslo-shesternya"
     },
     {
       "id": "62",
@@ -796,7 +861,8 @@
       "file": "kreslo9.jpg",
       "title": "Кресло «Болт»",
       "description": "Акцентное кресло для гостиной или кабинета",
-      "price": 620
+      "price": 620,
+      "slug": "kreslo-bolt"
     },
     {
       "id": "368",
@@ -808,7 +874,8 @@
       "file": "kreslo10.jpg",
       "title": "Кресло «Табак»",
       "description": "Акцентное кресло для гостиной или кабинета",
-      "price": 620
+      "price": 620,
+      "slug": "kreslo-tabak"
     },
     {
       "id": "369",
@@ -820,7 +887,8 @@
       "file": "kreslo11.jpg",
       "title": "Кресло «Рама»",
       "description": "Акцентное кресло для гостиной или кабинета",
-      "price": 715
+      "price": 715,
+      "slug": "kreslo-rama"
     },
     {
       "id": "370",
@@ -832,7 +900,8 @@
       "file": "kreslo12.jpg",
       "title": "Кресло «Графит»",
       "description": "Акцентное кресло для гостиной или кабинета",
-      "price": 830
+      "price": 830,
+      "slug": "kreslo-grafit"
     },
     {
       "id": "371",
@@ -844,7 +913,8 @@
       "file": "kreslo13.jpg",
       "title": "Кресло «Сатин»",
       "description": "Акцентное кресло для гостиной или кабинета",
-      "price": 570
+      "price": 570,
+      "slug": "kreslo-satin"
     },
     {
       "id": "63",
@@ -856,7 +926,8 @@
       "file": "banketka1.jpg",
       "title": "Банкетка «Стрелка»",
       "description": "Лаконичная банкетка для зала, прихожей или террасы",
-      "price": 520
+      "price": 520,
+      "slug": "banketka-strelka"
     },
     {
       "id": "64",
@@ -868,7 +939,8 @@
       "file": "banketka10.jpg",
       "title": "Банкетка «Молот»",
       "description": "Лаконичная банкетка для зала, прихожей или террасы",
-      "price": 800
+      "price": 800,
+      "slug": "banketka-molot"
     },
     {
       "id": "65",
@@ -880,7 +952,8 @@
       "file": "banketka11.jpg",
       "title": "Банкетка «Ковка»",
       "description": "Лаконичная банкетка для зала, прихожей или террасы",
-      "price": 870
+      "price": 870,
+      "slug": "banketka-kovka"
     },
     {
       "id": "66",
@@ -892,7 +965,8 @@
       "file": "banketka12.jpg",
       "title": "Банкетка «Пролёт»",
       "description": "Лаконичная банкетка для зала, прихожей или террасы",
-      "price": 520
+      "price": 520,
+      "slug": "banketka-prolet"
     },
     {
       "id": "67",
@@ -904,7 +978,8 @@
       "file": "banketka13.jpg",
       "title": "Банкетка «Стык»",
       "description": "Лаконичная банкетка для зала, прихожей или террасы",
-      "price": 440
+      "price": 440,
+      "slug": "banketka-styk"
     },
     {
       "id": "68",
@@ -916,7 +991,8 @@
       "file": "banketka14.jpg",
       "title": "Банкетка «Кромка»",
       "description": "Лаконичная банкетка для зала, прихожей или террасы",
-      "price": 475
+      "price": 475,
+      "slug": "banketka-kromka"
     },
     {
       "id": "69",
@@ -928,7 +1004,8 @@
       "file": "banketka15.jpg",
       "title": "Банкетка «Профиль»",
       "description": "Лаконичная банкетка для зала, прихожей или террасы",
-      "price": 300
+      "price": 300,
+      "slug": "banketka-profil"
     },
     {
       "id": "70",
@@ -940,7 +1017,8 @@
       "file": "banketka2.jpg",
       "title": "Банкетка «Секция»",
       "description": "Лаконичная банкетка для зала, прихожей или террасы",
-      "price": 620
+      "price": 620,
+      "slug": "banketka-sekciya"
     },
     {
       "id": "71",
@@ -952,7 +1030,8 @@
       "file": "banketka3.jpg",
       "title": "Банкетка «Модуль»",
       "description": "Лаконичная банкетка для зала, прихожей или террасы",
-      "price": 680
+      "price": 680,
+      "slug": "banketka-modul"
     },
     {
       "id": "72",
@@ -964,7 +1043,8 @@
       "file": "banketka4.jpg",
       "title": "Банкетка «Ярус»",
       "description": "Лаконичная банкетка для зала, прихожей или террасы",
-      "price": 575
+      "price": 575,
+      "slug": "banketka-yarus"
     },
     {
       "id": "73",
@@ -976,7 +1056,8 @@
       "file": "banketka5.jpg",
       "title": "Банкетка «Уровень»",
       "description": "Лаконичная банкетка для зала, прихожей или террасы",
-      "price": 420
+      "price": 420,
+      "slug": "banketka-uroven"
     },
     {
       "id": "74",
@@ -988,7 +1069,8 @@
       "file": "banketka6.jpg",
       "title": "Банкетка «Сектор»",
       "description": "Лаконичная банкетка для зала, прихожей или террасы",
-      "price": 470
+      "price": 470,
+      "slug": "banketka-sektor"
     },
     {
       "id": "75",
@@ -1000,7 +1082,8 @@
       "file": "banketka7.jpg",
       "title": "Банкетка «Блок»",
       "description": "Лаконичная банкетка для зала, прихожей или террасы",
-      "price": 400
+      "price": 400,
+      "slug": "banketka-blok"
     },
     {
       "id": "76",
@@ -1012,7 +1095,8 @@
       "file": "banketka8.jpg",
       "title": "Банкетка «Решётка»",
       "description": "Лаконичная банкетка для зала, прихожей или террасы",
-      "price": 600
+      "price": 600,
+      "slug": "banketka-reshetka"
     },
     {
       "id": "77",
@@ -1024,7 +1108,8 @@
       "file": "banketka9.jpg",
       "title": "Банкетка «Сетка»",
       "description": "Лаконичная банкетка для зала, прихожей или террасы",
-      "price": 890
+      "price": 890,
+      "slug": "banketka-setka"
     },
     {
       "id": "78",
@@ -1037,7 +1122,8 @@
       "title": "Стеллаж «Рамка»",
       "description": "Открытое хранение с индустриальным характером",
       "price": 500,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "stellazh-ramka"
     },
     {
       "id": "79",
@@ -1050,7 +1136,8 @@
       "title": "Стеллаж «Портал»",
       "description": "Открытое хранение с индустриальным характером",
       "price": 600,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "stellazh-portal"
     },
     {
       "id": "80",
@@ -1063,7 +1150,8 @@
       "title": "Стеллаж «Пролом»",
       "description": "Открытое хранение с индустриальным характером",
       "price": 700,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "stellazh-prolom"
     },
     {
       "id": "81",
@@ -1076,7 +1164,8 @@
       "title": "Стеллаж «Проём»",
       "description": "Открытое хранение с индустриальным характером",
       "price": 300,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "stellazh-proem"
     },
     {
       "id": "82",
@@ -1089,7 +1178,8 @@
       "title": "Стеллаж «Консоль»",
       "description": "Открытое хранение с индустриальным характером",
       "price": 400,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "stellazh-konsol"
     },
     {
       "id": "83",
@@ -1101,7 +1191,8 @@
       "file": "stelash4.jpg",
       "title": "Стеллаж «Ниша»",
       "description": "Открытое хранение с индустриальным характером",
-      "price": 580
+      "price": 580,
+      "slug": "stellazh-nisha"
     },
     {
       "id": "84",
@@ -1113,7 +1204,8 @@
       "file": "stelash5.jpg",
       "title": "Стеллаж «Выступ»",
       "description": "Открытое хранение с индустриальным характером",
-      "price": 785
+      "price": 785,
+      "slug": "stellazh-vystup"
     },
     {
       "id": "85",
@@ -1125,7 +1217,8 @@
       "file": "stelash6.jpg",
       "title": "Стеллаж «Грань»",
       "description": "Открытое хранение с индустриальным характером",
-      "price": 645
+      "price": 645,
+      "slug": "stellazh-gran"
     },
     {
       "id": "86",
@@ -1138,7 +1231,8 @@
       "title": "Гардеробная «Плоскость»",
       "description": "Стильная гардеробная в стиле лофт с индустриальным характером",
       "price": 1200,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "garderobnaya-ploskost"
     },
     {
       "id": "87",
@@ -1151,7 +1245,8 @@
       "title": "Гардеробная «Пласт»",
       "description": "Стильная гардеробная в стиле лофт с индустриальным характером",
       "price": 780,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "garderobnaya-plast"
     },
     {
       "id": "88",
@@ -1164,7 +1259,8 @@
       "title": "Гардеробная «Слой»",
       "description": "Стильная гардеробная в стиле лофт с индустриальным характером",
       "price": 800,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "garderobnaya-sloj"
     },
     {
       "id": "89",
@@ -1176,7 +1272,8 @@
       "file": "polka1.jpg",
       "title": "Полка «Лист»",
       "description": "Настенная полка — функция и декор в одном решении",
-      "price": 280
+      "price": 280,
+      "slug": "polka-list"
     },
     {
       "id": "90",
@@ -1188,7 +1285,8 @@
       "file": "polka10.jpg",
       "title": "Винный шкаф «Полоса»",
       "description": "Стильный настенный винный шкаф в стиле лофт: чёрный металлический каркас с горизонтальными полками",
-      "price": 1180
+      "price": 1180,
+      "slug": "vinnyj-shkaf-polosa"
     },
     {
       "id": "91",
@@ -1201,7 +1299,8 @@
       "title": "Винный шкаф «Брус»",
       "description": "Стильный настенный винный шкаф в стиле лофт: чёрный металлический каркас с горизонтальными полками",
       "price": 1300,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "vinnyj-shkaf-brus"
     },
     {
       "id": "92",
@@ -1213,7 +1312,8 @@
       "file": "polka12.jpg",
       "title": "Полка «Ребро»",
       "description": "Настенная полка — функция и декор в одном решении",
-      "price": 1270
+      "price": 1270,
+      "slug": "polka-rebro"
     },
     {
       "id": "93",
@@ -1225,7 +1325,8 @@
       "file": "polka13.jpg",
       "title": "Полка «Уступ»",
       "description": "Настенная полка — функция и декор в одном решении",
-      "price": 600
+      "price": 600,
+      "slug": "polka-ustup"
     },
     {
       "id": "94",
@@ -1237,7 +1338,8 @@
       "file": "polka14.jpg",
       "title": "Полка «Вырез»",
       "description": "Настенная полка — функция и декор в одном решении",
-      "price": 810
+      "price": 810,
+      "slug": "polka-vyrez"
     },
     {
       "id": "95",
@@ -1249,7 +1351,8 @@
       "file": "polka15.jpg",
       "title": "Полка «Срез»",
       "description": "Настенная полка — функция и декор в одном решении",
-      "price": 270
+      "price": 270,
+      "slug": "polka-srez"
     },
     {
       "id": "96",
@@ -1261,7 +1364,8 @@
       "file": "polka16.jpg",
       "title": "Полка «Шаг»",
       "description": "Настенная полка — функция и декор в одном решении",
-      "price": 300
+      "price": 300,
+      "slug": "polka-shag"
     },
     {
       "id": "97",
@@ -1273,7 +1377,8 @@
       "file": "polka17.jpg",
       "title": "Полка «Ряд»",
       "description": "Настенная полка — функция и декор в одном решении",
-      "price": 600
+      "price": 600,
+      "slug": "polka-ryad"
     },
     {
       "id": "98",
@@ -1285,7 +1390,8 @@
       "file": "polka18.jpg",
       "title": "Полка «Точка»",
       "description": "Настенная полка — функция и декор в одном решении",
-      "price": 145
+      "price": 145,
+      "slug": "polka-tochka"
     },
     {
       "id": "99",
@@ -1297,7 +1403,8 @@
       "file": "polka19.jpg",
       "title": "Полка «Бар»",
       "description": "Настенная полка — функция и декор в одном решении",
-      "price": 240
+      "price": 240,
+      "slug": "polka-bar"
     },
     {
       "id": "100",
@@ -1309,7 +1416,8 @@
       "file": "polka2.jpg",
       "title": "Полка «Ресепшн»",
       "description": "Настенная полка — функция и декор в одном решении",
-      "price": 540
+      "price": 540,
+      "slug": "polka-resepshn"
     },
     {
       "id": "101",
@@ -1321,7 +1429,8 @@
       "file": "polka20.jpg",
       "title": "Полка «Пульт»",
       "description": "Настенная полка — функция и декор в одном решении",
-      "price": 980
+      "price": 980,
+      "slug": "polka-pult"
     },
     {
       "id": "102",
@@ -1333,7 +1442,8 @@
       "file": "polka21.jpg",
       "title": "Полка «Пост»",
       "description": "Настенная полка — функция и декор в одном решении",
-      "price": 240
+      "price": 240,
+      "slug": "polka-post"
     },
     {
       "id": "103",
@@ -1345,7 +1455,8 @@
       "file": "polka22.jpg",
       "title": "Полка «Сервис»",
       "description": "Настенная полка — функция и декор в одном решении",
-      "price": 265
+      "price": 265,
+      "slug": "polka-servis"
     },
     {
       "id": "104",
@@ -1357,7 +1468,8 @@
       "file": "polka23.jpg",
       "title": "Полка «Зона»",
       "description": "Настенная полка — функция и декор в одном решении",
-      "price": 270
+      "price": 270,
+      "slug": "polka-zona"
     },
     {
       "id": "105",
@@ -1369,7 +1481,8 @@
       "file": "polka3.jpg",
       "title": "Полка «Лобби»",
       "description": "Настенная полка — функция и декор в одном решении",
-      "price": 1430
+      "price": 1430,
+      "slug": "polka-lobbi"
     },
     {
       "id": "106",
@@ -1381,7 +1494,8 @@
       "file": "polka4.jpg",
       "title": "Полка «Холл»",
       "description": "Настенная полка — функция и декор в одном решении",
-      "price": 400
+      "price": 400,
+      "slug": "polka-holl"
     },
     {
       "id": "107",
@@ -1393,7 +1507,8 @@
       "file": "polka5.jpg",
       "title": "Полка «Вестибюль»",
       "description": "Настенная полка — функция и декор в одном решении",
-      "price": 2100
+      "price": 2100,
+      "slug": "polka-vestibyul"
     },
     {
       "id": "108",
@@ -1405,7 +1520,8 @@
       "file": "polka6.jpg",
       "title": "Винный шкаф «Ветер»",
       "description": "Напольная винная полка в стиле лофт",
-      "price": 240
+      "price": 240,
+      "slug": "vinnyj-shkaf-veter"
     },
     {
       "id": "109",
@@ -1417,7 +1533,8 @@
       "file": "polka7.jpg",
       "title": "Винный шкаф «Маятник»",
       "description": "Настенный винный шкаф в стиле лофт: чёрный металлический каркас с горизонтальными ячейками для бутылок",
-      "price": 610
+      "price": 610,
+      "slug": "vinnyj-shkaf-mayatnik"
     },
     {
       "id": "110",
@@ -1429,7 +1546,8 @@
       "file": "polka8.jpg",
       "title": "Винный шкаф «Амплитуда»",
       "description": "Стильный настенный винный шкаф в стиле лофт: чёрный металлический каркас с горизонтальными полками",
-      "price": 1585
+      "price": 1585,
+      "slug": "vinnyj-shkaf-amplituda"
     },
     {
       "id": "111",
@@ -1441,7 +1559,8 @@
       "file": "polka9.jpg",
       "title": "Винный шкаф «Лето»",
       "description": "Стильный настенный винный шкаф в стиле лофт: чёрный металлический каркас с горизонтальными полками",
-      "price": 1100
+      "price": 1100,
+      "slug": "vinnyj-shkaf-leto"
     },
     {
       "id": "112",
@@ -1453,7 +1572,8 @@
       "file": "stoiki1.jpg",
       "title": "Стойка «Сад»",
       "description": "Стойка в стиле лофт для дома и офиса",
-      "price": 380
+      "price": 380,
+      "slug": "stojka-sad"
     },
     {
       "id": "113",
@@ -1465,7 +1585,8 @@
       "file": "stoiki10.jpg",
       "title": "Стойка «Терраса»",
       "description": "Барная или ресепшн-стойка с сильным силуэтом",
-      "price": 1560
+      "price": 1560,
+      "slug": "stojka-terrasa"
     },
     {
       "id": "114",
@@ -1477,7 +1598,8 @@
       "file": "stoiki11.jpg",
       "title": "Стойка «Веранда»",
       "description": "Барная или ресепшн-стойка с сильным силуэтом",
-      "price": 1100
+      "price": 1100,
+      "slug": "stojka-veranda"
     },
     {
       "id": "115",
@@ -1489,7 +1611,8 @@
       "file": "stoiki2.jpg",
       "title": "Стойка «Балкон»",
       "description": "Барная или ресепшн-стойка с сильным силуэтом",
-      "price": 1200
+      "price": 1200,
+      "slug": "stojka-balkon"
     },
     {
       "id": "116",
@@ -1501,7 +1624,8 @@
       "file": "stoiki3.jpg",
       "title": "Стойка «Двор»",
       "description": "Барная или ресепшн-стойка с сильным силуэтом",
-      "price": 600
+      "price": 600,
+      "slug": "stojka-dvor"
     },
     {
       "id": "117",
@@ -1513,7 +1637,8 @@
       "file": "stoiki4.jpg",
       "title": "Стойка «Поляна»",
       "description": "Барная или ресепшн-стойка с сильным силуэтом",
-      "price": 1000
+      "price": 1000,
+      "slug": "stojka-polyana"
     },
     {
       "id": "119",
@@ -1525,7 +1650,8 @@
       "file": "stoiki6.jpg",
       "title": "Стойка «Берег»",
       "description": "Барная или ресепшн-стойка с сильным силуэтом",
-      "price": 1000
+      "price": 1000,
+      "slug": "stojka-bereg"
     },
     {
       "id": "120",
@@ -1537,7 +1663,8 @@
       "file": "stoiki7.jpg",
       "title": "Стойка «Ротонда»",
       "description": "Барная или ресепшн-стойка с сильным силуэтом",
-      "price": 700
+      "price": 700,
+      "slug": "stojka-rotonda"
     },
     {
       "id": "121",
@@ -1549,7 +1676,8 @@
       "file": "stoiki8.jpg",
       "title": "Стойка «Павильон»",
       "description": "Барная или ресепшн-стойка с сильным силуэтом",
-      "price": 500
+      "price": 500,
+      "slug": "stojka-pavilon"
     },
     {
       "id": "122",
@@ -1561,7 +1689,8 @@
       "file": "stoiki9.jpg",
       "title": "Стойка «Навес»",
       "description": "Барная или ресепшн-стойка с сильным силуэтом",
-      "price": 1200
+      "price": 1200,
+      "slug": "stojka-naves"
     },
     {
       "id": "123",
@@ -1573,7 +1702,8 @@
       "file": "kacheli01.jpg",
       "title": "Качели «Шатёр»",
       "description": "Качели для сада и террасы — комфорт на свежем воздухе",
-      "price": 2780
+      "price": 2780,
+      "slug": "kacheli-shater"
     },
     {
       "id": "124",
@@ -1585,7 +1715,8 @@
       "file": "kacheli02.jpg",
       "title": "Качели «Купол»",
       "description": "Качели для сада и террасы — комфорт на свежем воздухе",
-      "price": 2180
+      "price": 2180,
+      "slug": "kacheli-kupol"
     },
     {
       "id": "125",
@@ -1597,7 +1728,8 @@
       "file": "kacheli03.jpg",
       "title": "Качели «Арка»",
       "description": "Качели для сада и террасы — комфорт на свежем воздухе",
-      "price": 1350
+      "price": 1350,
+      "slug": "kacheli-arka"
     },
     {
       "id": "126",
@@ -1609,7 +1741,8 @@
       "file": "kacheli04.jpg",
       "title": "Качели «Пергола»",
       "description": "Качели для сада и террасы — комфорт на свежем воздухе",
-      "price": 1500
+      "price": 1500,
+      "slug": "kacheli-pergola"
     },
     {
       "id": "127",
@@ -1621,7 +1754,8 @@
       "file": "kacheli05.jpg",
       "title": "Качели «Грот»",
       "description": "Качели для сада и террасы — комфорт на свежем воздухе",
-      "price": 1300
+      "price": 1300,
+      "slug": "kacheli-grot"
     },
     {
       "id": "128",
@@ -1633,7 +1767,8 @@
       "file": "kacheli06.jpg",
       "title": "Качели «Сень»",
       "description": "Качели для сада и террасы — комфорт на свежем воздухе",
-      "price": 1240
+      "price": 1240,
+      "slug": "kacheli-sen"
     },
     {
       "id": "129",
@@ -1645,7 +1780,8 @@
       "file": "kacheli07.jpg",
       "title": "Качели «Трапеза»",
       "description": "Качели для сада и террасы — комфорт на свежем воздухе",
-      "price": 980
+      "price": 980,
+      "slug": "kacheli-trapeza"
     },
     {
       "id": "130",
@@ -1657,7 +1793,8 @@
       "file": "kacheli08.jpg",
       "title": "Качели «Пикник»",
       "description": "Качели для сада и террасы — комфорт на свежем воздухе",
-      "price": 1485
+      "price": 1485,
+      "slug": "kacheli-piknik"
     },
     {
       "id": "131",
@@ -1669,7 +1806,8 @@
       "file": "kacheli09.jpg",
       "title": "Качели «Барбекю»",
       "description": "Качели для сада и террасы — комфорт на свежем воздухе",
-      "price": 900
+      "price": 900,
+      "slug": "kacheli-barbekyu"
     },
     {
       "id": "132",
@@ -1681,7 +1819,8 @@
       "file": "kacheli10.jpg",
       "title": "Качели «Ужин»",
       "description": "Качели для сада и террасы — комфорт на свежем воздухе",
-      "price": 1475
+      "price": 1475,
+      "slug": "kacheli-uzhin"
     },
     {
       "id": "133",
@@ -1693,7 +1832,8 @@
       "file": "kacheli11.jpg",
       "title": "Качели «Бранч»",
       "description": "Качели для сада и террасы — комфорт на свежем воздухе",
-      "price": 1500
+      "price": 1500,
+      "slug": "kacheli-branch"
     },
     {
       "id": "135",
@@ -1705,7 +1845,8 @@
       "file": "kacheli13.jpg",
       "title": "Качели «Банкетка»",
       "description": "Качели для сада и террасы — комфорт на свежем воздухе",
-      "price": 1600
+      "price": 1600,
+      "slug": "kacheli-banketka"
     },
     {
       "id": "136",
@@ -1717,7 +1858,8 @@
       "file": "kacheli14.jpg",
       "title": "Качели «Аллея»",
       "description": "Качели для сада и террасы — комфорт на свежем воздухе",
-      "price": 1800
+      "price": 1800,
+      "slug": "kacheli-alleya"
     },
     {
       "id": "137",
@@ -1729,7 +1871,8 @@
       "file": "kacheli15.jpg",
       "title": "Качели «Скульптура»",
       "description": "Качели для сада и террасы — комфорт на свежем воздухе",
-      "price": 1600
+      "price": 1600,
+      "slug": "kacheli-skulptura"
     },
     {
       "id": "138",
@@ -1741,7 +1884,8 @@
       "file": "kacheli16.jpg",
       "title": "Качели «Форма»",
       "description": "Качели для сада и террасы — комфорт на свежем воздухе",
-      "price": 900
+      "price": 900,
+      "slug": "kacheli-forma"
     },
     {
       "id": "139",
@@ -1753,7 +1897,8 @@
       "file": "kacheli17.jpg",
       "title": "Качели «Объём»",
       "description": "Качели для сада и террасы — комфорт на свежем воздухе",
-      "price": 880
+      "price": 880,
+      "slug": "kacheli-obem"
     },
     {
       "id": "140",
@@ -1765,7 +1910,8 @@
       "file": "kacheli18.jpg",
       "title": "Качели «Пластика»",
       "description": "Качели для сада и террасы — комфорт на свежем воздухе",
-      "price": 780
+      "price": 780,
+      "slug": "kacheli-plastika"
     },
     {
       "id": "141",
@@ -1777,7 +1923,8 @@
       "file": "besedka1.jpg",
       "title": "Беседка «Композиция»",
       "description": "Уютное место для отдыха в саду круглый год",
-      "price": 2230
+      "price": 2230,
+      "slug": "besedka-kompoziciya"
     },
     {
       "id": "142",
@@ -1789,7 +1936,8 @@
       "file": "besedka10.jpg",
       "title": "Беседка «Акцент»",
       "description": "Уютное место для отдыха в саду круглый год",
-      "price": 1800
+      "price": 1800,
+      "slug": "besedka-akcent"
     },
     {
       "id": "143",
@@ -1802,7 +1950,8 @@
       "title": "Беседка «Символ»",
       "description": "Уютное место для отдыха в саду круглый год",
       "price": 4500,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "besedka-simvol"
     },
     {
       "id": "144",
@@ -1815,7 +1964,8 @@
       "title": "Беседка «Знак»",
       "description": "Уютное место для отдыха в саду круглый год",
       "price": 6000,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "besedka-znak"
     },
     {
       "id": "145",
@@ -1827,7 +1977,8 @@
       "file": "besedka2.jpg",
       "title": "Беседка «Мотив»",
       "description": "Уютное место для отдыха в саду круглый год",
-      "price": 2200
+      "price": 2200,
+      "slug": "besedka-motiv"
     },
     {
       "id": "146",
@@ -1839,7 +1990,8 @@
       "file": "besedka3.jpg",
       "title": "Беседка «Деталь»",
       "description": "Уютное место для отдыха в саду круглый год",
-      "price": 1900
+      "price": 1900,
+      "slug": "besedka-detal"
     },
     {
       "id": "147",
@@ -1851,7 +2003,8 @@
       "file": "besedka4.jpg",
       "title": "Беседка «Фрагмент»",
       "description": "Уютное место для отдыха в саду круглый год",
-      "price": 3780
+      "price": 3780,
+      "slug": "besedka-fragment"
     },
     {
       "id": "148",
@@ -1864,7 +2017,8 @@
       "title": "Беседка «Жар»",
       "description": "Уютное место для отдыха в саду круглый год",
       "price": 5200,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "besedka-zhar"
     },
     {
       "id": "149",
@@ -1877,7 +2031,8 @@
       "title": "Беседка «Пламя»",
       "description": "Уютное место для отдыха в саду круглый год",
       "price": 3000,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "besedka-plamya"
     },
     {
       "id": "150",
@@ -1889,7 +2044,8 @@
       "file": "besedka7.jpg",
       "title": "Беседка «Гриль»",
       "description": "Уютное место для отдыха в саду круглый год",
-      "price": 2700
+      "price": 2700,
+      "slug": "besedka-gril"
     },
     {
       "id": "151",
@@ -1902,7 +2058,8 @@
       "title": "Беседка «Шашлык»",
       "description": "Уютное место для отдыха в саду круглый год",
       "price": 8000,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "besedka-shashlyk"
     },
     {
       "id": "152",
@@ -1915,7 +2072,8 @@
       "title": "Беседка «Стейк»",
       "description": "Уютное место для отдыха в саду круглый год",
       "price": 4200,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "besedka-stejk"
     },
     {
       "id": "385",
@@ -1928,7 +2086,8 @@
       "title": "Беседка «Атриум»",
       "description": "Беседка в стиле лофт",
       "price": 3800,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "besedka-atrium"
     },
     {
       "id": "386",
@@ -1941,7 +2100,8 @@
       "title": "Беседка «Канопия»",
       "description": "Беседка в стиле лофт",
       "price": 4200,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "besedka-kanopiya"
     },
     {
       "id": "388",
@@ -1954,7 +2114,8 @@
       "title": "Беседка «Веранда»",
       "description": "Беседка в стиле лофт",
       "price": 6200,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "besedka-veranda"
     },
     {
       "id": "387",
@@ -1967,7 +2128,8 @@
       "title": "Навес «Гоби»",
       "description": "Стильный навес для машины в стиле лофт",
       "price": 8000,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "naves-gobi"
     },
     {
       "id": "153",
@@ -1979,7 +2141,8 @@
       "file": "dinner_zone.jpg",
       "title": "Обеденная зона «Дымок»",
       "description": "Готовый комплект для трапез на открытом воздухе",
-      "price": 2000
+      "price": 2000,
+      "slug": "obedennaya-zona-dymok"
     },
     {
       "id": "154",
@@ -1991,7 +2154,8 @@
       "file": "dinner_zone2.jpg",
       "title": "Обеденная зона «Костёр»",
       "description": "Готовый комплект для трапез на открытом воздухе",
-      "price": 1400
+      "price": 1400,
+      "slug": "obedennaya-zona-koster"
     },
     {
       "id": "155",
@@ -2003,7 +2167,8 @@
       "file": "dinner_zone3.jpg",
       "title": "Обеденная зона «Очаг»",
       "description": "Готовый комплект для трапез на открытом воздухе",
-      "price": 1400
+      "price": 1400,
+      "slug": "obedennaya-zona-ochag"
     },
     {
       "id": "156",
@@ -2015,7 +2180,8 @@
       "file": "dinner_zone4.jpg",
       "title": "Обеденная зона «Горн»",
       "description": "Готовый комплект для трапез на открытом воздухе",
-      "price": 1350
+      "price": 1350,
+      "slug": "obedennaya-zona-gorn"
     },
     {
       "id": "157",
@@ -2027,7 +2193,8 @@
       "file": "dinner_zone5.jpg",
       "title": "Обеденная зона «Тандыр»",
       "description": "Готовый комплект для трапез на открытом воздухе",
-      "price": 900
+      "price": 900,
+      "slug": "obedennaya-zona-tandyr"
     },
     {
       "id": "158",
@@ -2039,7 +2206,8 @@
       "file": "lavka1.jpg",
       "title": "Лавка «Станция»",
       "description": "Садовая лавка с продуманной эргономикой",
-      "price": 610
+      "price": 610,
+      "slug": "lavka-stanciya"
     },
     {
       "id": "159",
@@ -2051,7 +2219,8 @@
       "file": "lavka2.jpg",
       "title": "Лавка «Площадка»",
       "description": "Садовая лавка с продуманной эргономикой",
-      "price": 400
+      "price": 400,
+      "slug": "lavka-ploschadka"
     },
     {
       "id": "160",
@@ -2063,7 +2232,8 @@
       "file": "lavka3.jpg",
       "title": "Лавка «Уголок»",
       "description": "Садовая лавка с продуманной эргономикой",
-      "price": 550
+      "price": 550,
+      "slug": "lavka-ugolok"
     },
     {
       "id": "161",
@@ -2075,7 +2245,8 @@
       "file": "lavka4.jpg",
       "title": "Лавка «Пространство»",
       "description": "Садовая лавка с продуманной эргономикой",
-      "price": 400
+      "price": 400,
+      "slug": "lavka-prostranstvo"
     },
     {
       "id": "162",
@@ -2087,7 +2258,8 @@
       "file": "lavka5.jpg",
       "title": "Лавка «Кухня»",
       "description": "Садовая лавка с продуманной эргономикой",
-      "price": 350
+      "price": 350,
+      "slug": "lavka-kuhnya"
     },
     {
       "id": "163",
@@ -2099,7 +2271,8 @@
       "file": "skamiya1.jpg",
       "title": "Лавка «Патио»",
       "description": "Садовая лавка с продуманной эргономикой",
-      "price": 500
+      "price": 500,
+      "slug": "lavka-patio"
     },
     {
       "id": "164",
@@ -2111,7 +2284,8 @@
       "file": "skamiya10.jpg",
       "title": "Лавка «Чаша»",
       "description": "Садовая лавка с продуманной эргономикой",
-      "price": 500
+      "price": 500,
+      "slug": "lavka-chasha"
     },
     {
       "id": "165",
@@ -2123,7 +2297,8 @@
       "file": "skamiya11.jpg",
       "title": "Лавка «Марш»",
       "description": "Садовая лавка с продуманной эргономикой",
-      "price": 350
+      "price": 350,
+      "slug": "lavka-marsh"
     },
     {
       "id": "166",
@@ -2135,7 +2310,8 @@
       "file": "skamiya12.jpg",
       "title": "Лавка «Подъём»",
       "description": "Садовая лавка с продуманной эргономикой",
-      "price": 350
+      "price": 350,
+      "slug": "lavka-podem"
     },
     {
       "id": "167",
@@ -2147,7 +2323,8 @@
       "file": "skamiya13.jpg",
       "title": "Лавка «Спираль»",
       "description": "Садовая лавка с продуманной эргономикой",
-      "price": 300
+      "price": 300,
+      "slug": "lavka-spiral"
     },
     {
       "id": "168",
@@ -2159,7 +2336,8 @@
       "file": "skamiya14.jpg",
       "title": "Лавка «Виток»",
       "description": "Садовая лавка с продуманной эргономикой",
-      "price": 430
+      "price": 430,
+      "slug": "lavka-vitok"
     },
     {
       "id": "169",
@@ -2171,7 +2349,8 @@
       "file": "skamiya15.jpg",
       "title": "Лавка «Завиток»",
       "description": "Садовая лавка с продуманной эргономикой",
-      "price": 500
+      "price": 500,
+      "slug": "lavka-zavitok"
     },
     {
       "id": "170",
@@ -2183,7 +2362,8 @@
       "file": "skamiya16.jpg",
       "title": "Лавка «Въезд»",
       "description": "Садовая лавка с продуманной эргономикой",
-      "price": 300
+      "price": 300,
+      "slug": "lavka-vezd"
     },
     {
       "id": "171",
@@ -2195,7 +2375,8 @@
       "file": "skamiya2.jpg",
       "title": "Лавка «Проезд»",
       "description": "Садовая лавка с продуманной эргономикой",
-      "price": 400
+      "price": 400,
+      "slug": "lavka-proezd"
     },
     {
       "id": "172",
@@ -2207,7 +2388,8 @@
       "file": "skamiya3.jpg",
       "title": "Лавка «Азимут»",
       "description": "Садовая лавка с продуманной эргономикой",
-      "price": 350
+      "price": 350,
+      "slug": "lavka-azimut"
     },
     {
       "id": "173",
@@ -2219,7 +2401,8 @@
       "file": "skamiya4.jpg",
       "title": "Лавка «Бриз»",
       "description": "Садовая лавка с продуманной эргономикой",
-      "price": 400
+      "price": 400,
+      "slug": "lavka-briz"
     },
     {
       "id": "174",
@@ -2231,7 +2414,8 @@
       "file": "skamiya5.jpg",
       "title": "Лавка «Вектор»",
       "description": "Садовая лавка с продуманной эргономикой",
-      "price": 450
+      "price": 450,
+      "slug": "lavka-vektor"
     },
     {
       "id": "175",
@@ -2243,7 +2427,8 @@
       "file": "skamiya6.jpg",
       "title": "Лавка «Глина»",
       "description": "Садовая лавка с продуманной эргономикой",
-      "price": 400
+      "price": 400,
+      "slug": "lavka-glina"
     },
     {
       "id": "176",
@@ -2255,7 +2440,8 @@
       "file": "skamiya7.jpg",
       "title": "Лавка «Дюна»",
       "description": "Садовая лавка с продуманной эргономикой",
-      "price": 310
+      "price": 310,
+      "slug": "lavka-dyuna"
     },
     {
       "id": "177",
@@ -2267,7 +2453,8 @@
       "file": "skamiya8.jpg",
       "title": "Лавка «Зенит»",
       "description": "Садовая лавка с продуманной эргономикой",
-      "price": 500
+      "price": 500,
+      "slug": "lavka-zenit"
     },
     {
       "id": "178",
@@ -2279,7 +2466,8 @@
       "file": "skamiya9.jpg",
       "title": "Лавка «Ирис»",
       "description": "Садовая лавка с продуманной эргономикой",
-      "price": 400
+      "price": 400,
+      "slug": "lavka-iris"
     },
     {
       "id": "179",
@@ -2291,7 +2479,8 @@
       "file": "275b9c63-2924-49f6-a085-4eee43559124.jpg",
       "title": "Арт-объект «Кедр»",
       "description": "Авторский металлический объект для ландшафта",
-      "price": 550
+      "price": 550,
+      "slug": "art-obekt-kedr"
     },
     {
       "id": "180",
@@ -2303,7 +2492,8 @@
       "file": "5cf9450b-579d-453b-8f29-7ccfc48e4c6d.jpg",
       "title": "Арт-объект «Лотос»",
       "description": "Авторский металлический объект для ландшафта",
-      "price": 310
+      "price": 310,
+      "slug": "art-obekt-lotos"
     },
     {
       "id": "181",
@@ -2315,7 +2505,8 @@
       "file": "6d45a1c0-d4b2-4bf3-92ff-a88ca0e5f414.jpg",
       "title": "Арт-объект «Меридиан»",
       "description": "Авторский металлический объект для ландшафта",
-      "price": 320
+      "price": 320,
+      "slug": "art-obekt-meridian"
     },
     {
       "id": "182",
@@ -2327,7 +2518,8 @@
       "file": "7a776130-c4be-44b7-8224-421e85df9864.jpg",
       "title": "Арт-объект «Нимб»",
       "description": "Авторский металлический объект для ландшафта",
-      "price": 560
+      "price": 560,
+      "slug": "art-obekt-nimb"
     },
     {
       "id": "183",
@@ -2339,7 +2531,8 @@
       "file": "88593be1-4be6-4d67-8024-b6ea2197c3bf.jpg",
       "title": "Арт-объект «Орбита»",
       "description": "Авторский металлический объект для ландшафта",
-      "price": 980
+      "price": 980,
+      "slug": "art-obekt-orbita"
     },
     {
       "id": "184",
@@ -2351,7 +2544,8 @@
       "file": "9593be46-e7fe-4ff5-b71f-febd56a7b16e.jpg",
       "title": "Арт-объект «Парус»",
       "description": "Авторский металлический объект для ландшафта",
-      "price": 300
+      "price": 300,
+      "slug": "art-obekt-parus"
     },
     {
       "id": "185",
@@ -2363,7 +2557,8 @@
       "file": "acb9a794-9082-4191-ba38-9fd0b1cba64c.jpg",
       "title": "Арт-объект «Рубеж»",
       "description": "Авторский металлический объект для ландшафта",
-      "price": 800
+      "price": 800,
+      "slug": "art-obekt-rubezh"
     },
     {
       "id": "186",
@@ -2375,7 +2570,8 @@
       "file": "af181499-72a0-44bb-a4b9-3953be7e26e7.jpg",
       "title": "Арт-объект «Сфера»",
       "description": "Авторский металлический объект для ландшафта",
-      "price": 1080
+      "price": 1080,
+      "slug": "art-obekt-sfera"
     },
     {
       "id": "187",
@@ -2387,7 +2583,8 @@
       "file": "e0761078-e9f7-409e-bc2f-8579fee0fc4a.jpg",
       "title": "Арт-объект «Тропа»",
       "description": "Авторский металлический объект для ландшафта",
-      "price": 760
+      "price": 760,
+      "slug": "art-obekt-tropa"
     },
     {
       "id": "188",
@@ -2399,7 +2596,8 @@
       "file": "e8e2b35c-a44d-4abf-ae1d-cb9fb6517b69.jpg",
       "title": "Арт-объект «Урбан»",
       "description": "Авторский металлический объект для ландшафта",
-      "price": 840
+      "price": 840,
+      "slug": "art-obekt-urban"
     },
     {
       "id": "189",
@@ -2411,7 +2609,8 @@
       "file": "e9891a33-5328-4271-bae3-d6e1cdcff4d0.jpg",
       "title": "Арт-объект «Фьорд»",
       "description": "Авторский металлический объект для ландшафта",
-      "price": 600
+      "price": 600,
+      "slug": "art-obekt-ford"
     },
     {
       "id": "190",
@@ -2423,7 +2622,8 @@
       "file": "mangal1.jpg",
       "title": "Мангал «Холм»",
       "description": "Мангал для гриля и отдыха у огня",
-      "price": 590
+      "price": 590,
+      "slug": "mangal-holm"
     },
     {
       "id": "191",
@@ -2435,7 +2635,8 @@
       "file": "mangal10.jpg",
       "title": "Мангал «Цитадель»",
       "description": "Мангал для гриля и отдыха у огня",
-      "price": 980
+      "price": 980,
+      "slug": "mangal-citadel"
     },
     {
       "id": "192",
@@ -2447,7 +2648,8 @@
       "file": "mangal11.jpg",
       "title": "Мангал «Штрих»",
       "description": "Мангал для гриля и отдыха у огня",
-      "price": 820
+      "price": 820,
+      "slug": "mangal-shtrih"
     },
     {
       "id": "193",
@@ -2459,7 +2661,8 @@
       "file": "mangal12.jpg",
       "title": "Мангал «Эстет»",
       "description": "Мангал для гриля и отдыха у огня",
-      "price": 450
+      "price": 450,
+      "slug": "mangal-estet"
     },
     {
       "id": "194",
@@ -2471,7 +2674,8 @@
       "file": "mangal13.jpg",
       "title": "Мангал «Юнга»",
       "description": "Мангал для гриля и отдыха у огня",
-      "price": 420
+      "price": 420,
+      "slug": "mangal-yunga"
     },
     {
       "id": "195",
@@ -2483,7 +2687,8 @@
       "file": "mangal14.jpg",
       "title": "Мангал «Якорь»",
       "description": "Мангал для гриля и отдыха у огня",
-      "price": 370
+      "price": 370,
+      "slug": "mangal-yakor"
     },
     {
       "id": "196",
@@ -2495,7 +2700,8 @@
       "file": "mangal15.jpg",
       "title": "Мангал «Авангард»",
       "description": "Мангал для гриля и отдыха у огня",
-      "price": 300
+      "price": 300,
+      "slug": "mangal-avangard"
     },
     {
       "id": "197",
@@ -2507,7 +2713,8 @@
       "file": "mangal16.jpg",
       "title": "Мангал «Баланс»",
       "description": "Мангал для гриля и отдыха у огня",
-      "price": 1080
+      "price": 1080,
+      "slug": "mangal-balans"
     },
     {
       "id": "198",
@@ -2519,7 +2726,8 @@
       "file": "mangal17.jpg",
       "title": "Мангал «Гармония»",
       "description": "Мангал для гриля и отдыха у огня",
-      "price": 1150
+      "price": 1150,
+      "slug": "mangal-garmoniya"
     },
     {
       "id": "199",
@@ -2531,7 +2739,8 @@
       "file": "mangal18.jpg",
       "title": "Мангал «Диалог»",
       "description": "Мангал для гриля и отдыха у огня",
-      "price": 980
+      "price": 980,
+      "slug": "mangal-dialog"
     },
     {
       "id": "200",
@@ -2543,7 +2752,8 @@
       "file": "mangal19.jpg",
       "title": "Мангал «Единство»",
       "description": "Мангал для гриля и отдыха у огня",
-      "price": 360
+      "price": 360,
+      "slug": "mangal-edinstvo"
     },
     {
       "id": "201",
@@ -2555,7 +2765,8 @@
       "file": "mangal2.jpg",
       "title": "Мангал «Жест»",
       "description": "Мангал для гриля и отдыха у огня",
-      "price": 730
+      "price": 730,
+      "slug": "mangal-zhest"
     },
     {
       "id": "202",
@@ -2567,7 +2778,8 @@
       "file": "mangal20.jpg",
       "title": "Мангал «Зеркало»",
       "description": "Мангал для гриля и отдыха у огня",
-      "price": 820
+      "price": 820,
+      "slug": "mangal-zerkalo"
     },
     {
       "id": "203",
@@ -2579,7 +2791,8 @@
       "file": "mangal21.jpg",
       "title": "Мангал «Импульс»",
       "description": "Мангал для гриля и отдыха у огня",
-      "price": 810
+      "price": 810,
+      "slug": "mangal-impuls"
     },
     {
       "id": "204",
@@ -2591,7 +2804,8 @@
       "file": "mangal22.jpg",
       "title": "Мангал «Каскад»",
       "description": "Мангал для гриля и отдыха у огня",
-      "price": 980
+      "price": 980,
+      "slug": "mangal-kaskad"
     },
     {
       "id": "205",
@@ -2603,7 +2817,8 @@
       "file": "mangal23.jpg",
       "title": "Мангал «Лабиринт»",
       "description": "Мангал для гриля и отдыха у огня",
-      "price": 750
+      "price": 750,
+      "slug": "mangal-labirint"
     },
     {
       "id": "206",
@@ -2615,7 +2830,8 @@
       "file": "mangal24.jpg",
       "title": "Мангал «Мозаика»",
       "description": "Мангал для гриля и отдыха у огня",
-      "price": 620
+      "price": 620,
+      "slug": "mangal-mozaika"
     },
     {
       "id": "207",
@@ -2627,7 +2843,8 @@
       "file": "mangal3.jpg",
       "title": "Мангал «Нота»",
       "description": "Мангал для гриля и отдыха у огня",
-      "price": 580
+      "price": 580,
+      "slug": "mangal-nota"
     },
     {
       "id": "208",
@@ -2639,7 +2856,8 @@
       "file": "mangal4.jpg",
       "title": "Мангал «Оазис»",
       "description": "Мангал для гриля и отдыха у огня",
-      "price": 850
+      "price": 850,
+      "slug": "mangal-oazis"
     },
     {
       "id": "209",
@@ -2651,7 +2869,8 @@
       "file": "mangal5.jpg",
       "title": "Мангал «Панорама»",
       "description": "Мангал для гриля и отдыха у огня",
-      "price": 470
+      "price": 470,
+      "slug": "mangal-panorama"
     },
     {
       "id": "210",
@@ -2663,7 +2882,8 @@
       "file": "mangal6.jpg",
       "title": "Мангал «Радуга»",
       "description": "Мангал для гриля и отдыха у огня",
-      "price": 665
+      "price": 665,
+      "slug": "mangal-raduga"
     },
     {
       "id": "211",
@@ -2675,7 +2895,8 @@
       "file": "mangal7.jpg",
       "title": "Мангал «Соната»",
       "description": "Мангал для гриля и отдыха у огня",
-      "price": 680
+      "price": 680,
+      "slug": "mangal-sonata"
     },
     {
       "id": "212",
@@ -2687,7 +2908,8 @@
       "file": "mangal8.jpg",
       "title": "Мангал «Такт»",
       "description": "Мангал для гриля и отдыха у огня",
-      "price": 525
+      "price": 525,
+      "slug": "mangal-takt"
     },
     {
       "id": "213",
@@ -2699,7 +2921,8 @@
       "file": "mangal9.jpg",
       "title": "Мангал «Узор»",
       "description": "Мангал для гриля и отдыха у огня",
-      "price": 330
+      "price": 330,
+      "slug": "mangal-uzor"
     },
     {
       "id": "214",
@@ -2711,7 +2934,8 @@
       "file": "mangal_zona1.jpg",
       "title": "Мангальная зона «Феникс»",
       "description": "Полноценная зона барбекю под ваш участок",
-      "price": 1700
+      "price": 1700,
+      "slug": "mangalnaya-zona-feniks"
     },
     {
       "id": "215",
@@ -2723,7 +2947,8 @@
       "file": "mangal_zona10.jpg",
       "title": "Мангальная зона «Хор»",
       "description": "Полноценная зона барбекю под ваш участок",
-      "price": 2600
+      "price": 2600,
+      "slug": "mangalnaya-zona-hor"
     },
     {
       "id": "216",
@@ -2735,7 +2960,8 @@
       "file": "mangal_zona11.jpg",
       "title": "Мангальная зона «Цикл»",
       "description": "Полноценная зона барбекю под ваш участок",
-      "price": 2700
+      "price": 2700,
+      "slug": "mangalnaya-zona-cikl"
     },
     {
       "id": "217",
@@ -2747,7 +2973,8 @@
       "file": "mangal_zona12.jpg",
       "title": "Мангальная зона «Эпоха»",
       "description": "Полноценная зона барбекю под ваш участок",
-      "price": 2100
+      "price": 2100,
+      "slug": "mangalnaya-zona-epoha"
     },
     {
       "id": "218",
@@ -2759,7 +2986,8 @@
       "file": "mangal_zona2.jpg",
       "title": "Мангальная зона «Юность»",
       "description": "Полноценная зона барбекю под ваш участок",
-      "price": 2200
+      "price": 2200,
+      "slug": "mangalnaya-zona-yunost"
     },
     {
       "id": "219",
@@ -2771,7 +2999,8 @@
       "file": "mangal_zona3.jpg",
       "title": "Мангальная зона «Алмаз»",
       "description": "Полноценная зона барбекю под ваш участок",
-      "price": 3110
+      "price": 3110,
+      "slug": "mangalnaya-zona-almaz"
     },
     {
       "id": "220",
@@ -2783,7 +3012,8 @@
       "file": "mangal_zona4.jpg",
       "title": "Мангальная зона «Бархат»",
       "description": "Полноценная зона барбекю под ваш участок",
-      "price": 1300
+      "price": 1300,
+      "slug": "mangalnaya-zona-barhat"
     },
     {
       "id": "221",
@@ -2795,7 +3025,8 @@
       "file": "mangal_zona5.jpg",
       "title": "Мангальная зона «Вихрь»",
       "description": "Полноценная зона барбекю под ваш участок",
-      "price": 3050
+      "price": 3050,
+      "slug": "mangalnaya-zona-vihr"
     },
     {
       "id": "222",
@@ -2807,7 +3038,8 @@
       "file": "mangal_zona6.jpg",
       "title": "Мангальная зона «Гранж»",
       "description": "Полноценная зона барбекю под ваш участок",
-      "price": 2800
+      "price": 2800,
+      "slug": "mangalnaya-zona-granzh"
     },
     {
       "id": "223",
@@ -2819,7 +3051,8 @@
       "file": "mangal_zona7.jpg",
       "title": "Мангальная зона «Дали»",
       "description": "Полноценная зона барбекю под ваш участок",
-      "price": 2470
+      "price": 2470,
+      "slug": "mangalnaya-zona-dali"
     },
     {
       "id": "224",
@@ -2831,7 +3064,8 @@
       "file": "mangal_zona8.jpg",
       "title": "Мангальная зона «Ель»",
       "description": "Полноценная зона барбекю под ваш участок",
-      "price": 2450
+      "price": 2450,
+      "slug": "mangalnaya-zona-el"
     },
     {
       "id": "225",
@@ -2844,7 +3078,8 @@
       "title": "Мангальная зона «Жар-птица»",
       "description": "Полноценная зона барбекю под ваш участок",
       "price": 4200,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "mangalnaya-zona-zhar-ptica"
     },
     {
       "id": "226",
@@ -2856,7 +3091,8 @@
       "file": "kostrovai_chasha-1.jpg",
       "title": "Костровая чаша «Заря»",
       "description": "Костровая чаша для вечеров у живого огня",
-      "price": 420
+      "price": 420,
+      "slug": "kostrovaya-chasha-zarya"
     },
     {
       "id": "227",
@@ -2868,7 +3104,8 @@
       "file": "kostrovai_chasha-2.jpg",
       "title": "Костровая чаша «Ива»",
       "description": "Костровая чаша для вечеров у живого огня",
-      "price": 550
+      "price": 550,
+      "slug": "kostrovaya-chasha-iva"
     },
     {
       "id": "228",
@@ -2880,7 +3117,8 @@
       "file": "kostrovai_chasha-3.jpg",
       "title": "Костровая чаша «Камыш»",
       "description": "Костровая чаша для вечеров у живого огня",
-      "price": 480
+      "price": 480,
+      "slug": "kostrovaya-chasha-kamysh"
     },
     {
       "id": "229",
@@ -2892,7 +3130,8 @@
       "file": "kostrovai_chasha-4.jpg",
       "title": "Костровая чаша «Лазурь»",
       "description": "Костровая чаша для вечеров у живого огня",
-      "price": 430
+      "price": 430,
+      "slug": "kostrovaya-chasha-lazur"
     },
     {
       "id": "230",
@@ -2904,7 +3143,8 @@
       "file": "kostrovai_chasha-5.jpg",
       "title": "Костровая чаша «Метель»",
       "description": "Костровая чаша для вечеров у живого огня",
-      "price": 470
+      "price": 470,
+      "slug": "kostrovaya-chasha-metel"
     },
     {
       "id": "231",
@@ -2917,7 +3157,8 @@
       "title": "Маршевая лестница «Ночь»",
       "description": "Классическая маршевная лестница на заказ",
       "price": 1800,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "marshevaya-lestnica-noch"
     },
     {
       "id": "232",
@@ -2930,7 +3171,8 @@
       "title": "Маршевая лестница «Осень»",
       "description": "Классическая маршевная лестница на заказ",
       "price": 1800,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "marshevaya-lestnica-osen"
     },
     {
       "id": "233",
@@ -2943,7 +3185,8 @@
       "title": "Винтовая лестница «Песок»",
       "description": "Компактная винтовая лестница с плавным подъёмом",
       "price": 1800,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "vintovaya-lestnica-pesok"
     },
     {
       "id": "234",
@@ -2956,7 +3199,8 @@
       "title": "Винтовая лестница «Роса»",
       "description": "Компактная винтовая лестница с плавным подъёмом",
       "price": 1800,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "vintovaya-lestnica-rosa"
     },
     {
       "id": "235",
@@ -2969,7 +3213,8 @@
       "title": "Винтовая лестница «Сумерки»",
       "description": "Компактная винтовая лестница с плавным подъёмом",
       "price": 1800,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "vintovaya-lestnica-sumerki"
     },
     {
       "id": "236",
@@ -2982,7 +3227,8 @@
       "title": "Винтовая лестница «Тайга»",
       "description": "Компактная винтовая лестница с плавным подъёмом",
       "price": 1800,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "vintovaya-lestnica-tajga"
     },
     {
       "id": "237",
@@ -2995,7 +3241,8 @@
       "title": "Винтовая лестница «Утро»",
       "description": "Компактная винтовая лестница с плавным подъёмом",
       "price": 1800,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "vintovaya-lestnica-utro"
     },
     {
       "id": "238",
@@ -3008,7 +3255,8 @@
       "title": "Лестница «Фреска»",
       "description": "Лестница на металлокаркасе — прочность и стиль",
       "price": 1800,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "lestnica-freska"
     },
     {
       "id": "239",
@@ -3021,7 +3269,8 @@
       "title": "Лестница «Хвоя»",
       "description": "Лестница на металлокаркасе — прочность и стиль",
       "price": 1800,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "lestnica-hvoya"
     },
     {
       "id": "240",
@@ -3034,7 +3283,8 @@
       "title": "Лестница «Цветок»",
       "description": "Лестница на металлокаркасе — прочность и стиль",
       "price": 1800,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "lestnica-cvetok"
     },
     {
       "id": "241",
@@ -3047,7 +3297,8 @@
       "title": "Лестница «Чаща»",
       "description": "Лестница на металлокаркасе — прочность и стиль",
       "price": 1800,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "lestnica-chascha"
     },
     {
       "id": "242",
@@ -3060,7 +3311,8 @@
       "title": "Лестница «Шёлк»",
       "description": "Лестница на металлокаркасе — прочность и стиль",
       "price": 1800,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "lestnica-shelk"
     },
     {
       "id": "243",
@@ -3073,7 +3325,8 @@
       "title": "Лестница «Щит»",
       "description": "Лестница на металлокаркасе — прочность и стиль",
       "price": 1800,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "lestnica-schit"
     },
     {
       "id": "244",
@@ -3086,7 +3339,8 @@
       "title": "Лестница «Эльф»",
       "description": "Лестница на металлокаркасе — прочность и стиль",
       "price": 1800,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "lestnica-elf"
     },
     {
       "id": "245",
@@ -3099,7 +3353,8 @@
       "title": "Лестница «Юг»",
       "description": "Лестница на металлокаркасе — прочность и стиль",
       "price": 1800,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "lestnica-yug"
     },
     {
       "id": "246",
@@ -3112,7 +3367,8 @@
       "title": "Лестница «Ясень»",
       "description": "Лестница на металлокаркасе — прочность и стиль",
       "price": 1800,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "lestnica-yasen"
     },
     {
       "id": "247",
@@ -3125,7 +3381,8 @@
       "title": "Лестница «Арсенал»",
       "description": "Лестница на металлокаркасе — прочность и стиль",
       "price": 1800,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "lestnica-arsenal"
     },
     {
       "id": "248",
@@ -3138,7 +3395,8 @@
       "title": "Перила «Бастион»",
       "description": "Перила и ограждения с чёткой геометрией",
       "price": 300,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "perila-bastion"
     },
     {
       "id": "249",
@@ -3151,7 +3409,8 @@
       "title": "Перила «Вал»",
       "description": "Перила и ограждения с чёткой геометрией",
       "price": 300,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "perila-val"
     },
     {
       "id": "250",
@@ -3164,7 +3423,8 @@
       "title": "Перила «Гавань»",
       "description": "Перила и ограждения с чёткой геометрией",
       "price": 300,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "perila-gavan"
     },
     {
       "id": "251",
@@ -3177,7 +3437,8 @@
       "title": "Перила «Дозор»",
       "description": "Перила и ограждения с чёткой геометрией",
       "price": 300,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "perila-dozor"
     },
     {
       "id": "252",
@@ -3190,7 +3451,8 @@
       "title": "Перила «Ерш»",
       "description": "Перила и ограждения с чёткой геометрией",
       "price": 300,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "perila-ersh"
     },
     {
       "id": "253",
@@ -3203,7 +3465,8 @@
       "title": "Перила «Жатва»",
       "description": "Перила и ограждения с чёткой геометрией",
       "price": 300,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "perila-zhatva"
     },
     {
       "id": "254",
@@ -3216,7 +3479,8 @@
       "title": "Перила «Замок»",
       "description": "Перила и ограждения с чёткой геометрией",
       "price": 300,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "perila-zamok"
     },
     {
       "id": "255",
@@ -3229,7 +3493,8 @@
       "title": "Перила «Исток»",
       "description": "Перила и ограждения с чёткой геометрией",
       "price": 300,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "perila-istok"
     },
     {
       "id": "256",
@@ -3242,7 +3507,8 @@
       "title": "Перила «Каньон»",
       "description": "Перила и ограждения с чёткой геометрией",
       "price": 300,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "perila-kanon"
     },
     {
       "id": "257",
@@ -3255,7 +3521,8 @@
       "title": "Ограждение «Лагуна»",
       "description": "Ограждения с чёткой геометрией",
       "price": 300,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "ograzhdenie-laguna"
     },
     {
       "id": "258",
@@ -3267,7 +3534,8 @@
       "file": "kostrovai_chasha-6.png",
       "title": "Костровая чаша «Сфера»",
       "description": "Костровая чаша для вечеров у живого огня",
-      "price": 620
+      "price": 620,
+      "slug": "kostrovaya-chasha-sfera"
     },
     {
       "id": "259",
@@ -3279,7 +3547,8 @@
       "file": "vorota1.jpg",
       "title": "Ворота «Норд»",
       "description": "Въездные ворота с индивидуальным дизайном",
-      "price": "request"
+      "price": "request",
+      "slug": "vorota-nord"
     },
     {
       "id": "260",
@@ -3291,7 +3560,8 @@
       "file": "vorota10.jpg",
       "title": "Ворота «Остров»",
       "description": "Въездные ворота с индивидуальным дизайном",
-      "price": "request"
+      "price": "request",
+      "slug": "vorota-ostrov"
     },
     {
       "id": "261",
@@ -3303,7 +3573,8 @@
       "file": "vorota11.jpg",
       "title": "Ворота «Порт»",
       "description": "Въездные ворота с индивидуальным дизайном",
-      "price": "request"
+      "price": "request",
+      "slug": "vorota-port"
     },
     {
       "id": "262",
@@ -3315,7 +3586,8 @@
       "file": "vorota12.jpg",
       "title": "Ворота «Риф»",
       "description": "Въездные ворота с индивидуальным дизайном",
-      "price": "request"
+      "price": "request",
+      "slug": "vorota-rif"
     },
     {
       "id": "263",
@@ -3327,7 +3599,8 @@
       "file": "vorota13.jpg",
       "title": "Ворота «Сквер»",
       "description": "Въездные ворота с индивидуальным дизайном",
-      "price": "request"
+      "price": "request",
+      "slug": "vorota-skver"
     },
     {
       "id": "264",
@@ -3339,7 +3612,8 @@
       "file": "vorota14.jpg",
       "title": "Ворота «Терра»",
       "description": "Въездные ворота с индивидуальным дизайном",
-      "price": "request"
+      "price": "request",
+      "slug": "vorota-terra"
     },
     {
       "id": "266",
@@ -3351,7 +3625,8 @@
       "file": "vorota16.jpg",
       "title": "Ворота «Форт»",
       "description": "Въездные ворота с индивидуальным дизайном",
-      "price": "request"
+      "price": "request",
+      "slug": "vorota-fort"
     },
     {
       "id": "267",
@@ -3363,7 +3638,8 @@
       "file": "vorota17.jpg",
       "title": "Ворота «Хребет»",
       "description": "Въездные ворота с индивидуальным дизайном",
-      "price": "request"
+      "price": "request",
+      "slug": "vorota-hrebet"
     },
     {
       "id": "268",
@@ -3375,7 +3651,8 @@
       "file": "vorota18.jpg",
       "title": "Ворота «Цепь»",
       "description": "Въездные ворота с индивидуальным дизайном",
-      "price": "request"
+      "price": "request",
+      "slug": "vorota-cep"
     },
     {
       "id": "269",
@@ -3387,7 +3664,8 @@
       "file": "vorota2.jpg",
       "title": "Ворота «Шлюз»",
       "description": "Въездные ворота с индивидуальным дизайном",
-      "price": "request"
+      "price": "request",
+      "slug": "vorota-shlyuz"
     },
     {
       "id": "270",
@@ -3399,7 +3677,8 @@
       "file": "vorota3.jpg",
       "title": "Ворота «Эстакада»",
       "description": "Въездные ворота с индивидуальным дизайном",
-      "price": "request"
+      "price": "request",
+      "slug": "vorota-estakada"
     },
     {
       "id": "271",
@@ -3411,7 +3690,8 @@
       "file": "vorota4.jpg",
       "title": "Ворота «Юрта»",
       "description": "Въездные ворота с индивидуальным дизайном",
-      "price": "request"
+      "price": "request",
+      "slug": "vorota-yurta"
     },
     {
       "id": "272",
@@ -3423,7 +3703,8 @@
       "file": "vorota5.jpg",
       "title": "Ворота «Аллюр»",
       "description": "Въездные ворота с индивидуальным дизайном",
-      "price": "request"
+      "price": "request",
+      "slug": "vorota-allyur"
     },
     {
       "id": "273",
@@ -3435,7 +3716,8 @@
       "file": "vorota6.jpg",
       "title": "Ворота «Береговой»",
       "description": "Въездные ворота с индивидуальным дизайном",
-      "price": "request"
+      "price": "request",
+      "slug": "vorota-beregovoj"
     },
     {
       "id": "274",
@@ -3447,7 +3729,8 @@
       "file": "vorota7.jpg",
       "title": "Ворота «Вершина»",
       "description": "Въездные ворота с индивидуальным дизайном",
-      "price": "request"
+      "price": "request",
+      "slug": "vorota-vershina"
     },
     {
       "id": "275",
@@ -3459,7 +3742,8 @@
       "file": "vorota8.jpg",
       "title": "Ворота «Глубина»",
       "description": "Въездные ворота с индивидуальным дизайном",
-      "price": "request"
+      "price": "request",
+      "slug": "vorota-glubina"
     },
     {
       "id": "276",
@@ -3471,7 +3755,8 @@
       "file": "vorota9.jpg",
       "title": "Ворота «Долина»",
       "description": "Въездные ворота с индивидуальным дизайном",
-      "price": "request"
+      "price": "request",
+      "slug": "vorota-dolina"
     },
     {
       "id": "277",
@@ -3483,7 +3768,8 @@
       "file": "kalitka1.jpg",
       "title": "Калитка «Залив»",
       "description": "Калитка, гармонирующая с общим стилем участка",
-      "price": "request"
+      "price": "request",
+      "slug": "kalitka-zaliv"
     },
     {
       "id": "278",
@@ -3495,7 +3781,8 @@
       "file": "kalitka10.jpg",
       "title": "Калитка «Коса»",
       "description": "Калитка, гармонирующая с общим стилем участка",
-      "price": "request"
+      "price": "request",
+      "slug": "kalitka-kosa"
     },
     {
       "id": "279",
@@ -3507,7 +3794,8 @@
       "file": "kalitka11.jpg",
       "title": "Калитка «Луг»",
       "description": "Калитка, гармонирующая с общим стилем участка",
-      "price": "request"
+      "price": "request",
+      "slug": "kalitka-lug"
     },
     {
       "id": "280",
@@ -3519,7 +3807,8 @@
       "file": "kalitka12.jpg",
       "title": "Калитка «Мель»",
       "description": "Калитка, гармонирующая с общим стилем участка",
-      "price": "request"
+      "price": "request",
+      "slug": "kalitka-mel"
     },
     {
       "id": "281",
@@ -3531,7 +3820,8 @@
       "file": "kalitka2.jpg",
       "title": "Калитка «Нива»",
       "description": "Калитка, гармонирующая с общим стилем участка",
-      "price": "request"
+      "price": "request",
+      "slug": "kalitka-niva"
     },
     {
       "id": "282",
@@ -3543,7 +3833,8 @@
       "file": "kalitka3.jpg",
       "title": "Калитка «Овраг»",
       "description": "Калитка, гармонирующая с общим стилем участка",
-      "price": "request"
+      "price": "request",
+      "slug": "kalitka-ovrag"
     },
     {
       "id": "283",
@@ -3555,7 +3846,8 @@
       "file": "kalitka4.jpg",
       "title": "Калитка «Плёс»",
       "description": "Калитка, гармонирующая с общим стилем участка",
-      "price": "request"
+      "price": "request",
+      "slug": "kalitka-ples"
     },
     {
       "id": "284",
@@ -3567,7 +3859,8 @@
       "file": "kalitka5.jpg",
       "title": "Калитка «Ручей»",
       "description": "Калитка, гармонирующая с общим стилем участка",
-      "price": "request"
+      "price": "request",
+      "slug": "kalitka-ruchej"
     },
     {
       "id": "285",
@@ -3579,7 +3872,8 @@
       "file": "kalitka6.jpg",
       "title": "Калитка «Степь»",
       "description": "Калитка, гармонирующая с общим стилем участка",
-      "price": "request"
+      "price": "request",
+      "slug": "kalitka-step"
     },
     {
       "id": "286",
@@ -3591,7 +3885,8 @@
       "file": "kalitka7.jpg",
       "title": "Калитка «Тундра»",
       "description": "Калитка, гармонирующая с общим стилем участка",
-      "price": "request"
+      "price": "request",
+      "slug": "kalitka-tundra"
     },
     {
       "id": "287",
@@ -3603,7 +3898,8 @@
       "file": "kalitka8.jpg",
       "title": "Калитка «Утёс»",
       "description": "Калитка, гармонирующая с общим стилем участка",
-      "price": "request"
+      "price": "request",
+      "slug": "kalitka-utes"
     },
     {
       "id": "288",
@@ -3615,7 +3911,8 @@
       "file": "kalitka9.jpg",
       "title": "Калитка «Хутор»",
       "description": "Калитка, гармонирующая с общим стилем участка",
-      "price": "request"
+      "price": "request",
+      "slug": "kalitka-hutor"
     },
     {
       "id": "289",
@@ -3627,7 +3924,8 @@
       "file": "zabor1.jpg",
       "title": "Забор «Цветение»",
       "description": "Забор в духе лофт — приватность без тяжести",
-      "price": "request"
+      "price": "request",
+      "slug": "zabor-cvetenie"
     },
     {
       "id": "290",
@@ -3639,7 +3937,8 @@
       "file": "zabor2.jpg",
       "title": "Забор «Ширь»",
       "description": "Забор в духе лофт — приватность без тяжести",
-      "price": "request"
+      "price": "request",
+      "slug": "zabor-shir"
     },
     {
       "id": "291",
@@ -3651,7 +3950,8 @@
       "file": "zabor3.jpg",
       "title": "Забор «Эльбрус»",
       "description": "Забор в духе лофт — приватность без тяжести",
-      "price": "request"
+      "price": "request",
+      "slug": "zabor-elbrus"
     },
     {
       "id": "292",
@@ -3664,7 +3964,8 @@
       "title": "Игровой комплекс «Истина»",
       "description": "Игровой комплекс для детской площадки",
       "price": 2000,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "igrovoj-kompleks-istina"
     },
     {
       "id": "293",
@@ -3677,7 +3978,8 @@
       "title": "Игровой комплекс «Ковчег»",
       "description": "Игровой комплекс для детской площадки",
       "price": 2000,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "igrovoj-kompleks-kovcheg"
     },
     {
       "id": "294",
@@ -3690,7 +3992,8 @@
       "title": "Игровой комплекс «Ладья»",
       "description": "Игровой комплекс для детской площадки",
       "price": 2000,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "igrovoj-kompleks-ladya"
     },
     {
       "id": "295",
@@ -3702,7 +4005,8 @@
       "file": "kacheli1.jpg",
       "title": "Детские качели «Метис»",
       "description": "Безопасные качели для маленьких непосед",
-      "price": 1500
+      "price": 1500,
+      "slug": "detskie-kacheli-metis"
     },
     {
       "id": "296",
@@ -3715,7 +4019,8 @@
       "title": "Лестница",
       "description": "Безопасные качели для маленьких непосед",
       "price": 1800,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "lestnica"
     },
     {
       "id": "297",
@@ -3728,7 +4033,8 @@
       "title": "Спортивный элемент «Орёл»",
       "description": "Спортивный элемент для активного досуга",
       "price": 2000,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "sportivnyj-element-orel"
     },
     {
       "id": "298",
@@ -3741,7 +4047,8 @@
       "title": "Спортивный элемент «Росинка»",
       "description": "Спортивный элемент для активного досуга",
       "price": 2000,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "sportivnyj-element-rosinka"
     },
     {
       "id": "299",
@@ -3753,7 +4060,8 @@
       "file": "0a15556abc954a95282fbd5e0eba6f7c.jpg",
       "title": "Арт-объект «Пульс»",
       "description": "Авторский металлический объект для ландшафта",
-      "price": "request"
+      "price": "request",
+      "slug": "art-obekt-puls"
     },
     {
       "id": "300",
@@ -3765,7 +4073,8 @@
       "file": "180a8905-808b-4f73-8e2b-668b44794f64.jpg",
       "title": "«Метаморфоза»",
       "description": "Авторская металлическая композиция ручной работы",
-      "price": 150
+      "price": 150,
+      "slug": "metamorfoza"
     },
     {
       "id": "301",
@@ -3778,7 +4087,8 @@
       "title": "«Эфир»",
       "description": "Авторская металлическая композиция ручной работы",
       "price": 450,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "efir"
     },
     {
       "id": "302",
@@ -3790,7 +4100,8 @@
       "file": "6212631b-e95f-40f5-b12a-1273e864dd27.jpg",
       "title": "«Кинетика»",
       "description": "Авторская металлическая композиция ручной работы",
-      "price": 100
+      "price": 100,
+      "slug": "kinetika"
     },
     {
       "id": "303",
@@ -3802,7 +4113,8 @@
       "file": "63792fd6080f5e660d00d2d3a381b3a1.jpg",
       "title": "«Аура»",
       "description": "Авторская металлическая композиция ручной работы",
-      "price": 100
+      "price": 100,
+      "slug": "aura"
     },
     {
       "id": "304",
@@ -3814,7 +4126,8 @@
       "file": "79832a2d-edec-41de-a611-33bf6a39582a.jpg",
       "title": "«Свиток»",
       "description": "Авторская металлическая композиция ручной работы",
-      "price": 150
+      "price": 150,
+      "slug": "svitok"
     },
     {
       "id": "305",
@@ -3826,7 +4139,8 @@
       "file": "7afdeed9b7c8c73a351c1aada6122c15.jpg",
       "title": "«Воздух»",
       "description": "Авторская металлическая композиция ручной работы",
-      "price": 250
+      "price": 250,
+      "slug": "vozduh"
     },
     {
       "id": "306",
@@ -3839,7 +4153,8 @@
       "title": "«Спираль»",
       "description": "Авторская металлическая композиция ручной работы",
       "price": 160,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "spiral"
     },
     {
       "id": "307",
@@ -3852,7 +4167,8 @@
       "title": "«Контур»",
       "description": "Авторская металлическая композиция ручной работы",
       "price": 300,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "kontur"
     },
     {
       "id": "402",
@@ -3864,7 +4180,8 @@
       "file": "10.jpg",
       "title": "«Гармония»",
       "description": "Авторская металлическая композиция ручной работы",
-      "price": 460
+      "price": 460,
+      "slug": "garmoniya"
     },
     {
       "id": "308",
@@ -3876,7 +4193,8 @@
       "file": "fcd330eeec71546764613d4a0fe34e31.jpg",
       "title": "Арт-объект «Пластика»",
       "description": "Авторский металлический объект для ландшафта",
-      "price": "request"
+      "price": "request",
+      "slug": "art-obekt-plastika"
     },
     {
       "id": "309",
@@ -3888,7 +4206,8 @@
       "file": "02b23152-20cf-48d3-b689-18b6ac0220e4.jpg",
       "title": "Козырек «Каркас»",
       "description": "Козырек с металлическим каркасом в стиле лофт: защита входной зоны от осадков и солнца",
-      "price": 690
+      "price": 690,
+      "slug": "kozyrek-karkas"
     },
     {
       "id": "310",
@@ -3900,7 +4219,8 @@
       "file": "06c77632-53d9-4eba-ba4b-278144fad4af.jpg",
       "title": "Решётка «Опора»",
       "description": "Металлическая решётка на окно в стиле лофт",
-      "price": 400
+      "price": 400,
+      "slug": "reshetka-opora"
     },
     {
       "id": "311",
@@ -3912,7 +4232,8 @@
       "file": "0c4af249-7504-4f9a-a135-578622a72fe0.jpg",
       "title": "Козырек «Ферма»",
       "description": "Козырек на ферменной конструкции в стиле лофт: выразительная геометрия и надёжная защита над входом",
-      "price": 485
+      "price": 485,
+      "slug": "kozyrek-ferma"
     },
     {
       "id": "312",
@@ -3924,7 +4245,8 @@
       "file": "1963862b-80a9-4fa0-91cb-147b09eeaac3.jpg",
       "title": "Решётка «Траверса»",
       "description": "Металлическая решётка на окно в стиле лофт",
-      "price": 400
+      "price": 400,
+      "slug": "reshetka-traversa"
     },
     {
       "id": "313",
@@ -3936,7 +4258,8 @@
       "file": "1e330104-6449-44ec-8fc1-0da5da668f0c.jpg",
       "title": "Решётка «Ригель»",
       "description": "Металлическая решётка на окно в стиле лофт",
-      "price": 270
+      "price": 270,
+      "slug": "reshetka-rigel"
     },
     {
       "id": "314",
@@ -3948,7 +4271,8 @@
       "file": "202e3866-c111-43a0-b615-0121f78cc796.jpg",
       "title": "Козырек «Прогон»",
       "description": "Козырек с горизонтальным прогоном в стиле лофт — лаконичный индустриальный силуэт над входом",
-      "price": 990
+      "price": 990,
+      "slug": "kozyrek-progon"
     },
     {
       "id": "315",
@@ -3960,7 +4284,8 @@
       "file": "24038370-3c93-4d3c-86b9-33c71b13b06d.jpg",
       "title": "Навес «Балка»",
       "description": "Стильный навес для машины в стиле лофт",
-      "price": "request"
+      "price": "request",
+      "slug": "naves-balka"
     },
     {
       "id": "316",
@@ -3972,7 +4297,8 @@
       "file": "2481356f-c857-4ab5-8653-127bca76f88c.jpg",
       "title": "Навес «Узел»",
       "description": "Стильный навес для машины в стиле лофт",
-      "price": "request"
+      "price": "request",
+      "slug": "naves-uzel"
     },
     {
       "id": "317",
@@ -3984,7 +4310,8 @@
       "file": "5ac7e73c-348d-4b42-9ea7-0b38d86ad535.jpg",
       "title": "Решётка «Связь»",
       "description": "Металлическая решётка на окно в стиле лофт",
-      "price": 350
+      "price": 350,
+      "slug": "reshetka-svyaz"
     },
     {
       "id": "318",
@@ -3996,7 +4323,8 @@
       "file": "655b2160-2696-4592-abb0-acba5261c7de.jpg",
       "title": "Навес «Основание»",
       "description": "Стильный навес для машины в стиле лофт",
-      "price": "request"
+      "price": "request",
+      "slug": "naves-osnovanie"
     },
     {
       "id": "319",
@@ -4008,7 +4336,8 @@
       "file": "738e4df8-7252-439c-a0f6-339c5268c87a.jpg",
       "title": "Решётка «Монолит»",
       "description": "Металлическая решётка на окно в стиле лофт",
-      "price": 485
+      "price": 485,
+      "slug": "reshetka-monolit"
     },
     {
       "id": "320",
@@ -4021,7 +4350,8 @@
       "title": "Козырек «Стержень»",
       "description": "Козырек на стержневых опорах в стиле лофт: лёгкая конструкция над входной группой",
       "price": 750,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "kozyrek-sterzhen"
     },
     {
       "id": "321",
@@ -4033,7 +4363,8 @@
       "file": "9d5870e9-311f-40b8-a0ae-f518a4b80531.jpg",
       "title": "Решётка «Кронштейн»",
       "description": "Металлическая решётка на окно в стиле лофт",
-      "price": 450
+      "price": 450,
+      "slug": "reshetka-kronshtejn"
     },
     {
       "id": "322",
@@ -4045,7 +4376,8 @@
       "file": "a02eb335-9ca0-409e-ba8d-bf86701f398e.jpg",
       "title": "Навес «Фланец»",
       "description": "Стильный навес для машины в стиле лофт",
-      "price": "request"
+      "price": "request",
+      "slug": "naves-flanec"
     },
     {
       "id": "323",
@@ -4057,7 +4389,8 @@
       "file": "a1ea21e5-3733-4d56-b689-80d793468941.jpg",
       "title": "Решётка «Рама»",
       "description": "Металлическая решётка на окно в стиле лофт",
-      "price": 220
+      "price": 220,
+      "slug": "reshetka-rama"
     },
     {
       "id": "324",
@@ -4070,7 +4403,8 @@
       "title": "Козырек «Портал»",
       "description": "Портальный козырек в стиле лофт: акцентная рама над входом с защитой от осадков",
       "price": 1000,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "kozyrek-portal"
     },
     {
       "id": "325",
@@ -4082,7 +4416,8 @@
       "file": "b0625402-1bbc-40e8-87c0-cf427c951f77.jpg",
       "title": "Решётка «Консоль»",
       "description": "Металлическая решётка на окно в стиле лофт",
-      "price": 250
+      "price": 250,
+      "slug": "reshetka-konsol"
     },
     {
       "id": "326",
@@ -4094,7 +4429,8 @@
       "file": "b0aa4f29-171a-43c9-9a09-3328e27510c2.jpg",
       "title": "Решётка «Пролёт»",
       "description": "Металлическая решётка на окно в стиле лофт",
-      "price": 255
+      "price": 255,
+      "slug": "reshetka-prolet"
     },
     {
       "id": "327",
@@ -4106,7 +4442,8 @@
       "file": "e1119d26-74e4-4a21-b87c-a66d598ead55.jpg",
       "title": "Навес «Несущая»",
       "description": "Стильный навес для машины в стиле лофт",
-      "price": "request"
+      "price": "request",
+      "slug": "naves-nesuschaya"
     },
     {
       "id": "328",
@@ -4118,7 +4455,8 @@
       "file": "e1cdae56-38c5-42d5-974b-25ea92c15c3c.jpg",
       "title": "Решётка «Монтаж»",
       "description": "Металлическая решётка на окно в стиле лофт",
-      "price": 200
+      "price": 200,
+      "slug": "reshetka-montazh"
     },
     {
       "id": "329",
@@ -4130,7 +4468,8 @@
       "file": "e7511d1e-396e-4029-9981-1aea435b2d8f.jpg",
       "title": "Навес «Сборка»",
       "description": "Стильный навес для машины в стиле лофт",
-      "price": "request"
+      "price": "request",
+      "slug": "naves-sborka"
     },
     {
       "id": "330",
@@ -4142,7 +4481,8 @@
       "file": "fe83faf1-cf3f-49ca-95e9-5db5aae768c9.jpg",
       "title": "Навес «Проект»",
       "description": "Стильный навес для машины в стиле лофт",
-      "price": "request"
+      "price": "request",
+      "slug": "naves-proekt"
     },
     {
       "id": "25",
@@ -4155,7 +4495,8 @@
       "title": "Стол «Депо»",
       "description": "Стол из металла и мрамора / гранита в стиле лофт",
       "price": 800,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "stol-depo"
     },
     {
       "id": "26",
@@ -4168,7 +4509,8 @@
       "title": "Стол «Ангар»",
       "description": "Стильный стол из металла и мрамора / гранита в стиле лофт",
       "price": 2200,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "stol-angar"
     },
     {
       "id": "27",
@@ -4181,7 +4523,8 @@
       "title": "Стол «Цех»",
       "description": "Стол из массива и металла в духе лофта",
       "price": 1000,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "stol-ceh"
     },
     {
       "id": "28",
@@ -4194,7 +4537,8 @@
       "title": "Стол «Маяк»",
       "description": "Массив и металл в духе индустриального лофта",
       "price": 1250,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "stol-mayak"
     },
     {
       "id": "332",
@@ -4206,7 +4550,8 @@
       "file": "stol30.jpg",
       "title": "Стол «Уно»",
       "description": "Письменный стол в стиле лофт из массива и металла",
-      "price": 565
+      "price": 565,
+      "slug": "stol-uno"
     },
     {
       "id": "333",
@@ -4219,7 +4564,8 @@
       "title": "Стол обеденный «Лента»",
       "description": "Обеденный стол премиум-класса: каменная столешница, основание из металла",
       "price": 2500,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "stol-obedennyj-lenta"
     },
     {
       "id": "334",
@@ -4232,7 +4578,8 @@
       "title": "Стол обеденный «Арка»",
       "description": "Обеденный стол премиум-класса: каменная столешница, основание из металла",
       "price": 2700,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "stol-obedennyj-arka"
     },
     {
       "id": "337",
@@ -4244,7 +4591,8 @@
       "file": "stol35.jpg",
       "title": "Стол обеденный «Гранд»",
       "description": "Большой обеденный стол в стиле лофт из массива и металла",
-      "price": 1620
+      "price": 1620,
+      "slug": "stol-obedennyj-grand"
     },
     {
       "id": "338",
@@ -4256,7 +4604,8 @@
       "file": "stol36.jpg",
       "title": "Стол «Дымка»",
       "description": "Стол в стиле лофт из металла и стекла",
-      "price": 540
+      "price": 540,
+      "slug": "stol-dymka"
     },
     {
       "id": "339",
@@ -4268,7 +4617,8 @@
       "file": "stol37.jpg",
       "title": "Стол «Слэб»",
       "description": "Стол в стиле лофт из массива и металла",
-      "price": 1520
+      "price": 1520,
+      "slug": "stol-sleb"
     },
     {
       "id": "341",
@@ -4280,7 +4630,8 @@
       "file": "stol39.jpg",
       "title": "Стол «Орбита»",
       "description": "Круглый стол в стиле лофт: белая столешница и тонкие геометричные металлические ножки",
-      "price": 510
+      "price": 510,
+      "slug": "stol-orbita"
     },
     {
       "id": "342",
@@ -4292,7 +4643,8 @@
       "file": "stol40.jpg",
       "title": "Стол «Фасет»",
       "description": "Стол в стиле лофт: белая столешница на тонких металлических ножках",
-      "price": 540
+      "price": 540,
+      "slug": "stol-faset"
     },
     {
       "id": "344",
@@ -4304,7 +4656,8 @@
       "file": "banketka16.jpg",
       "title": "Банкетка «Изумруд»",
       "description": "Банкетка в стиле лофт: мягкое сиденье из бархата с капитоне и геометричный металлический каркас",
-      "price": 320
+      "price": 320,
+      "slug": "banketka-izumrud"
     },
     {
       "id": "345",
@@ -4316,7 +4669,8 @@
       "file": "stul11.jpg",
       "title": "Барный стул «Борг»",
       "description": "Барный стул в стиле лофт из металла с мягким сидением и спинкой",
-      "price": 300
+      "price": 300,
+      "slug": "barnyj-stul-borg"
     },
     {
       "id": "346",
@@ -4328,7 +4682,8 @@
       "file": "garderobnaya.jpg",
       "title": "Гардеробная «Урбан»",
       "description": "Металлоконструкция для прихожей: верхняя полка, вешалка, скамья с мягким сиденьем и полки для обуви",
-      "price": 910
+      "price": 910,
+      "slug": "garderobnaya-urban"
     },
     {
       "id": "347",
@@ -4340,7 +4695,8 @@
       "file": "garderobnaya-simple-dub.jpg",
       "title": "Гардеробная Simple «Дуб крафт»",
       "description": "Гардеробная система в стиле лофт: полки ЛДСП под дуб табак, чёрный металлический каркас, 100×35×190 см",
-      "price": 950
+      "price": 950,
+      "slug": "garderobnaya-simple-dub-kraft"
     },
     {
       "id": "348",
@@ -4352,7 +4708,8 @@
       "file": "garderobnaya2.jpg",
       "title": "Гардеробная «Комфорт»",
       "description": "Металлоконструкция для прихожей: верхняя полка, вешалка, декоративная решётка с крючками, скамья и полки для обуви",
-      "price": 1000
+      "price": 1000,
+      "slug": "garderobnaya-komfort"
     },
     {
       "id": "349",
@@ -4364,7 +4721,8 @@
       "file": "stelash12.jpg",
       "title": "Стеллаж «Каскад»",
       "description": "Стеллаж в стиле лофт: чёрный металлический каркас и асимметричные деревянные полки с каскадной компоновкой",
-      "price": 540
+      "price": 540,
+      "slug": "stellazh-kaskad"
     },
     {
       "id": "350",
@@ -4376,7 +4734,8 @@
       "file": "stelash13.jpg",
       "title": "Стеллаж «Икс»",
       "description": "Высокий стеллаж в стиле лофт: чёрный металлический каркас с X-образными перемычками и белые полки",
-      "price": 310
+      "price": 310,
+      "slug": "stellazh-iks"
     },
     {
       "id": "351",
@@ -4388,7 +4747,8 @@
       "file": "stelash14.jpg",
       "title": "Стеллаж «Диагональ»",
       "description": "Стеллаж-перегородка в стиле лофт: металлический каркас с сетчатыми боковинами и асимметричные деревянные полки",
-      "price": 910
+      "price": 910,
+      "slug": "stellazh-diagonal"
     },
     {
       "id": "352",
@@ -4400,7 +4760,8 @@
       "file": "stelash15.jpg",
       "title": "Стеллаж «Ферма»",
       "description": "Высокий стеллаж в стиле лофт: чёрный металлический каркас с X-образной боковой решёткой и шесть деревянных полок",
-      "price": 935
+      "price": 935,
+      "slug": "stellazh-ferma"
     },
     {
       "id": "372",
@@ -4412,7 +4773,8 @@
       "file": "stelash16.jpg",
       "title": "Стеллаж «Колонна»",
       "description": "Высокий стеллаж в стиле лофт: металлический каркас с прямоугольными стойками и деревянные полки, проходящие сквозь каркас",
-      "price": 965
+      "price": 965,
+      "slug": "stellazh-kolonna"
     },
     {
       "id": "373",
@@ -4425,7 +4787,8 @@
       "title": "Стеллаж «Витрина»",
       "description": "Стеллаж в стиле лофт: асимметричный металлический каркас золотистого цвета и стеклянные полки",
       "price": 950,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "stellazh-vitrina"
     },
     {
       "id": "374",
@@ -4437,7 +4800,8 @@
       "file": "stelash18.jpg",
       "title": "Стеллаж «Триплекс»",
       "description": "Широкий стеллаж в стиле лофт: чёрный металлический каркас с X-образными перемычками и массивные деревянные полки",
-      "price": 1145
+      "price": 1145,
+      "slug": "stellazh-tripleks"
     },
     {
       "id": "375",
@@ -4449,7 +4813,8 @@
       "file": "stelash19.jpg",
       "title": "Стеллаж «Мрамор»",
       "description": "Стеллаж в стиле лофт: золотистый металлический каркас, асимметричные полки из белого мрамора и открытые верхний и нижний ярусы",
-      "price": 1580
+      "price": 1580,
+      "slug": "stellazh-mramor"
     },
     {
       "id": "376",
@@ -4461,7 +4826,8 @@
       "file": "stelash20.jpg",
       "title": "Стеллаж «Стекло»",
       "description": "Стеллаж в стиле лофт: четыре секции из тёмного металла со стеклянными полками и промежутками между ярусами",
-      "price": 1320
+      "price": 1320,
+      "slug": "stellazh-steklo"
     },
     {
       "id": "377",
@@ -4473,7 +4839,8 @@
       "file": "stelash21.jpg",
       "title": "Стеллаж «Геометрия»",
       "description": "Стеллаж в стиле лофт: золотистый металлический каркас из вложенных прямоугольников и тонированные стеклянные полки",
-      "price": 1450
+      "price": 1450,
+      "slug": "stellazh-geometriya"
     },
     {
       "id": "378",
@@ -4485,7 +4852,8 @@
       "file": "stelash22.jpg",
       "title": "Стеллаж «Экран»",
       "description": "Двухсекционный стеллаж в стиле лофт: чёрный металлический каркас с вертикальными ламелями и деревянные полки",
-      "price": 1850
+      "price": 1850,
+      "slug": "stellazh-ekran"
     },
     {
       "id": "379",
@@ -4497,7 +4865,8 @@
       "file": "stelash23.jpg",
       "title": "Стеллаж «Перегородка»",
       "description": "Стеллаж-перегородка в стиле лофт: чёрный металлический каркас с вертикальными рейками и светлые деревянные полки",
-      "price": 1650
+      "price": 1650,
+      "slug": "stellazh-peregorodka"
     },
     {
       "id": "380",
@@ -4510,7 +4879,8 @@
       "title": "Стеллаж «Крест»",
       "description": "Высокий стеллаж в стиле лофт: чёрный металлический каркас с X-образными боковинами и шесть ярусов тёмных деревянных полок",
       "price": 2150,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "stellazh-krest"
     },
     {
       "id": "381",
@@ -4522,7 +4892,8 @@
       "file": "vinshkaf1.jpg",
       "title": "Винный шкаф «Решётка»",
       "description": "Настенный винный шкаф в стиле лофт: чёрный металлический каркас с горизонтальными ячейками для бутылок",
-      "price": 210
+      "price": 210,
+      "slug": "vinnyj-shkaf-reshetka"
     },
     {
       "id": "382",
@@ -4534,7 +4905,8 @@
       "file": "vinshkaf2.webp",
       "title": "Винный шкаф «Бокал»",
       "description": "Настенный винный шкаф в стиле лофт: металлический каркас, деревянные полки, отделение для бутылок и подвес для бокалов",
-      "price": 620
+      "price": 620,
+      "slug": "vinnyj-shkaf-bokal"
     },
     {
       "id": "383",
@@ -4546,7 +4918,8 @@
       "file": "vinshkaf3.jpg",
       "title": "Винный шкаф «Каркас»",
       "description": "Винный шкаф в стиле лофт: чёрный металлический каркас 25×25 мм и полки из ЛДСП 18 мм",
-      "price": 780
+      "price": 780,
+      "slug": "vinnyj-shkaf-karkas"
     },
     {
       "id": "384",
@@ -4558,7 +4931,8 @@
       "file": "vinshkaf4.jpg",
       "title": "Винный шкаф «Консоль»",
       "description": "Винный шкаф-бар в стиле лофт: металлический каркас, деревянная столешница, подвес для бокалов и ярусы для бутылок",
-      "price": 890
+      "price": 890,
+      "slug": "vinnyj-shkaf-konsol"
     },
     {
       "id": "353",
@@ -4570,7 +4944,8 @@
       "file": "kletka1.jpg",
       "title": "Клетка «Дом»",
       "description": "Металлическая клетка для собак в стиле лофт: деревянная столешница, вертикальные прутья и мягкий матрас",
-      "price": 870
+      "price": 870,
+      "slug": "kletka-dom"
     },
     {
       "id": "354",
@@ -4582,7 +4957,8 @@
       "file": "kletka2.jpg",
       "title": "Клетка «Свет»",
       "description": "Металлическая клетка для собак в стиле лофт: белый каркас, деревянная столешница и дверь на петлях",
-      "price": 820
+      "price": 820,
+      "slug": "kletka-svet"
     },
     {
       "id": "355",
@@ -4594,7 +4970,8 @@
       "file": "krovat8.jpg",
       "title": "Кровать двухъярусная «Лофт»",
       "description": "Двухъярусная кровать в стиле лофт: металлический каркас с заклёпками, деревянные вставки и встроенная лестница",
-      "price": 2300
+      "price": 2300,
+      "slug": "krovat-dvuhyarusnaya-loft"
     },
     {
       "id": "356",
@@ -4606,7 +4983,8 @@
       "file": "stol42.jpg",
       "title": "Стол «Лестница»",
       "description": "Стол в стиле лофт из массива и металла",
-      "price": 820
+      "price": 820,
+      "slug": "stol-lestnica"
     },
     {
       "id": "357",
@@ -4619,7 +4997,8 @@
       "title": "Стол «Рингс»",
       "description": "Дизайнерский стол в стиле лофт: каменная столешница и металлические опоры в форме полуколец",
       "price": 1600,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "stol-rings"
     },
     {
       "id": "358",
@@ -4632,7 +5011,8 @@
       "title": "Стол «Спэйс»",
       "description": "Дизайнерский стол: каменная столешница и архитектурное металлическое основание",
       "price": 1600,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "stol-spejs"
     },
     {
       "id": "359",
@@ -4645,7 +5025,8 @@
       "title": "Стол «Тритон»",
       "description": "Стол в минималистичном индустриальном стиле: каменная столешница и металлические ножки X-образной формы",
       "price": 1000,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "stol-triton"
     },
     {
       "id": "360",
@@ -4658,7 +5039,8 @@
       "title": "Стол «Пламя»",
       "description": "Дизайнерский стол в индустриальном стиле: тонкая столешница из мрамора / гранита и металлическое основание",
       "price": 1900,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "stol-plamya"
     },
     {
       "id": "361",
@@ -4671,7 +5053,8 @@
       "title": "Стол «Гермес»",
       "description": "Дизайнерский обеденный стол: белая мраморная столешница и скульптурное основание в золотистом металле",
       "price": 3000,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "stol-germes"
     },
     {
       "id": "362",
@@ -4684,7 +5067,8 @@
       "title": "Стол «Форма»",
       "description": "Стол в современном стиле: столешница из массива дерева и скульптурные металлические опоры",
       "price": 2000,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "stol-forma"
     },
     {
       "id": "363",
@@ -4697,7 +5081,8 @@
       "title": "Стол «Призма»",
       "description": "Дизайнерский стол: стеклянная столешница и скульптурное металлическое основание геометричной формы",
       "price": 1300,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "stol-prizma"
     },
     {
       "id": "364",
@@ -4710,7 +5095,8 @@
       "title": "Стол «Кромка»",
       "description": "Консольный стол: столешница из массива с живым краем и скульптурное металлическое основание",
       "price": 1200,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "stol-kromka"
     },
     {
       "id": "389",
@@ -4722,7 +5108,8 @@
       "file": "drovnica1.jpg",
       "title": "Дровница «Каркас»",
       "description": "Стильная дровница для хранения дров в стиле лофт",
-      "price": 290
+      "price": 290,
+      "slug": "drovnica-karkas"
     },
     {
       "id": "390",
@@ -4734,7 +5121,8 @@
       "file": "drovnica2.jpg",
       "title": "Дровница «Геометрия»",
       "description": "Стильная дровница для хранения дров в стиле лофт",
-      "price": 480
+      "price": 480,
+      "slug": "drovnica-geometriya"
     },
     {
       "id": "391",
@@ -4746,7 +5134,8 @@
       "file": "drovnica3.jpg",
       "title": "Дровница «Вертикаль»",
       "description": "Стильная дровница для хранения дров в стиле лофт",
-      "price": 585
+      "price": 585,
+      "slug": "drovnica-vertikal"
     },
     {
       "id": "392",
@@ -4758,7 +5147,8 @@
       "file": "drovnica4.jpg",
       "title": "Дровница «Решётка»",
       "description": "Стильная дровница для хранения дров в стиле лофт",
-      "price": 710
+      "price": 710,
+      "slug": "drovnica-reshetka"
     },
     {
       "id": "393",
@@ -4771,7 +5161,8 @@
       "title": "Дровница «Панель»",
       "description": "Стильная дровница для хранения дров в стиле лофт",
       "price": 1400,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "drovnica-panel"
     },
     {
       "id": "394",
@@ -4784,7 +5175,8 @@
       "title": "Дровница «Диагональ»",
       "description": "Стильная дровница для хранения дров в стиле лофт",
       "price": 955,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "drovnica-diagonal"
     },
     {
       "id": "395",
@@ -4797,7 +5189,8 @@
       "title": "Перила «Рамка»",
       "description": "Перила и ограждения с чёткой геометрией",
       "price": 300,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "perila-ramka"
     },
     {
       "id": "396",
@@ -4810,7 +5203,8 @@
       "title": "Козырек «Консоль»",
       "description": "Консольный козырёк со стеклянной кровлей, деревянными ламелями и встроенной подсветкой в стиле лофт",
       "price": 1800,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "kozyrek-konsol"
     },
     {
       "id": "397",
@@ -4823,7 +5217,8 @@
       "title": "Козырек «Плоскость»",
       "description": "Плоский козырёк со стеклянным покрытием на двух металлических опорах — лаконичный индустриальный силуэт",
       "price": 1900,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "kozyrek-ploskost"
     },
     {
       "id": "398",
@@ -4836,7 +5231,8 @@
       "title": "Козырек «Ламель»",
       "description": "Козырёк с боковыми деревянными ламелями и встроенными светильниками — полуоткрытая входная зона в стиле лофт",
       "price": 2700,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "kozyrek-lamel"
     },
     {
       "id": "399",
@@ -4849,7 +5245,8 @@
       "title": "Козырек «Кромка»",
       "description": "Козырёк с выразительным профилем кровли и декоративным экраном из металлических ламелей",
       "price": 3100,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "kozyrek-kromka"
     },
     {
       "id": "400",
@@ -4862,7 +5259,8 @@
       "title": "Козырек «Фасад»",
       "description": "Навес над крыльцом с массивным металлокаркасом, ребристым потолком и боковым экраном в стиле лофт",
       "price": 3200,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "kozyrek-fasad"
     },
     {
       "id": "401",
@@ -4875,7 +5273,8 @@
       "title": "Козырек «Атриум»",
       "description": "Просторный входной козырёк премиум-класса с металлокаркасом, стеклянной кровлей и современной отделкой",
       "price": 4500,
-      "priceFrom": true
+      "priceFrom": true,
+      "slug": "kozyrek-atrium"
     }
   ]
 }

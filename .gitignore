@@ -1,7 +1,12 @@
 node_modules/
 dist/
+.fonts-cache/
 .DS_Store
 Thumbs.db
 *.log
 .env
 .env.*
+src/api/config.php
+dist/api/config.php
+src/js/telegram-config.js
+dist/js/telegram-config.js

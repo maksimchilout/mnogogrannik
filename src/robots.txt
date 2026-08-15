@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Disallow: /checkout.html
+
+Sitemap: https://mnogogrannik.by/sitemap.xml

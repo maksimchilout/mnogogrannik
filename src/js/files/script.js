@@ -13,10 +13,14 @@ import { initCheckoutPage } from "./checkout.js";
 import { initCatalogSearch } from "./search-catalog.js";
 import { initThemeToggle } from "./theme.js";
 import { formatPrice } from "./catalog-utils.js";
+import { SHOWCASE_MODE } from "./shop-mode.js";
 
 window.onload = function () {
 	initThemeToggle();
-	restoreCartFromStorage();
+	// SHOWCASE_MODE: корзина временно отключена
+	if (!SHOWCASE_MODE) {
+		restoreCartFromStorage();
+	}
 	initProductCatalog();
 	initSubscribeForm();
 	initCatalogPage();
@@ -47,42 +51,51 @@ window.onload = function () {
 			}
 			e.preventDefault();
 		}
-		if (targetElement.classList.contains('actions-product__button')) {
-			const productId = targetElement.closest('.item-product').dataset.pid;
-			addToCart(targetElement, productId);
-			e.preventDefault();
-		}
-
-		if (targetElement.classList.contains('cart-header__icon') || targetElement.closest('.cart-header__icon')) {
-			const cartHeader = document.querySelector('.cart-header');
-			const cartList = document.querySelector('.cart-list');
-			const cartEmpty = document.querySelector('[data-cart-empty]');
-			const isEmpty = !cartList?.children.length;
-
-			if (isEmpty) {
-				const isOpen = cartHeader.classList.contains('_active') && cartHeader.classList.contains('_empty');
-				cartHeader.classList.toggle('_active', !isOpen);
-				cartHeader.classList.toggle('_empty', !isOpen);
-				if (cartEmpty) cartEmpty.hidden = isOpen;
-			} else {
-				cartHeader.classList.remove('_empty');
-				if (cartEmpty) cartEmpty.hidden = true;
-				cartHeader.classList.toggle('_active');
+		const productButton = targetElement.closest('.actions-product__button');
+		if (productButton) {
+			if (SHOWCASE_MODE) {
+				// Витрина: «Подробнее» ведёт на страницу товара (как клик по карточке)
+				return;
 			}
 			e.preventDefault();
-		} else if (!targetElement.closest('.cart-header') && !targetElement.classList.contains('actions-product__button')) {
-			const cartHeader = document.querySelector('.cart-header');
-			cartHeader?.classList.remove('_active', '_empty');
-			document.querySelector('[data-cart-empty]')?.setAttribute('hidden', '');
+			const card = productButton.closest('.item-product');
+			const productId = card?.dataset.pid;
+			if (productId) addToCart(productButton, productId);
 		}
 
-		if (targetElement.classList.contains('cart-list__delete') || targetElement.closest('.cart-list__delete')) {
-			const deleteButton = targetElement.closest('.cart-list__delete');
-			const productId = deleteButton?.closest('.cart-list__item')?.dataset.cartPid;
-			if (productId) {
-				removeFromCartStorage(productId);
+		// SHOWCASE_MODE: обработчики корзины временно отключены
+		if (!SHOWCASE_MODE) {
+			if (targetElement.classList.contains('cart-header__icon') || targetElement.closest('.cart-header__icon')) {
+				const cartHeader = document.querySelector('.cart-header');
+				const cartList = document.querySelector('.cart-list');
+				const cartEmpty = document.querySelector('[data-cart-empty]');
+				const isEmpty = !cartList?.children.length;
+
+				if (isEmpty) {
+					const isOpen = cartHeader.classList.contains('_active') && cartHeader.classList.contains('_empty');
+					cartHeader.classList.toggle('_active', !isOpen);
+					cartHeader.classList.toggle('_empty', !isOpen);
+					if (cartEmpty) cartEmpty.hidden = isOpen;
+				} else {
+					cartHeader.classList.remove('_empty');
+					if (cartEmpty) cartEmpty.hidden = true;
+					cartHeader.classList.toggle('_active');
+				}
+				e.preventDefault();
+			} else if (!targetElement.closest('.cart-header') && !targetElement.classList.contains('actions-product__button')) {
+				const cartHeader = document.querySelector('.cart-header');
+				cartHeader?.classList.remove('_active', '_empty');
+				document.querySelector('[data-cart-empty]')?.setAttribute('hidden', '');
 			}
-			e.preventDefault();
+
+			if (targetElement.classList.contains('cart-list__delete') || targetElement.closest('.cart-list__delete')) {
+				const deleteButton = targetElement.closest('.cart-list__delete');
+				const productId = deleteButton?.closest('.cart-list__item')?.dataset.cartPid;
+				if (productId) {
+					removeFromCartStorage(productId);
+				}
+				e.preventDefault();
+			}
 		}
 	}
 
@@ -168,7 +181,8 @@ window.onload = function () {
 			let productTemplatePricesStart = '<div class="item-product__prices"><div class="item-product__price-group">';
 			let productTemplatePricesCurrent = `<div class="item-product__price">${formatPrice(productPrice)}</div>`;
 			let productTemplatePricesOld = `<div class="item-product__price item-product__price_old">${formatPrice(productOldPrice)}</div>`;
-			let productTemplatePricesEnd = `</div><a href="" class="actions-product__button btn btn_white">В корзину</a></div>`;
+			// SHOWCASE_MODE: текст кнопки «Подробнее»; при SHOWCASE_MODE = false вернуть «В корзину»
+			let productTemplatePricesEnd = `</div><a href="${productUrl}" class="actions-product__button btn btn_white">${SHOWCASE_MODE ? 'Подробнее' : 'В корзину'}</a></div>`;
 
 			productTemplatePrices = productTemplatePricesStart;
 			productTemplatePrices += productTemplatePricesCurrent;
@@ -194,6 +208,7 @@ window.onload = function () {
 		});
 	}
 
+	// SHOWCASE_MODE: addToCart сохранён для возврата к магазину
 	function addToCart(productButton, productId) {
 		if (!productButton.classList.contains('_hold')) {
 			productButton.classList.add('_hold');
@@ -380,7 +395,8 @@ function initSliders() {
 			},
 			loopAdditionalSlides: 5,
 			preloadImages: false,
-			parallax: true,
+			// parallax на отзывах не используется и в Safari ломает маску слева
+			parallax: false,
 			threshold: 10,
 			touchRatio: 1,
 			touchAngle: 35,

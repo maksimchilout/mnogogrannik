@@ -218,6 +218,14 @@
 			}
 		}
 	}
+	&__unp {
+		cursor: default;
+		@media (any-hover: hover){
+			&:hover{
+				color: $grayColor;
+			}
+		}
+	}
 }
 .menu-footer {
 	display: flex;
@@ -254,6 +262,12 @@
 			&:hover{
 				color: $orangeColor;
 			}
+		}
+	}
+
+	&__contacts {
+		.contacts-footer__item {
+			margin-bottom: 0;
 		}
 	}
 }

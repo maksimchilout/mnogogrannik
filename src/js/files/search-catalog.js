@@ -3,6 +3,7 @@ import {
 	escapeHtml,
 	formatProductPrice,
 	getProductPrice,
+	getProductImageAlt,
 	getProductText,
 	getProductTitle,
 	buildCatalogHref,
@@ -69,12 +70,13 @@ function searchCatalog(query) {
 
 function renderCategoryItem(item) {
 	const href = buildCatalogHref(item.category, item.subcategory);
-	const imageSrc = catalogImageSrc(item.image);
+	const imageSrc = `/${catalogImageSrc(item.image)}`;
+	const imageAlt = `${item.subcategoryTitle} — ${item.categoryTitle} на заказ`;
 
 	return `
 		<a href="${href}" class="search-results__item search-results__item_category">
 			<span class="search-results__thumb">
-				<img src="${imageSrc}" alt="" loading="lazy">
+				<img src="${imageSrc}" alt="${escapeHtml(imageAlt)}" loading="lazy">
 			</span>
 			<span class="search-results__info">
 				<span class="search-results__name">${escapeHtml(item.subcategoryTitle)}</span>
@@ -85,15 +87,16 @@ function renderCategoryItem(item) {
 }
 
 function renderProductItem(product) {
-	const href = buildCatalogHref(product.category, product.subcategory, product.id);
-	const imageSrc = catalogImageSrc(product.image);
+	const href = buildCatalogHref(product.category, product.subcategory, product);
+	const imageSrc = `/${catalogImageSrc(product.image)}`;
 	const title = getProductTitle(product);
+	const imageAlt = getProductImageAlt(product);
 	const price = formatProductPrice(product);
 
 	return `
 		<a href="${href}" class="search-results__item">
 			<span class="search-results__thumb">
-				<img src="${imageSrc}" alt="" loading="lazy">
+				<img src="${imageSrc}" alt="${escapeHtml(imageAlt)}" loading="lazy">
 			</span>
 			<span class="search-results__info">
 				<span class="search-results__name">${escapeHtml(title)}</span>
@@ -156,7 +159,7 @@ function dispatchSearchEvent(query) {
 }
 
 async function loadCatalogData() {
-	const catalogUrl = new URL('json/catalog.json', window.location.href).href;
+	const catalogUrl = new URL('/json/catalog.json', window.location.origin).href;
 	const response = await fetch(catalogUrl);
 	if (!response.ok) throw new Error('catalog.json not found');
 

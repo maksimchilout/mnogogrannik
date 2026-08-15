@@ -7,6 +7,7 @@ import {
 	removeCartItem,
 } from './cart.js';
 import { submitCheckoutTelegramOrder } from './telegram-orders.js';
+import { SHOWCASE_MODE } from './shop-mode.js';
 
 function escapeHtml(value) {
 	return String(value)
@@ -181,6 +182,12 @@ function initCheckoutForm() {
 
 export function initCheckoutPage() {
 	if (!document.querySelector('[data-checkout-page]')) return;
+
+	// SHOWCASE_MODE: страница оформления заказа временно недоступна
+	if (SHOWCASE_MODE) {
+		window.location.replace('/catalog/');
+		return;
+	}
 
 	renderCheckoutItems();
 	initCheckoutInteractions();

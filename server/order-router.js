@@ -51,7 +51,7 @@ async function loadCheckoutCartImages(cart, siteOrigin) {
 export function createOrderRouter() {
 	const router = express.Router();
 
-	router.post('/order', (req, res) => {
+	router.post(['/order', '/order.php'], (req, res) => {
 		upload.array('files', 20)(req, res, async (uploadError) => {
 			if (uploadError) {
 				console.error('Upload failed:', uploadError);

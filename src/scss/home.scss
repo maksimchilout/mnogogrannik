@@ -70,8 +70,16 @@
 		@media (min-width:$tablet){
 			margin-left: rem(-120);
 		}
+		// <1550: блок текста ужимаем, чтобы не уходил за край вьюпорта
+		@media (max-width: 1549.98px) and (min-width: $tablet) {
+			flex: 0 1 auto;
+			width: auto;
+			max-width: min(rem(400), 38%);
+			margin-left: rem(16); // минимальный отступ от края вьюпорта
+		}
 		@media (max-width:$tablet){
 			margin: 0px -15px;
+			max-width: none;
 		}
 	}
 
@@ -101,6 +109,9 @@
 		backdrop-filter: blur(30px);
 		
 	}
+	@media (max-width: 1549.98px) and (min-width: $tablet) {
+		padding: rem(36) rem(28);
+	}
 	// .content-main__title
 	&__title {
 		@include adaptiveValue("font-size", 40, 20);
@@ -108,6 +119,9 @@
 		line-height: 120%;
 		&:not(:last-child) {
 			margin: 0 0 calc(16px / 56px * 1em) 0;
+		}
+		@media (max-width: 1549.98px) and (min-width: $tablet) {
+			font-size: clamp(rem(24), 2.1vw, rem(32));
 		}
 	}
 
@@ -120,6 +134,12 @@
 		&:not(:last-child) {
 			margin: 0 0 calc(48px / 20px * 1em) 0;
 		}
+		@media (max-width: 1549.98px) and (min-width: $tablet) {
+			font-size: clamp(rem(15), 1.2vw, rem(17));
+			&:not(:last-child) {
+				margin: 0 0 rem(28) 0;
+			}
+		}
 	}
 
 	// .content-main__button
@@ -131,6 +151,10 @@
 		width: 100%;
 		color: #fff;
 		background: $orangeColor;
+		@media (max-width: 1549.98px) and (min-width: $tablet) {
+			min-height: rem(56);
+			font-size: rem(17);
+		}
 		@media (any-hover: hover){
 			&:hover{
 				background: #9e8463;
@@ -581,7 +605,7 @@
 	&__body {
 		flex: 0 0 calc(465 / 1240 * 100%);
 		position: relative;
-		z-index: 5;
+		z-index: 1;
 		align-self: center;
 		@media (min-width:$tablet){
 			@include adaptiveValue("padding-right", 80, 30);
@@ -637,19 +661,9 @@
 	position: relative;
 	// .slider-rooms__body
 	&__body {
-		overflow: visible;
+		// Слайды клипуются контейнером — без маски поверх фото справа
+		overflow: hidden;
 		position: relative;
-		&::before{
-			content:'';
-			position: absolute;
-			top: 0;
-			height: 100%;
-			width: 100vw;
-			left: 0;
-			background: #fcf8f3;
-			z-index: 2;
-			transform: translate(-100%, 0);
-		}
 	}
 
 	// .slider-rooms__slide

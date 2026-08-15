@@ -295,7 +295,8 @@
 		color: var(--color-text-muted);
 	}
 
-	.contacts-footer__item {
+	.contacts-footer__item,
+	.menu-footer__link {
 		@media (any-hover: hover) {
 			&:hover {
 				color: var(--color-accent);
@@ -428,10 +429,6 @@
 		color: var(--color-accent);
 	}
 
-	.slider-rooms__body::before {
-		background: var(--color-bg);
-	}
-
 	.slider-rooms__image_review {
 		background: var(--color-bg-secondary);
 	}
@@ -541,6 +538,65 @@
 	.catalog-content__empty {
 		@include dark-glass-soft(0.05);
 		color: var(--color-text-muted);
+	}
+
+	.catalog-index__card {
+		@include dark-glass-soft(0.05);
+		border-color: rgba(255, 255, 255, 0.08);
+		color: var(--color-text);
+		background: transparent;
+	}
+
+	.catalog-product {
+		&__eyebrow,
+		&__text {
+			color: var(--color-text-muted);
+		}
+
+		&__title,
+		&__price {
+			color: var(--color-text-strong);
+		}
+
+		&__media {
+			@include dark-glass-soft(0.04);
+		}
+
+		&__form-wrap {
+			@include dark-glass-soft(0.05);
+			background: transparent;
+		}
+
+		&__form-title,
+		&__label {
+			color: #fff;
+		}
+
+		&__input {
+			@include dark-glass-soft(0.05);
+			color: #fff;
+
+			&::placeholder {
+				color: #fff;
+				opacity: 0.85;
+			}
+		}
+
+		&__submit {
+			color: #fff;
+			background: $orangeColor;
+			box-shadow: 0 rem(4) rem(14) rgba(232, 159, 113, 0.28);
+
+			@media (any-hover: hover) {
+				&:hover {
+					background: #c48a55;
+				}
+			}
+		}
+
+		&__back {
+			color: var(--color-text);
+		}
 	}
 
 	// Checkout
