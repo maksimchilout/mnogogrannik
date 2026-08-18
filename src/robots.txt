@@ -2,5 +2,9 @@ User-agent: *
 Allow: /
 
 Disallow: /checkout.html
+Disallow: /admin/
+Disallow: /cart/
+Disallow: /api/
 
+Host: mnogogrannik.by
 Sitemap: https://mnogogrannik.by/sitemap.xml
