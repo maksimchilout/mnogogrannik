@@ -1,0 +1,22 @@
+# Canonical host + pretty URLs (Apache)
+DirectoryIndex index.html
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+	RewriteBase /
+
+	# www → non-www (301), keep path and query string
+	RewriteCond %{HTTP_HOST} ^www\.mnogogrannik\.by$ [NC]
+	RewriteRule ^(.*)$ https://mnogogrannik.by/$1 [L,R=301]
+
+	# Legacy catalog.html → /catalog/ (hash → path handled by JS on catalog pages)
+	RewriteRule ^catalog\.html$ /catalog/ [R=301,L,QSA,NE]
+
+	# Ensure trailing slash for catalog directories without forcing files
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_URI} ^/catalog/.+[^/]$
+	RewriteRule ^(catalog/.+)$ /$1/ [R=301,L]
+
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_URI} ^/blog/.+[^/]$
+	RewriteRule ^(blog/.+)$ /$1/ [R=301,L]
+</IfModule>

@@ -616,7 +616,11 @@ export async function initCatalogPage() {
 		if (searchInput) searchInput.value = initialSearchQuery;
 		applyCatalogSearch(searchQuery, { updateUrl: false });
 	} else if (route.kind === 'product') {
-		applyCatalogSeo(currentSection, currentSub);
+		const product =
+			catalogProducts.find((item) => item.slug === route.productSlug) ||
+			getProductByCardId(pageRoot?.dataset.productId || '') ||
+			null;
+		applyCatalogSeo(currentSection, currentSub, product);
 	} else if (pageRoot?.dataset.catalogSsr !== 'true' && !document.querySelector('[data-catalog-ssr="true"]')) {
 		renderProducts();
 		updateHeader();

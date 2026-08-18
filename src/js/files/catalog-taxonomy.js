@@ -1,6 +1,47 @@
 /** Канонические URL-slug’и каталога (path-based routing). */
 
-export const SITE_ORIGIN = 'https://mnogogrannik.by';
+import { generateCatalogIndexMeta, generateCategoryMeta, generateProductMeta } from './catalog-meta.js';
+
+/** Основной хост без www. Не брать из location.host — www редиректится на apex. */
+export const SITE_HOST = 'mnogogrannik.by';
+export const SITE_ORIGIN = `https://${SITE_HOST}`;
+
+/**
+ * Абсолютный URL для canonical / og:url / sitemap / schema.
+ * Всегда https://mnogogrannik.by{путь}: без www, без query/hash, без двойных слэшей.
+ * Не зависит от того, с какого хоста открыли страницу.
+ *
+ * @param {string} [pathOrUrl]
+ * @returns {string}
+ */
+export function siteAbsoluteUrl(pathOrUrl = '/') {
+	const origin = SITE_ORIGIN;
+	const raw = String(pathOrUrl || '/').trim();
+	if (!raw || raw === origin || raw === `${origin}/`) {
+		return `${origin}/`;
+	}
+
+	let pathname = '/';
+	try {
+		const absolute = /^https?:\/\//i.test(raw)
+			? raw
+			: `${origin}${raw.startsWith('/') ? '' : '/'}${raw}`;
+		pathname = new URL(absolute).pathname || '/';
+	} catch {
+		pathname = raw.replace(/^https?:\/\/[^/]+/i, '');
+		if (!pathname.startsWith('/')) pathname = `/${pathname}`;
+	}
+
+	pathname = pathname.replace(/\/index\.html$/i, '/').replace(/\/{2,}/g, '/');
+	if (!pathname.startsWith('/')) pathname = `/${pathname}`;
+
+	const hasFileExtension = /\.[a-z0-9]+$/i.test(pathname);
+	if (pathname.startsWith('/catalog') && !pathname.endsWith('/') && !hasFileExtension) {
+		pathname += '/';
+	}
+
+	return `${origin}${pathname}`;
+}
 
 /**
  * @typedef {{
@@ -447,9 +488,7 @@ export const CATALOG_SECTIONS = [
 ];
 
 export const DEFAULT_CATALOG_SEO = {
-	title: 'Каталог изделий на заказ в Минске | Mnogogrannik',
-	description:
-		'Каталог Mnogogrannik: лофт-мебель, мангалы, лестницы, навесы, садовая мебель и металлоконструкции на заказ в Минске и Беларуси. Рассчитаем стоимость проекта.',
+	...generateCatalogIndexMeta(),
 	seoH1: 'Каталог изделий на заказ',
 	heroText:
 		'Выберите раздел — изготовим проект под ваше пространство в Минске и по Беларуси.',
@@ -523,7 +562,7 @@ export function catalogPath(sectionSlug, subSlug = null, productSlug = null) {
 }
 
 export function catalogAbsoluteUrl(sectionSlug, subSlug = null, productSlug = null) {
-	return `${SITE_ORIGIN}${catalogPath(sectionSlug, subSlug, productSlug)}`;
+	return siteAbsoluteUrl(catalogPath(sectionSlug, subSlug, productSlug));
 }
 
 export function getProductPath(product) {
@@ -603,47 +642,10 @@ export function hashToCatalogPath(hash) {
 
 export function resolveSeo(section = null, sub = null, product = null) {
 	if (product) {
-		const sectionTitle = section?.title || product.categoryTitle || '';
-		const subTitle = sub?.title || product.subcategoryTitle || '';
-		const title = `${product.title} на заказ в Минске — ${subTitle || sectionTitle} | Mnogogrannik`;
-		const description =
-			product.description
-				? `${product.description} Изготовление на заказ в Минске — Mnogogrannik.`
-				: `${product.title}: изготовление на заказ в Минске и Беларуси. Рассчитаем стоимость проекта.`;
-		return {
-			title,
-			description,
-			h1: product.title,
-			heroText: product.description || '',
-		};
-	}
-	if (sub && section) {
-		return {
-			title:
-				sub.seoTitle ||
-				`${sub.title} на заказ в Минске — ${section.title} | Mnogogrannik`,
-			description:
-				sub.seoDescription ||
-				`Изготавливаем ${sub.title.toLowerCase()} по индивидуальным проектам в Минске и Беларуси. Раздел «${section.title}». Рассчитаем стоимость проекта.`,
-			h1: sub.seoH1 || `${sub.title} на заказ`,
-			heroText:
-				sub.heroText ||
-				sub.seoDescription ||
-				`Изготавливаем ${sub.title.toLowerCase()} по индивидуальным проектам в Минске и Беларуси. Рассчитаем стоимость проекта.`,
-		};
+		return generateProductMeta(product, section, sub);
 	}
 	if (section) {
-		return {
-			title: section.seoTitle || `${section.title} на заказ в Минске | Mnogogrannik`,
-			description:
-				section.seoDescription ||
-				`Изготавливаем ${section.title.toLowerCase()} по индивидуальным проектам в Минске и Беларуси. Рассчитаем стоимость проекта.`,
-			h1: section.seoH1 || `${section.title} на заказ`,
-			heroText:
-				section.heroText ||
-				section.seoDescription ||
-				`${section.title}: изделия на заказ под ваше пространство.`,
-		};
+		return generateCategoryMeta(section, sub);
 	}
 	return {
 		title: DEFAULT_CATALOG_SEO.title,

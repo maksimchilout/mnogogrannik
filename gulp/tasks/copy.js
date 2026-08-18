@@ -12,6 +12,7 @@ export const copy = () => {
 		.src(
 			[
 				`${app.path.srcFolder}/robots.txt`,
+				`${app.path.srcFolder}/.htaccess`,
 			],
 			{ allowEmpty: true }
 		)

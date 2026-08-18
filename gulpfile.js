@@ -16,6 +16,7 @@ import { json } from "./gulp/tasks/json.js";
 import { reset } from "./gulp/tasks/reset.js";
 import { html } from "./gulp/tasks/html.js";
 import { catalogPages } from "./gulp/tasks/catalog-pages.js";
+import { blogPages } from "./gulp/tasks/blog-pages.js";
 import { schemaHome } from "./gulp/tasks/schema-home.js";
 import { server } from "./gulp/tasks/server.js";
 import { scss } from "./gulp/tasks/scss.js";
@@ -31,6 +32,9 @@ const catalogSources = [
 	`${path.srcFolder}/js/files/catalog-taxonomy.js`,
 	`${path.srcFolder}/js/files/catalog-utils.js`,
 	`${path.srcFolder}/js/files/catalog-schema.js`,
+	`${path.srcFolder}/js/files/catalog-meta.js`,
+	`${path.srcFolder}/js/files/blog-posts.js`,
+	`${path.srcFolder}/js/files/markdown.js`,
 	`${path.srcFolder}/js/files/shop-mode.js`,
 	`${path.srcFolder}/html/**/*.*`,
 ];
@@ -39,17 +43,19 @@ function watcher() {
 	gulp.watch(path.watch.files, copy);
 	gulp.watch([
 		`${path.srcFolder}/robots.txt`,
+		`${path.srcFolder}/.htaccess`,
 		`${path.srcFolder}/api/**/*.*`,
 		`${path.srcFolder}/js/telegram-config.js`,
 		`${path.srcFolder}/js/telegram-config.example.js`,
 	], copy);
-	gulp.watch([path.watch.html, path.watch.htmlPartials, `${path.srcFolder}/js/files/catalog-schema.js`], gulp.series(schemaHome, html, catalogPages));
+	gulp.watch([path.watch.html, path.watch.htmlPartials, `${path.srcFolder}/js/files/catalog-schema.js`], gulp.series(schemaHome, html, catalogPages, blogPages));
 	gulp.watch(path.watch.scss, scss);
 	gulp.watch(path.watch.js, js);
 	gulp.watch(path.watch.images, images);
 	gulp.watch(path.watch.logo, favicon);
 	gulp.watch(path.watch.json, gulp.series(json, catalogPages));
-	gulp.watch(catalogSources, gulp.series(schemaHome, catalogPages));
+	gulp.watch(catalogSources, gulp.series(schemaHome, catalogPages, blogPages));
+	gulp.watch(`${path.srcFolder}/blog/**/*.md`, blogPages);
 }
 
 export { svgSprive }
@@ -64,7 +70,8 @@ const mainTasks = gulp.series(
 	gulp.parallel(copy, html, scss, json, js, favicon),
 	// Картинки отдельно — не конкурируют с webpack за память
 	images,
-	catalogPages
+	catalogPages,
+	blogPages
 );
 
 // create script to do tasks
@@ -78,6 +85,7 @@ export { build }
 export { deployZIP }
 export { html }
 export { catalogPages }
+export { blogPages }
 export { schemaHome }
 export { images }
 export { favicon }

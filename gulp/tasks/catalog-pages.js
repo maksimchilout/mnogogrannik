@@ -3,14 +3,15 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import {
 	buildBreadcrumbListSchema,
+	buildCatalogBreadcrumbs,
 	buildProductSchema,
 	renderJsonLdBlocks,
 } from '../../src/js/files/catalog-schema.js';
 import {
 	CATALOG_SECTIONS,
-	SITE_ORIGIN,
 	catalogAbsoluteUrl,
 	catalogPath,
+	siteAbsoluteUrl,
 	getProductPath,
 	getSectionById,
 	getSubById,
@@ -25,6 +26,7 @@ import {
 	getProductTitle,
 } from '../../src/js/files/catalog-utils.js';
 import { SHOWCASE_MODE } from '../../src/js/files/shop-mode.js';
+import { getBlogSitemapEntries } from '../../src/js/files/blog-posts.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.resolve(__dirname, '../..');
@@ -32,7 +34,7 @@ const srcDir = path.join(rootDir, 'src');
 const buildDir = path.join(rootDir, 'dist');
 const partialsDir = path.join(srcDir, 'html');
 
-const OG_IMAGE = `${SITE_ORIGIN}/img/about/about-hero.jpg`;
+const OG_IMAGE = siteAbsoluteUrl('/img/about/about-hero.jpg');
 
 function formatSitemapDate(date = new Date()) {
 	return date.toISOString().slice(0, 10);
@@ -90,18 +92,27 @@ function toRootRelativeHtml(html) {
 		.replace(/href="js\//g, 'href="/js/');
 }
 
-function renderHead({ title, description, canonical, robots = 'index, follow' }) {
+function renderHead({
+	title,
+	description,
+	canonical,
+	ogType = 'website',
+	robots = 'index, follow',
+	jsonLd = '',
+}) {
 	const head = resolveIncludes(
 		`@@include('html/_head.htm',{
 "title":${JSON.stringify(title)},
 "description":${JSON.stringify(description)},
 "canonical":${JSON.stringify(canonical)},
 "ogImage":${JSON.stringify(OG_IMAGE)},
+"ogType":${JSON.stringify(ogType)},
 "robots":${JSON.stringify(robots)}
 })`,
 		{}
 	);
-	return toRootRelativeHtml(head);
+	const extra = jsonLd ? `${jsonLd}\n` : '';
+	return `${toRootRelativeHtml(head)}\n${extra}</head>`;
 }
 
 function renderHeader() {
@@ -265,8 +276,7 @@ function renderListingPage({
 
 	return `<!DOCTYPE html>
 <html lang="ru">
-${renderHead({ title: seo.title, description: seo.description, canonical })}
-${schemaHtml}
+${renderHead({ title: seo.title, description: seo.description, canonical, jsonLd: schemaHtml })}
 <body>
 	<div class="wrapper">
 		${renderHeader()}
@@ -304,7 +314,7 @@ ${schemaHtml}
 
 function renderIndexPage() {
 	const seo = resolveSeo();
-	const canonical = `${SITE_ORIGIN}/catalog/`;
+	const canonical = siteAbsoluteUrl('/catalog/');
 	const cards = CATALOG_SECTIONS.map((section) => {
 		const href = catalogPath(section.slug);
 		return `
@@ -314,16 +324,12 @@ function renderIndexPage() {
 			</a>`;
 	}).join('\n');
 
-	const breadcrumbs = [
-		{ label: 'Главная', href: '/' },
-		{ label: 'Каталог', href: '/catalog/' },
-	];
+	const breadcrumbs = buildCatalogBreadcrumbs();
 	const schemaHtml = renderJsonLdBlocks(buildBreadcrumbListSchema(breadcrumbs));
 
 	return `<!DOCTYPE html>
 <html lang="ru">
-${renderHead({ title: seo.title, description: seo.description, canonical })}
-${schemaHtml}
+${renderHead({ title: seo.title, description: seo.description, canonical, jsonLd: schemaHtml })}
 <body>
 	<div class="wrapper">
 		${renderHeader()}
@@ -372,17 +378,9 @@ function renderProductPage(product, section, sub) {
 	const price = formatProductPrice(product);
 	const imageSrc = `/${catalogImageSrc(product.image)}`;
 	const imageAlt = getProductImageAlt(product);
-	const absoluteImage = `${SITE_ORIGIN}${imageSrc}`;
+	const absoluteImage = siteAbsoluteUrl(imageSrc);
 
-	const crumbs = [
-		{ label: 'Главная', href: '/' },
-		{ label: 'Каталог', href: '/catalog/' },
-		{ label: section.title, href: catalogPath(section.slug) },
-	];
-	if (sub) {
-		crumbs.push({ label: sub.title, href: catalogPath(section.slug, sub.slug) });
-	}
-	crumbs.push({ label: title, href: catalogPath(section.slug, sub?.slug || null, product.slug) });
+	const crumbs = buildCatalogBreadcrumbs({ section, sub, product });
 
 	const backHref = sub
 		? catalogPath(section.slug, sub.slug)
@@ -395,8 +393,7 @@ function renderProductPage(product, section, sub) {
 
 	return `<!DOCTYPE html>
 <html lang="ru">
-${renderHead({ title: seo.title, description: seo.description, canonical })}
-${schemaHtml}
+${renderHead({ title: seo.title, description: seo.description, canonical, jsonLd: schemaHtml })}
 <body>
 	<div class="wrapper">
 		${renderHeader()}
@@ -462,10 +459,11 @@ function sortProductsForSection(products, section) {
 
 function buildSitemapUrls(products, lastmod = formatSitemapDate()) {
 	const urls = [
-		{ loc: `${SITE_ORIGIN}/`, priority: '1.0', changefreq: 'weekly' },
-		{ loc: `${SITE_ORIGIN}/about.html`, priority: '0.8', changefreq: 'monthly' },
-		{ loc: `${SITE_ORIGIN}/policy.html`, priority: '0.8', changefreq: 'monthly' },
-		{ loc: `${SITE_ORIGIN}/catalog/`, priority: '0.8', changefreq: 'weekly' },
+		{ loc: siteAbsoluteUrl('/'), priority: '1.0', changefreq: 'weekly' },
+		{ loc: siteAbsoluteUrl('/about.html'), priority: '0.8', changefreq: 'monthly' },
+		{ loc: siteAbsoluteUrl('/policy.html'), priority: '0.8', changefreq: 'monthly' },
+		{ loc: siteAbsoluteUrl('/catalog/'), priority: '0.8', changefreq: 'weekly' },
+		...getBlogSitemapEntries(),
 	];
 
 	for (const section of CATALOG_SECTIONS) {
@@ -520,7 +518,7 @@ function buildLegacyRedirectPage() {
 	<meta charset="UTF-8">
 	<title>Каталог — mnogogrannik.lab</title>
 	<meta name="robots" content="noindex, follow">
-	<link rel="canonical" href="${SITE_ORIGIN}/catalog/">
+	<link rel="canonical" href="${siteAbsoluteUrl('/catalog/')}">
 	<script>
 		(function () {
 			var path = location.pathname || '';
@@ -591,11 +589,7 @@ export const catalogPages = async (done) => {
 				renderListingPage({
 					seo,
 					canonical: catalogAbsoluteUrl(section.slug),
-					breadcrumbs: [
-						{ label: 'Главная', href: '/' },
-						{ label: 'Каталог', href: '/catalog/' },
-						{ label: section.title, href: catalogPath(section.slug) },
-					],
+					breadcrumbs: buildCatalogBreadcrumbs({ section }),
 					heroTitle: seo.h1,
 					heroText: seo.heroText,
 					contentTitle: section.title,
@@ -618,12 +612,7 @@ export const catalogPages = async (done) => {
 						renderListingPage({
 							seo: subSeo,
 							canonical: catalogAbsoluteUrl(section.slug, sub.slug),
-							breadcrumbs: [
-								{ label: 'Главная', href: '/' },
-								{ label: 'Каталог', href: '/catalog/' },
-								{ label: section.title, href: catalogPath(section.slug) },
-								{ label: sub.title, href: catalogPath(section.slug, sub.slug) },
-							],
+							breadcrumbs: buildCatalogBreadcrumbs({ section, sub }),
 							heroTitle: subSeo.h1,
 							heroText: subSeo.heroText,
 							contentTitle: section.title,
@@ -660,11 +649,15 @@ export const catalogPages = async (done) => {
 		writeHtml(path.join(buildDir, 'sitemap.xml'), sitemapXml);
 		writeHtml(path.join(srcDir, 'sitemap.xml'), sitemapXml);
 
-		const htaccess = `# Catalog pretty URLs (Apache)
+		const htaccess = `# Canonical host + pretty URLs (Apache)
 DirectoryIndex index.html
 <IfModule mod_rewrite.c>
 	RewriteEngine On
 	RewriteBase /
+
+	# www → non-www (301), keep path and query string
+	RewriteCond %{HTTP_HOST} ^www\\.mnogogrannik\\.by$ [NC]
+	RewriteRule ^(.*)$ https://mnogogrannik.by/$1 [L,R=301]
 
 	# Legacy catalog.html → /catalog/ (hash → path handled by JS on catalog pages)
 	RewriteRule ^catalog\\.html$ /catalog/ [R=301,L,QSA,NE]
@@ -673,9 +666,14 @@ DirectoryIndex index.html
 	RewriteCond %{REQUEST_FILENAME} !-f
 	RewriteCond %{REQUEST_URI} ^/catalog/.+[^/]$
 	RewriteRule ^(catalog/.+)$ /$1/ [R=301,L]
+
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_URI} ^/blog/.+[^/]$
+	RewriteRule ^(blog/.+)$ /$1/ [R=301,L]
 </IfModule>
 `;
 		writeHtml(path.join(buildDir, '.htaccess'), htaccess);
+		writeHtml(path.join(srcDir, '.htaccess'), htaccess);
 
 		const sitemapUrlCount = (sitemapXml.match(/<loc>/g) || []).length;
 		console.log(

@@ -1,0 +1,271 @@
+.blog-hero {
+	background: #fcf8f3;
+	@include adaptiveValue("padding-top", 140, 100);
+	@include adaptiveValue("padding-bottom", 48, 32);
+
+	&__container {
+		max-width: rem(820);
+	}
+
+	&__breadcrumbs {
+		margin: 0 0 24px 0;
+	}
+
+	&__date {
+		margin: 0 0 rem(12) 0;
+		color: $grayColor;
+		font-size: rem(14);
+	}
+
+	&__title {
+		text-align: left;
+		margin: 0 0 calc(20px / 40px * 1em) 0;
+	}
+
+	&__text {
+		max-width: rem(640);
+		line-height: 150%;
+		color: $grayColor;
+		@include adaptiveValue("font-size", 18, 16);
+	}
+}
+
+.blog {
+	@include adaptiveValue("padding-top", 56, 32);
+	@include adaptiveValue("padding-bottom", 24, 16);
+
+	&__list {
+		display: grid;
+		gap: rem(28);
+	}
+}
+
+.blog-card {
+	display: grid;
+	grid-template-columns: minmax(0, 280px) minmax(0, 1fr);
+	gap: rem(28);
+	padding: rem(24);
+	background: #fcf8f3;
+	align-items: stretch;
+
+	@media (max-width: $tablet) {
+		grid-template-columns: 1fr;
+	}
+
+	&__media {
+		display: block;
+		min-height: rem(200);
+	}
+
+	&__body {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		min-width: 0;
+	}
+
+	&__date {
+		margin: 0 0 rem(8) 0;
+		color: $grayColor;
+		font-size: rem(14);
+	}
+
+	&__title {
+		margin: 0 0 rem(12) 0;
+		@include adaptiveValue("font-size", 28, 22);
+		line-height: 125%;
+
+		a {
+			color: inherit;
+		}
+	}
+
+	&__excerpt {
+		margin: 0 0 rem(20) 0;
+		color: $grayColor;
+		line-height: 150%;
+	}
+
+	&__more {
+		margin-top: auto;
+	}
+}
+
+.blog-cover,
+.blog-figure {
+	margin: 0;
+
+	&__placeholder {
+		display: flex;
+		align-items: flex-end;
+		min-height: rem(220);
+		padding: rem(16);
+		background:
+			linear-gradient(180deg, rgba(58, 58, 58, 0.08), rgba(58, 58, 58, 0.42)),
+			repeating-linear-gradient(
+				-45deg,
+				#f3eee6,
+				#f3eee6 12px,
+				#ebe4d8 12px,
+				#ebe4d8 24px
+			);
+	}
+
+	&__hint {
+		color: #fff;
+		font-size: rem(14);
+		line-height: 140%;
+		text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35);
+	}
+}
+
+.blog-article {
+	@include adaptiveValue("padding-top", 40, 24);
+	@include adaptiveValue("padding-bottom", 24, 16);
+
+	&__container {
+		max-width: rem(820);
+	}
+
+	&__content {
+		@include adaptiveValue("margin-top", 36, 24);
+		@include adaptiveValue("font-size", 18, 16);
+		line-height: 160%;
+
+		h2 {
+			margin: rem(32) 0 rem(14) 0;
+			@include adaptiveValue("font-size", 28, 22);
+			line-height: 125%;
+		}
+
+		p {
+			margin: 0 0 rem(16) 0;
+		}
+
+		ul,
+		ol {
+			margin: 0 0 rem(18) 0;
+			padding-left: rem(22);
+		}
+
+		li {
+			margin: 0 0 rem(8) 0;
+		}
+
+		a {
+			color: $orangeColor;
+			border-bottom: 1px solid transparent;
+			transition: border-color 0.2s ease;
+
+			@media (any-hover: hover) {
+				&:hover {
+					border-bottom-color: currentColor;
+				}
+			}
+		}
+
+		strong {
+			font-weight: 600;
+		}
+	}
+
+	&__table-wrap {
+		overflow-x: auto;
+		margin: 0 0 rem(24) 0;
+	}
+
+	&__table {
+		width: 100%;
+		border-collapse: collapse;
+		font-size: rem(15);
+
+		th,
+		td {
+			padding: rem(10) rem(12);
+			border: 1px solid rgba(58, 58, 58, 0.12);
+			text-align: left;
+			vertical-align: top;
+		}
+
+		th {
+			background: #fcf8f3;
+			font-weight: 600;
+		}
+	}
+
+	&__catalog-link {
+		padding: rem(16);
+		background: #fcf8f3;
+	}
+
+	&__back {
+		margin: rem(36) 0 0 0;
+	}
+
+	&__back-link {
+		color: $mainColor;
+		border-bottom: 1px solid transparent;
+
+		@media (any-hover: hover) {
+			&:hover {
+				border-bottom-color: currentColor;
+			}
+		}
+	}
+}
+
+.blog-article .blog-cover {
+	margin-top: 0;
+}
+
+.blog-article .blog-figure {
+	margin: rem(24) 0;
+}
+
+.blog-related {
+	margin-top: rem(48);
+	padding-top: rem(32);
+	border-top: 1px solid rgba(58, 58, 58, 0.1);
+
+	&__heading {
+		margin: 0 0 rem(20) 0;
+		@include adaptiveValue("font-size", 28, 22);
+	}
+
+	&__grid {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: rem(20);
+
+		@media (max-width: $mobile) {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__card {
+		display: block;
+		padding: rem(16);
+		background: #fcf8f3;
+		color: inherit;
+		transition: transform 0.2s ease;
+
+		@media (any-hover: hover) {
+			&:hover {
+				transform: translateY(-2px);
+			}
+		}
+	}
+
+	&__title {
+		margin: rem(14) 0 rem(8) 0;
+		font-size: rem(18);
+		line-height: 130%;
+	}
+
+	&__excerpt {
+		margin: 0;
+		color: $grayColor;
+		font-size: rem(14);
+		line-height: 150%;
+	}
+}
